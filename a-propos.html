@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - CCFA | Conseil Formation Audit Montauban</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 120px 0 60px;
+            color: white;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .page-header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        
+        .founder-section {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+        
+        .founder-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .founder-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            color: white;
+        }
+        
+        .founder-bio h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .founder-role {
+            color: var(--primary-color);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        
+        .founder-bio p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: var(--text-light);
+        }
+        
+        .expertise-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .expertise-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: var(--bg-light);
+            border-radius: 8px;
+        }
+        
+        .expertise-icon {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .timeline-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+        
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 60px 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content:first-child {
+            order: 3;
+            text-align: left;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content:last-child {
+            order: 1;
+            text-align: right;
+        }
+        
+        .timeline-date {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 14px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .timeline-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        
+        .timeline-content h4 {
+            font-size: 16px;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .timeline-content p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .values-detail-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .value-card {
+            padding: 40px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        @media (max-width: 768px) {
+            .founder-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                grid-template-columns: 60px 1fr;
+                gap: 20px;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-content:first-child,
+            .timeline-item:nth-child(even) .timeline-content:last-child {
+                order: initial;
+                text-align: left;
+            }
+            
+            .timeline-content:first-child {
+                display: none;
+            }
+            
+            .values-grid,
+            .expertise-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html">
+                            <span class="logo-text">CCFA</span>
+                            <span class="logo-subtitle">Chikhi Conseil Formation Audit</span>
+                        </a>
+                    </div>
+                    <button class="mobile-menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="a-propos.html" class="active">À PROPOS</a></li>
+                        <li class="dropdown">
+                            <a href="#services">NOS SERVICES</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="service-ingenierie.html">Ingénierie de Formation</a></li>
+                                <li><a href="service-audit.html">Audit Qualiopi</a></li>
+                                <li><a href="service-essms.html">Évaluation ESSMS</a></li>
+                                <li><a href="service-bilan.html">Bilan de Compétences</a></li>
+                                <li><a href="service-management.html">Management de Transition</a></li>
+                                <li><a href="service-territorial.html">Développement Territorial</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="tarifs.html">TARIFS</a></li>
+                        <li><a href="contact.html" class="btn-contact">NOUS CONTACTER</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>À Propos de CCFA</h1>
+            <p>27 ans d'expérience au service du développement territorial</p>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder-section">
+        <div class="container">
+            <div class="founder-content">
+                <div class="founder-image" style="background: none; padding: 0; overflow: hidden;">
+                    <img src="images/samir-chikhi.jpg" alt="Samir Chikhi" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                </div>
+                <div class="founder-bio">
+                    <h2>Samir Chikhi</h2>
+                    <p class="founder-role">Fondateur & Consultant Expert</p>
+                    <p>
+                        Fort de <strong>27 années d'expérience</strong> dans le secteur public, l'économie sociale et solidaire, 
+                        et le développement territorial, j'ai créé CCFA pour accompagner les acteurs locaux dans leur structuration 
+                        et leur professionnalisation.
+                    </p>
+                    <p>
+                        Mon parcours m'a permis d'occuper des fonctions de <strong>Directeur Général des Services</strong> de collectivités, 
+                        de <strong>directeur de structures ESS</strong> gérant des budgets allant jusqu'à 4,2 millions d'euros et des équipes 
+                        de 55 personnes, ainsi que de <strong>chargé de mission</strong> sur des projets structurants (ANRU, fonds européens LEADER).
+                    </p>
+                    <p>
+                        Cette double expertise - opérationnelle et stratégique - me permet aujourd'hui d'accompagner mes clients 
+                        avec une <strong>approche pragmatique</strong>, ancrée dans la réalité du terrain.
+                    </p>
+                    
+                    <div class="expertise-list">
+                        <div class="expertise-item">
+                            <div class="expertise-icon">✓</div>
+                            <span>Auditeur Qualiopi Certifié</span>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon">✓</div>
+                            <span>Évaluateur ESSMS</span>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon">✓</div>
+                            <span>Consultant DLA Occitanie</span>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon">✓</div>
+                            <span>Ex-DGS Collectivité</span>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon">✓</div>
+                            <span>Expert Fonds Européens</span>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon">✓</div>
+                            <span>Formateur Certifié</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Parcours Professionnel</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Création CCFA</h3>
+                        <h4>Consultant Indépendant</h4>
+                        <p>Lancement de l'activité de conseil, formation et audit. Missions d'ingénierie pédagogique, certification Qualiopi et accompagnement DLA.</p>
+                    </div>
+                    <div class="timeline-date">2020</div>
+                    <div class="timeline-content"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content"></div>
+                    <div class="timeline-date">2019-21</div>
+                    <div class="timeline-content">
+                        <h3>Directeur Général des Services</h3>
+                        <h4>Mairie de Grisolles (82)</h4>
+                        <p>Pilotage stratégique et opérationnel. Budget 4,2M€, 55 agents. Gestion RH, finances, projets locaux et coopération institutionnelle.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Chargé de mission Fonds LEADER</h3>
+                        <h4>PETR Garonne Quercy Gascogne</h4>
+                        <p>Animation territoriale sur 140 communes. Émergence et accompagnement de projets européens, formation des porteurs de projet.</p>
+                    </div>
+                    <div class="timeline-date">2016-18</div>
+                    <div class="timeline-content"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content"></div>
+                    <div class="timeline-date">2009-12</div>
+                    <div class="timeline-content">
+                        <h3>Directeur</h3>
+                        <h4>Régie de Quartier Bellefontaine - Toulouse</h4>
+                        <p>Direction d'une structure ESS de 1,1M€ et 55 salariés. Développement, consolidation partenariats et ancrage territorial.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Chargé de mission ANRU</h3>
+                        <h4>Communauté Montauban Trois Rivières</h4>
+                        <p>Pilotage du projet de renouvellement urbain. Création de la clause d'insertion. Politique de l'emploi sur 11 communes.</p>
+                    </div>
+                    <div class="timeline-date">2003-07</div>
+                    <div class="timeline-content"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content"></div>
+                    <div class="timeline-date">2001-09</div>
+                    <div class="timeline-content">
+                        <h3>Directeur Adjoint</h3>
+                        <h4>Régie de Quartier Montauban Services</h4>
+                        <p>Gestion quotidienne (RH, opérationnel, finances). Structure de 700K€ et 43 personnes. Interface équipes-direction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Detail Section -->
+    <section class="values-detail-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Valeurs</h2>
+                <p style="max-width: 700px; margin: 20px auto 0; text-align: center; color: var(--text-light);">
+                    Ces valeurs guident notre action quotidienne et notre engagement auprès de nos clients
+                </p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Expertise Terrain</h3>
+                    <p>
+                        Notre approche est ancrée dans 27 ans d'expérience opérationnelle. Nous ne conseillons pas 
+                        depuis un bureau : nous avons géré, dirigé, piloté les mêmes problématiques que vous rencontrez. 
+                        Cette expertise éprouvée garantit des solutions pragmatiques et réalistes.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Accompagnement Personnalisé</h3>
+                    <p>
+                        Chaque structure est unique. Nous prenons le temps de comprendre votre contexte, vos enjeux 
+                        et vos ressources pour construire avec vous des solutions sur-mesure. Notre accompagnement 
+                        s'adapte à votre rythme et à vos contraintes organisationnelles.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🏛️</div>
+                    <h3>Ancrage Territorial</h3>
+                    <p>
+                        Basé à Montauban et intervenant principalement en Occitanie, nous connaissons les spécificités 
+                        des territoires, les réseaux d'acteurs et les ressources locales. Cette proximité nous permet 
+                        d'être réactifs et de proposer des solutions adaptées aux réalités territoriales.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation & Qualité</h3>
+                    <p>
+                        Nous combinons méthodes éprouvées et approches innovantes. Certifiés Qualiopi, nous nous 
+                        engageons dans une démarche d'amélioration continue. Notre objectif : vous apporter les 
+                        meilleurs outils et pratiques pour renforcer votre efficacité et votre impact.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Travaillons Ensemble</h2>
+                <p>Vous avez un projet ? Une problématique ? Discutons-en pour trouver les meilleures solutions adaptées à votre structure.</p>
+                <a href="contact.html" class="btn-primary-large">Prendre Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-text">CCFA</span>
+                        <span class="logo-subtitle">Chikhi Conseil Formation Audit</span>
+                    </div>
+                    <p class="footer-contact">
+                        <strong>Téléphone:</strong> 06 52 81 38 22<br>
+                        <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0f6c60617b6e6c7b4f6c3d696e21697d">[email&#160;protected]</a><br>
+                        <strong>Adresse:</strong> 12 rue du Génie<br>
+                        82000 Montauban
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Nos Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="service-ingenierie.html">Ingénierie de Formation</a></li>
+                        <li><a href="service-audit.html">Audit Qualiopi</a></li>
+                        <li><a href="service-essms.html">Évaluation ESSMS</a></li>
+                        <li><a href="service-bilan.html">Bilan de Compétences</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>L'Entreprise</h4>
+                    <ul class="footer-links">
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="service-management.html">Management de Transition</a></li>
+                        <li><a href="service-territorial.html">Développement Territorial</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Horaires</h4>
+                    <p><strong>Du lundi au vendredi</strong><br>
+                    9h - 12h30 et 14h - 18h</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/samirchikhi/" target="_blank">in</a>
+                        <a href="https://samir-chikhi.mystrikingly.com/" target="_blank" style="font-size:13px;font-weight:600;">CV</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CCFA - Tous droits réservés | <a href="mentions-legales.html">Mentions L�

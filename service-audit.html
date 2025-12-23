@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit & Certification Qualiopi - CCFA Montauban</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .service-hero {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 140px 0 80px;
+            color: white;
+        }
+        
+        .service-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .service-hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+        
+        .service-hero-subtitle {
+            font-size: 22px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .service-intro {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .intro-visual {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            aspect-ratio: 1;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+        }
+        
+        .intro-text h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+        
+        .intro-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box {
+            background: var(--bg-light);
+            padding: 25px;
+            border-left: 4px solid var(--primary-color);
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .highlight-box strong {
+            color: var(--primary-color);
+        }
+        
+        .features-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+        
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        .process-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            top: 40px;
+            right: -15px;
+            font-size: 30px;
+            color: var(--primary-color);
+            font-weight: 300;
+        }
+        
+        .process-step:last-child::after {
+            display: none;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        
+        .process-step h4 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        
+        .process-step p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+        
+        .benefits-list {
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+        
+        .benefit-item {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+        
+        .benefit-item h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .benefit-item p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        .references-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .reference-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .reference-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 12px;
+        }
+        
+        .reference-logo {
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .reference-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 1024px) {
+            .features-grid,
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .reference-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-hero h1 {
+                font-size: 36px;
+            }
+            
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .intro-visual {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .features-grid,
+            .process-steps,
+            .reference-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-step::after {
+                top: auto;
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%) rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html">
+                            <span class="logo-text">CCFA</span>
+                            <span class="logo-subtitle">Chikhi Conseil Formation Audit</span>
+                        </a>
+                    </div>
+                    <button class="mobile-menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="a-propos.html">À PROPOS</a></li>
+                        <li class="dropdown">
+                            <a href="#services">NOS SERVICES</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="service-ingenierie.html">Ingénierie de Formation</a></li>
+                                <li><a href="service-audit.html">Audit Qualiopi</a></li>
+                                <li><a href="service-essms.html">Évaluation ESSMS</a></li>
+                                <li><a href="service-bilan.html">Bilan de Compétences</a></li>
+                                <li><a href="service-management.html">Management de Transition</a></li>
+                                <li><a href="service-territorial.html">Développement Territorial</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="tarifs.html">TARIFS</a></li>
+                        <li><a href="contact.html" class="btn-contact">NOUS CONTACTER</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Service Hero -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <h1>Audit & Certification Qualiopi</h1>
+                <p class="service-hero-subtitle">
+                    Accompagnement expert à la certification RNQ avec un taux de réussite de 100% 
+                    pour l'obtention de Qualiopi
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="service-intro">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-visual">
+                    ✓
+                </div>
+                <div class="intro-text">
+                    <h2>Votre Partenaire pour la Certification Qualiopi</h2>
+                    <p>
+                        La certification <strong>Qualiopi</strong> est devenue obligatoire pour tous les organismes 
+                        de formation souhaitant bénéficier de fonds publics ou mutualisés. Cette certification 
+                        garantit la qualité de vos processus de formation.
+                    </p>
+                    <p>
+                        Fort de mon expérience en tant qu'<strong>auditeur certificateur Qualiopi</strong> pour 
+                        QOANIX (2022-2024) et de mes missions de pré-audit pour NAPSIA et l'UFCV Occitanie, 
+                        j'accompagne les organismes de formation dans leur parcours de certification.
+                    </p>
+                    <div class="highlight-box">
+                        <strong>Résultat garanti :</strong> 100% des structures accompagnées ont obtenu 
+                        leur certification Qualiopi dès le premier audit.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Prestations Qualiopi</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Audit Blanc Préparatoire</h3>
+                    <p>
+                        Diagnostic complet de votre conformité au référentiel national qualité. 
+                        Identification précise des écarts et plan d'action détaillé.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Accompagnement à la Certification</h3>
+                    <p>
+                        Mise en conformité documentaire, construction des preuves, préparation 
+                        des équipes et accompagnement jusqu'à l'obtention de la certification.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Audits de Surveillance</h3>
+                    <p>
+                        Accompagnement lors des audits de surveillance et de renouvellement. 
+                        Maintien de votre conformité dans la durée.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Formation des Équipes</h3>
+                    <p>
+                        Formation de vos collaborateurs aux exigences du référentiel. 
+                        Appropriation des processus qualité par l'ensemble de vos équipes.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Mise en Conformité Documentaire</h3>
+                    <p>
+                        Aide à la construction et à l'organisation de votre système documentaire. 
+                        Création de templates et outils opérationnels.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Conseil Stratégique Qualité</h3>
+                    <p>
+                        Optimisation de vos processus au-delà de la seule conformité. 
+                        Transformation de Qualiopi en levier d'amélioration continue.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Notre Méthodologie</h2>
+                <p style="max-width: 700px; margin: 20px auto 0; text-align: center; color: var(--text-light);">
+                    Un accompagnement structuré en 4 étapes pour garantir votre réussite
+                </p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Diagnostic Initial</h4>
+                    <p>Audit blanc complet et identification des écarts avec le référentiel</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Plan d'Action</h4>
+                    <p>Construction du plan de mise en conformité avec priorisation des actions</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Accompagnement</h4>
+                    <p>Mise en œuvre du plan, formation des équipes, construction des preuves</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Certification</h4>
+                    <p>Préparation à l'audit de certification et suivi post-certification</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pourquoi Choisir CCFA ?</h2>
+            </div>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏆</div>
+                    <div>
+                        <h4>Expertise d'Auditeur Certifié</h4>
+                        <p>
+                            En tant qu'ancien auditeur certificateur Qualiopi, je connais précisément les attentes 
+                            des organismes certificateurs et les pièges à éviter. Cette double casquette 
+                            (auditeur/consultant) est un atout majeur pour votre réussite.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">📊</div>
+                    <div>
+                        <h4>100% de Réussite</h4>
+                        <p>
+                            Toutes les structures que j'ai accompagnées ont obtenu leur certification Qualiopi 
+                            dès le premier audit. Ce résultat s'explique par une méthodologie éprouvée et un 
+                            accompagnement personnalisé jusqu'à la certification.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <div>
+                        <h4>Approche Pragmatique</h4>
+                        <p>
+                            Pas de surcharge documentaire inutile. Je vous aide à construire un système qualité 
+                            efficace, adapté à votre taille et à vos ressources, qui serve réellement votre 
+                            organisation au-delà de la certification.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎓</div>
+                    <div>
+                        <h4>Accompagnement Terrain</h4>
+                        <p>
+                            Formateur expérimenté (CNFPT, Léo Lagrange, milieu carcéral), je comprends les 
+                            contraintes opérationnelles des organismes de formation. Mon accompagnement intègre 
+                            cette réalité du terrain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section class="references-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ils Nous Font Confiance</h2>
+            </div>
+            <div class="reference-cards">
+                <div class="reference-card">
+                    <div class="reference-logo">QOANIX - Orléans</div>
+                    <p>
+                        <strong>Auditeur Certificateur Qualiopi</strong> (2022-2024)<br>
+                        Réalisation d'audits de certification pour des organismes de formation de toutes tailles.
+                    </p>
+                </div>
+
+                <div class="reference-card">
+                    <div class="reference-logo">UFCV Occitanie - Toulouse</div>
+                    <p>
+                        <strong>Pré-Audit Qualiopi</strong> (2022)<br>
+                        Audit blanc préparatoire et accompagnement à la certification d'un grand organisme régional.
+                    </p>
+                </div>
+
+                <div class="reference-card">
+                    <div class="reference-logo">NAPSIA</div>
+                    <p>
+                        <strong>Pré-Audit Qualiopi</strong> (2022)<br>
+                        Diagnostic de conformité et plan d'action pour la certification.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à Obtenir Votre Certification Qualiopi ?</h2>
+                <p>Contactez-nous pour un premier échange et un devis personnalisé. Nous étudions ensemble la meilleure stratégie pour votre certification.</p>
+                <a href="contact.html" class="btn-primary-large">Demander un Devis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-text">CCFA</span>
+                        <span class="logo-subtitle">Chikhi Conseil Formation Audit</span>
+                    </div>
+                    <p class="footer-contact">
+                        <strong>Téléphone:</strong> 06 52 81 38 22<br>
+                        <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="64070b0a1005071024075602054a0216">[email&#160;protected]</a><br>
+                        <strong>Adresse:</strong> 12 rue du Génie<br>
+                        82000 Montauban
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Nos Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="service-ingenierie.html">Ingénierie de Formation</a></li>
+                        <li><a href="service-audit.html">Audit Qualiopi</a></li>
+                        <li><a href="service-essms.html">Évaluation ESSMS</a></li>
+                        <li><a href="service-bilan.html">Bilan de Compétences</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>L'Entreprise</h4>
+                    <ul class="footer-links">
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="service-management.html">Management de Transition</a></li>
+                        <li><a href="service-territorial.html">Développement Territorial</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Horaires</h4>
+                    <p><strong>Du lundi au vendredi</strong><br>
+                    9h - 12h30 et 14h - 18h</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/samirchikhi/" target="_blank">in</a>
+                        <a href="https://samir-chikhi.mystrikingly.com/" target="_blank" style="font-size:13px;font-weight:600;">CV</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CCFA - Tous droits réservés | <a href="mentions-legales.html">Mentions L�
