@@ -227,20 +227,13 @@ if (contactFormEl) {
             const formData = new FormData(contactFormEl);
             const action = contactFormEl.getAttribute('action');
 
-            // formsubmit.co — endpoint AJAX
-            const ajaxUrl = action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
-            const data = Object.fromEntries(
-                Array.from(formData.entries()).filter(([k]) => !k.startsWith('_'))
-            );
-            data._subject = 'Nouveau message depuis www.c2fa.fr';
-
-            const response = await fetch(ajaxUrl, {
+            // Formspree — envoi AJAX
+            const response = await fetch(action, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify(data)
+                body: formData,
+                headers: { 'Accept': 'application/json' }
             });
-            const result = await response.json();
-            if (result.success === 'true' || result.success === true || response.ok) {
+            if (response.ok) {
                 showFormMessage('Message envoyé ! Nous vous recontacterons sous 48h ouvrées.', 'success');
                 contactFormEl.reset();
             } else {
