@@ -227,22 +227,24 @@ if (contactFormEl) {
             const formData = new FormData(contactFormEl);
             const action = contactFormEl.getAttribute('action');
 
-            if (action && action.includes('formspree.io') && !action.includes('YOUR_FORM_ID')) {
-                const response = await fetch(action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
-                if (response.ok) {
-                    showFormMessage('Message envoyé ! Nous vous recontacterons sous 48h.', 'success');
-                    contactFormEl.reset();
-                } else {
-                    throw new Error('Erreur serveur');
-                }
-            } else {
-                // Fallback si Formspree n'est pas configuré
-                showFormMessage('Message envoyé ! Nous vous recontacterons sous 48h.', 'success');
+            // formsubmit.co — endpoint AJAX
+            const ajaxUrl = action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+            const data = Object.fromEntries(
+                Array.from(formData.entries()).filter(([k]) => !k.startsWith('_'))
+            );
+            data._subject = 'Nouveau message depuis www.c2fa.fr';
+
+            const response = await fetch(ajaxUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const result = await response.json();
+            if (result.success === 'true' || result.success === true || response.ok) {
+                showFormMessage('Message envoyé ! Nous vous recontacterons sous 48h ouvrées.', 'success');
                 contactFormEl.reset();
+            } else {
+                throw new Error('Erreur serveur');
             }
         } catch (err) {
             showFormMessage('Une erreur est survenue. Contactez-nous directement au 06 52 81 38 22.', 'error');
