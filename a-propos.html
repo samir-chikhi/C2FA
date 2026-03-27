@@ -106,82 +106,110 @@
             padding: 80px 0;
             background: var(--bg-light);
         }
-        
+
         .timeline {
-            max-width: 900px;
+            max-width: 760px;
             margin: 0 auto;
             position: relative;
         }
-        
+
+        /* Ligne verticale */
         .timeline::before {
             content: '';
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
+            left: 100px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
             background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
             border-radius: 2px;
         }
-        
+
         .timeline-item {
-            display: grid;
-            grid-template-columns: 1fr 60px 1fr;
-            gap: 30px;
-            margin-bottom: 60px;
-            align-items: center;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content:first-child {
-            order: 3;
-            text-align: left;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content:last-child {
-            order: 1;
-            text-align: right;
-        }
-        
-        .timeline-date {
-            width: 60px;
-            height: 60px;
-            background: white;
-            border: 4px solid var(--primary-color);
-            border-radius: 50%;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--primary-color);
-            font-size: 14px;
-            z-index: 2;
+            align-items: flex-start;
+            margin-bottom: 36px;
             position: relative;
         }
-        
-        .timeline-content {
+
+        .timeline-left {
+            width: 120px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-right: 28px;
+            position: relative;
+        }
+
+        .timeline-year {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--primary-color);
+            text-align: right;
+            line-height: 1.4;
+            padding-top: 5px;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary-color);
+            position: absolute;
+            right: -8px;
+            top: 9px;
+            z-index: 2;
+        }
+
+        .timeline-card {
+            flex: 1;
             background: white;
-            padding: 25px;
+            padding: 22px 28px;
             border-radius: 12px;
             box-shadow: var(--shadow-md);
+            margin-left: 20px;
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition);
         }
-        
-        .timeline-content h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
+
+        .timeline-card:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .timeline-card h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
             color: var(--text-dark);
         }
-        
-        .timeline-content h4 {
-            font-size: 16px;
+
+        .timeline-card h4 {
+            font-size: 13px;
             color: var(--primary-color);
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        
-        .timeline-content p {
+
+        .timeline-card p {
             font-size: 14px;
             color: var(--text-light);
-            line-height: 1.6;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            .timeline::before { left: 62px; }
+            .timeline-left { width: 80px; padding-right: 20px; }
+            .timeline-dot { right: -6px; top: 8px; width: 12px; height: 12px; }
+            .timeline-year { font-size: 12px; }
+            .timeline-card { margin-left: 14px; padding: 16px 18px; }
+            .timeline-card h3 { font-size: 16px; }
         }
         
         .values-detail-section {
@@ -234,30 +262,15 @@
             .founder-content {
                 grid-template-columns: 1fr;
             }
-            
-            .timeline::before {
-                left: 30px;
+            .founder-image {
+                max-width: 260px;
+                margin: 0 auto;
             }
-            
-            .timeline-item {
-                grid-template-columns: 60px 1fr;
-                gap: 20px;
-            }
-            
-            .timeline-item:nth-child(even) .timeline-content:first-child,
-            .timeline-item:nth-child(even) .timeline-content:last-child {
-                order: initial;
-                text-align: left;
-            }
-            
-            .timeline-content:first-child {
-                display: none;
-            }
-            
             .values-grid,
             .expertise-list {
                 grid-template-columns: 1fr;
             }
+            .page-header h1 { font-size: 32px; }
         }
     </style>
 </head>
@@ -370,20 +383,25 @@
                 <h2 class="section-title">Parcours Professionnel</h2>
             </div>
             <div class="timeline">
+
                 <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Création CCFA</h3>
+                    <div class="timeline-left">
+                        <div class="timeline-year">Depuis<br>2020</div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-card">
+                        <h3>Création de CCFA</h3>
                         <h4>Consultant Indépendant</h4>
                         <p>Lancement de l'activité de conseil, formation et audit. Missions d'ingénierie pédagogique, certification Qualiopi et accompagnement DLA.</p>
                     </div>
-                    <div class="timeline-date">2020</div>
-                    <div class="timeline-content"></div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-content"></div>
-                    <div class="timeline-date">2019-21</div>
-                    <div class="timeline-content">
+                    <div class="timeline-left">
+                        <div class="timeline-year">2019<br>— 2021</div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-card">
                         <h3>Directeur Général des Services</h3>
                         <h4>Mairie de Grisolles (82)</h4>
                         <p>Pilotage stratégique et opérationnel. Budget 4,2M€, 55 agents. Gestion RH, finances, projets locaux et coopération institutionnelle.</p>
@@ -391,44 +409,53 @@
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-content">
+                    <div class="timeline-left">
+                        <div class="timeline-year">2016<br>— 2018</div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-card">
                         <h3>Chargé de mission Fonds LEADER</h3>
                         <h4>PETR Garonne Quercy Gascogne</h4>
                         <p>Animation territoriale sur 140 communes. Émergence et accompagnement de projets européens, formation des porteurs de projet.</p>
                     </div>
-                    <div class="timeline-date">2016-18</div>
-                    <div class="timeline-content"></div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-content"></div>
-                    <div class="timeline-date">2009-12</div>
-                    <div class="timeline-content">
+                    <div class="timeline-left">
+                        <div class="timeline-year">2009<br>— 2012</div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-card">
                         <h3>Directeur</h3>
-                        <h4>Régie de Quartier Bellefontaine - Toulouse</h4>
-                        <p>Direction d'une structure ESS de 1,1M€ et 55 salariés. Développement, consolidation partenariats et ancrage territorial.</p>
+                        <h4>Régie de Quartier Bellefontaine — Toulouse</h4>
+                        <p>Direction d'une structure ESS de 1,1M€ et 55 salariés. Développement des partenariats et ancrage territorial.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-content">
+                    <div class="timeline-left">
+                        <div class="timeline-year">2003<br>— 2007</div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-card">
                         <h3>Chargé de mission ANRU</h3>
-                        <h4>Communauté Montauban Trois Rivières</h4>
+                        <h4>Communauté d'Agglomération Montauban Trois Rivières</h4>
                         <p>Pilotage du projet de renouvellement urbain. Création de la clause d'insertion. Politique de l'emploi sur 11 communes.</p>
                     </div>
-                    <div class="timeline-date">2003-07</div>
-                    <div class="timeline-content"></div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-content"></div>
-                    <div class="timeline-date">2001-09</div>
-                    <div class="timeline-content">
+                    <div class="timeline-left">
+                        <div class="timeline-year">2001<br>— 2009</div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-card">
                         <h3>Directeur Adjoint</h3>
                         <h4>Régie de Quartier Montauban Services</h4>
                         <p>Gestion quotidienne (RH, opérationnel, finances). Structure de 700K€ et 43 personnes. Interface équipes-direction.</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
