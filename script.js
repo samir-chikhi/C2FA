@@ -247,7 +247,7 @@ if (contactFormEl) {
                 throw new Error('Erreur serveur');
             }
         } catch (err) {
-            showFormMessage('Une erreur est survenue. Contactez-nous directement au 06 52 81 38 22.', 'error');
+            showFormMessage('Une erreur est survenue. Contactez-nous directement au 06 51 50 97 18.', 'error');
         } finally {
             submitBtn.textContent = 'Envoyer le Message';
             submitBtn.disabled = false;
