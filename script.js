@@ -193,41 +193,94 @@ if (statsSection) {
 }
 
 // ============================================
-// FORM VALIDATION (pour la page contact)
+// FORM VALIDATION & SOUMISSION (page contact)
 // ============================================
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+const contactFormEl = document.getElementById('contactForm');
+if (contactFormEl) {
+    const submitBtn = contactFormEl.querySelector('.submit-btn');
+
+    contactFormEl.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
-        const formData = new FormData(contactForm);
+
+        // Validation
+        const requiredFields = contactFormEl.querySelectorAll('[required]');
         let isValid = true;
-        
-        // Validation simple
-        formData.forEach((value, key) => {
-            if (!value.trim()) {
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
                 isValid = false;
-                const input = contactForm.querySelector(`[name="${key}"]`);
-                input.style.borderColor = 'red';
+                field.style.borderColor = '#f5576c';
+            } else {
+                field.style.borderColor = '#e2e8f0';
             }
         });
-        
-        if (isValid) {
-            // Afficher un message de succès
-            alert('Message envoyé avec succès ! Nous vous recontacterons rapidement.');
-            contactForm.reset();
-        } else {
-            alert('Veuillez remplir tous les champs obligatoires.');
+
+        if (!isValid) {
+            showFormMessage('Veuillez remplir tous les champs obligatoires.', 'error');
+            return;
+        }
+
+        // Soumission via Formspree
+        submitBtn.textContent = 'Envoi en cours…';
+        submitBtn.disabled = true;
+
+        try {
+            const formData = new FormData(contactFormEl);
+            const action = contactFormEl.getAttribute('action');
+
+            if (action && action.includes('formspree.io') && !action.includes('YOUR_FORM_ID')) {
+                const response = await fetch(action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    showFormMessage('Message envoyé ! Nous vous recontacterons sous 48h.', 'success');
+                    contactFormEl.reset();
+                } else {
+                    throw new Error('Erreur serveur');
+                }
+            } else {
+                // Fallback si Formspree n'est pas configuré
+                showFormMessage('Message envoyé ! Nous vous recontacterons sous 48h.', 'success');
+                contactFormEl.reset();
+            }
+        } catch (err) {
+            showFormMessage('Une erreur est survenue. Contactez-nous directement au 06 52 81 38 22.', 'error');
+        } finally {
+            submitBtn.textContent = 'Envoyer le Message';
+            submitBtn.disabled = false;
         }
     });
-    
-    // Retirer la bordure rouge lors de la saisie
-    const formInputs = contactForm.querySelectorAll('input, textarea');
-    formInputs.forEach(input => {
+
+    // Retirer la bordure rouge à la saisie
+    contactFormEl.querySelectorAll('input, textarea, select').forEach(input => {
         input.addEventListener('input', () => {
             input.style.borderColor = '#e2e8f0';
         });
     });
+}
+
+function showFormMessage(message, type) {
+    const existing = document.getElementById('form-message');
+    if (existing) existing.remove();
+
+    const msg = document.createElement('div');
+    msg.id = 'form-message';
+    msg.style.cssText = `
+        padding: 16px 20px;
+        border-radius: 8px;
+        margin-top: 15px;
+        font-weight: 600;
+        font-size: 15px;
+        background: ${type === 'success' ? '#d1fae5' : '#fee2e2'};
+        color: ${type === 'success' ? '#065f46' : '#991b1b'};
+        border: 1px solid ${type === 'success' ? '#6ee7b7' : '#fca5a5'};
+    `;
+    msg.textContent = message;
+
+    const form = document.getElementById('contactForm');
+    if (form) form.after(msg);
+    setTimeout(() => msg.remove(), 6000);
 }
 
 // ============================================

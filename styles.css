@@ -838,12 +838,230 @@ section {
     .hero-title {
         font-size: 28px;
     }
-    
+
     .section-title {
         font-size: 32px;
     }
-    
+
     .stat-number {
         font-size: 36px;
+    }
+}
+
+/* ============================================
+   HERO CTA BUTTONS
+   ============================================ */
+.hero-cta {
+    margin-top: 35px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.btn-hero-primary {
+    display: inline-block;
+    padding: 16px 40px;
+    background: white;
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    color: var(--secondary-color);
+}
+
+.btn-hero-secondary {
+    display: inline-block;
+    padding: 16px 40px;
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-hero-secondary:hover {
+    background: white;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+.testimonials-section {
+    background: var(--bg-light);
+    padding: 80px 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial-quote {
+    font-size: 80px;
+    line-height: 0.8;
+    color: var(--primary-color);
+    opacity: 0.2;
+    font-family: Georgia, serif;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-stars {
+    color: #f59e0b;
+    font-size: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.testimonial-author {
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.author-name {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.author-role {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 4px;
+}
+
+/* ============================================
+   FLOATING CTA BUTTON
+   ============================================ */
+.floating-cta {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.floating-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap;
+}
+
+.floating-btn-phone {
+    background: #10b981;
+    color: white;
+}
+
+.floating-btn-phone:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.45);
+    color: white;
+}
+
+.floating-btn-rdv {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.floating-btn-rdv:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.45);
+    color: white;
+}
+
+/* ============================================
+   BANNER CONSULTATION GRATUITE
+   ============================================ */
+.free-consult-banner {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    z-index: 100;
+}
+
+.free-consult-banner a {
+    color: white;
+    text-decoration: underline;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+.free-consult-banner a:hover {
+    opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .floating-btn span:last-child {
+        display: none;
+    }
+
+    .floating-btn {
+        padding: 14px;
+        border-radius: 50%;
+        width: 52px;
+        height: 52px;
+        justify-content: center;
+    }
+
+    .floating-cta {
+        bottom: 20px;
+        right: 20px;
     }
 }
