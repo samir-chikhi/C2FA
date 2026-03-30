@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ressources & Blog — Qualiopi, Formation, ESS | CCFA Montauban</title>
+  <meta name="description" content="Guides pratiques, conseils et actualités sur la certification Qualiopi, l'ingénierie de formation et le développement territorial en Occitanie.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2b4a; --terracotta: #C0572A; --terracotta-light: #d4693c;
+      --gold: #b8963e; --cream: #f8f5f0; --gray-light: #f2f0ec;
+      --gray-mid: #e0ddd7; --gray-text: #6b6560; --white: #ffffff;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--navy); background: var(--white); -webkit-font-smoothing: antialiased; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(26,43,74,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 68px; }
+    .logo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: white; text-decoration: none; }
+    .logo span { color: var(--terracotta); }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.5rem 0.9rem; border-radius: 4px; transition: all 0.2s; }
+    .nav-links a:hover { color: white; background: rgba(255,255,255,0.08); }
+    .nav-cta { background: var(--terracotta) !important; color: white !important; }
+
+    .page-header { background: linear-gradient(135deg, var(--navy), #0f1d35); padding: 8rem 2rem 4rem; }
+    .page-header-inner { max-width: 1200px; margin: 0 auto; }
+    .page-header .eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.8rem; }
+    .page-header h1 { font-family: var(--font-display); font-size: 2.8rem; color: white; margin-bottom: 1rem; }
+    .page-header p { color: rgba(255,255,255,0.65); font-size: 1.05rem; max-width: 560px; }
+
+    .blog-main { padding: 5rem 0; background: var(--cream); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .blog-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
+
+    /* ARTICLES */
+    .articles { display: flex; flex-direction: column; gap: 2.5rem; }
+    .article-card {
+      background: white; border-radius: 12px;
+      border: 1px solid var(--gray-mid); overflow: hidden;
+      transition: all 0.25s;
+    }
+    .article-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(26,43,74,0.1); }
+    .article-card.featured { border-color: var(--terracotta); }
+    .article-hero {
+      background: linear-gradient(135deg, var(--navy), #0f1d35);
+      padding: 2.5rem; position: relative;
+    }
+    .article-tag {
+      display: inline-block; font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.25rem 0.7rem; border-radius: 3px; margin-bottom: 1rem;
+    }
+    .tag-qualiopi { background: rgba(192,87,42,0.2); color: #e8855a; }
+    .tag-formation { background: rgba(184,150,62,0.2); color: #d4b060; }
+    .tag-territorial { background: rgba(100,150,200,0.2); color: #8ab4d4; }
+    .tag-essms { background: rgba(100,180,130,0.2); color: #7dc49a; }
+    .article-hero h2 { font-family: var(--font-display); font-size: 1.6rem; color: white; line-height: 1.25; }
+    .article-meta { display: flex; gap: 1.5rem; margin-top: 0.8rem; flex-wrap: wrap; }
+    .article-meta span { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+    .article-body { padding: 2rem; }
+    .article-intro { font-size: 0.95rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 1.5rem; }
+    .article-points { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+    .article-points li { display: flex; gap: 0.6rem; font-size: 0.9rem; color: var(--navy); }
+    .article-points li::before { content: '→'; color: var(--terracotta); font-weight: 700; flex-shrink: 0; }
+    .article-cta {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--terracotta); color: white;
+      padding: 0.7rem 1.5rem; border-radius: 5px;
+      text-decoration: none; font-size: 0.88rem; font-weight: 600;
+      transition: all 0.2s;
+    }
+    .article-cta:hover { background: var(--terracotta-light); }
+    .article-cta-outline {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      border: 1px solid var(--navy); color: var(--navy);
+      padding: 0.7rem 1.5rem; border-radius: 5px;
+      text-decoration: none; font-size: 0.88rem; font-weight: 600;
+      transition: all 0.2s; margin-left: 0.8rem;
+    }
+    .article-cta-outline:hover { background: var(--navy); color: white; }
+
+    /* SIDEBAR BLOG */
+    .blog-sidebar { display: flex; flex-direction: column; gap: 1.5rem; position: sticky; top: 88px; }
+    .sidebar-card { background: white; border-radius: 10px; padding: 1.5rem; border: 1px solid var(--gray-mid); }
+    .sidebar-card h3 { font-family: var(--font-display); font-size: 1rem; color: var(--navy); margin-bottom: 1rem; }
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .checklist li { display: flex; gap: 0.5rem; font-size: 0.84rem; color: var(--navy); }
+    .checklist li::before { content: '☐'; color: var(--terracotta); flex-shrink: 0; }
+    .sidebar-cta-card {
+      background: var(--navy); border-radius: 10px; padding: 1.5rem; text-align: center;
+    }
+    .sidebar-cta-card h3 { color: white; font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.6rem; }
+    .sidebar-cta-card p { color: rgba(255,255,255,0.65); font-size: 0.82rem; margin-bottom: 1.2rem; line-height: 1.6; }
+    .sidebar-btn {
+      display: block; background: var(--terracotta); color: white;
+      padding: 0.7rem; border-radius: 5px; text-decoration: none;
+      font-weight: 700; font-size: 0.85rem; transition: background 0.2s;
+    }
+    .sidebar-btn:hover { background: var(--terracotta-light); }
+    .themes-list { display: flex; flex-direction: column; gap: 0.4rem; }
+    .theme-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.5rem 0; border-bottom: 1px solid var(--gray-light);
+      font-size: 0.84rem; cursor: pointer; color: var(--navy); text-decoration: none;
+    }
+    .theme-item:last-child { border-bottom: none; }
+    .theme-item:hover { color: var(--terracotta); }
+    .theme-count { background: var(--gray-light); border-radius: 10px; padding: 0.1rem 0.5rem; font-size: 0.72rem; font-weight: 700; color: var(--gray-text); }
+
+    footer { background: #0f1824; padding: 3rem 0 2rem; }
+    .footer-simple { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-simple p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+    .footer-logo { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: white; }
+    .footer-logo span { color: var(--terracotta); }
+
+    @media (max-width: 900px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-sidebar { position: static; }
+      .nav-links { display: none; }
+      .page-header h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">CC<span>FA</span></a>
+    <ul class="nav-links">
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="index.html#services">Nos services</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="blog.html">Ressources</a></li>
+      <li><a href="contact.html" class="nav-cta">Consultation gratuite →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="eyebrow">Ressources & Guides</div>
+    <h1>Tout ce que vous devez<br>savoir pour réussir.</h1>
+    <p>Guides pratiques, conseils terrain et actualités réglementaires — par un expert qui a vécu les mêmes enjeux que vous.</p>
+  </div>
+</div>
+
+<section class="blog-main">
+  <div class="container">
+    <div class="blog-grid">
+
+      <div class="articles">
+
+        <!-- Article 1 : SEO cible "Qualiopi Occitanie" -->
+        <div class="article-card featured">
+          <div class="article-hero">
+            <div class="article-tag tag-qualiopi">Qualiopi · Guide complet</div>
+            <h2>Certification Qualiopi en Occitanie : le guide complet 2026 pour les organismes de formation</h2>
+            <div class="article-meta">
+              <span>📅 Mars 2026</span>
+              <span>⏱ 8 min de lecture</span>
+              <span>✍️ Samir Chikhi, auditeur certifié</span>
+            </div>
+          </div>
+          <div class="article-body">
+            <p class="article-intro">
+              Depuis le 1er janvier 2022, la certification Qualiopi est obligatoire pour tout organisme de formation souhaitant accéder aux financements publics et mutualisés (OPCO, CPF, Pôle Emploi, Région...). Pourtant, en Occitanie, nombre de structures abordent encore leur certification sans méthode — et y laissent des plumes.
+            </p>
+            <p style="font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:0.8rem;">Ce que vous apprendrez dans cet article :</p>
+            <ul class="article-points">
+              <li>Les 7 critères du Référentiel National Qualité (RNQ) que les auditeurs scrutent en priorité</li>
+              <li>Les 3 erreurs fatales commises par 80% des organismes lors de leur premier audit</li>
+              <li>Comment constituer un dossier documentaire solide en moins de 3 mois</li>
+              <li>Les spécificités régionales Occitanie : organismes certificateurs actifs, délais, coûts réels</li>
+              <li>Comment transformer votre certification en avantage commercial durable</li>
+            </ul>
+            <a href="contact.html" class="article-cta">Être accompagné pour ma certification →</a>
+            <a href="service-audit.html" class="article-cta-outline">Voir nos packs Qualiopi</a>
+          </div>
+        </div>
+
+        <!-- Article 2 : SEO cible "management transition ESS collectivité" -->
+        <div class="article-card">
+          <div class="article-hero">
+            <div class="article-tag tag-territorial">Management de transition · ESS</div>
+            <h2>Management de transition dans les associations et collectivités : ce que personne ne vous dit</h2>
+            <div class="article-meta">
+              <span>📅 Février 2026</span>
+              <span>⏱ 6 min de lecture</span>
+              <span>✍️ Samir Chikhi, ex-DGS</span>
+            </div>
+          </div>
+          <div class="article-body">
+            <p class="article-intro">
+              Un départ précipité, une crise de gouvernance, un projet structurant sans pilote — le management de transition est souvent vécu comme un aveu de faiblesse. C'est en réalité l'un des leviers les plus intelligents pour traverser une période charnière sans perdre ni temps, ni équipes, ni crédibilité.
+            </p>
+            <ul class="article-points">
+              <li>Quand faire appel à un directeur de transition ? Les 5 signaux qui ne trompent pas</li>
+              <li>Comment choisir le bon profil pour votre structure (association, collectivité, ESSMS)</li>
+              <li>Les premières 48h qui font tout : protocole d'intégration opérationnelle</li>
+              <li>Coût réel et modes de financement d'une mission de 3 à 6 mois</li>
+              <li>Comment assurer la sortie et la transmission sans laisser de vide</li>
+            </ul>
+            <a href="service-management.html" class="article-cta">En savoir plus →</a>
+            <a href="contact.html" class="article-cta-outline">Discuter d'une mission</a>
+          </div>
+        </div>
+
+        <!-- Article 3 : SEO cible "bilan compétences CPF Montauban" -->
+        <div class="article-card">
+          <div class="article-hero">
+            <div class="article-tag tag-formation">Bilan de compétences · CPF</div>
+            <h2>Bilan de compétences financé par le CPF : mode d'emploi pour les actifs de Tarn-et-Garonne</h2>
+            <div class="article-meta">
+              <span>📅 Janvier 2026</span>
+              <span>⏱ 5 min de lecture</span>
+              <span>✍️ Samir Chikhi, formateur certifié</span>
+            </div>
+          </div>
+          <div class="article-body">
+            <p class="article-intro">
+              Vous ressentez un besoin de changement professionnel mais ne savez pas par où commencer ? Le bilan de compétences est l'outil le plus concret pour clarifier votre trajectoire — et il est finançable à 100% via votre CPF. Voici comment ça marche concrètement à Montauban.
+            </p>
+            <ul class="article-points">
+              <li>Ce qu'un bilan de compétences peut (et ne peut pas) faire pour vous</li>
+              <li>Les 3 phases réglementaires des 24h : ce qui se passe vraiment</li>
+              <li>Comment mobiliser votre CPF sans avancer d'argent</li>
+              <li>Ce qui différencie un bon accompagnateur d'un prestataire CPF lambda</li>
+              <li>Exemples de reconversions réussies : retours d'expérience Occitanie</li>
+            </ul>
+            <a href="service-bilan.html" class="article-cta">Découvrir l'offre bilan →</a>
+            <a href="contact.html" class="article-cta-outline">Demander une info</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="blog-sidebar">
+
+        <div class="sidebar-card">
+          <h3>📋 Check-list Qualiopi gratuite</h3>
+          <p style="font-size:0.82rem;color:var(--gray-text);margin-bottom:1rem;">Les 10 points contrôlés en priorité par les auditeurs :</p>
+          <ul class="checklist">
+            <li>Programme de formation daté et signé</li>
+            <li>Positionnement pédagogique documenté</li>
+            <li>Évaluation des acquis à chaque étape</li>
+            <li>Recueil des besoins avant entrée en formation</li>
+            <li>Suivi de l'exécution pédagogique</li>
+            <li>Système de réclamations et appels</li>
+            <li>Accessibilité handicap (référent désigné)</li>
+            <li>Formation continue des formateurs</li>
+            <li>Enquête satisfaction stagiaires</li>
+            <li>Indicateurs de résultats actualisés</li>
+          </ul>
+          <a href="contact.html" style="display:block;margin-top:1.2rem;background:var(--terracotta);color:white;padding:0.65rem;border-radius:5px;text-align:center;text-decoration:none;font-weight:700;font-size:0.85rem;">Télécharger la check-list complète →</a>
+        </div>
+
+        <div class="sidebar-cta-card">
+          <h3>Où en êtes-vous avec Qualiopi ?</h3>
+          <p>En 15 minutes, je peux évaluer votre niveau de préparation et vous dire exactement ce qu'il vous reste à faire.</p>
+          <a href="contact.html" class="sidebar-btn">Audit diagnostic gratuit →</a>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Thèmes abordés</h3>
+          <div class="themes-list">
+            <a href="#" class="theme-item">Certification Qualiopi <span class="theme-count">3</span></a>
+            <a href="#" class="theme-item">Ingénierie de formation <span class="theme-count">2</span></a>
+            <a href="#" class="theme-item">Management ESS <span class="theme-count">2</span></a>
+            <a href="#" class="theme-item">Bilan de compétences <span class="theme-count">1</span></a>
+            <a href="#" class="theme-item">Fonds européens <span class="theme-count">1</span></a>
+            <a href="#" class="theme-item">Évaluation ESSMS <span class="theme-count">1</span></a>
+          </div>
+        </div>
+
+        <div class="sidebar-card" style="background:var(--cream);">
+          <h3>À propos de l'auteur</h3>
+          <p style="font-size:0.84rem;color:var(--gray-text);line-height:1.6;margin-bottom:0.8rem;">
+            <strong style="color:var(--navy);">Samir Chikhi</strong> — Fondateur de CCFA, auditeur certificateur Qualiopi (2022-2024), ex-DGS de collectivité, 27 ans d'expérience terrain en ESS et développement territorial.
+          </p>
+          <a href="a-propos.html" style="color:var(--terracotta);font-size:0.84rem;font-weight:600;text-decoration:none;">Voir le parcours complet →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-simple">
+      <div class="footer-logo">CC<span>FA</span></div>
+      <p>© 2026 CCFA — SASU · SIRET 100 178 730 00014 · <a href="mentions-legales.html" style="color:rgba(255,255,255,0.5);">Mentions légales</a></p>
+      <a href="https://www.linkedin.com/in/samirchikhi/" target="_blank" style="color:rgba(255,255,255,0.5);">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
