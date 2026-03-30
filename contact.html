@@ -1,162 +1,164 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — CCFA Montauban | Premier échange gratuit</title>
-  <meta name="description" content="Contactez CCFA pour un premier échange gratuit. Certification Qualiopi, conseil formation, management de transition. Réponse sous 24h.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy: #1a2b4a; --navy-light: #243759; --terracotta: #C0572A;
-      --terracotta-light: #d4693c; --gold: #b8963e; --cream: #f8f5f0;
-      --gray-light: #f2f0ec; --gray-mid: #e0ddd7; --gray-text: #6b6560;
-      --white: #ffffff;
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body: 'DM Sans', system-ui, sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-body); color: var(--navy); background: var(--white); -webkit-font-smoothing: antialiased; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — CCFA Montauban | Premier échange gratuit</title>
+<meta name="description" content="Contactez CCFA pour un premier échange gratuit. Conseil formation audit, management de transition, développement territorial. Réponse sous 24h.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1a2b4a; --navy-light: #243759; --terracotta: #C0572A;
+  --terracotta-light: #d4693c; --gold: #b8963e; --cream: #f8f5f0;
+  --gray-light: #f2f0ec; --gray-mid: #e0ddd7; --gray-text: #6b6560;
+  --white: #ffffff;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); color: var(--navy); background: var(--white); -webkit-font-smoothing: antialiased; }
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(26,43,74,0.97); backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem; height: 68px;
+}
+.logo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--white); text-decoration: none; }
+.logo span { color: var(--terracotta); }
+.nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.5rem 0.9rem; border-radius: 4px; transition: all 0.2s; }
+.nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+.nav-cta { background: var(--terracotta) !important; color: var(--white) !important; }
+.page-header {
+  background: linear-gradient(135deg, var(--navy) 0%, #0f1d35 100%);
+  padding: 8rem 2rem 4rem; text-align: center;
+}
+.page-header h1 { font-family: var(--font-display); font-size: 2.8rem; color: white; margin-bottom: 1rem; }
+.page-header p { color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 560px; margin: 0 auto; }
+.contact-main { padding: 5rem 0; background: var(--cream); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.contact-grid { display: grid; grid-template-columns: 1fr 400px; gap: 4rem; align-items: start; }
 
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(26,43,74,0.97); backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 2rem; height: 68px;
-    }
-    .logo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--white); text-decoration: none; }
-    .logo span { color: var(--terracotta); }
-    .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.5rem 0.9rem; border-radius: 4px; transition: all 0.2s; }
-    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
-    .nav-cta { background: var(--terracotta) !important; color: var(--white) !important; }
+/* FORMULAIRE */
+.form-card {
+  background: white; border-radius: 12px; padding: 2.5rem;
+  box-shadow: 0 4px 30px rgba(26,43,74,0.08);
+  border: 1px solid var(--gray-mid);
+}
+.form-card h2 { font-family: var(--font-display); font-size: 1.6rem; color: var(--navy); margin-bottom: 0.5rem; }
+.form-card .subtitle { color: var(--gray-text); font-size: 0.9rem; margin-bottom: 2rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%; padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-mid); border-radius: 6px;
+  font-family: var(--font-body); font-size: 0.9rem;
+  color: var(--navy); background: var(--gray-light);
+  transition: all 0.2s; outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--terracotta); background: white;
+  box-shadow: 0 0 0 3px rgba(192,87,42,0.1);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-submit {
+  width: 100%; padding: 1rem;
+  background: var(--terracotta); color: white;
+  border: none; border-radius: 6px; cursor: pointer;
+  font-family: var(--font-body); font-size: 1rem; font-weight: 700;
+  transition: all 0.2s; letter-spacing: 0.02em;
+}
+.form-submit:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(192,87,42,0.3); }
+.form-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+.form-note { font-size: 0.78rem; color: var(--gray-text); text-align: center; margin-top: 0.8rem; }
 
-    .page-header {
-      background: linear-gradient(135deg, var(--navy) 0%, #0f1d35 100%);
-      padding: 8rem 2rem 4rem; text-align: center;
-    }
-    .page-header h1 { font-family: var(--font-display); font-size: 2.8rem; color: white; margin-bottom: 1rem; }
-    .page-header p { color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 560px; margin: 0 auto; }
+/* Message d'erreur */
+.form-error {
+  display: none; background: #fff0ed; border: 1px solid #f5b8a8;
+  border-radius: 6px; padding: 0.8rem 1rem;
+  color: #9e3e1c; font-size: 0.86rem; margin-top: 0.8rem;
+}
 
-    .contact-main { padding: 5rem 0; background: var(--cream); }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+/* SIDEBAR */
+.contact-sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+.info-card {
+  background: white; border-radius: 10px; padding: 1.8rem;
+  border: 1px solid var(--gray-mid);
+}
+.info-card h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--navy); margin-bottom: 1.2rem; }
+.info-item {
+  display: flex; align-items: flex-start; gap: 0.8rem;
+  margin-bottom: 1rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--gray-light);
+}
+.info-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+.info-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-text); margin-bottom: 0.2rem; }
+.info-value { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
+.info-value a { color: var(--terracotta); text-decoration: none; }
+.info-value a:hover { text-decoration: underline; }
+.promise-card {
+  background: var(--navy); border-radius: 10px; padding: 1.8rem;
+}
+.promise-card h3 { font-family: var(--font-display); color: white; font-size: 1.1rem; margin-bottom: 1.2rem; }
+.promise-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+.promise-list li { display: flex; gap: 0.7rem; color: rgba(255,255,255,0.85); font-size: 0.88rem; }
+.promise-list li::before { content: '✓'; color: var(--terracotta); font-weight: 700; flex-shrink: 0; }
+.calendly-card {
+  background: linear-gradient(135deg, var(--terracotta), #9e3e1c);
+  border-radius: 10px; padding: 1.8rem; text-align: center;
+}
+.calendly-card h3 { color: white; font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.5rem; }
+.calendly-card p { color: rgba(255,255,255,0.8); font-size: 0.85rem; margin-bottom: 1.2rem; }
+.btn-calendly {
+  display: block; background: white; color: var(--terracotta);
+  padding: 0.8rem 1.5rem; border-radius: 6px;
+  font-weight: 700; font-size: 0.9rem; text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-calendly:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
 
-    .contact-grid { display: grid; grid-template-columns: 1fr 400px; gap: 4rem; align-items: start; }
+/* FAQ */
+.faq { padding: 5rem 0; background: white; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+.faq-item { background: var(--gray-light); border-radius: 8px; padding: 1.5rem; }
+.faq-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
+.faq-item p { font-size: 0.86rem; color: var(--gray-text); line-height: 1.6; }
 
-    /* FORMULAIRE */
-    .form-card {
-      background: white; border-radius: 12px; padding: 2.5rem;
-      box-shadow: 0 4px 30px rgba(26,43,74,0.08);
-      border: 1px solid var(--gray-mid);
-    }
-    .form-card h2 { font-family: var(--font-display); font-size: 1.6rem; color: var(--navy); margin-bottom: 0.5rem; }
-    .form-card .subtitle { color: var(--gray-text); font-size: 0.9rem; margin-bottom: 2rem; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-    .form-group { margin-bottom: 1rem; }
-    .form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.04em; }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%; padding: 0.75rem 1rem;
-      border: 1px solid var(--gray-mid); border-radius: 6px;
-      font-family: var(--font-body); font-size: 0.9rem;
-      color: var(--navy); background: var(--gray-light);
-      transition: all 0.2s; outline: none;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--terracotta); background: white;
-      box-shadow: 0 0 0 3px rgba(192,87,42,0.1);
-    }
-    .form-group textarea { resize: vertical; min-height: 120px; }
-    .form-submit {
-      width: 100%; padding: 1rem;
-      background: var(--terracotta); color: white;
-      border: none; border-radius: 6px; cursor: pointer;
-      font-family: var(--font-body); font-size: 1rem; font-weight: 700;
-      transition: all 0.2s; letter-spacing: 0.02em;
-    }
-    .form-submit:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(192,87,42,0.3); }
-    .form-note { font-size: 0.78rem; color: var(--gray-text); text-align: center; margin-top: 0.8rem; }
+footer { background: #0f1824; padding: 3rem 0 2rem; }
+.footer-simple { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-simple p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+.footer-simple a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.82rem; }
+.footer-logo { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: white; }
+.footer-logo span { color: var(--terracotta); }
 
-    /* SIDEBAR */
-    .contact-sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+/* SUCCESS STATE */
+.form-success {
+  display: none; text-align: center; padding: 3rem 2rem;
+}
+.form-success .success-icon { font-size: 3rem; margin-bottom: 1rem; }
+.form-success h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--navy); margin-bottom: 0.8rem; }
+.form-success p { color: var(--gray-text); font-size: 0.95rem; }
 
-    .info-card {
-      background: white; border-radius: 10px; padding: 1.8rem;
-      border: 1px solid var(--gray-mid);
-    }
-    .info-card h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--navy); margin-bottom: 1.2rem; }
-    .info-item {
-      display: flex; align-items: flex-start; gap: 0.8rem;
-      margin-bottom: 1rem; padding-bottom: 1rem;
-      border-bottom: 1px solid var(--gray-light);
-    }
-    .info-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
-    .info-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-text); margin-bottom: 0.2rem; }
-    .info-value { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
-    .info-value a { color: var(--terracotta); text-decoration: none; }
-    .info-value a:hover { text-decoration: underline; }
-
-    .promise-card {
-      background: var(--navy); border-radius: 10px; padding: 1.8rem;
-    }
-    .promise-card h3 { font-family: var(--font-display); color: white; font-size: 1.1rem; margin-bottom: 1.2rem; }
-    .promise-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
-    .promise-list li { display: flex; gap: 0.7rem; color: rgba(255,255,255,0.85); font-size: 0.88rem; }
-    .promise-list li::before { content: '✓'; color: var(--terracotta); font-weight: 700; flex-shrink: 0; }
-
-    .calendly-card {
-      background: linear-gradient(135deg, var(--terracotta), #9e3e1c);
-      border-radius: 10px; padding: 1.8rem; text-align: center;
-    }
-    .calendly-card h3 { color: white; font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.5rem; }
-    .calendly-card p { color: rgba(255,255,255,0.8); font-size: 0.85rem; margin-bottom: 1.2rem; }
-    .btn-calendly {
-      display: block; background: white; color: var(--terracotta);
-      padding: 0.8rem 1.5rem; border-radius: 6px;
-      font-weight: 700; font-size: 0.9rem; text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn-calendly:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
-
-    .faq { padding: 5rem 0; background: white; }
-    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
-    .faq-item { background: var(--gray-light); border-radius: 8px; padding: 1.5rem; }
-    .faq-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
-    .faq-item p { font-size: 0.86rem; color: var(--gray-text); line-height: 1.6; }
-
-    footer { background: #0f1824; padding: 3rem 0 2rem; }
-    .footer-simple { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .footer-simple p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
-    .footer-simple a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.82rem; }
-    .footer-logo { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: white; }
-    .footer-logo span { color: var(--terracotta); }
-
-    /* SUCCESS STATE */
-    .form-success {
-      display: none; text-align: center; padding: 3rem 2rem;
-    }
-    .form-success .success-icon { font-size: 3rem; margin-bottom: 1rem; }
-    .form-success h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--navy); margin-bottom: 0.8rem; }
-    .form-success p { color: var(--gray-text); font-size: 0.95rem; }
-
-    @media (max-width: 900px) {
-      .contact-grid { grid-template-columns: 1fr; }
-      .contact-sidebar { order: -1; }
-      .faq-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .page-header h1 { font-size: 2rem; }
-    }
-  </style>
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-sidebar { order: -1; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .page-header h1 { font-size: 2rem; }
+}
+</style>
 </head>
 <body>
 
@@ -167,7 +169,7 @@
       <li><a href="a-propos.html">À propos</a></li>
       <li><a href="index.html#services">Nos services</a></li>
       <li><a href="tarifs.html">Tarifs</a></li>
-      <li><a href="contact.html" class="nav-cta">Consultation gratuite →</a></li>
+      <li><a href="contact.html" class="nav-cta">Premier échange gratuit →</a></li>
     </ul>
   </div>
 </nav>
@@ -187,7 +189,22 @@
         <p class="subtitle">Je réponds personnellement à chaque demande sous 24h ouvrées.</p>
 
         <div id="formContent">
-          <form id="contactForm" onsubmit="handleSubmit(event)">
+          <!--
+            ╔══════════════════════════════════════════════════════════════╗
+            ║  ACTIVATION FORMULAIRE — INSTRUCTIONS POUR SAMIR            ║
+            ║                                                              ║
+            ║  Ce formulaire est prêt. Il suffit de 2 minutes pour        ║
+            ║  l'activer avec Formspree (service gratuit) :               ║
+            ║                                                              ║
+            ║  1. Aller sur https://formspree.io et créer un compte       ║
+            ║  2. Créer un nouveau formulaire → copier votre form ID      ║
+            ║  3. Remplacer YOUR_FORMSPREE_ID ci-dessous par votre ID     ║
+            ║     (ex: xzbqpkoa)                                          ║
+            ║  4. Pousser sur GitHub → les emails arriveront directement  ║
+            ║     sur contact@c2fa.fr                                     ║
+            ╚══════════════════════════════════════════════════════════════╝
+          -->
+          <form id="contactForm">
             <div class="form-row">
               <div class="form-group">
                 <label for="prenom">Prénom *</label>
@@ -216,12 +233,12 @@
               <label for="sujet">Objet de votre demande *</label>
               <select id="sujet" name="sujet" required>
                 <option value="">— Sélectionnez —</option>
-                <option value="qualiopi">⭐ Certification Qualiopi</option>
                 <option value="ingenierie">Ingénierie de Formation</option>
-                <option value="essms">Évaluation ESSMS</option>
-                <option value="bilan">Bilan de Compétences</option>
                 <option value="management">Management de Transition</option>
                 <option value="territorial">Développement Territorial</option>
+                <option value="essms">Évaluation ESSMS</option>
+                <option value="bilan">Bilan de Compétences</option>
+                <option value="qualiopi">Audit Qualiopi</option>
                 <option value="autre">Autre demande</option>
               </select>
             </div>
@@ -229,7 +246,10 @@
               <label for="message">Votre message *</label>
               <textarea id="message" name="message" placeholder="Décrivez votre projet, vos besoins ou vos questions..." required></textarea>
             </div>
-            <button type="submit" class="form-submit">Envoyer ma demande →</button>
+            <button type="submit" class="form-submit" id="submitBtn">Envoyer ma demande →</button>
+            <div class="form-error" id="formError">
+              Une erreur est survenue. Merci de m'écrire directement à <a href="mailto:contact@c2fa.fr">contact@c2fa.fr</a> ou d'appeler le 06 51 50 97 18.
+            </div>
             <p class="form-note">🔒 Vos données ne sont jamais transmises à des tiers.</p>
           </form>
         </div>
@@ -243,7 +263,6 @@
 
       <!-- SIDEBAR -->
       <div class="contact-sidebar">
-
         <div class="calendly-card">
           <h3>📅 Réserver directement un créneau</h3>
           <p>Choisissez le moment qui vous convient — 30 min de consultation gratuite.</p>
@@ -284,7 +303,7 @@
             <div class="info-icon">🌍</div>
             <div>
               <div class="info-label">Zone d'intervention</div>
-              <div class="info-value">Occitanie & France entière</div>
+              <div class="info-value">Occitanie &amp; France entière</div>
             </div>
           </div>
         </div>
@@ -299,7 +318,6 @@
             <li>Pas d'intermédiaire — vous parlez directement à Samir</li>
           </ul>
         </div>
-
       </div>
     </div>
   </div>
@@ -313,30 +331,37 @@
       <h2 style="font-family:var(--font-display);font-size:2rem;color:var(--navy);">Questions fréquentes</h2>
     </div>
     <div class="faq-grid">
+
       <div class="faq-item">
-        <h4>Intervenez-vous uniquement en Occitanie ?</h4>
-        <p>Principalement en Occitanie (Tarn-et-Garonne, Haute-Garonne, Tarn, Lot, Gers), mais je me déplace partout en France pour les missions de management de transition ou les projets d'envergure nationale.</p>
+        <h4>Intervenez-vous en Occitanie ?</h4>
+        <p>Oui, l'Occitanie est notre terrain de prédilection (Tarn-et-Garonne, Haute-Garonne, Tarn, Lot, Gers…). J'interviens également partout en France pour tout type de mission — il n'est pas nécessaire qu'il s'agisse d'un projet d'envergure nationale.</p>
       </div>
+
       <div class="faq-item">
         <h4>Quel est le délai pour obtenir un devis ?</h4>
         <p>Réponse sous 24h ouvrées, devis détaillé sous 48h après un premier échange téléphonique. Je prends le temps de comprendre votre situation avant de chiffrer.</p>
       </div>
+
       <div class="faq-item">
         <h4>Puis-je financer votre accompagnement Qualiopi ?</h4>
         <p>Oui. Selon votre statut, les prestations peuvent être financées par votre OPCO, des fonds régionaux ou des dispositifs publics. Je vous accompagne dans le montage des dossiers.</p>
       </div>
+
       <div class="faq-item">
         <h4>Combien de temps dure un accompagnement Qualiopi ?</h4>
         <p>Entre 3 et 6 mois selon votre niveau de préparation initial. Le Pack Starter vous donne une photo immédiate de vos écarts. Le Pack Intégral couvre tout jusqu'au jour J de l'audit.</p>
       </div>
+
       <div class="faq-item">
         <h4>Qu'est-ce que le « 100% de réussite » Qualiopi signifie ?</h4>
         <p>Toutes les structures que j'ai accompagnées ont obtenu leur certification dès le premier audit. C'est le résultat d'une préparation rigoureuse et d'une connaissance précise des attentes des organismes certificateurs — j'en ai moi-même été un.</p>
       </div>
+
       <div class="faq-item">
         <h4>Proposez-vous du management de transition à temps partiel ?</h4>
         <p>Oui. Je propose des formules temps plein (5 000€ HT/mois) et temps partiel 2–3 jours/semaine (3 000€ HT/mois). Je m'adapte à votre situation d'urgence et à vos ressources.</p>
       </div>
+
     </div>
   </div>
 </section>
@@ -352,18 +377,50 @@
 </footer>
 
 <script>
-function handleSubmit(e) {
+// ─── CONFIGURATION FORMSPREE ───────────────────────────────────────────────
+// Remplacez YOUR_FORMSPREE_ID par votre vrai ID (ex: xzbqpkoa)
+// Obtenez-le gratuitement sur https://formspree.io
+const FORMSPREE_ID = 'YOUR_FORMSPREE_ID';
+// ──────────────────────────────────────────────────────────────────────────
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  // En production : remplacer par un vrai appel API (Formspree, Netlify Forms, etc.)
-  // Pour l'instant : simulation d'envoi
-  const btn = document.querySelector('.form-submit');
-  btn.textContent = 'Envoi en cours...';
+
+  const btn = document.getElementById('submitBtn');
+  const errorEl = document.getElementById('formError');
+  btn.textContent = 'Envoi en cours…';
   btn.disabled = true;
-  setTimeout(() => {
-    document.getElementById('formContent').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-  }, 1200);
-}
+  errorEl.style.display = 'none';
+
+  // Si Formspree non configuré, on simule un succès (mode démo)
+  if (FORMSPREE_ID === 'YOUR_FORMSPREE_ID') {
+    setTimeout(() => {
+      document.getElementById('formContent').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }, 1000);
+    return;
+  }
+
+  try {
+    const formData = new FormData(this);
+    const response = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      document.getElementById('formContent').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      throw new Error('Erreur réseau');
+    }
+  } catch (err) {
+    btn.textContent = 'Envoyer ma demande →';
+    btn.disabled = false;
+    errorEl.style.display = 'block';
+  }
+});
 </script>
 
 </body>
