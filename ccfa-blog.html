@@ -1,130 +1,140 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ressources & Blog — Qualiopi, Formation, ESS | CCFA Montauban</title>
-  <meta name="description" content="Guides pratiques, conseils et actualités sur la certification Qualiopi, l'ingénierie de formation et le développement territorial en Occitanie.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy: #1a2b4a; --terracotta: #C0572A; --terracotta-light: #d4693c;
-      --gold: #b8963e; --cream: #f8f5f0; --gray-light: #f2f0ec;
-      --gray-mid: #e0ddd7; --gray-text: #6b6560; --white: #ffffff;
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body: 'DM Sans', system-ui, sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-body); color: var(--navy); background: var(--white); -webkit-font-smoothing: antialiased; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ressources & Blog — Qualiopi, Audit, ESS, ESSMS, Formation | CCFA Montauban</title>
+<meta name="description" content="Guides pratiques, conseils terrain et actualités réglementaires sur Qualiopi, l'évaluation ESSMS, l'audit territorial, la formation tout au long de la vie et l'accompagnement ESS — par Samir Chikhi, CCFA Montauban.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1a2b4a; --terracotta: #C0572A; --terracotta-light: #d4693c;
+  --gold: #b8963e; --cream: #f8f5f0; --gray-light: #f2f0ec;
+  --gray-mid: #e0ddd7; --gray-text: #6b6560; --white: #ffffff;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); color: var(--navy); background: var(--white); -webkit-font-smoothing: antialiased; }
 
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(26,43,74,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 68px; }
-    .logo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: white; text-decoration: none; }
-    .logo span { color: var(--terracotta); }
-    .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.5rem 0.9rem; border-radius: 4px; transition: all 0.2s; }
-    .nav-links a:hover { color: white; background: rgba(255,255,255,0.08); }
-    .nav-cta { background: var(--terracotta) !important; color: white !important; }
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(26,43,74,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 68px; }
+.logo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: white; text-decoration: none; }
+.logo span { color: var(--terracotta); }
+.nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.5rem 0.9rem; border-radius: 4px; transition: all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: white; background: rgba(255,255,255,0.08); }
+.nav-cta { background: var(--terracotta) !important; color: white !important; }
+.nav-links a.nav-cta:hover { background: var(--terracotta-light) !important; }
 
-    .page-header { background: linear-gradient(135deg, var(--navy), #0f1d35); padding: 8rem 2rem 4rem; }
-    .page-header-inner { max-width: 1200px; margin: 0 auto; }
-    .page-header .eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.8rem; }
-    .page-header h1 { font-family: var(--font-display); font-size: 2.8rem; color: white; margin-bottom: 1rem; }
-    .page-header p { color: rgba(255,255,255,0.65); font-size: 1.05rem; max-width: 560px; }
+/* PAGE HEADER */
+.page-header { background: linear-gradient(135deg, var(--navy), #0f1d35); padding: 8rem 2rem 4rem; }
+.page-header-inner { max-width: 1200px; margin: 0 auto; }
+.page-header .eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.8rem; }
+.page-header h1 { font-family: var(--font-display); font-size: 2.8rem; color: white; margin-bottom: 1rem; line-height: 1.2; }
+.page-header p { color: rgba(255,255,255,0.65); font-size: 1.05rem; max-width: 560px; line-height: 1.7; }
 
-    .blog-main { padding: 5rem 0; background: var(--cream); }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .blog-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
+/* FILTERS */
+.filter-bar { background: var(--white); border-bottom: 1px solid var(--gray-mid); padding: 1rem 2rem; position: sticky; top: 68px; z-index: 50; }
+.filter-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+.filter-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-text); margin-right: 0.5rem; }
+.filter-btn { border: 1px solid var(--gray-mid); background: white; color: var(--gray-text); padding: 0.35rem 1rem; border-radius: 20px; font-size: 0.82rem; font-weight: 500; cursor: pointer; transition: all 0.2s; font-family: var(--font-body); }
+.filter-btn:hover, .filter-btn.active { background: var(--navy); color: white; border-color: var(--navy); }
+.filter-btn.active-terra { background: var(--terracotta); color: white; border-color: var(--terracotta); }
 
-    /* ARTICLES */
-    .articles { display: flex; flex-direction: column; gap: 2.5rem; }
-    .article-card {
-      background: white; border-radius: 12px;
-      border: 1px solid var(--gray-mid); overflow: hidden;
-      transition: all 0.25s;
-    }
-    .article-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(26,43,74,0.1); }
-    .article-card.featured { border-color: var(--terracotta); }
-    .article-hero {
-      background: linear-gradient(135deg, var(--navy), #0f1d35);
-      padding: 2.5rem; position: relative;
-    }
-    .article-tag {
-      display: inline-block; font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 0.25rem 0.7rem; border-radius: 3px; margin-bottom: 1rem;
-    }
-    .tag-qualiopi { background: rgba(192,87,42,0.2); color: #e8855a; }
-    .tag-formation { background: rgba(184,150,62,0.2); color: #d4b060; }
-    .tag-territorial { background: rgba(100,150,200,0.2); color: #8ab4d4; }
-    .tag-essms { background: rgba(100,180,130,0.2); color: #7dc49a; }
-    .article-hero h2 { font-family: var(--font-display); font-size: 1.6rem; color: white; line-height: 1.25; }
-    .article-meta { display: flex; gap: 1.5rem; margin-top: 0.8rem; flex-wrap: wrap; }
-    .article-meta span { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
-    .article-body { padding: 2rem; }
-    .article-intro { font-size: 0.95rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 1.5rem; }
-    .article-points { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
-    .article-points li { display: flex; gap: 0.6rem; font-size: 0.9rem; color: var(--navy); }
-    .article-points li::before { content: '→'; color: var(--terracotta); font-weight: 700; flex-shrink: 0; }
-    .article-cta {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      background: var(--terracotta); color: white;
-      padding: 0.7rem 1.5rem; border-radius: 5px;
-      text-decoration: none; font-size: 0.88rem; font-weight: 600;
-      transition: all 0.2s;
-    }
-    .article-cta:hover { background: var(--terracotta-light); }
-    .article-cta-outline {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      border: 1px solid var(--navy); color: var(--navy);
-      padding: 0.7rem 1.5rem; border-radius: 5px;
-      text-decoration: none; font-size: 0.88rem; font-weight: 600;
-      transition: all 0.2s; margin-left: 0.8rem;
-    }
-    .article-cta-outline:hover { background: var(--navy); color: white; }
+/* MAIN LAYOUT */
+.blog-main { padding: 4rem 0 5rem; background: var(--cream); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.blog-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
+.articles { display: flex; flex-direction: column; gap: 2.5rem; }
 
-    /* SIDEBAR BLOG */
-    .blog-sidebar { display: flex; flex-direction: column; gap: 1.5rem; position: sticky; top: 88px; }
-    .sidebar-card { background: white; border-radius: 10px; padding: 1.5rem; border: 1px solid var(--gray-mid); }
-    .sidebar-card h3 { font-family: var(--font-display); font-size: 1rem; color: var(--navy); margin-bottom: 1rem; }
-    .checklist { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-    .checklist li { display: flex; gap: 0.5rem; font-size: 0.84rem; color: var(--navy); }
-    .checklist li::before { content: '☐'; color: var(--terracotta); flex-shrink: 0; }
-    .sidebar-cta-card {
-      background: var(--navy); border-radius: 10px; padding: 1.5rem; text-align: center;
-    }
-    .sidebar-cta-card h3 { color: white; font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.6rem; }
-    .sidebar-cta-card p { color: rgba(255,255,255,0.65); font-size: 0.82rem; margin-bottom: 1.2rem; line-height: 1.6; }
-    .sidebar-btn {
-      display: block; background: var(--terracotta); color: white;
-      padding: 0.7rem; border-radius: 5px; text-decoration: none;
-      font-weight: 700; font-size: 0.85rem; transition: background 0.2s;
-    }
-    .sidebar-btn:hover { background: var(--terracotta-light); }
-    .themes-list { display: flex; flex-direction: column; gap: 0.4rem; }
-    .theme-item {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0.5rem 0; border-bottom: 1px solid var(--gray-light);
-      font-size: 0.84rem; cursor: pointer; color: var(--navy); text-decoration: none;
-    }
-    .theme-item:last-child { border-bottom: none; }
-    .theme-item:hover { color: var(--terracotta); }
-    .theme-count { background: var(--gray-light); border-radius: 10px; padding: 0.1rem 0.5rem; font-size: 0.72rem; font-weight: 700; color: var(--gray-text); }
+/* ARTICLE CARDS */
+.article-card { background: white; border-radius: 12px; border: 1px solid var(--gray-mid); overflow: hidden; transition: all 0.25s; }
+.article-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(26,43,74,0.1); }
+.article-card.featured { border-left: 4px solid var(--terracotta); }
+.article-hero { background: linear-gradient(135deg, var(--navy), #0f1d35); padding: 2.5rem; position: relative; }
+.article-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 3px; margin-bottom: 1rem; }
+.tag-qualiopi { background: rgba(192,87,42,0.2); color: #e8855a; }
+.tag-formation { background: rgba(184,150,62,0.2); color: #d4b060; }
+.tag-territorial { background: rgba(100,150,200,0.2); color: #8ab4d4; }
+.tag-essms { background: rgba(100,180,130,0.2); color: #7dc49a; }
+.tag-audit { background: rgba(160,100,200,0.2); color: #c090e0; }
+.tag-management { background: rgba(200,180,100,0.2); color: #d4c060; }
+.tag-ftv { background: rgba(200,130,130,0.2); color: #e09090; }
 
-    footer { background: #0f1824; padding: 3rem 0 2rem; }
-    .footer-simple { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .footer-simple p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
-    .footer-logo { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: white; }
-    .footer-logo span { color: var(--terracotta); }
+.article-hero h2 { font-family: var(--font-display); font-size: 1.55rem; color: white; line-height: 1.25; }
+.article-meta { display: flex; gap: 1.5rem; margin-top: 0.8rem; flex-wrap: wrap; }
+.article-meta span { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+.article-body { padding: 2rem; }
+.article-intro { font-size: 0.95rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 1.5rem; }
 
-    @media (max-width: 900px) {
-      .blog-grid { grid-template-columns: 1fr; }
-      .blog-sidebar { position: static; }
-      .nav-links { display: none; }
-      .page-header h1 { font-size: 2rem; }
-    }
-  </style>
+/* ARTICLE CONTENT */
+.article-section-title { font-size: 0.85rem; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.8rem; margin-top: 1.5rem; }
+.article-text { font-size: 0.92rem; color: var(--gray-text); line-height: 1.75; margin-bottom: 1rem; }
+.article-points { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+.article-points li { display: flex; gap: 0.6rem; font-size: 0.9rem; color: var(--navy); line-height: 1.5; }
+.article-points li::before { content: '→'; color: var(--terracotta); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+.highlight-box { background: var(--cream); border-left: 3px solid var(--terracotta); padding: 1rem 1.2rem; border-radius: 0 6px 6px 0; margin: 1.2rem 0; }
+.highlight-box p { font-size: 0.9rem; color: var(--navy); line-height: 1.65; font-style: italic; }
+
+.two-col-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; margin-bottom: 1.5rem; }
+.two-col-list li { display: flex; gap: 0.5rem; font-size: 0.88rem; color: var(--navy); line-height: 1.4; }
+.two-col-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+.stat-row { display: flex; gap: 1.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
+.stat-box { flex: 1; min-width: 120px; background: var(--cream); border-radius: 8px; padding: 1rem; text-align: center; }
+.stat-box .stat-num { font-family: var(--font-display); font-size: 1.8rem; color: var(--terracotta); font-weight: 700; }
+.stat-box .stat-label { font-size: 0.78rem; color: var(--gray-text); line-height: 1.4; margin-top: 0.2rem; }
+
+.article-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--gray-light); }
+.article-cta { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--terracotta); color: white; padding: 0.7rem 1.5rem; border-radius: 5px; text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: all 0.2s; }
+.article-cta:hover { background: var(--terracotta-light); }
+.article-cta-outline { display: inline-flex; align-items: center; gap: 0.4rem; border: 1px solid var(--navy); color: var(--navy); padding: 0.7rem 1.5rem; border-radius: 5px; text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: all 0.2s; }
+.article-cta-outline:hover { background: var(--navy); color: white; }
+
+/* EXPAND toggle */
+.article-preview { }
+.article-full { display: none; }
+.read-more-btn { background: none; border: none; color: var(--terracotta); font-size: 0.88rem; font-weight: 700; cursor: pointer; padding: 0; font-family: var(--font-body); display: inline-flex; align-items: center; gap: 0.3rem; margin-top: 0.5rem; }
+.read-more-btn:hover { color: var(--terracotta-light); }
+
+/* SIDEBAR */
+.blog-sidebar { display: flex; flex-direction: column; gap: 1.5rem; position: sticky; top: 128px; }
+.sidebar-card { background: white; border-radius: 10px; padding: 1.5rem; border: 1px solid var(--gray-mid); }
+.sidebar-card h3 { font-family: var(--font-display); font-size: 1rem; color: var(--navy); margin-bottom: 1rem; }
+.checklist { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.checklist li { display: flex; gap: 0.5rem; font-size: 0.84rem; color: var(--navy); }
+.checklist li::before { content: '☐'; color: var(--terracotta); flex-shrink: 0; }
+.sidebar-cta-card { background: var(--navy); border-radius: 10px; padding: 1.5rem; text-align: center; }
+.sidebar-cta-card h3 { color: white; font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.6rem; }
+.sidebar-cta-card p { color: rgba(255,255,255,0.65); font-size: 0.82rem; margin-bottom: 1.2rem; line-height: 1.6; }
+.sidebar-btn { display: block; background: var(--terracotta); color: white; padding: 0.7rem; border-radius: 5px; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: background 0.2s; }
+.sidebar-btn:hover { background: var(--terracotta-light); }
+.themes-list { display: flex; flex-direction: column; gap: 0.4rem; }
+.theme-item { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--gray-light); font-size: 0.84rem; cursor: pointer; color: var(--navy); text-decoration: none; }
+.theme-item:last-child { border-bottom: none; }
+.theme-item:hover { color: var(--terracotta); }
+.theme-count { background: var(--gray-light); border-radius: 10px; padding: 0.1rem 0.5rem; font-size: 0.72rem; font-weight: 700; color: var(--gray-text); }
+
+/* FOOTER */
+footer { background: #0f1824; padding: 3rem 0 2rem; }
+.footer-simple { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-simple p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+.footer-logo { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: white; }
+.footer-logo span { color: var(--terracotta); }
+
+@media (max-width: 900px) {
+  .blog-grid { grid-template-columns: 1fr; }
+  .blog-sidebar { position: static; }
+  .nav-links { display: none; }
+  .page-header h1 { font-size: 2rem; }
+  .two-col-list { grid-template-columns: 1fr; }
+  .stat-row { gap: 0.8rem; }
+}
+</style>
 </head>
 <body>
 
@@ -135,7 +145,7 @@
       <li><a href="a-propos.html">À propos</a></li>
       <li><a href="index.html#services">Nos services</a></li>
       <li><a href="tarifs.html">Tarifs</a></li>
-      <li><a href="blog.html">Ressources</a></li>
+      <li><a href="ccfa-blog.html" class="active">Ressources</a></li>
       <li><a href="contact.html" class="nav-cta">Consultation gratuite →</a></li>
     </ul>
   </div>
@@ -143,113 +153,534 @@
 
 <div class="page-header">
   <div class="page-header-inner">
-    <div class="eyebrow">Ressources & Guides</div>
-    <h1>Tout ce que vous devez<br>savoir pour réussir.</h1>
-    <p>Guides pratiques, conseils terrain et actualités réglementaires — par un expert qui a vécu les mêmes enjeux que vous.</p>
+    <div class="eyebrow">Ressources & Guides pratiques</div>
+    <h1>L'expertise terrain,<br>au service de vos décisions.</h1>
+    <p>Guides opérationnels, analyses réglementaires et retours d'expérience — rédigés par un praticien de 27 ans, pas par un communicant.</p>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <div class="filter-bar-inner">
+    <span class="filter-label">Filtrer :</span>
+    <button class="filter-btn active" onclick="filterArticles('all', this)">Tous les articles</button>
+    <button class="filter-btn" onclick="filterArticles('qualiopi', this)">Qualiopi</button>
+    <button class="filter-btn" onclick="filterArticles('essms', this)">Évaluation ESSMS</button>
+    <button class="filter-btn" onclick="filterArticles('audit', this)">Audit territorial</button>
+    <button class="filter-btn" onclick="filterArticles('formation', this)">Formation</button>
+    <button class="filter-btn" onclick="filterArticles('territorial', this)">Collectivités</button>
+    <button class="filter-btn" onclick="filterArticles('management', this)">Management ESS</button>
   </div>
 </div>
 
 <section class="blog-main">
   <div class="container">
     <div class="blog-grid">
+      <div class="articles" id="articles-container">
 
-      <div class="articles">
-
-        <!-- Article 1 : SEO cible "Qualiopi Occitanie" -->
-        <div class="article-card featured">
+        <!-- ============================================================
+             ARTICLE 1 : QUALIOPI
+        ============================================================ -->
+        <div class="article-card featured" data-category="qualiopi">
           <div class="article-hero">
-            <div class="article-tag tag-qualiopi">Qualiopi · Guide complet</div>
-            <h2>Certification Qualiopi en Occitanie : le guide complet 2026 pour les organismes de formation</h2>
+            <div class="article-tag tag-qualiopi">Qualiopi · Guide complet 2026</div>
+            <h2>Certification Qualiopi : le guide complet pour les organismes de formation</h2>
             <div class="article-meta">
               <span>📅 Mars 2026</span>
-              <span>⏱ 8 min de lecture</span>
+              <span>⏱ 10 min de lecture</span>
               <span>✍️ Samir Chikhi, auditeur certifié</span>
             </div>
           </div>
           <div class="article-body">
             <p class="article-intro">
-              Depuis le 1er janvier 2022, la certification Qualiopi est obligatoire pour tout organisme de formation souhaitant accéder aux financements publics et mutualisés (OPCO, CPF, Pôle Emploi, Région...). Pourtant, en Occitanie, nombre de structures abordent encore leur certification sans méthode — et y laissent des plumes.
+              Depuis le 1er janvier 2022, la certification Qualiopi est la condition sine qua non pour accéder aux financements publics et mutualisés. Pourtant, nombre d'organismes abordent encore leur audit sans méthode — et y laissent des plumes. Ce guide vous donne le cadre opérationnel pour réussir du premier coup.
             </p>
-            <p style="font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:0.8rem;">Ce que vous apprendrez dans cet article :</p>
-            <ul class="article-points">
-              <li>Les 7 critères du Référentiel National Qualité (RNQ) que les auditeurs scrutent en priorité</li>
-              <li>Les 3 erreurs fatales commises par 80% des organismes lors de leur premier audit</li>
-              <li>Comment constituer un dossier documentaire solide en moins de 3 mois</li>
-              <li>Les spécificités régionales Occitanie : organismes certificateurs actifs, délais, coûts réels</li>
-              <li>Comment transformer votre certification en avantage commercial durable</li>
-            </ul>
-            <a href="contact.html" class="article-cta">Être accompagné pour ma certification →</a>
-            <a href="service-audit.html" class="article-cta-outline">Voir nos packs Qualiopi</a>
+
+            <div class="article-preview">
+              <p class="article-section-title">Les 3 erreurs fatales que j'observe en audit</p>
+              <ul class="article-points">
+                <li>Confondre "avoir des documents" et "avoir un système qualité" : l'auditeur cherche des preuves de mise en œuvre, pas des classeurs vides</li>
+                <li>Négliger le critère 1 (Information du public) : les informations sur le site web, les délais, les résultats obtenus doivent être précises et à jour</li>
+                <li>Oublier la traçabilité de l'amélioration continue : sans boucle d'amélioration documentée, pas de certification possible</li>
+              </ul>
+              <button class="read-more-btn" onclick="toggleArticle(this)">Lire la suite de cet article ↓</button>
+            </div>
+
+            <div class="article-full">
+              <p class="article-section-title">Comprendre le RNQ : les 7 critères décryptés</p>
+              <p class="article-text">
+                Le Référentiel National Qualité (RNQ) s'articule autour de 7 critères, eux-mêmes déclinés en 32 indicateurs. Certains sont "fondamentaux" (non-conformité = refus de certification), d'autres sont "modulables" selon votre type d'action (formation continue, apprentissage, VAE, bilan de compétences).
+              </p>
+              <ul class="article-points">
+                <li><strong>Critère 1 — Information :</strong> Accessibilité et clarté des informations délivrées aux publics (tarifs, délais, résultats, accessibilité handicap)</li>
+                <li><strong>Critère 2 — Identification des besoins :</strong> Comment vous positionnez les bénéficiaires avant l'entrée en formation (entretien, questionnaire, test de positionnement)</li>
+                <li><strong>Critère 3 — Adaptation aux publics :</strong> Moyens pédagogiques, techniques et d'encadrement mobilisés pour répondre aux besoins identifiés</li>
+                <li><strong>Critère 4 — Adéquation des intervenants :</strong> Compétences des formateurs, justifiées par des CV, des certifications ou des portfolio d'expériences</li>
+                <li><strong>Critère 5 — Environnement propice :</strong> Accessibilité physique, équipements, prise en compte du handicap, sous-traitance</li>
+                <li><strong>Critère 6 — Inscrit dans l'environnement :</strong> Veille légale et réglementaire, dialogue avec les financeurs, partenariats</li>
+                <li><strong>Critère 7 — Amélioration continue :</strong> Enquêtes de satisfaction, traitement des réclamations, analyse des indicateurs de résultats, révision des pratiques</li>
+              </ul>
+
+              <div class="stat-row">
+                <div class="stat-box"><div class="stat-num">32</div><div class="stat-label">indicateurs à documenter</div></div>
+                <div class="stat-box"><div class="stat-num">3–6</div><div class="stat-label">mois de préparation conseillés</div></div>
+                <div class="stat-box"><div class="stat-num">3 ans</div><div class="stat-label">durée de la certification</div></div>
+                <div class="stat-box"><div class="stat-num">1 800€</div><div class="stat-label">coût moyen d'audit (hors accompagnement)</div></div>
+              </div>
+
+              <p class="article-section-title">Le plan de travail en 4 phases (modèle CCFA)</p>
+              <ul class="article-points">
+                <li><strong>Phase 1 — Diagnostic (J à J+15) :</strong> Cartographie de l'existant, identification des écarts par indicateur, classement par priorité (bloquant / à améliorer / conforme)</li>
+                <li><strong>Phase 2 — Construction documentaire (J+15 à J+60) :</strong> Création ou mise à niveau des procédures, templates et preuves pour chaque indicateur manquant</li>
+                <li><strong>Phase 3 — Mise en œuvre (J+60 à J+75) :</strong> Déploiement réel des procédures (ne pas se limiter au papier), constitution du dossier de preuves daté</li>
+                <li><strong>Phase 4 — Simulation d'audit (J+75 à J+90) :</strong> Entretien blanc, revue du classeur de preuves, préparation des réponses aux questions types des auditeurs</li>
+              </ul>
+
+              <div class="highlight-box">
+                <p>💡 <strong>Conseil de praticien :</strong> L'auditeur n'est pas votre ennemi — il vérifie que vous faites vraiment ce que vous dites faire. La clé n'est pas d'avoir des documents parfaits, c'est d'avoir un système cohérent et tracé. Un OF qui a 6 indicateurs "en cours d'amélioration documentée" avec des preuves réelles passera mieux qu'un OF qui présente 32 documents créés la semaine précédente.</p>
+              </div>
+
+              <p class="article-section-title">Choisir son organisme certificateur</p>
+              <p class="article-text">En Occitanie, plusieurs organismes accrédités COFRAC interviennent régulièrement : Bureau Veritas, AFNOR Certification, Global Certification, Apave, SGS. Les délais varient de 2 à 6 mois selon les agendas. Comparez les prix (entre 1 500€ et 3 500€ selon la taille de l'OF), les créneaux disponibles et la réputation sur votre type de formations.</p>
+
+              <p class="article-section-title">Transformer Qualiopi en avantage commercial</p>
+              <ul class="article-points">
+                <li>Mettre le logo sur tous vos supports dès le lendemain de la certification</li>
+                <li>Candidater aux marchés OPCO, Pôle Emploi et Région qui exigent Qualiopi</li>
+                <li>Valoriser votre taux de satisfaction et vos indicateurs de résultats dans vos propositions commerciales</li>
+                <li>Utiliser l'audit de surveillance (18 mois) pour afficher une "démarche d'amélioration continue en cours"</li>
+              </ul>
+            </div>
+
+            <div class="article-actions">
+              <a href="contact.html" class="article-cta">Être accompagné pour ma certification →</a>
+              <a href="service-audit.html" class="article-cta-outline">Voir nos packs Qualiopi</a>
+            </div>
           </div>
         </div>
 
-        <!-- Article 2 : SEO cible "management transition ESS collectivité" -->
-        <div class="article-card">
+        <!-- ============================================================
+             ARTICLE 2 : ÉVALUATION ESSMS
+        ============================================================ -->
+        <div class="article-card" data-category="essms">
           <div class="article-hero">
-            <div class="article-tag tag-territorial">Management de transition · ESS</div>
-            <h2>Management de transition dans les associations et collectivités : ce que personne ne vous dit</h2>
+            <div class="article-tag tag-essms">Évaluation ESSMS · Réforme 2022</div>
+            <h2>Évaluation des ESSMS : tout comprendre sur le nouveau dispositif HAS et comment s'y préparer</h2>
             <div class="article-meta">
               <span>📅 Février 2026</span>
-              <span>⏱ 6 min de lecture</span>
+              <span>⏱ 9 min de lecture</span>
+              <span>✍️ Samir Chikhi, expert social</span>
+            </div>
+          </div>
+          <div class="article-body">
+            <p class="article-intro">
+              Depuis la loi du 2 août 2021 et le décret du 12 mai 2022, l'évaluation des ESSMS (Établissements et Services Sociaux et Médico-Sociaux) a été profondément réformée. Fini les auto-évaluations et les évaluations internes/externes à calendrier souple — place à un cycle quinquennal unique piloté par la HAS. Ce changement a pris beaucoup de structures au dépourvu.
+            </p>
+
+            <div class="article-preview">
+              <ul class="article-points">
+                <li>Un référentiel unique HAS qui couvre 157 éléments d'investigation</li>
+                <li>Des évaluateurs obligatoirement habilités HAS (liste nationale)</li>
+                <li>Une évaluation externe tous les 5 ans avec rapport transmis à l'autorité de tarification</li>
+              </ul>
+              <button class="read-more-btn" onclick="toggleArticle(this)">Lire la suite de cet article ↓</button>
+            </div>
+
+            <div class="article-full">
+              <p class="article-section-title">Ce qui a fondamentalement changé avec la réforme HAS</p>
+              <p class="article-text">
+                L'ancien système (évaluation interne + évaluation externe tous les 5 ans, avec deux cycles successifs) a été remplacé par un référentiel unique d'évaluation de la qualité des établissements et services. Ce référentiel est organisé en 3 chapitres thématiques et s'applique à l'ensemble du secteur (EHPAD, ESAT, IME, MECS, SAAD, CAMSP, etc.), avec des adaptations sectorielles.
+              </p>
+              <ul class="article-points">
+                <li><strong>Chapitre 1 — La bientraitance :</strong> Culture de bientraitance, lutte contre la maltraitance, droits des personnes, intimité et vie affective/sexuelle</li>
+                <li><strong>Chapitre 2 — L'accompagnement personnalisé :</strong> Co-construction du projet personnalisé, continuité de l'accompagnement, participation des proches</li>
+                <li><strong>Chapitre 3 — La qualité de vie au travail :</strong> Management, conditions de travail, formation et compétences des professionnels, prévention des RPS</li>
+              </ul>
+
+              <div class="highlight-box">
+                <p>⚠️ <strong>Point d'attention :</strong> Le chapitre 3 (qualité de vie au travail) est souvent celui qui crée le plus de surprises. Beaucoup de directeurs pensent qu'il s'agit uniquement d'un RH — or les évaluateurs HAS vérifient aussi la cohérence entre le projet d'établissement, les fiches de poste, les pratiques managériales réelles et le taux d'absentéisme. C'est un regard 360° sur l'organisation.</p>
+              </div>
+
+              <p class="article-section-title">Le calendrier : ne pas se laisser surprendre</p>
+              <ul class="article-points">
+                <li>Les premières évaluations du nouveau cycle ont démarré en 2023 pour les structures dont la dernière évaluation externe remontait à avant 2018</li>
+                <li>Le calendrier est arrêté par l'autorité de tarification (ARS / CD) — vous serez notifié, mais il vaut mieux anticiper</li>
+                <li>La durée standard d'une évaluation : 2 à 5 jours sur site selon la taille de la structure</li>
+                <li>Le rapport est transmis à l'ARS/CD dans les 60 jours suivant la fin de la mission</li>
+              </ul>
+
+              <p class="article-section-title">Comment se préparer concrètement (18 mois avant)</p>
+              <ul class="article-points">
+                <li><strong>J-18 mois :</strong> Lancer un diagnostic interne sur les 157 éléments du référentiel HAS</li>
+                <li><strong>J-12 mois :</strong> Formaliser ou réviser le projet d'établissement et les projets personnalisés</li>
+                <li><strong>J-9 mois :</strong> Mettre en place les outils de recueil de satisfaction (résidents, familles, professionnels)</li>
+                <li><strong>J-6 mois :</strong> Lancer les groupes de travail internes sur les points faibles identifiés</li>
+                <li><strong>J-3 mois :</strong> Sélectionner l'organisme évaluateur habilité HAS et signer la convention</li>
+                <li><strong>J-1 mois :</strong> Préparer la documentation à transmettre et briefer les équipes</li>
+              </ul>
+
+              <p class="article-section-title">Le rôle d'un consultant externe dans cette démarche</p>
+              <p class="article-text">Un accompagnement externe apporte trois valeurs ajoutées : un regard neutre (ni la bienveillance de l'interne, ni la méfiance de l'évaluateur), une connaissance des attentes réelles des évaluateurs HAS, et une capacité à produire les livrables documentaires (plan d'amélioration, projets personnalisés, procédures de bientraitance) dans un format qui satisfait les exigences du référentiel.</p>
+
+              <div class="stat-row">
+                <div class="stat-box"><div class="stat-num">157</div><div class="stat-label">éléments d'investigation HAS</div></div>
+                <div class="stat-box"><div class="stat-num">5 ans</div><div class="stat-label">périodicité du cycle</div></div>
+                <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">chapitres thématiques</div></div>
+              </div>
+            </div>
+
+            <div class="article-actions">
+              <a href="contact.html" class="article-cta">Préparer mon évaluation ESSMS →</a>
+              <a href="service-essms.html" class="article-cta-outline">Notre offre ESSMS</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             ARTICLE 3 : AUDIT TERRITORIAL
+        ============================================================ -->
+        <div class="article-card" data-category="audit">
+          <div class="article-hero">
+            <div class="article-tag tag-audit">Audit territorial · Méthode</div>
+            <h2>L'audit territorial : à quoi ça sert vraiment, et comment en faire un outil de pilotage politique</h2>
+            <div class="article-meta">
+              <span>📅 Janvier 2026</span>
+              <span>⏱ 8 min de lecture</span>
+              <span>✍️ Samir Chikhi, ex-DGS, consultant territorial</span>
+            </div>
+          </div>
+          <div class="article-body">
+            <p class="article-intro">
+              L'audit territorial souffre d'une réputation d'outil punitif ou défensif — commandé après une crise, avant une élection ou sous pression d'une chambre régionale des comptes. C'est dommage : utilisé proactivement, il est l'un des instruments les plus puissants pour un exécutif qui veut savoir précisément où il en est et où il doit aller.
+            </p>
+
+            <div class="article-preview">
+              <ul class="article-points">
+                <li>Un audit territorial n'est pas un contrôle — c'est une photographie objective d'une situation pour éclairer une décision</li>
+                <li>Il peut porter sur les finances, les ressources humaines, les politiques publiques, l'organisation, les équipements ou le développement économique</li>
+              </ul>
+              <button class="read-more-btn" onclick="toggleArticle(this)">Lire la suite de cet article ↓</button>
+            </div>
+
+            <div class="article-full">
+              <p class="article-section-title">Les 6 types d'audit territorial et leurs usages</p>
+              <ul class="article-points">
+                <li><strong>Audit financier et fiscal :</strong> Analyse des marges de manœuvre budgétaires, capacité d'autofinancement, endettement, fiscalité locale comparée — indispensable en début de mandat</li>
+                <li><strong>Audit organisationnel :</strong> Cartographie des services, des doublons, des goulots d'étranglement, des risques RH (pyramide des âges, compétences critiques, absentéisme)</li>
+                <li><strong>Audit de politique publique :</strong> Évaluation de l'efficacité et de l'efficience d'un dispositif (politique sociale, développement économique, mobilité) — "est-ce que ça marche et pour quel coût ?"</li>
+                <li><strong>Audit patrimonial :</strong> État du bâti communal, coûts de maintenance, priorisation des investissements, performance énergétique</li>
+                <li><strong>Audit de gouvernance :</strong> Qualité des délibérations, circuit de la commande publique, transparence des décisions, risque juridique</li>
+                <li><strong>Audit de développement territorial :</strong> Attractivité, démographie, économie locale, dynamiques intercommunales — pour définir une stratégie de mandat</li>
+              </ul>
+
+              <p class="article-section-title">La méthodologie d'un audit territorial rigoureux</p>
+              <p class="article-text">Un audit de qualité repose sur trois sources complémentaires : l'analyse documentaire (délibérations, comptes administratifs, organigrammes, bilans sociaux), les entretiens semi-directifs (élus, DGS, chefs de service, usagers représentatifs), et l'observation directe sur le terrain. La triangulation de ces trois sources est ce qui donne à l'audit sa valeur — et ce qui le distingue d'un simple rapport de comptage.</p>
+
+              <div class="highlight-box">
+                <p>💡 <strong>Retour d'expérience :</strong> Dans mes missions, j'observe que les plus grandes économies et les plus grands gains d'efficacité ne viennent pas des audits financiers — ils viennent des audits organisationnels. Une réorganisation de service bien conduite peut libérer l'équivalent de 1,5 ETP sans supprimer un seul poste, simplement en clarifiant les périmètres et en supprimant les doublons.</p>
+              </div>
+
+              <p class="article-section-title">Utiliser l'audit comme outil de dialogue avec les équipes</p>
+              <p class="article-text">L'audit ne doit pas être vécu comme une inspection par les agents. La communication interne autour de la démarche est clé : expliquer l'objectif (améliorer, pas sanctionner), associer les managers de proximité à la phase de diagnostic, et restituer les conclusions avant publication. Un audit participatif produit des recommandations 30% plus applicables qu'un audit "de cabinet" déconnecté du terrain.</p>
+
+              <p class="article-section-title">Ce que contient un rapport d'audit territorial CCFA</p>
+              <ul class="article-points">
+                <li>Synthèse exécutive de 3 pages (lisible par un élu sans bagage technique)</li>
+                <li>Diagnostic complet avec données comparatives (communes similaires, données nationales)</li>
+                <li>Recommandations hiérarchisées par impact et faisabilité (matrice effort/gain)</li>
+                <li>Plan d'actions prioritaires sur 12 mois avec indicateurs de suivi</li>
+                <li>Présentation devant le conseil municipal ou la direction générale si souhaité</li>
+              </ul>
+            </div>
+
+            <div class="article-actions">
+              <a href="contact.html" class="article-cta">Commander un audit territorial →</a>
+              <a href="service-territorial.html" class="article-cta-outline">Notre offre territorial</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             ARTICLE 4 : FORMATION TOUT AU LONG DE LA VIE
+        ============================================================ -->
+        <div class="article-card" data-category="formation">
+          <div class="article-hero">
+            <div class="article-tag tag-ftv">Formation tout au long de la vie</div>
+            <h2>Formation tout au long de la vie : droits, dispositifs et stratégies pour les actifs et les employeurs en 2026</h2>
+            <div class="article-meta">
+              <span>📅 Janvier 2026</span>
+              <span>⏱ 9 min de lecture</span>
+              <span>✍️ Samir Chikhi, ingénieur de formation</span>
+            </div>
+          </div>
+          <div class="article-body">
+            <p class="article-intro">
+              La formation professionnelle française est l'une des plus touffues au monde : CPF, OPCO, Pro-A, PDC, CIF, VAE, CléA, AFEST... Entre les droits individuels, les obligations employeur et les financements mutualisés, il est aisé de passer à côté de ressources significatives. Ce guide démêle l'essentiel.
+            </p>
+
+            <div class="article-preview">
+              <ul class="article-points">
+                <li>Le CPF (Compte Personnel de Formation) : 500€/an (800€ pour les non-qualifiés), mobilisable sans accord employeur pour les formations éligibles</li>
+                <li>Les entreprises de 11 salariés et plus sont assujetties à la contribution formation (entre 1% et 1,68% de la masse salariale brute selon l'effectif)</li>
+              </ul>
+              <button class="read-more-btn" onclick="toggleArticle(this)">Lire la suite de cet article ↓</button>
+            </div>
+
+            <div class="article-full">
+              <p class="article-section-title">La carte des financements disponibles selon votre situation</p>
+
+              <p class="article-text"><strong>Pour les salariés du privé :</strong></p>
+              <ul class="article-points">
+                <li><strong>CPF :</strong> Droits à formation accumulés (500€/an, 5 000€ plafond), utilisable sur moncompteformation.gouv.fr — depuis 2023, un reste à charge de 100€ s'applique sauf accord employeur ou abondement OPCO</li>
+                <li><strong>Plan de Développement des Compétences (PDC) :</strong> Formations à l'initiative de l'employeur — vous avez le droit d'y accéder, votre employeur a l'obligation de vous former aux évolutions de votre poste</li>
+                <li><strong>Pro-A (Reconversion ou Promotion par Alternance) :</strong> Permet de changer de métier ou de monter en qualification tout en restant en poste — financement OPCO, très sous-utilisé</li>
+                <li><strong>VAE (Validation des Acquis de l'Expérience) :</strong> Obtenir un diplôme ou une certification sans reprendre les bancs de l'école — réforme 2023 : le parcours est raccourci et accompagné</li>
+              </ul>
+
+              <p class="article-text"><strong>Pour les demandeurs d'emploi :</strong></p>
+              <ul class="article-points">
+                <li><strong>AIF (Aide Individuelle à la Formation) France Travail :</strong> Financement des formations non éligibles CPF pour les DE — décision au cas par cas du conseiller</li>
+                <li><strong>CSP (Contrat de Sécurisation Professionnelle) :</strong> Pour les licenciés économiques — 12 mois d'accompagnement renforcé avec financement de formation possible</li>
+                <li><strong>POEI (Préparation Opérationnelle à l'Emploi Individuelle) :</strong> Former un DE avant son embauche chez un employeur ciblé — cofinancé France Travail / OPCO</li>
+              </ul>
+
+              <p class="article-text"><strong>Pour les employeurs :</strong></p>
+              <ul class="article-points">
+                <li><strong>Entretien professionnel obligatoire :</strong> Tous les 2 ans, et bilan à 6 ans — sans formation sur 6 ans = abondement correctif CPF de 3 000€ à votre charge</li>
+                <li><strong>AFEST (Action de Formation En Situation de Travail) :</strong> Former sur le poste de travail en alternant séquences réflexives — éligible Qualiopi, finançable OPCO</li>
+                <li><strong>Abondement CPF employeur :</strong> Vous pouvez compléter le CPF de vos salariés — levier de fidélisation et de montée en compétences ciblée</li>
+              </ul>
+
+              <div class="highlight-box">
+                <p>📊 <strong>Chiffre à retenir :</strong> En France, 37% des droits CPF accumulés ne sont jamais utilisés. Pour les employeurs, les sommes versées aux OPCO mais non récupérées via des demandes de prise en charge représentent en moyenne 30 à 45% des contributions. Autrement dit : votre argent dort.</p>
+              </div>
+
+              <p class="article-section-title">Construire un plan de formation qui sert vraiment l'organisation</p>
+              <ul class="article-points">
+                <li>Partir des orientations stratégiques (pas du catalogue disponible) : quelles compétences nous manquent pour atteindre nos objectifs dans 3 ans ?</li>
+                <li>Distinguer formation "obligation légale" (sécurité, habilitations) de formation "investissement stratégique" (management, numérique, technique)</li>
+                <li>Négocier avec votre OPCO des cofinancements avant d'engager les dépenses</li>
+                <li>Évaluer les formations à chaud ET à froid (3 mois après) — c'est une exigence Qualiopi, c'est aussi une bonne gestion</li>
+              </ul>
+
+              <p class="article-section-title">La VAE en 2026 : ce que la réforme change concrètement</p>
+              <p class="article-text">La loi Avenir Professionnel de 2018 et la réforme de 2022 ont profondément assoupli la VAE. Le dossier de recevabilité est simplifié, l'accompagnement est financé (24h de conseil incluses), et les délais de traitement ont été réduits. Pour les professionnels du social et de la santé notamment, c'est une voie royale pour certifier des années d'expérience sans reprendre de formation longue.</p>
+            </div>
+
+            <div class="article-actions">
+              <a href="contact.html" class="article-cta">Construire mon plan de formation →</a>
+              <a href="service-ingenierie.html" class="article-cta-outline">Ingénierie de formation</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             ARTICLE 5 : ACCOMPAGNEMENT COLLECTIVITÉS
+        ============================================================ -->
+        <div class="article-card" data-category="territorial">
+          <div class="article-hero">
+            <div class="article-tag tag-territorial">Collectivités · Conseil</div>
+            <h2>Accompagner une collectivité en transition : méthodes, pièges et conditions de réussite</h2>
+            <div class="article-meta">
+              <span>📅 Décembre 2025</span>
+              <span>⏱ 7 min de lecture</span>
               <span>✍️ Samir Chikhi, ex-DGS</span>
             </div>
           </div>
           <div class="article-body">
             <p class="article-intro">
-              Un départ précipité, une crise de gouvernance, un projet structurant sans pilote — le management de transition est souvent vécu comme un aveu de faiblesse. C'est en réalité l'un des leviers les plus intelligents pour traverser une période charnière sans perdre ni temps, ni équipes, ni crédibilité.
+              Une collectivité en transition — après une élection, un changement de DGS, une fusion, une réorganisation — est un organisme vivant sous tension. Les élus portent un projet politique nouveau, les agents portent des habitudes et des craintes, et les usagers attendent des résultats. Le consultant externe qui arrive dans ce contexte doit naviguer entre légitimité politique, compétence technique et intelligence humaine.
             </p>
-            <ul class="article-points">
-              <li>Quand faire appel à un directeur de transition ? Les 5 signaux qui ne trompent pas</li>
-              <li>Comment choisir le bon profil pour votre structure (association, collectivité, ESSMS)</li>
-              <li>Les premières 48h qui font tout : protocole d'intégration opérationnelle</li>
-              <li>Coût réel et modes de financement d'une mission de 3 à 6 mois</li>
-              <li>Comment assurer la sortie et la transmission sans laisser de vide</li>
-            </ul>
-            <a href="service-management.html" class="article-cta">En savoir plus →</a>
-            <a href="contact.html" class="article-cta-outline">Discuter d'une mission</a>
+
+            <div class="article-preview">
+              <ul class="article-points">
+                <li>La première erreur : arriver avec des solutions avant d'avoir compris les problèmes</li>
+                <li>La deuxième erreur : s'aligner sur l'élu contre les agents, ou sur les agents contre l'élu</li>
+              </ul>
+              <button class="read-more-btn" onclick="toggleArticle(this)">Lire la suite de cet article ↓</button>
+            </div>
+
+            <div class="article-full">
+              <p class="article-section-title">Les 5 situations qui nécessitent un accompagnement externe</p>
+              <ul class="article-points">
+                <li><strong>Début de mandat :</strong> Diagnostic 100 jours, définition des priorités, organisation de la direction générale, relation élu/administration</li>
+                <li><strong>Réorganisation de services :</strong> Fusion de communes, mutualisation intercommunale, création de direction thématique — accompagnement du changement, plan de communication interne</li>
+                <li><strong>Crise RH :</strong> Conflit social, départ brutal d'un cadre stratégique, montée du présentéisme ou de l'absentéisme — diagnostic, médiation, plan de prévention</li>
+                <li><strong>Montage de projet :</strong> Candidature à un appel à projets (ANCT, LEADER, FEDER), ingénierie financière, dossier de subvention</li>
+                <li><strong>Évaluation de politique publique :</strong> Que ce soit imposé (contrat de ville, CTG) ou volontaire, l'évaluation externe crédibilise la décision politique</li>
+              </ul>
+
+              <p class="article-section-title">La méthode d'entrée en mission : les 15 premiers jours</p>
+              <ul class="article-points">
+                <li>Entretiens individuels avec le maire/président, le DGS et les directeurs de pôle (pas de note commune, écoute active)</li>
+                <li>Lecture des documents stratégiques (PLU, PCAET, projet de territoire, rapport d'orientation budgétaire)</li>
+                <li>Analyse des indicateurs RH : organigramme réel vs théorique, taux d'absentéisme, pyramide des âges, formations récentes</li>
+                <li>Identification des "irritants" : ce qui bloque les agents au quotidien, les sujets tabous, les dossiers en souffrance</li>
+                <li>Note de cadrage : restitution de la situation telle qu'observée, sans jugement — valider avec l'élu avant de continuer</li>
+              </ul>
+
+              <div class="highlight-box">
+                <p>🏛️ <strong>Spécificité du secteur public :</strong> Dans une collectivité, le "client" est double — l'élu qui commande et paye, et les agents qui subissent ou bénéficient de la mission. Un bon consultant sait que sa crédibilité auprès des agents est aussi importante que sa relation à l'élu. Sans la confiance des équipes, les recommandations restent des rapports.</p>
+              </div>
+
+              <p class="article-section-title">Les indicateurs de réussite d'une mission d'accompagnement</p>
+              <ul class="article-points">
+                <li>Les recommandations sont effectivement mises en œuvre (pas juste "notées")</li>
+                <li>Les agents concernés s'approprient les changements plutôt que de les subir</li>
+                <li>L'élu dispose d'une vision claire et partageable de sa stratégie de mandat</li>
+                <li>La collectivité n'a plus besoin du consultant pour continuer — la compétence est internalisée</li>
+              </ul>
+            </div>
+
+            <div class="article-actions">
+              <a href="contact.html" class="article-cta">Discuter de votre collectivité →</a>
+              <a href="service-territorial.html" class="article-cta-outline">Offre accompagnement</a>
+            </div>
           </div>
         </div>
 
-        <!-- Article 3 : SEO cible "bilan compétences CPF Montauban" -->
-        <div class="article-card">
+        <!-- ============================================================
+             ARTICLE 6 : MANAGEMENT ESS
+        ============================================================ -->
+        <div class="article-card" data-category="management">
           <div class="article-hero">
-            <div class="article-tag tag-formation">Bilan de compétences · CPF</div>
-            <h2>Bilan de compétences financé par le CPF : mode d'emploi pour les actifs de Tarn-et-Garonne</h2>
+            <div class="article-tag tag-management">Management ESS · Gouvernance</div>
+            <h2>Diriger une association ou une structure ESS : les 7 compétences que les formations ne vous enseignent pas</h2>
             <div class="article-meta">
-              <span>📅 Janvier 2026</span>
-              <span>⏱ 5 min de lecture</span>
-              <span>✍️ Samir Chikhi, formateur certifié</span>
+              <span>📅 Novembre 2025</span>
+              <span>⏱ 7 min de lecture</span>
+              <span>✍️ Samir Chikhi, fondateur, dirigeant ESS</span>
             </div>
           </div>
           <div class="article-body">
             <p class="article-intro">
-              Vous ressentez un besoin de changement professionnel mais ne savez pas par où commencer ? Le bilan de compétences est l'outil le plus concret pour clarifier votre trajectoire — et il est finançable à 100% via votre CPF. Voici comment ça marche concrètement à Montauban.
+              Diriger une structure de l'ESS, ce n'est pas "faire comme dans le privé mais avec moins de moyens et plus de valeurs". C'est un exercice de haute voltige spécifique : tenir ensemble une gouvernance démocratique, une logique économique contrainte, des parties prenantes multiples et des équipes souvent fortement engagées mais peu formées au management. Voici ce qui distingue les dirigeants ESS qui réussissent.
             </p>
-            <ul class="article-points">
-              <li>Ce qu'un bilan de compétences peut (et ne peut pas) faire pour vous</li>
-              <li>Les 3 phases réglementaires des 24h : ce qui se passe vraiment</li>
-              <li>Comment mobiliser votre CPF sans avancer d'argent</li>
-              <li>Ce qui différencie un bon accompagnateur d'un prestataire CPF lambda</li>
-              <li>Exemples de reconversions réussies : retours d'expérience Occitanie</li>
-            </ul>
-            <a href="service-bilan.html" class="article-cta">Découvrir l'offre bilan →</a>
-            <a href="contact.html" class="article-cta-outline">Demander une info</a>
+
+            <div class="article-preview">
+              <ul class="article-points">
+                <li>Piloter par les missions (pas par les indicateurs) : savoir ce qui fait sens au-delà des budgets</li>
+                <li>Gérer la gouvernance comme un atout, pas comme une contrainte : le CA peut être votre meilleur levier ou votre principal frein</li>
+              </ul>
+              <button class="read-more-btn" onclick="toggleArticle(this)">Lire la suite de cet article ↓</button>
+            </div>
+
+            <div class="article-full">
+              <p class="article-section-title">Les 7 compétences spécifiques du dirigeant ESS</p>
+              <ul class="article-points">
+                <li><strong>1. Le storytelling de projet :</strong> Savoir raconter la mission de façon à mobiliser les bénévoles, convaincre les financeurs ET motiver les salariés — trois audiences, trois registres, un même fil</li>
+                <li><strong>2. La lecture financière sous pression :</strong> Lire un compte de résultat, distinguer trésorerie et résultat, anticiper les effets de calendrier des subventions — sans être comptable</li>
+                <li><strong>3. La gestion de la gouvernance élargie :</strong> Faire travailler ensemble un CA militant, une direction opérationnelle et des financeurs institutionnels qui n'ont pas les mêmes attentes ni les mêmes temporalités</li>
+                <li><strong>4. Le management par le sens :</strong> Dans l'ESS, la rémunération ne peut pas être le premier levier — apprendre à reconnaître, valoriser et engager autrement</li>
+                <li><strong>5. La gestion des crises de croissance :</strong> Passer de 2 à 10 salariés, ou de 10 à 30, nécessite de refondre l'organisation — beaucoup de structures ESS échouent à ce moment précis</li>
+                <li><strong>6. Le pilotage multi-financeurs :</strong> OPCO, DREETS, Département, Région, fondations, appels à projets européens — chaque financeur a ses règles, ses calendriers et ses indicateurs. Savoir orchestrer sans perdre la cohérence de projet</li>
+                <li><strong>7. La représentation politique :</strong> Parler aux élus, défendre son projet devant une commission, savoir dire non à une commande publique mal ficelée — la compétence politique est incontournable dans l'ESS</li>
+              </ul>
+
+              <div class="highlight-box">
+                <p>🎯 <strong>Ce que j'observe :</strong> Les dirigeants ESS qui "brûlent" après 5-7 ans ont presque toujours le même profil : très forts sur la mission, très investis humainement, mais sans système de délégation, sans tableau de bord et sans espace de ressourcement. La durabilité du dirigeant ESS est une condition de durabilité de l'organisation.</p>
+              </div>
+
+              <p class="article-section-title">Les outils de pilotage adaptés à l'ESS</p>
+              <ul class="article-points">
+                <li>Tableau de bord de mission : indicateurs d'impact social, pas seulement financiers</li>
+                <li>Plan de trésorerie mensuel (vital quand 60% des recettes arrivent en fin d'année)</li>
+                <li>Matrice des risques financeurs : quelle dépendance à quel financeur, quel scénario de remplacement</li>
+                <li>Bilan social annuel simplifié : turnover, absentéisme, formation, satisfaction équipes</li>
+              </ul>
+            </div>
+
+            <div class="article-actions">
+              <a href="contact.html" class="article-cta">Accompagnement dirigeant ESS →</a>
+              <a href="service-management.html" class="article-cta-outline">Nos formations management</a>
+            </div>
           </div>
         </div>
 
-      </div>
+        <!-- ============================================================
+             ARTICLE 7 : INGÉNIERIE DE FORMATION / FONDS EUROPÉENS
+        ============================================================ -->
+        <div class="article-card" data-category="formation">
+          <div class="article-hero">
+            <div class="article-tag tag-formation">Ingénierie de formation · Fonds européens</div>
+            <h2>Ingénierie de formation et fonds européens : comment financer votre projet de formation sans sacrifier la pédagogie</h2>
+            <div class="article-meta">
+              <span>📅 Octobre 2025</span>
+              <span>⏱ 8 min de lecture</span>
+              <span>✍️ Samir Chikhi, ingénieur pédagogique</span>
+            </div>
+          </div>
+          <div class="article-body">
+            <p class="article-intro">
+              Le FSE+ (Fonds Social Européen Plus) finance en France des centaines de millions d'euros de formations chaque année via les Régions, la DREETS et les OPCO. Or, la plupart des organismes de formation laissent passer ces financements faute de savoir monter un dossier conforme. Et ceux qui y parviennent finissent parfois par créer des formations pour les critères d'éligibilité plutôt que pour les besoins réels.
+            </p>
 
-      <!-- SIDEBAR -->
+            <div class="article-preview">
+              <ul class="article-points">
+                <li>Le FSE+ 2021-2027 représente 5,4 milliards d'euros pour la France — avec une forte orientation vers l'insertion, l'égalité et les compétences numériques</li>
+                <li>La clé : aligner votre projet pédagogique avec les priorités programmatiques AVANT de rédiger le dossier</li>
+              </ul>
+              <button class="read-more-btn" onclick="toggleArticle(this)">Lire la suite de cet article ↓</button>
+            </div>
+
+            <div class="article-full">
+              <p class="article-section-title">L'ingénierie de formation : un processus en 5 étapes</p>
+              <ul class="article-points">
+                <li><strong>Étape 1 — Analyse des besoins :</strong> Identifier les écarts entre compétences actuelles et compétences cibles — par entretiens, observations terrain, analyse de poste</li>
+                <li><strong>Étape 2 — Définition des objectifs pédagogiques :</strong> Formuler en termes de capacités observables ("à l'issue de la formation, le stagiaire sera capable de...") — pas en termes de contenus</li>
+                <li><strong>Étape 3 — Conception du dispositif :</strong> Choix de la modalité (présentiel, distanciel, hybride, AFEST), séquençage, ressources, évaluation des acquis à chaque étape</li>
+                <li><strong>Étape 4 — Déploiement :</strong> Planification, logistique, communication auprès des publics, gestion administrative (conventions, feuilles de présence, émargements)</li>
+                <li><strong>Étape 5 — Évaluation et amélioration :</strong> À chaud (satisfaction immédiate), à froid (transfert en situation de travail), impact sur les indicateurs métier</li>
+              </ul>
+
+              <p class="article-section-title">Les fonds mobilisables selon votre type de structure</p>
+
+              <div class="two-col-list">
+                <li>FSE+ via Région Occitanie</li>
+                <li>FEDER pour les investissements</li>
+                <li>LEADER pour les zones rurales</li>
+                <li>Plan d'Investissement dans les Compétences</li>
+                <li>Cofinancements OPCO (par branche)</li>
+                <li>Fonds propres Région/Département</li>
+                <li>ANCT pour les quartiers prioritaires</li>
+                <li>Appels à projets DREETS</li>
+              </div>
+
+              <div class="highlight-box">
+                <p>⚠️ <strong>Le piège du "reverse engineering" :</strong> Construire la formation en partant des critères d'éligibilité plutôt que des besoins réels produit des formations administrativement correctes mais pédagogiquement creuses — et qui ne passent pas l'évaluation Qualiopi. La règle : construire d'abord une réponse pédagogique solide, puis trouver le financement adapté.</p>
+              </div>
+
+              <p class="article-section-title">Comment monter un dossier FSE+ qui tient la route</p>
+              <ul class="article-points">
+                <li>Lire le programme opérationnel régional et identifier les axes prioritaires auxquels vous répondez réellement</li>
+                <li>Construire votre cadre logique : activités → livrables → résultats → impact — chaque maillon doit être mesurable</li>
+                <li>Anticiper les exigences de dépigmentation (séparation stricte des dépenses cofinancées FSE des autres)</li>
+                <li>Prévoir dès le début les modalités de suivi des bénéficiaires (fichier de suivi, enquêtes de devenir à 6 mois)</li>
+                <li>Budgéter les coûts de gestion administrative du FSE (entre 15 et 25% des coûts réels) — ne pas les sous-estimer</li>
+              </ul>
+            </div>
+
+            <div class="article-actions">
+              <a href="contact.html" class="article-cta">Monter mon dossier de financement →</a>
+              <a href="service-ingenierie.html" class="article-cta-outline">Notre offre ingénierie</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /articles -->
+
+      <!-- ============================================================
+           SIDEBAR
+      ============================================================ -->
       <div class="blog-sidebar">
 
         <div class="sidebar-card">
           <h3>📋 Check-list Qualiopi gratuite</h3>
-          <p style="font-size:0.82rem;color:var(--gray-text);margin-bottom:1rem;">Les 10 points contrôlés en priorité par les auditeurs :</p>
+          <p style="font-size:0.82rem;color:var(--gray-text);margin-bottom:1rem;">Les 10 points prioritaires des auditeurs :</p>
           <ul class="checklist">
             <li>Programme de formation daté et signé</li>
             <li>Positionnement pédagogique documenté</li>
             <li>Évaluation des acquis à chaque étape</li>
-            <li>Recueil des besoins avant entrée en formation</li>
+            <li>Recueil des besoins avant entrée</li>
             <li>Suivi de l'exécution pédagogique</li>
             <li>Système de réclamations et appels</li>
             <li>Accessibilité handicap (référent désigné)</li>
@@ -257,49 +688,97 @@
             <li>Enquête satisfaction stagiaires</li>
             <li>Indicateurs de résultats actualisés</li>
           </ul>
-          <a href="contact.html" style="display:block;margin-top:1.2rem;background:var(--terracotta);color:white;padding:0.65rem;border-radius:5px;text-align:center;text-decoration:none;font-weight:700;font-size:0.85rem;">Télécharger la check-list complète →</a>
+          <a href="contact.html" style="display:block;margin-top:1.2rem;background:var(--terracotta);color:white;padding:0.65rem;border-radius:5px;text-align:center;text-decoration:none;font-weight:700;font-size:0.85rem;">Recevoir la check-list complète →</a>
         </div>
 
         <div class="sidebar-cta-card">
-          <h3>Où en êtes-vous avec Qualiopi ?</h3>
-          <p>En 15 minutes, je peux évaluer votre niveau de préparation et vous dire exactement ce qu'il vous reste à faire.</p>
+          <h3>Où en êtes-vous ?</h3>
+          <p>En 30 minutes, je peux évaluer votre situation et vous dire exactement par quoi commencer — sans engagement.</p>
           <a href="contact.html" class="sidebar-btn">Audit diagnostic gratuit →</a>
         </div>
 
         <div class="sidebar-card">
-          <h3>Thèmes abordés</h3>
+          <h3>Thèmes</h3>
           <div class="themes-list">
-            <a href="#" class="theme-item">Certification Qualiopi <span class="theme-count">3</span></a>
-            <a href="#" class="theme-item">Ingénierie de formation <span class="theme-count">2</span></a>
-            <a href="#" class="theme-item">Management ESS <span class="theme-count">2</span></a>
-            <a href="#" class="theme-item">Bilan de compétences <span class="theme-count">1</span></a>
-            <a href="#" class="theme-item">Fonds européens <span class="theme-count">1</span></a>
-            <a href="#" class="theme-item">Évaluation ESSMS <span class="theme-count">1</span></a>
+            <a href="#" class="theme-item" onclick="filterFromSidebar('qualiopi')">Certification Qualiopi <span class="theme-count">1</span></a>
+            <a href="#" class="theme-item" onclick="filterFromSidebar('essms')">Évaluation ESSMS <span class="theme-count">1</span></a>
+            <a href="#" class="theme-item" onclick="filterFromSidebar('audit')">Audit territorial <span class="theme-count">1</span></a>
+            <a href="#" class="theme-item" onclick="filterFromSidebar('formation')">Formation / FTV <span class="theme-count">2</span></a>
+            <a href="#" class="theme-item" onclick="filterFromSidebar('territorial')">Collectivités <span class="theme-count">1</span></a>
+            <a href="#" class="theme-item" onclick="filterFromSidebar('management')">Management ESS <span class="theme-count">1</span></a>
           </div>
         </div>
 
         <div class="sidebar-card" style="background:var(--cream);">
           <h3>À propos de l'auteur</h3>
           <p style="font-size:0.84rem;color:var(--gray-text);line-height:1.6;margin-bottom:0.8rem;">
-            <strong style="color:var(--navy);">Samir Chikhi</strong> — Fondateur de CCFA, auditeur certificateur Qualiopi (2022-2024), ex-DGS de collectivité, 27 ans d'expérience terrain en ESS et développement territorial.
+            <strong style="color:var(--navy);">Samir Chikhi</strong> — Fondateur de CCFA SASU, auditeur Qualiopi, ex-DGS de collectivité, 27 ans d'expérience en ESS, développement territorial et ingénierie de formation en Occitanie.
           </p>
           <a href="a-propos.html" style="color:var(--terracotta);font-size:0.84rem;font-weight:600;text-decoration:none;">Voir le parcours complet →</a>
         </div>
 
-      </div>
-    </div>
-  </div>
+        <div class="sidebar-card">
+          <h3>📞 Besoin d'un conseil rapide ?</h3>
+          <p style="font-size:0.84rem;color:var(--gray-text);line-height:1.6;margin-bottom:1rem;">Appelez directement ou envoyez un message — réponse sous 24h ouvrées.</p>
+          <a href="tel:+33XXXXXXXXX" style="display:flex;align-items:center;gap:0.5rem;color:var(--navy);font-weight:700;font-size:0.88rem;text-decoration:none;margin-bottom:0.6rem;">📞 Nous appeler</a>
+          <a href="contact.html" style="display:flex;align-items:center;gap:0.5rem;color:var(--terracotta);font-weight:700;font-size:0.88rem;text-decoration:none;">✉️ Nous écrire</a>
+        </div>
+
+      </div><!-- /sidebar -->
+    </div><!-- /blog-grid -->
+  </div><!-- /container -->
 </section>
 
 <footer>
   <div class="container">
     <div class="footer-simple">
       <div class="footer-logo">CC<span>FA</span></div>
-      <p>© 2026 CCFA — SASU · SIRET 100 178 730 00014 · <a href="mentions-legales.html" style="color:rgba(255,255,255,0.5);">Mentions légales</a></p>
-      <a href="https://www.linkedin.com/in/samirchikhi/" target="_blank" style="color:rgba(255,255,255,0.5);">LinkedIn</a>
+      <p>© 2026 CCFA SASU · SIRET 100 178 730 00014 · 12 rue du Génie, 82000 Montauban · <a href="mentions-legales.html" style="color:rgba(255,255,255,0.5);">Mentions légales</a></p>
+      <a href="https://www.linkedin.com/in/samirchikhi/" target="_blank" style="color:rgba(255,255,255,0.5);font-size:0.82rem;">LinkedIn</a>
     </div>
   </div>
 </footer>
+
+<script>
+function toggleArticle(btn) {
+  const card = btn.closest('.article-body');
+  const preview = card.querySelector('.article-preview');
+  const full = card.querySelector('.article-full');
+  const isOpen = full.style.display === 'block';
+  
+  if (isOpen) {
+    full.style.display = 'none';
+    btn.textContent = 'Lire la suite de cet article ↓';
+  } else {
+    full.style.display = 'block';
+    btn.textContent = 'Réduire cet article ↑';
+    // scroll to article
+    card.closest('.article-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function filterArticles(category, btn) {
+  // Update button states
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  
+  const cards = document.querySelectorAll('.article-card');
+  cards.forEach(card => {
+    if (category === 'all' || card.dataset.category === category) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+function filterFromSidebar(category) {
+  event.preventDefault();
+  const btn = document.querySelector(`.filter-btn[onclick*="${category}"]`);
+  filterArticles(category, btn);
+  document.querySelector('.filter-bar').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
 
 </body>
 </html>
