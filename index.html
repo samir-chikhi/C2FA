@@ -1,521 +1,535 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CCFA — Expert Qualiopi & Conseil Formation | Montauban, Occitanie</title>
-  <meta name="description" content="Samir Chikhi, expert en certification Qualiopi, ingénierie de formation et conseil territorial. 27 ans d'expérience. 100% de réussite Qualiopi. Montauban, Occitanie.">
-  <meta name="keywords" content="Qualiopi, certification Qualiopi Occitanie, audit Qualiopi Montauban, ingénierie formation, conseil ESS, ESSMS, bilan de compétences, CCFA">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy: #1a2b4a;
-      --navy-light: #243759;
-      --terracotta: #C0572A;
-      --terracotta-light: #d4693c;
-      --gold: #b8963e;
-      --cream: #f8f5f0;
-      --gray-light: #f2f0ec;
-      --gray-mid: #e0ddd7;
-      --gray-text: #6b6560;
-      --white: #ffffff;
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body: 'DM Sans', system-ui, sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-body);
-      color: var(--navy);
-      background: var(--white);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCFA — Conseil Formation Audit | Montauban, Occitanie</title>
+<meta name="description" content="Samir Chikhi, expert en développement territorial, ingénierie de formation, conseil ESS et audit. 27 ans d'expérience. Montauban, Occitanie et France entière.">
+<meta name="keywords" content="conseil formation audit Occitanie, ingénierie formation, développement territorial, management de transition ESS, Qualiopi, ESSMS, bilan de compétences, CCFA Montauban">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1a2b4a;
+  --navy-light: #243759;
+  --terracotta: #C0572A;
+  --terracotta-light: #d4693c;
+  --gold: #b8963e;
+  --cream: #f8f5f0;
+  --gray-light: #f2f0ec;
+  --gray-mid: #e0ddd7;
+  --gray-text: #6b6560;
+  --white: #ffffff;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
 
-    /* ─── NAV ─── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(26,43,74,0.97);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 2rem; height: 68px;
-    }
-    .logo {
-      font-family: var(--font-display);
-      font-size: 1.3rem; font-weight: 700;
-      color: var(--white); text-decoration: none;
-      letter-spacing: -0.01em;
-    }
-    .logo span { color: var(--terracotta); }
-    .nav-links {
-      display: flex; align-items: center; gap: 0.2rem;
-      list-style: none;
-    }
-    .nav-links a {
-      color: rgba(255,255,255,0.8); text-decoration: none;
-      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
-      text-transform: uppercase; padding: 0.5rem 0.9rem;
-      border-radius: 4px; transition: all 0.2s;
-    }
-    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
-    .nav-cta {
-      background: var(--terracotta) !important;
-      color: var(--white) !important;
-      padding: 0.55rem 1.2rem !important;
-      border-radius: 4px !important;
-    }
-    .nav-cta:hover { background: var(--terracotta-light) !important; }
-    .nav-dropdown { position: relative; }
-    .nav-dropdown-menu {
-      display: none; position: absolute; top: 100%; left: 0;
-      background: var(--navy-light); border-radius: 6px;
-      padding: 0.5rem 0; min-width: 240px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-    }
-    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
-    .nav-dropdown-menu a {
-      display: block; padding: 0.6rem 1.2rem !important;
-      font-size: 0.82rem !important; border-radius: 0 !important;
-      border-left: 3px solid transparent;
-    }
-    .nav-dropdown-menu a:hover { border-left-color: var(--terracotta) !important; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-    .hamburger span { width: 22px; height: 2px; background: white; border-radius: 2px; }
+  /* Couleurs professionnelles pour les 6 services — palette sobre et distincte */
+  --color-ingenierie:  #3B5E8C; /* bleu ardoise */
+  --color-audit:       #5C6E5B; /* vert sauge foncé */
+  --color-essms:       #7A5C4A; /* brun cuir */
+  --color-bilan:       #4A6070; /* bleu-gris acier */
+  --color-management:  #6B5344; /* marron tabac */
+  --color-territorial: #4E5C6E; /* gris-bleu graphite */
+}
 
-    /* ─── HERO ─── */
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, var(--navy) 0%, #0f1d35 50%, #1a2b4a 100%);
-      display: flex; align-items: center; position: relative; overflow: hidden;
-      padding-top: 68px;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(192,87,42,0.12) 0%, transparent 60%);
-    }
-    .hero::after {
-      content: '';
-      position: absolute; top: -50%; right: -10%;
-      width: 600px; height: 600px;
-      border: 1px solid rgba(255,255,255,0.04);
-      border-radius: 50%;
-    }
-    .hero-inner {
-      max-width: 1200px; margin: 0 auto; padding: 5rem 2rem;
-      display: grid; grid-template-columns: 1fr 420px; gap: 5rem; align-items: center;
-      position: relative; z-index: 1;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(192,87,42,0.15); border: 1px solid rgba(192,87,42,0.3);
-      color: #e8855a; font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 0.4rem 0.9rem; border-radius: 20px; margin-bottom: 1.5rem;
-    }
-    .hero-badge::before { content: '●'; font-size: 0.6rem; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-      font-weight: 700; line-height: 1.12;
-      color: var(--white); margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
-    }
-    .hero h1 em { color: var(--terracotta); font-style: normal; }
-    .hero-sub {
-      font-size: 1.1rem; color: rgba(255,255,255,0.7);
-      line-height: 1.7; margin-bottom: 2.5rem; max-width: 520px;
-    }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--terracotta); color: var(--white);
-      padding: 0.9rem 2rem; border-radius: 5px;
-      font-weight: 600; font-size: 0.95rem; text-decoration: none;
-      transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
-      box-shadow: 0 4px 20px rgba(192,87,42,0.35);
-    }
-    .btn-primary:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(192,87,42,0.4); }
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,0.3); color: var(--white);
-      padding: 0.9rem 2rem; border-radius: 5px;
-      font-weight: 500; font-size: 0.95rem; text-decoration: none;
-      transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
-    }
-    .btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
-    .hero-trust {
-      margin-top: 3.5rem; padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      display: flex; gap: 2.5rem; flex-wrap: wrap;
-    }
-    .trust-item { text-align: center; }
-    .trust-num {
-      font-family: var(--font-display);
-      font-size: 2.2rem; font-weight: 700; color: var(--white);
-      line-height: 1;
-    }
-    .trust-num span { color: var(--terracotta); }
-    .trust-label { font-size: 0.78rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.3rem; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--navy);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
 
-    /* Hero card */
-    .hero-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 12px; padding: 2.5rem;
-      backdrop-filter: blur(10px);
-    }
-    .hero-card-title {
-      font-family: var(--font-display);
-      font-size: 1.1rem; color: var(--white); margin-bottom: 1.5rem;
-      font-weight: 600;
-    }
-    .hero-card-title span { color: var(--terracotta); }
-    .cert-badge {
-      background: linear-gradient(135deg, var(--gold), #8a6d2a);
-      border-radius: 8px; padding: 1.2rem; text-align: center; margin-bottom: 1.5rem;
-    }
-    .cert-badge .cert-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.8); }
-    .cert-badge .cert-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: white; }
-    .cert-badge .cert-sub { font-size: 0.78rem; color: rgba(255,255,255,0.85); margin-top: 0.2rem; }
-    .hero-services-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
-    .hero-services-list li {
-      display: flex; align-items: center; gap: 0.7rem;
-      color: rgba(255,255,255,0.8); font-size: 0.88rem;
-    }
-    .hero-services-list li::before {
-      content: '→'; color: var(--terracotta); font-weight: 700; flex-shrink: 0;
-    }
-    .hero-card-cta {
-      margin-top: 1.5rem; width: 100%; display: block; text-align: center;
-      background: var(--terracotta); color: white; padding: 0.9rem;
-      border-radius: 5px; text-decoration: none; font-weight: 600; font-size: 0.9rem;
-      transition: background 0.2s;
-    }
-    .hero-card-cta:hover { background: var(--terracotta-light); }
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(26,43,74,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem; height: 68px;
+}
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem; font-weight: 700;
+  color: var(--white); text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.logo span { color: var(--terracotta); }
+.nav-links {
+  display: flex; align-items: center; gap: 0.2rem;
+  list-style: none;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.8); text-decoration: none;
+  font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
+  text-transform: uppercase; padding: 0.5rem 0.9rem;
+  border-radius: 4px; transition: all 0.2s;
+}
+.nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+.nav-cta {
+  background: var(--terracotta) !important;
+  color: var(--white) !important;
+  padding: 0.55rem 1.2rem !important;
+  border-radius: 4px !important;
+}
+.nav-cta:hover { background: var(--terracotta-light) !important; }
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  display: none; position: absolute; top: 100%; left: 0;
+  background: var(--navy-light); border-radius: 6px;
+  padding: 0.5rem 0; min-width: 240px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu a {
+  display: block; padding: 0.6rem 1.2rem !important;
+  font-size: 0.82rem !important; border-radius: 0 !important;
+  border-left: 3px solid transparent;
+}
+.nav-dropdown-menu a:hover { border-left-color: var(--terracotta) !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 22px; height: 2px; background: white; border-radius: 2px; }
 
-    /* ─── SECTIONS COMMUNES ─── */
-    section { padding: 5rem 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .section-eyebrow {
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.8rem;
-    }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 700; line-height: 1.2;
-      letter-spacing: -0.02em; color: var(--navy);
-    }
-    .section-sub { font-size: 1.05rem; color: var(--gray-text); margin-top: 0.8rem; max-width: 560px; }
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--navy) 0%, #0f1d35 50%, #1a2b4a 100%);
+  display: flex; align-items: center; position: relative; overflow: hidden;
+  padding-top: 68px;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(192,87,42,0.10) 0%, transparent 60%);
+}
+.hero::after {
+  content: '';
+  position: absolute; top: -50%; right: -10%;
+  width: 600px; height: 600px;
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; padding: 5rem 2rem;
+  display: grid; grid-template-columns: 1fr 400px; gap: 5rem; align-items: center;
+  position: relative; z-index: 1;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(192,87,42,0.15); border: 1px solid rgba(192,87,42,0.3);
+  color: #e8855a; font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.4rem 0.9rem; border-radius: 20px; margin-bottom: 1.5rem;
+}
+.hero-badge::before { content: '●'; font-size: 0.6rem; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 700; line-height: 1.12;
+  color: var(--white); margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+.hero h1 em { color: var(--terracotta); font-style: normal; }
+.hero-sub {
+  font-size: 1.1rem; color: rgba(255,255,255,0.7);
+  line-height: 1.7; margin-bottom: 2.5rem; max-width: 520px;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--terracotta); color: var(--white);
+  padding: 0.9rem 2rem; border-radius: 5px;
+  font-weight: 600; font-size: 0.95rem; text-decoration: none;
+  transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(192,87,42,0.35);
+}
+.btn-primary:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(192,87,42,0.4); }
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.3); color: var(--white);
+  padding: 0.9rem 2rem; border-radius: 5px;
+  font-weight: 500; font-size: 0.95rem; text-decoration: none;
+  transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+.hero-trust {
+  margin-top: 3.5rem; padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; gap: 2.5rem; flex-wrap: wrap;
+}
+.trust-item { text-align: center; }
+.trust-num {
+  font-family: var(--font-display);
+  font-size: 2.2rem; font-weight: 700; color: var(--white);
+  line-height: 1;
+}
+.trust-num span { color: var(--terracotta); }
+.trust-label { font-size: 0.78rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.3rem; }
 
-    /* ─── URGENCE QUALIOPI ─── */
-    .urgence {
-      background: var(--navy);
-      padding: 2.5rem 0;
-    }
-    .urgence-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 2rem; flex-wrap: wrap;
-    }
-    .urgence-text { color: white; }
-    .urgence-text strong { color: var(--terracotta); }
-    .urgence-text p { font-size: 0.95rem; opacity: 0.8; margin-top: 0.3rem; }
-    .urgence-btn {
-      background: white; color: var(--navy); padding: 0.8rem 1.8rem;
-      border-radius: 4px; font-weight: 700; text-decoration: none;
-      font-size: 0.9rem; white-space: nowrap; transition: all 0.2s;
-    }
-    .urgence-btn:hover { background: var(--cream); transform: translateY(-1px); }
+/* Hero card — expertise générale (remplace la carte Qualiopi centrée) */
+.hero-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px; padding: 2.5rem;
+  backdrop-filter: blur(10px);
+}
+.hero-card-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem; color: var(--white); margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+.hero-card-title span { color: var(--terracotta); }
+.expertise-domains {
+  display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 1.5rem;
+}
+.expertise-domain {
+  display: flex; align-items: center; gap: 0.9rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 7px;
+  transition: background 0.2s;
+}
+.expertise-domain:hover { background: rgba(255,255,255,0.09); }
+.domain-icon {
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.domain-text {}
+.domain-name {
+  font-size: 0.88rem; font-weight: 600; color: var(--white);
+  line-height: 1.2;
+}
+.domain-sub {
+  font-size: 0.76rem; color: rgba(255,255,255,0.5);
+  margin-top: 0.15rem;
+}
+.hero-card-cta {
+  margin-top: 0.5rem; width: 100%; display: block; text-align: center;
+  background: var(--terracotta); color: white; padding: 0.9rem;
+  border-radius: 5px; text-decoration: none; font-weight: 600; font-size: 0.9rem;
+  transition: background 0.2s;
+}
+.hero-card-cta:hover { background: var(--terracotta-light); }
 
-    /* ─── SERVICES ─── */
-    .services { background: var(--cream); }
-    .services-header {
-      display: flex; justify-content: space-between; align-items: flex-end;
-      margin-bottom: 3rem; gap: 2rem; flex-wrap: wrap;
-    }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-    }
-    .service-card {
-      background: var(--white); border-radius: 10px;
-      border: 1px solid var(--gray-mid);
-      padding: 2rem; transition: all 0.25s;
-      position: relative; overflow: hidden;
-    }
-    .service-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0;
-      height: 3px; background: var(--gray-mid); transition: background 0.25s;
-    }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,43,74,0.1); }
-    .service-card:hover::before { background: var(--terracotta); }
-    .service-card.featured {
-      border-color: var(--terracotta); grid-column: span 1;
-    }
-    .service-card.featured::before { background: var(--terracotta); }
-    .service-tag {
-      display: inline-block; font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      background: rgba(192,87,42,0.1); color: var(--terracotta);
-      padding: 0.25rem 0.6rem; border-radius: 3px; margin-bottom: 1rem;
-    }
-    .service-icon { font-size: 2rem; margin-bottom: 1rem; }
-    .service-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.2rem; font-weight: 600; color: var(--navy);
-      margin-bottom: 0.7rem;
-    }
-    .service-card p { font-size: 0.88rem; color: var(--gray-text); line-height: 1.6; }
-    .service-card-link {
-      display: inline-flex; align-items: center; gap: 0.3rem;
-      color: var(--terracotta); font-size: 0.85rem; font-weight: 600;
-      text-decoration: none; margin-top: 1.2rem;
-    }
-    .service-card-link:hover { gap: 0.6rem; }
+/* ─── SECTIONS COMMUNES ─── */
+section { padding: 5rem 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.section-eyebrow {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.8rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700; line-height: 1.2;
+  letter-spacing: -0.02em; color: var(--navy);
+}
+.section-sub { font-size: 1.05rem; color: var(--gray-text); margin-top: 0.8rem; max-width: 560px; }
 
-    /* ─── PREUVE SOCIALE ─── */
-    .proof { background: var(--white); }
-    .proof-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .proof-card {
-      background: var(--cream); border-radius: 10px;
-      padding: 2rem; border-left: 4px solid var(--terracotta);
-    }
-    .proof-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.8rem; }
-    .proof-text {
-      font-size: 0.95rem; line-height: 1.7; color: var(--navy);
-      font-style: italic; margin-bottom: 1.2rem;
-    }
-    .proof-author { display: flex; flex-direction: column; }
-    .proof-name { font-weight: 700; font-size: 0.9rem; color: var(--navy); }
-    .proof-role { font-size: 0.8rem; color: var(--gray-text); }
-    .clients-strip {
-      margin-top: 3.5rem; padding-top: 2.5rem;
-      border-top: 1px solid var(--gray-mid);
-    }
-    .clients-strip p { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); text-align: center; margin-bottom: 1.5rem; }
-    .clients-logos {
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: 1rem 2.5rem; align-items: center;
-    }
-    .client-pill {
-      background: var(--gray-light); border: 1px solid var(--gray-mid);
-      border-radius: 20px; padding: 0.4rem 1rem;
-      font-size: 0.82rem; font-weight: 600; color: var(--navy);
-    }
+/* ─── SERVICES ─── */
+.services { background: var(--cream); }
+.services-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 3rem; gap: 2rem; flex-wrap: wrap;
+}
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.service-card {
+  background: var(--white); border-radius: 10px;
+  border: 1px solid var(--gray-mid);
+  padding: 2rem; transition: all 0.25s;
+  position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; transition: background 0.25s;
+}
+/* Couleur de barre par service */
+.service-card.s-ingenierie::before  { background: var(--color-ingenierie); }
+.service-card.s-audit::before       { background: var(--color-audit); }
+.service-card.s-essms::before       { background: var(--color-essms); }
+.service-card.s-bilan::before       { background: var(--color-bilan); }
+.service-card.s-management::before  { background: var(--color-management); }
+.service-card.s-territorial::before { background: var(--color-territorial); }
 
-    /* ─── PARCOURS / LÉGITIMITÉ ─── */
-    .legitimite { background: var(--navy); }
-    .legit-inner {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
-    }
-    .legit-left .section-title { color: white; }
-    .legit-left .section-eyebrow { color: #e8855a; }
-    .legit-left .section-sub { color: rgba(255,255,255,0.6); }
-    .legit-highlight-box {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 10px; padding: 1.8rem; margin-top: 2rem;
-    }
-    .legit-highlight-box h4 { color: var(--terracotta); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
-    .credentials { display: flex; flex-direction: column; gap: 0.6rem; }
-    .credential-item {
-      display: flex; align-items: center; gap: 0.7rem;
-      color: rgba(255,255,255,0.85); font-size: 0.88rem;
-    }
-    .credential-item::before { content: '✓'; color: var(--terracotta); font-weight: 700; flex-shrink: 0; }
-    .timeline { display: flex; flex-direction: column; gap: 0; }
-    .timeline-item {
-      display: grid; grid-template-columns: 80px 1fr;
-      gap: 1.5rem; padding: 1.5rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .timeline-item:last-child { border-bottom: none; }
-    .timeline-date { font-size: 0.8rem; color: var(--terracotta); font-weight: 600; padding-top: 0.2rem; line-height: 1.4; }
-    .timeline-content h4 { color: white; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; }
-    .timeline-content p { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,43,74,0.1); }
 
-    /* ─── TARIFS RAPIDES ─── */
-    .tarifs { background: var(--gray-light); }
-    .tarifs-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem; margin-top: 3rem;
-    }
-    .tarif-card {
-      background: var(--white); border-radius: 10px;
-      border: 1px solid var(--gray-mid);
-      padding: 2rem; text-align: center; transition: all 0.25s;
-    }
-    .tarif-card.popular {
-      border-color: var(--terracotta); position: relative;
-    }
-    .popular-badge {
-      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-      background: var(--terracotta); color: white;
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
-      text-transform: uppercase; padding: 0.25rem 0.8rem; border-radius: 10px;
-    }
-    .tarif-card h3 { font-family: var(--font-display); font-size: 1.15rem; color: var(--navy); margin-bottom: 0.5rem; }
-    .tarif-price {
-      font-family: var(--font-display);
-      font-size: 2.4rem; font-weight: 700; color: var(--navy);
-      margin: 1rem 0 0.3rem;
-    }
-    .tarif-price span { font-size: 1rem; font-weight: 400; color: var(--gray-text); }
-    .tarif-desc { font-size: 0.82rem; color: var(--gray-text); margin-bottom: 1.5rem; }
-    .tarif-features { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
-    .tarif-features li { font-size: 0.84rem; color: var(--navy); display: flex; gap: 0.5rem; }
-    .tarif-features li::before { content: '✓'; color: var(--terracotta); font-weight: 700; flex-shrink: 0; }
-    .btn-tarif {
-      display: block; padding: 0.75rem; border-radius: 5px;
-      text-decoration: none; font-weight: 600; font-size: 0.88rem;
-      transition: all 0.2s;
-    }
-    .btn-tarif-outline { border: 1px solid var(--navy); color: var(--navy); }
-    .btn-tarif-outline:hover { background: var(--navy); color: white; }
-    .btn-tarif-solid { background: var(--terracotta); color: white; }
-    .btn-tarif-solid:hover { background: var(--terracotta-light); }
+.service-tag {
+  display: inline-block; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.25rem 0.6rem; border-radius: 3px; margin-bottom: 1rem;
+}
+/* Tags colorés par service */
+.service-card.s-ingenierie  .service-tag { background: rgba(59,94,140,0.10);  color: var(--color-ingenierie); }
+.service-card.s-audit       .service-tag { background: rgba(92,110,91,0.10);  color: var(--color-audit); }
+.service-card.s-essms       .service-tag { background: rgba(122,92,74,0.10);  color: var(--color-essms); }
+.service-card.s-bilan       .service-tag { background: rgba(74,96,112,0.10);  color: var(--color-bilan); }
+.service-card.s-management  .service-tag { background: rgba(107,83,68,0.10);  color: var(--color-management); }
+.service-card.s-territorial .service-tag { background: rgba(78,92,110,0.10);  color: var(--color-territorial); }
 
-    /* ─── CTA FINAL ─── */
-    .cta-final {
-      background: linear-gradient(135deg, var(--terracotta) 0%, #9e3e1c 100%);
-      padding: 5rem 0;
-    }
-    .cta-inner { max-width: 700px; margin: 0 auto; padding: 0 2rem; text-align: center; }
-    .cta-inner h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      color: white; margin-bottom: 1rem; font-weight: 700;
-    }
-    .cta-inner p { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 2.5rem; }
-    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-cta-white {
-      background: white; color: var(--terracotta);
-      padding: 1rem 2.2rem; border-radius: 5px;
-      font-weight: 700; font-size: 1rem; text-decoration: none;
-      transition: all 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-    .btn-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
-    .btn-cta-trans {
-      border: 2px solid rgba(255,255,255,0.5); color: white;
-      padding: 1rem 2.2rem; border-radius: 5px;
-      font-weight: 600; font-size: 1rem; text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn-cta-trans:hover { border-color: white; background: rgba(255,255,255,0.1); }
+.service-icon { font-size: 2rem; margin-bottom: 1rem; }
+.service-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem; font-weight: 600; color: var(--navy);
+  margin-bottom: 0.7rem;
+}
+.service-card p { font-size: 0.88rem; color: var(--gray-text); line-height: 1.6; }
+.service-card-link {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-size: 0.85rem; font-weight: 600;
+  text-decoration: none; margin-top: 1.2rem; transition: gap 0.2s;
+}
+.service-card.s-ingenierie  .service-card-link { color: var(--color-ingenierie); }
+.service-card.s-audit       .service-card-link { color: var(--color-audit); }
+.service-card.s-essms       .service-card-link { color: var(--color-essms); }
+.service-card.s-bilan       .service-card-link { color: var(--color-bilan); }
+.service-card.s-management  .service-card-link { color: var(--color-management); }
+.service-card.s-territorial .service-card-link { color: var(--color-territorial); }
+.service-card-link:hover { gap: 0.6rem; }
 
-    /* ─── FOOTER ─── */
-    footer {
-      background: #0f1824;
-      padding: 4rem 0 2rem;
-    }
-    .footer-grid {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 3rem; margin-bottom: 3rem;
-    }
-    .footer-brand .logo-foot {
-      font-family: var(--font-display);
-      font-size: 1.3rem; font-weight: 700; color: white;
-    }
-    .footer-brand .logo-foot span { color: var(--terracotta); }
-    .footer-brand p {
-      font-size: 0.85rem; color: rgba(255,255,255,0.5);
-      margin-top: 1rem; line-height: 1.7; max-width: 260px;
-    }
-    .footer-brand .contact-items { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
-    .footer-brand .contact-item {
-      display: flex; align-items: center; gap: 0.5rem;
-      color: rgba(255,255,255,0.6); font-size: 0.85rem; text-decoration: none;
-    }
-    .footer-brand .contact-item:hover { color: white; }
-    footer h4 {
-      color: white; font-size: 0.78rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.1em;
-      margin-bottom: 1.2rem;
-    }
-    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-    footer ul a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-    footer ul a:hover { color: rgba(255,255,255,0.9); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 1.5rem;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem;
-    }
-    .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
-    .qualiopi-foot {
-      display: flex; align-items: center; gap: 0.5rem;
-      background: rgba(184,150,62,0.1); border: 1px solid rgba(184,150,62,0.3);
-      border-radius: 4px; padding: 0.4rem 0.8rem;
-      font-size: 0.75rem; font-weight: 700; color: var(--gold);
-      text-transform: uppercase; letter-spacing: 0.06em;
-    }
+/* ─── PREUVE SOCIALE ─── */
+.proof { background: var(--white); }
+.proof-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  margin-top: 3rem;
+}
+.proof-card {
+  background: var(--cream); border-radius: 10px;
+  padding: 2rem; border-left: 4px solid var(--terracotta);
+}
+.proof-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.8rem; }
+.proof-text {
+  font-size: 0.95rem; line-height: 1.7; color: var(--navy);
+  font-style: italic; margin-bottom: 1.2rem;
+}
+.proof-author { display: flex; flex-direction: column; }
+.proof-name { font-weight: 700; font-size: 0.9rem; color: var(--navy); }
+.proof-role { font-size: 0.8rem; color: var(--gray-text); }
+.clients-strip {
+  margin-top: 3.5rem; padding-top: 2.5rem;
+  border-top: 1px solid var(--gray-mid);
+}
+.clients-strip p { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); text-align: center; margin-bottom: 1.5rem; }
+.clients-logos {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 1rem 2.5rem; align-items: center;
+}
+.client-pill {
+  background: var(--gray-light); border: 1px solid var(--gray-mid);
+  border-radius: 20px; padding: 0.4rem 1rem;
+  font-size: 0.82rem; font-weight: 600; color: var(--navy);
+}
 
-    /* ─── FLOATING BAR ─── */
-    .float-bar {
-      position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
-      background: var(--navy); border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 50px; padding: 0.7rem 1.2rem;
-      display: flex; align-items: center; gap: 1rem;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.3); z-index: 90;
-      white-space: nowrap;
-    }
-    .float-bar p { color: rgba(255,255,255,0.8); font-size: 0.85rem; }
-    .float-bar a {
-      background: var(--terracotta); color: white;
-      padding: 0.45rem 1.2rem; border-radius: 25px;
-      text-decoration: none; font-size: 0.82rem; font-weight: 700;
-      transition: background 0.2s;
-    }
-    .float-bar a:hover { background: var(--terracotta-light); }
-    .float-close {
-      color: rgba(255,255,255,0.4); cursor: pointer; font-size: 1rem;
-      background: none; border: none; padding: 0 0.3rem;
-    }
-    .float-close:hover { color: white; }
+/* ─── PARCOURS / LÉGITIMITÉ ─── */
+.legitimite { background: var(--navy); }
+.legit-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+}
+.legit-left .section-title { color: white; }
+.legit-left .section-eyebrow { color: #e8855a; }
+.legit-left .section-sub { color: rgba(255,255,255,0.6); }
+.legit-highlight-box {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 1.8rem; margin-top: 2rem;
+}
+.legit-highlight-box h4 { color: var(--terracotta); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+.credentials { display: flex; flex-direction: column; gap: 0.6rem; }
+.credential-item {
+  display: flex; align-items: center; gap: 0.7rem;
+  color: rgba(255,255,255,0.85); font-size: 0.88rem;
+}
+.credential-item::before { content: '✓'; color: var(--terracotta); font-weight: 700; flex-shrink: 0; }
+.timeline { display: flex; flex-direction: column; gap: 0; }
+.timeline-item {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 1.5rem; padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-date { font-size: 0.8rem; color: var(--terracotta); font-weight: 600; padding-top: 0.2rem; line-height: 1.4; }
+.timeline-content h4 { color: white; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; }
+.timeline-content p { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
 
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 1024px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .hero-card { max-width: 480px; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .legit-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .tarifs-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-      .proof-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .services-grid { grid-template-columns: 1fr; }
-      .tarifs-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .urgence-inner { flex-direction: column; }
-      .hero-trust { gap: 1.5rem; }
-      .float-bar { left: 1rem; right: 1rem; transform: none; justify-content: space-between; }
-    }
+/* ─── TARIFS RAPIDES ─── */
+.tarifs { background: var(--gray-light); }
+.tarifs-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; margin-top: 3rem;
+}
+.tarif-card {
+  background: var(--white); border-radius: 10px;
+  border: 1px solid var(--gray-mid);
+  padding: 2rem; text-align: center; transition: all 0.25s;
+}
+.tarif-card.popular {
+  border-color: var(--terracotta); position: relative;
+}
+.popular-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--terracotta); color: white;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; padding: 0.25rem 0.8rem; border-radius: 10px;
+}
+.tarif-card h3 { font-family: var(--font-display); font-size: 1.15rem; color: var(--navy); margin-bottom: 0.5rem; }
+.tarif-price {
+  font-family: var(--font-display);
+  font-size: 2.4rem; font-weight: 700; color: var(--navy);
+  margin: 1rem 0 0.3rem;
+}
+.tarif-price span { font-size: 1rem; font-weight: 400; color: var(--gray-text); }
+.tarif-desc { font-size: 0.82rem; color: var(--gray-text); margin-bottom: 1.5rem; }
+.tarif-features { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+.tarif-features li { font-size: 0.84rem; color: var(--navy); display: flex; gap: 0.5rem; }
+.tarif-features li::before { content: '✓'; color: var(--terracotta); font-weight: 700; flex-shrink: 0; }
+.btn-tarif {
+  display: block; padding: 0.75rem; border-radius: 5px;
+  text-decoration: none; font-weight: 600; font-size: 0.88rem;
+  transition: all 0.2s;
+}
+.btn-tarif-outline { border: 1px solid var(--navy); color: var(--navy); }
+.btn-tarif-outline:hover { background: var(--navy); color: white; }
+.btn-tarif-solid { background: var(--terracotta); color: white; }
+.btn-tarif-solid:hover { background: var(--terracotta-light); }
 
-    /* ─── ANIMATIONS ENTRÉE ─── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .anim { opacity: 0; animation: fadeUp 0.6s ease forwards; }
-    .anim-1 { animation-delay: 0.1s; }
-    .anim-2 { animation-delay: 0.25s; }
-    .anim-3 { animation-delay: 0.4s; }
-    .anim-4 { animation-delay: 0.55s; }
-  </style>
+/* ─── CTA FINAL ─── */
+.cta-final {
+  background: linear-gradient(135deg, var(--terracotta) 0%, #9e3e1c 100%);
+  padding: 5rem 0;
+}
+.cta-inner { max-width: 700px; margin: 0 auto; padding: 0 2rem; text-align: center; }
+.cta-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  color: white; margin-bottom: 1rem; font-weight: 700;
+}
+.cta-inner p { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 2.5rem; }
+.cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-cta-white {
+  background: white; color: var(--terracotta);
+  padding: 1rem 2.2rem; border-radius: 5px;
+  font-weight: 700; font-size: 1rem; text-decoration: none;
+  transition: all 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.btn-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+.btn-cta-trans {
+  border: 2px solid rgba(255,255,255,0.5); color: white;
+  padding: 1rem 2.2rem; border-radius: 5px;
+  font-weight: 600; font-size: 1rem; text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-cta-trans:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #0f1824;
+  padding: 4rem 0 2rem;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem; margin-bottom: 3rem;
+}
+.footer-brand .logo-foot {
+  font-family: var(--font-display);
+  font-size: 1.3rem; font-weight: 700; color: white;
+}
+.footer-brand .logo-foot span { color: var(--terracotta); }
+.footer-brand p {
+  font-size: 0.85rem; color: rgba(255,255,255,0.5);
+  margin-top: 1rem; line-height: 1.7; max-width: 260px;
+}
+.footer-brand .contact-items { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-brand .contact-item {
+  display: flex; align-items: center; gap: 0.5rem;
+  color: rgba(255,255,255,0.6); font-size: 0.85rem; text-decoration: none;
+}
+.footer-brand .contact-item:hover { color: white; }
+footer h4 {
+  color: white; font-size: 0.78rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
+}
+footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+footer ul a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+footer ul a:hover { color: rgba(255,255,255,0.9); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 1.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+.qualiopi-foot {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: rgba(184,150,62,0.1); border: 1px solid rgba(184,150,62,0.3);
+  border-radius: 4px; padding: 0.4rem 0.8rem;
+  font-size: 0.75rem; font-weight: 700; color: var(--gold);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+
+/* ─── FLOATING BAR ─── */
+.float-bar {
+  position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+  background: var(--navy); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50px; padding: 0.7rem 1.2rem;
+  display: flex; align-items: center; gap: 1rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3); z-index: 90;
+  white-space: nowrap;
+}
+.float-bar p { color: rgba(255,255,255,0.8); font-size: 0.85rem; }
+.float-bar a {
+  background: var(--terracotta); color: white;
+  padding: 0.45rem 1.2rem; border-radius: 25px;
+  text-decoration: none; font-size: 0.82rem; font-weight: 700;
+  transition: background 0.2s;
+}
+.float-bar a:hover { background: var(--terracotta-light); }
+.float-close {
+  color: rgba(255,255,255,0.4); cursor: pointer; font-size: 1rem;
+  background: none; border: none; padding: 0 0.3rem;
+}
+.float-close:hover { color: white; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-card { max-width: 480px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .legit-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .tarifs-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .proof-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .services-grid { grid-template-columns: 1fr; }
+  .tarifs-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-trust { gap: 1.5rem; }
+  .float-bar { left: 1rem; right: 1rem; transform: none; justify-content: space-between; }
+}
+
+/* ─── ANIMATIONS ENTRÉE ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.anim { opacity: 0; animation: fadeUp 0.6s ease forwards; }
+.anim-1 { animation-delay: 0.1s; }
+.anim-2 { animation-delay: 0.25s; }
+.anim-3 { animation-delay: 0.4s; }
+.anim-4 { animation-delay: 0.55s; }
+</style>
 </head>
-<body>
 
+<body>
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
@@ -525,17 +539,17 @@
       <li class="nav-dropdown">
         <a href="#">Nos services ▾</a>
         <div class="nav-dropdown-menu">
-          <a href="service-audit.html">⭐ Audit Qualiopi</a>
           <a href="service-ingenierie.html">Ingénierie de Formation</a>
-          <a href="service-essms.html">Évaluation ESSMS</a>
-          <a href="service-bilan.html">Bilan de Compétences</a>
           <a href="service-management.html">Management de Transition</a>
           <a href="service-territorial.html">Développement Territorial</a>
+          <a href="service-essms.html">Évaluation ESSMS</a>
+          <a href="service-bilan.html">Bilan de Compétences</a>
+          <a href="service-audit.html">Audit Qualiopi</a>
         </div>
       </li>
       <li><a href="tarifs.html">Tarifs</a></li>
       <li><a href="blog.html">Ressources</a></li>
-      <li><a href="contact.html" class="nav-cta">Consultation gratuite →</a></li>
+      <li><a href="contact.html" class="nav-cta">Premier échange gratuit →</a></li>
     </ul>
     <div class="hamburger" onclick="document.querySelector('.nav-links').style.display='flex'">
       <span></span><span></span><span></span>
@@ -547,19 +561,19 @@
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-badge anim anim-1">Certifié Qualiopi · Expert RNQ</div>
+      <div class="hero-badge anim anim-1">Conseil · Formation · Audit · Territoire</div>
       <h1 class="anim anim-2">
-        Votre certification<br>
-        <em>Qualiopi</em><br>
-        obtenue du premier coup.
+        L'expertise au service<br>
+        des <em>territoires</em><br>
+        et des structures.
       </h1>
       <p class="hero-sub anim anim-3">
-        Auditeur certifié, ancien DGS, 27 ans de terrain — j'accompagne les organismes de formation,
-        associations et collectivités d'Occitanie dans leur structuration et leur professionnalisation.
+        27 ans d'expérience en développement local, ingénierie de formation, management de transition
+        et accompagnement des associations, collectivités et structures ESS — en Occitanie et partout en France.
       </p>
       <div class="hero-actions anim anim-4">
         <a href="contact.html" class="btn-primary">Premier échange gratuit →</a>
-        <a href="service-audit.html" class="btn-outline">Découvrir l'offre Qualiopi</a>
+        <a href="#services" class="btn-outline">Découvrir nos services</a>
       </div>
       <div class="hero-trust anim anim-4">
         <div class="trust-item">
@@ -580,39 +594,61 @@
         </div>
       </div>
     </div>
+
+    <!-- HERO CARD : expertise générale -->
     <div class="hero-card anim anim-3">
-      <div class="hero-card-title">Votre priorité <span>#1</span></div>
-      <div class="cert-badge">
-        <div class="cert-label">Certification nationale</div>
-        <div class="cert-name">QUALIOPI</div>
-        <div class="cert-sub">Référentiel National Qualité</div>
+      <div class="hero-card-title">6 domaines d'<span>expertise</span></div>
+      <div class="expertise-domains">
+        <div class="expertise-domain">
+          <div class="domain-icon">📚</div>
+          <div class="domain-text">
+            <div class="domain-name">Ingénierie de Formation</div>
+            <div class="domain-sub">Dispositifs sur-mesure, OPCO/CPF</div>
+          </div>
+        </div>
+        <div class="expertise-domain">
+          <div class="domain-icon">👔</div>
+          <div class="domain-text">
+            <div class="domain-name">Management de Transition</div>
+            <div class="domain-sub">Direction opérationnelle ESS & collectivités</div>
+          </div>
+        </div>
+        <div class="expertise-domain">
+          <div class="domain-icon">🏛️</div>
+          <div class="domain-text">
+            <div class="domain-name">Développement Territorial</div>
+            <div class="domain-sub">LEADER, politiques publiques, PETR</div>
+          </div>
+        </div>
+        <div class="expertise-domain">
+          <div class="domain-icon">🏥</div>
+          <div class="domain-text">
+            <div class="domain-name">Évaluation ESSMS</div>
+            <div class="domain-sub">Réglementaire, diagnostic organisationnel</div>
+          </div>
+        </div>
+        <div class="expertise-domain">
+          <div class="domain-icon">🎯</div>
+          <div class="domain-text">
+            <div class="domain-name">Bilan de Compétences</div>
+            <div class="domain-sub">24h réglementaires · Finançable CPF</div>
+          </div>
+        </div>
+        <div class="expertise-domain">
+          <div class="domain-icon">📋</div>
+          <div class="domain-text">
+            <div class="domain-name">Audit Qualiopi</div>
+            <div class="domain-sub">100% réussite · Accompagnement RNQ</div>
+          </div>
+        </div>
       </div>
-      <ul class="hero-services-list">
-        <li>Audit blanc préparatoire complet</li>
-        <li>Mise en conformité documentaire</li>
-        <li>Formation de vos équipes RNQ</li>
-        <li>Accompagnement jusqu'à l'audit J</li>
-        <li>Garantie réussite premier passage</li>
-        <li>Suivi post-certification inclus</li>
-      </ul>
-      <a href="service-audit.html" class="hero-card-cta">Voir les packs Qualiopi →</a>
+      <a href="#services" class="hero-card-cta">Voir toutes nos prestations →</a>
     </div>
   </div>
 </section>
 
-<!-- URGENCE QUALIOPI -->
-<div class="urgence">
-  <div class="urgence-inner">
-    <div class="urgence-text">
-      <strong>⚡ Sans Qualiopi, plus de financements OPCO, CPF ou publics.</strong>
-      <p>La certification est obligatoire. Chaque mois de retard vous coûte des marchés.</p>
-    </div>
-    <a href="contact.html" class="urgence-btn">Évaluer mon niveau de conformité →</a>
-  </div>
-</div>
-
 <!-- SERVICES -->
-<section class="services">
+<section class="services" id="services">
   <div class="container">
     <div class="services-header">
       <div>
@@ -623,47 +659,52 @@
     </div>
     <div class="services-grid">
 
-      <div class="service-card featured">
-        <div class="service-tag">⭐ Expertise phare</div>
-        <div class="service-icon">📋</div>
-        <h3>Audit &amp; Certification Qualiopi</h3>
-        <p>Ancien auditeur certificateur QOANIX, je connais les attendus des organismes certificateurs de l'intérieur. 100% de réussite au premier passage.</p>
-        <a href="service-audit.html" class="service-card-link">Découvrir →</a>
-      </div>
-
-      <div class="service-card">
+      <div class="service-card s-ingenierie">
+        <div class="service-tag">Formation</div>
         <div class="service-icon">📚</div>
         <h3>Ingénierie de Formation</h3>
         <p>Conception de dispositifs pédagogiques sur-mesure, référentiels, progression sur 3 niveaux, ingénierie financière OPCO/CPF.</p>
         <a href="service-ingenierie.html" class="service-card-link">Découvrir →</a>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">🏥</div>
-        <h3>Évaluation ESSMS</h3>
-        <p>Évaluations réglementaires des établissements sociaux et médico-sociaux. Diagnostic organisationnel et plans d'amélioration.</p>
-        <a href="service-essms.html" class="service-card-link">Découvrir →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🎯</div>
-        <h3>Bilan de Compétences</h3>
-        <p>24h réglementaires sur 3 mois. Finançable CPF. Analyse des compétences, aptitudes et motivations pour un projet de reconversion réaliste.</p>
-        <a href="service-bilan.html" class="service-card-link">Découvrir →</a>
-      </div>
-
-      <div class="service-card">
+      <div class="service-card s-management">
+        <div class="service-tag">Transition</div>
         <div class="service-icon">👔</div>
         <h3>Management de Transition</h3>
         <p>Direction générale opérationnelle pour collectivités et ESS. Intégration en 48h. Expérience prouvée : budgets jusqu'à 4,2M€, équipes 55 personnes.</p>
         <a href="service-management.html" class="service-card-link">Découvrir →</a>
       </div>
 
-      <div class="service-card">
+      <div class="service-card s-territorial">
+        <div class="service-tag">Territoire</div>
         <div class="service-icon">🏛️</div>
         <h3>Développement Territorial</h3>
         <p>Fonds européens LEADER/FEDER, diagnostic territorial, conseil en politiques publiques. Ancien chargé de mission PETR sur 140 communes.</p>
         <a href="service-territorial.html" class="service-card-link">Découvrir →</a>
+      </div>
+
+      <div class="service-card s-essms">
+        <div class="service-tag">Social & Médico-social</div>
+        <div class="service-icon">🏥</div>
+        <h3>Évaluation ESSMS</h3>
+        <p>Évaluations réglementaires des établissements sociaux et médico-sociaux. Diagnostic organisationnel et plans d'amélioration.</p>
+        <a href="service-essms.html" class="service-card-link">Découvrir →</a>
+      </div>
+
+      <div class="service-card s-bilan">
+        <div class="service-tag">Individuel</div>
+        <div class="service-icon">🎯</div>
+        <h3>Bilan de Compétences</h3>
+        <p>24h réglementaires sur 3 mois. Finançable CPF. Analyse des compétences, aptitudes et motivations pour un projet de reconversion réaliste.</p>
+        <a href="service-bilan.html" class="service-card-link">Découvrir →</a>
+      </div>
+
+      <div class="service-card s-audit">
+        <div class="service-tag">Qualité</div>
+        <div class="service-icon">📋</div>
+        <h3>Audit &amp; Certification Qualiopi</h3>
+        <p>Ancien auditeur certificateur QOANIX, je connais les attendus des organismes certificateurs de l'intérieur. 100% de réussite au premier passage.</p>
+        <a href="service-audit.html" class="service-card-link">Découvrir →</a>
       </div>
 
     </div>
@@ -676,7 +717,6 @@
     <div class="section-eyebrow">Témoignages</div>
     <h2 class="section-title">Ils m'ont fait confiance.<br>Voici ce qu'ils en disent.</h2>
     <div class="proof-grid">
-
       <div class="proof-card">
         <div class="proof-stars">★★★★★</div>
         <p class="proof-text">« L'accompagnement de Samir a été décisif. Il connaît le référentiel Qualiopi de l'intérieur — il a lui-même été auditeur certificateur. Résultat : zéro non-conformité majeure le jour J. Je recommande sans réserve. »</p>
@@ -685,7 +725,6 @@
           <span class="proof-role">Organisme de formation, Toulouse (150 salariés)</span>
         </div>
       </div>
-
       <div class="proof-card">
         <div class="proof-stars">★★★★★</div>
         <p class="proof-text">« Mission de management de transition en urgence : Samir opérationnel en 48h, nos équipes stabilisées en 3 semaines. Sa capacité à aller droit au cœur des problèmes RH et financiers nous a évité une crise grave. »</p>
@@ -694,7 +733,6 @@
           <span class="proof-role">Association ESS, Occitanie (55 salariés)</span>
         </div>
       </div>
-
       <div class="proof-card">
         <div class="proof-stars">★★★★★</div>
         <p class="proof-text">« Le diagnostic DLA réalisé par CCFA a transformé notre façon de voir notre modèle économique. Des recommandations concrètes, opérationnelles, et pas de bla-bla inutile. Nos financements sont sécurisés. »</p>
@@ -703,7 +741,6 @@
           <span class="proof-role">Structure médico-sociale, Tarn (ESSMS)</span>
         </div>
       </div>
-
       <div class="proof-card">
         <div class="proof-stars">★★★★★</div>
         <p class="proof-text">« Samir a monté notre dossier LEADER de A à Z. Rigueur, connaissance des exigences européennes et des réalités territoriales — nous avons obtenu le financement. Un partenaire de confiance sur le long terme. »</p>
@@ -712,7 +749,6 @@
           <span class="proof-role">Collectivité territoriale, Tarn-et-Garonne</span>
         </div>
       </div>
-
     </div>
     <div class="clients-strip">
       <p>Structures ayant bénéficié d'un accompagnement CCFA</p>
@@ -800,7 +836,6 @@
     <h2 class="section-title">Des packs clairs.<br>Pas de mauvaises surprises.</h2>
     <p class="section-sub">Tous les tarifs sont affichés. Devis personnalisé gratuit sous 48h.</p>
     <div class="tarifs-grid">
-
       <div class="tarif-card">
         <h3>Pack Starter</h3>
         <p class="tarif-desc">Pour démarrer votre démarche Qualiopi</p>
@@ -814,7 +849,6 @@
         </ul>
         <a href="contact.html" class="btn-tarif btn-tarif-outline">Demander un devis</a>
       </div>
-
       <div class="tarif-card popular">
         <div class="popular-badge">Le plus choisi</div>
         <h3>Pack Premium</h3>
@@ -830,7 +864,6 @@
         </ul>
         <a href="contact.html" class="btn-tarif btn-tarif-solid">Choisir ce pack</a>
       </div>
-
       <div class="tarif-card">
         <h3>Pack Intégral</h3>
         <p class="tarif-desc">Sérénité totale · Garantie réussite</p>
@@ -845,7 +878,6 @@
         </ul>
         <a href="contact.html" class="btn-tarif btn-tarif-outline">Demander un devis</a>
       </div>
-
     </div>
     <p style="text-align:center;margin-top:1.5rem;font-size:0.85rem;color:var(--gray-text);">
       Finançable OPCO · CPF (bilan de compétences) · Fonds publics &amp; régionaux
@@ -872,7 +904,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo-foot">CC<span>FA</span> — Chikhi Conseil Formation Audit</div>
-        <p>Expert en certification Qualiopi, ingénierie de formation et développement territorial. Basé à Montauban, intervenant en Occitanie et en France.</p>
+        <p>Conseil, formation, audit et développement territorial. Basé à Montauban, intervenant en Occitanie et partout en France.</p>
         <div class="contact-items">
           <a href="tel:0651509718" class="contact-item">📞 06 51 50 97 18</a>
           <a href="mailto:contact@c2fa.fr" class="contact-item">✉️ contact@c2fa.fr</a>
@@ -882,12 +914,12 @@
       <div>
         <h4>Nos services</h4>
         <ul>
-          <li><a href="service-audit.html">Audit Qualiopi</a></li>
           <li><a href="service-ingenierie.html">Ingénierie de Formation</a></li>
-          <li><a href="service-essms.html">Évaluation ESSMS</a></li>
-          <li><a href="service-bilan.html">Bilan de Compétences</a></li>
           <li><a href="service-management.html">Management de Transition</a></li>
           <li><a href="service-territorial.html">Développement Territorial</a></li>
+          <li><a href="service-essms.html">Évaluation ESSMS</a></li>
+          <li><a href="service-bilan.html">Bilan de Compétences</a></li>
+          <li><a href="service-audit.html">Audit Qualiopi</a></li>
         </ul>
       </div>
       <div>
@@ -930,32 +962,32 @@
 </div>
 
 <script>
-  // Cacher la float bar en haut de page
-  window.addEventListener('scroll', function() {
-    const bar = document.getElementById('floatBar');
-    if (!bar) return;
-    if (window.scrollY < 400) { bar.style.opacity = '0'; bar.style.pointerEvents = 'none'; }
-    else { bar.style.opacity = '1'; bar.style.pointerEvents = 'auto'; }
-  });
-  document.getElementById('floatBar').style.opacity = '0';
-  document.getElementById('floatBar').style.transition = 'opacity 0.3s';
+// Cacher la float bar en haut de page
+window.addEventListener('scroll', function() {
+  const bar = document.getElementById('floatBar');
+  if (!bar) return;
+  if (window.scrollY < 400) { bar.style.opacity = '0'; bar.style.pointerEvents = 'none'; }
+  else { bar.style.opacity = '1'; bar.style.pointerEvents = 'auto'; }
+});
+document.getElementById('floatBar').style.opacity = '0';
+document.getElementById('floatBar').style.transition = 'opacity 0.3s';
 
-  // Animations au scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.service-card, .proof-card, .tarif-card, .timeline-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
+// Animations au scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
   });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.service-card, .proof-card, .tarif-card, .timeline-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
 </script>
-
 </body>
 </html>
