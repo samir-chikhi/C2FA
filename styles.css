@@ -2,9 +2,9 @@
    VARIABLES ET RESET
    ============================================ */
 :root {
-    --primary-color: #C0572A;
+    --primary-color: #8a6828;
     --secondary-color: #1a2b4a;
-    --accent-color: #b8963e;
+    --accent-color: #8a6828;
     --text-dark: #1a2b4a;
     --text-light: #6b6560;
     --bg-light: #f8f5f0;
@@ -219,11 +219,11 @@ img {
 }
 
 .hero-slide:nth-child(2) {
-    background: linear-gradient(135deg, #C0572A 0%, #d4693c 100%);
+    background: linear-gradient(135deg, #6b2318 0%, #8a3022 100%);
 }
 
 .hero-slide:nth-child(3) {
-    background: linear-gradient(135deg, #1a2b4a 0%, #b8963e 100%);
+    background: linear-gradient(135deg, #1a2b4a 0%, #263d60 100%);
 }
 
 .hero-slide.active {
