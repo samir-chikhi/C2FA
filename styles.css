@@ -27,14 +27,14 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 600;
     line-height: 1.2;
 }
@@ -87,7 +87,7 @@ img {
 }
 
 .logo-text {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 32px;
     font-weight: 700;
     color: var(--primary-color);
@@ -129,7 +129,7 @@ img {
 }
 
 .nav-menu > li > a {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
@@ -950,7 +950,7 @@ section {
     font-size: 16px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
 }
 
 .btn-hero-primary:hover {
@@ -969,7 +969,7 @@ section {
     font-weight: 600;
     font-size: 16px;
     transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
 }
 
 .btn-hero-secondary:hover {
@@ -1039,7 +1039,7 @@ section {
     font-weight: 700;
     font-size: 16px;
     color: var(--text-dark);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 .author-role {
@@ -1072,7 +1072,7 @@ section {
     font-size: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
     white-space: nowrap;
 }
 
