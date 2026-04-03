@@ -1,380 +1,1149 @@
-/* ============================================================
-   service-styles.css — CCFA
-   Charte couleur unifiée pour toutes les pages services
-   Remplace les gradients criards (#f093fb, #f5576c, etc.)
-   par une palette professionnelle dérivée de la marque CCFA.
-
-   PALETTE DE BASE (identique à styles.css et ccfa-blog.html)
-   --navy        : #1a2b4a  (bleu nuit profond — dominant)
-   --terracotta  : #C0572A  (terracotta — accent principal)
-   --gold        : #b8963e  (or — accent secondaire)
-   --cream       : #f8f5f0  (fond chaud)
-   --gray-light  : #f2f0ec  (fond alternatif)
-   --gray-mid    : #e0ddd7  (bordures)
-   --gray-text   : #6b6560  (corps de texte secondaire)
-
-   ACCENTUATION PAR SERVICE (subtile, dérivée de la palette)
-   service-audit.html       → terracotta #C0572A / #d4693c
-   service-ingenierie.html  → gold #b8963e / #c9a84c
-   service-essms.html       → vert sauge #4a7c6b / #5a9480
-   service-bilan.html       → bleu slate #3d5a80 / #4e6d96
-   service-management.html  → bronze #8b6340 / #a07550
-   service-territorial.html → vert forêt #3d6b4f / #4d7f61
-   ============================================================ */
-
-/* ============================================================
-   0. RESET DES GRADIENTS CRIARDS (toutes pages)
-   On écrase les anciennes valeurs sans toucher à la structure
-   ============================================================ */
-
-/* Suppression du gradient rose/fuchsia (#f093fb, #f5576c) */
-.service-hero,
-.intro-visual,
-.feature-icon,
-.step-number,
-.benefit-icon {
-  background-image: none !important;
+/* ============================================
+   VARIABLES ET RESET
+   ============================================ */
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --accent-color: #f5576c;
+    --text-dark: #2d3748;
+    --text-light: #718096;
+    --bg-light: #f7fafc;
+    --bg-white: #ffffff;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
 }
 
-/* ============================================================
-   1. HERO — fond navy + accent terracotta (commun à tous)
-   ============================================================ */
-
-.service-hero {
-  background-color: #1a2b4a !important;
-  background-image: none !important;
-  position: relative;
-  overflow: hidden;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Légère texture géométrique subtile en overlay */
-.service-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 80% 20%, rgba(192,87,42,0.12) 0%, transparent 50%),
-    radial-gradient(circle at 20% 80%, rgba(184,150,62,0.08) 0%, transparent 40%);
-  pointer-events: none;
+html {
+    scroll-behavior: smooth;
 }
 
-.service-hero h1 {
-  color: #ffffff;
-  position: relative;
-  z-index: 1;
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.service-hero .service-hero-subtitle {
-  color: rgba(255,255,255,0.75);
-  position: relative;
-  z-index: 1;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
-/* Ligne de couleur en bas du hero — change par service via classes body */
-.service-hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: #C0572A;
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
 }
 
-/* ============================================================
-   2. INTRO VISUAL — remplace le gros carré gradient criard
-   ============================================================ */
-
-.intro-visual {
-  background-color: #1a2b4a !important;
-  background-image: none !important;
-  border-radius: 12px;
-  font-size: 96px !important;
-  box-shadow: 0 8px 32px rgba(26,43,74,0.18);
-  position: relative;
-  overflow: hidden;
+ul {
+    list-style: none;
 }
 
-.intro-visual::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(192,87,42,0.2) 0%, transparent 60%);
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-/* ============================================================
-   3. FEATURE ICONS — petits blocs d'icône
-   ============================================================ */
-
-.feature-icon {
-  background-color: #f8f5f0 !important;
-  background-image: none !important;
-  border: 1px solid #e0ddd7;
-  font-size: 36px !important;
-  border-radius: 10px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* ============================================================
-   4. PROCESS STEPS — numéros de cercle
-   ============================================================ */
-
-.step-number {
-  background-color: #1a2b4a !important;
-  background-image: none !important;
-  color: #ffffff !important;
-  border: 2px solid rgba(192,87,42,0.4);
-  font-size: 28px !important;
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
+.main-header {
+    background: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Flèche entre les étapes */
-.process-step::after {
-  color: #C0572A !important;
+.navbar {
+    padding: 1rem 0;
 }
 
-/* ============================================================
-   5. BENEFIT ICONS
-   ============================================================ */
-
-.benefit-icon {
-  background-color: #1a2b4a !important;
-  background-image: none !important;
-  font-size: 26px !important;
-  border-radius: 8px;
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* ============================================================
-   6. HIGHLIGHT BOX — bordure gauche terracotta
-   ============================================================ */
-
-.highlight-box {
-  background: #f8f5f0 !important;
-  border-left-color: #C0572A !important;
+.logo {
+    display: flex;
+    flex-direction: column;
 }
 
-.highlight-box strong {
-  color: #C0572A !important;
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: -1px;
 }
 
-/* ============================================================
-   7. SECTIONS ALTERNÉES — fonds sobres
-   ============================================================ */
-
-.features-section,
-.benefits-section {
-  background-color: #f8f5f0 !important;
+.logo-subtitle {
+    font-size: 11px;
+    color: var(--text-light);
+    font-weight: 400;
+    margin-top: -5px;
 }
 
-.process-section,
-.references-section,
-.service-intro {
-  background-color: #ffffff !important;
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
 }
 
-/* ============================================================
-   8. CTA SECTION — navy profond avec accent
-   ============================================================ */
-
-.cta-section {
-  background: linear-gradient(135deg, #1a2b4a 0%, #0f1d35 100%) !important;
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-dark);
+    transition: var(--transition);
 }
 
-.cta-section h2,
-.cta-section p {
-  color: rgba(255,255,255,0.9) !important;
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
 }
 
-/* ============================================================
-   9. FEATURE CARDS — hover discret
-   ============================================================ */
-
-.feature-card {
-  border: 1px solid #e0ddd7;
-  transition: all 0.25s ease;
+.nav-menu > li {
+    position: relative;
 }
 
-.feature-card:hover {
-  border-color: rgba(192,87,42,0.3);
-  box-shadow: 0 8px 28px rgba(26,43,74,0.10) !important;
-  transform: translateY(-3px) !important;
+.nav-menu > li > a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 0;
+    display: block;
 }
 
-.feature-card h3 {
-  color: #1a2b4a;
+.nav-menu > li > a:hover {
+    color: var(--primary-color);
 }
 
-/* ============================================================
-   10. REFERENCE CARDS
-   ============================================================ */
-
-.reference-card {
-  background: #f8f5f0 !important;
-  border-left: 3px solid #e0ddd7;
-  transition: border-color 0.2s;
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-white);
+    box-shadow: var(--shadow-lg);
+    border-radius: 8px;
+    min-width: 250px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition);
+    padding: 10px 0;
 }
 
-.reference-card:hover {
-  border-left-color: #C0572A;
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
-.reference-logo {
-  color: #1a2b4a !important;
-  font-size: 16px !important;
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 14px;
+    color: var(--text-dark);
 }
 
-/* ============================================================
-   11. BENEFIT ITEMS
-   ============================================================ */
-
-.benefit-item {
-  border: 1px solid #e0ddd7;
-  transition: box-shadow 0.2s;
+.dropdown-menu li a:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
 }
 
-.benefit-item:hover {
-  box-shadow: 0 4px 16px rgba(26,43,74,0.08) !important;
+.btn-contact {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white !important;
+    padding: 12px 24px !important;
+    border-radius: 25px;
+    font-size: 13px !important;
 }
 
-.benefit-item h4 {
-  color: #1a2b4a;
+.btn-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
-/* ============================================================
-   12. DIFFÉRENCIATION PAR SERVICE
-   Chaque service a une couleur d'accent légère — subtile,
-   appliquée uniquement sur les éléments clés (hero line,
-   step numbers, feature icons border, highlight box border)
-   ============================================================ */
-
-/* --- AUDIT QUALIOPI : terracotta (couleur principale CCFA) --- */
-body.page-audit .service-hero::after { background: #C0572A; }
-body.page-audit .step-number { border-color: rgba(192,87,42,0.5) !important; }
-body.page-audit .feature-icon { background-color: rgba(192,87,42,0.08) !important; border-color: rgba(192,87,42,0.2); }
-body.page-audit .highlight-box { border-left-color: #C0572A !important; }
-body.page-audit .reference-card:hover { border-left-color: #C0572A; }
-
-/* --- INGÉNIERIE DE FORMATION : gold/ambre --- */
-body.page-ingenierie .service-hero::after { background: #b8963e; }
-body.page-ingenierie .step-number { border-color: rgba(184,150,62,0.5) !important; }
-body.page-ingenierie .feature-icon { background-color: rgba(184,150,62,0.08) !important; border-color: rgba(184,150,62,0.2); }
-body.page-ingenierie .highlight-box { border-left-color: #b8963e !important; }
-body.page-ingenierie .highlight-box strong { color: #8a6e28 !important; }
-body.page-ingenierie .reference-card:hover { border-left-color: #b8963e; }
-body.page-ingenierie .process-step::after { color: #b8963e !important; }
-
-/* --- ÉVALUATION ESSMS : vert sauge (soin, humanité) --- */
-body.page-essms .service-hero::after { background: #4a7c6b; }
-body.page-essms .step-number { border-color: rgba(74,124,107,0.5) !important; }
-body.page-essms .feature-icon { background-color: rgba(74,124,107,0.08) !important; border-color: rgba(74,124,107,0.2); }
-body.page-essms .highlight-box { border-left-color: #4a7c6b !important; }
-body.page-essms .highlight-box strong { color: #3a6358 !important; }
-body.page-essms .reference-card:hover { border-left-color: #4a7c6b; }
-body.page-essms .process-step::after { color: #4a7c6b !important; }
-
-/* --- BILAN DE COMPÉTENCES : bleu slate (sérénité, projection) --- */
-body.page-bilan .service-hero::after { background: #3d5a80; }
-body.page-bilan .step-number { border-color: rgba(61,90,128,0.5) !important; }
-body.page-bilan .feature-icon { background-color: rgba(61,90,128,0.08) !important; border-color: rgba(61,90,128,0.2); }
-body.page-bilan .highlight-box { border-left-color: #3d5a80 !important; }
-body.page-bilan .highlight-box strong { color: #2d4570 !important; }
-body.page-bilan .reference-card:hover { border-left-color: #3d5a80; }
-body.page-bilan .process-step::after { color: #3d5a80 !important; }
-
-/* --- MANAGEMENT DE TRANSITION : bronze (expérience, solidité) --- */
-body.page-management .service-hero::after { background: #8b6340; }
-body.page-management .step-number { border-color: rgba(139,99,64,0.5) !important; }
-body.page-management .feature-icon { background-color: rgba(139,99,64,0.08) !important; border-color: rgba(139,99,64,0.2); }
-body.page-management .highlight-box { border-left-color: #8b6340 !important; }
-body.page-management .highlight-box strong { color: #7a5230 !important; }
-body.page-management .reference-card:hover { border-left-color: #8b6340; }
-body.page-management .process-step::after { color: #8b6340 !important; }
-
-/* --- DÉVELOPPEMENT TERRITORIAL : vert forêt (territoire, ancrage) --- */
-body.page-territorial .service-hero::after { background: #3d6b4f; }
-body.page-territorial .step-number { border-color: rgba(61,107,79,0.5) !important; }
-body.page-territorial .feature-icon { background-color: rgba(61,107,79,0.08) !important; border-color: rgba(61,107,79,0.2); }
-body.page-territorial .highlight-box { border-left-color: #3d6b4f !important; }
-body.page-territorial .highlight-box strong { color: #2d5840 !important; }
-body.page-territorial .reference-card:hover { border-left-color: #3d6b4f; }
-body.page-territorial .process-step::after { color: #3d6b4f !important; }
-
-/* ============================================================
-   13. BOUTONS CTA — cohérence avec styles.css
-   ============================================================ */
-
-.btn-primary-large,
-.btn-primary {
-  background-color: #C0572A !important;
-  background-image: none !important;
-  color: #ffffff !important;
-  border: none;
-  transition: background-color 0.2s ease;
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
 }
 
-.btn-primary-large:hover,
-.btn-primary:hover {
-  background-color: #d4693c !important;
+.hero-slider {
+    position: relative;
+    height: 100%;
 }
 
-/* ============================================================
-   14. FLOATING CTA BUTTONS
-   ============================================================ */
-
-.floating-btn-phone {
-  background-color: #1a2b4a !important;
-  background-image: none !important;
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
 }
 
-.floating-btn-rdv {
-  background-color: #C0572A !important;
-  background-image: none !important;
+.hero-slide:nth-child(1) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.floating-btn-rdv:hover {
-  background-color: #d4693c !important;
+.hero-slide:nth-child(2) {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
 
-.floating-btn-phone:hover {
-  background-color: #253d68 !important;
+.hero-slide:nth-child(3) {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
 
-/* ============================================================
-   15. SECTION TITLES — filet de soulignement discret
-   ============================================================ */
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 22px;
+    font-weight: 300;
+    max-width: 700px;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.hero-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 3;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.indicator.active {
+    background: white;
+    width: 30px;
+    border-radius: 6px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   STATS SECTION
+   ============================================ */
+.stats-section {
+    background: var(--bg-white);
+    padding: 60px 0;
+    margin-top: -50px;
+    position: relative;
+    z-index: 10;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* ============================================
+   SECTIONS GÉNÉRALES
+   ============================================ */
+section {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
 
 .section-title {
-  color: #1a2b4a;
-  position: relative;
-  display: inline-block;
+    font-size: 42px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
 }
 
 .section-title::after {
-  content: '';
-  display: block;
-  width: 48px;
-  height: 3px;
-  background: #C0572A;
-  margin: 12px auto 0;
-  border-radius: 2px;
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
 }
 
-/* ============================================================
-   16. TYPOGRAPHIE — cohérence avec le reste du site
-   ============================================================ */
-
-.intro-text h2 {
-  color: #1a2b4a;
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+.about-section {
+    background: var(--bg-light);
 }
 
-.process-step h4,
-.benefit-item h4,
-.feature-card h3 {
-  color: #1a2b4a;
+.intro-text {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-dark);
 }
 
-.intro-text p,
-.feature-card p,
-.process-step p,
-.benefit-item p,
-.reference-card p {
-  color: #6b6560;
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.about-principles {
+    background: var(--bg-white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.about-principles h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+}
+
+.principles-list li {
+    display: flex;
+    align-items: start;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.principle-icon {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
+.services-section {
+    background: var(--bg-white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.service-card {
+    background: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.service-icon {
+    font-size: 64px;
+}
+
+.service-content {
+    padding: 30px;
+}
+
+.service-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.service-description {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.service-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.service-link:hover {
+    color: var(--secondary-color);
+}
+
+/* ============================================
+   CLIENTS SECTION
+   ============================================ */
+.clients-section {
+    background: var(--bg-light);
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.client-logo {
+    background: var(--bg-white);
+    padding: 40px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.client-logo:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+}
+
+.client-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+.client-name span {
+    display: block;
+    font-size: 13px;
+    color: var(--text-light);
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+/* ============================================
+   VALUES SECTION
+   ============================================ */
+.values-section {
+    background: var(--bg-white);
+}
+
+.values-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.values-text h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+.values-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 14px 32px;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.values-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.value-badge {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   CERTIFICATION SECTION
+   ============================================ */
+.certification-section {
+    background: var(--bg-light);
+}
+
+.certification-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.certification-badge {
+    background: var(--bg-white);
+    padding: 60px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.certification-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.certification-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0.95;
+}
+
+.btn-primary-large {
+    display: inline-block;
+    background: white;
+    color: var(--primary-color);
+    padding: 18px 48px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.btn-primary-large:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.main-footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-contact {
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-links a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-bottom a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-bottom a:hover {
+    color: white;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .clients-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navigation */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: var(--bg-white);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: var(--shadow-lg);
+        transition: var(--transition);
+        z-index: 999;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        padding-left: 20px;
+        display: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    /* Hero */
+    .hero {
+        height: auto;
+        min-height: 520px;
+    }
+
+    .hero-slide {
+        min-height: 520px;
+    }
+
+    .hero-content {
+        padding: 80px 20px 60px;
+        justify-content: center;
+    }
+
+    .hero-title {
+        font-size: 28px;
+        margin-bottom: 14px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 24px;
+    }
+
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+
+    /* Sections */
+    .section-title {
+        font-size: 28px;
+    }
+
+    .services-grid,
+    .clients-grid,
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid,
+    .values-content,
+    .certification-content {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    /* CTA section */
+    .cta-content h2 {
+        font-size: 28px;
+    }
+
+    .btn-primary-large {
+        padding: 15px 32px;
+        font-size: 15px;
+    }
+
+    /* Footer */
+    .footer-content {
+        gap: 30px;
+    }
+
+    /* Bannière */
+    .free-consult-banner {
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+
+    .free-consult-banner a {
+        display: block;
+        margin: 6px 0 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .intro-text {
+        font-size: 16px;
+    }
+}
+
+/* ============================================
+   HERO CTA BUTTONS
+   ============================================ */
+.hero-cta {
+    margin-top: 35px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.btn-hero-primary {
+    display: inline-block;
+    padding: 16px 40px;
+    background: white;
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    color: var(--secondary-color);
+}
+
+.btn-hero-secondary {
+    display: inline-block;
+    padding: 16px 40px;
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-hero-secondary:hover {
+    background: white;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+.testimonials-section {
+    background: var(--bg-light);
+    padding: 80px 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial-quote {
+    font-size: 80px;
+    line-height: 0.8;
+    color: var(--primary-color);
+    opacity: 0.2;
+    font-family: Georgia, serif;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-stars {
+    color: #f59e0b;
+    font-size: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.testimonial-author {
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.author-name {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.author-role {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 4px;
+}
+
+/* ============================================
+   FLOATING CTA BUTTON
+   ============================================ */
+.floating-cta {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.floating-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap;
+}
+
+.floating-btn-phone {
+    background: #10b981;
+    color: white;
+}
+
+.floating-btn-phone:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.45);
+    color: white;
+}
+
+.floating-btn-rdv {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.floating-btn-rdv:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.45);
+    color: white;
+}
+
+/* ============================================
+   BANNER CONSULTATION GRATUITE
+   ============================================ */
+.free-consult-banner {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    z-index: 100;
+}
+
+.free-consult-banner a {
+    color: white;
+    text-decoration: underline;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+.free-consult-banner a:hover {
+    opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .floating-btn span:last-child {
+        display: none;
+    }
+
+    .floating-btn {
+        padding: 0;
+        border-radius: 50%;
+        width: 52px;
+        height: 52px;
+        justify-content: center;
+        font-size: 22px;
+    }
+
+    .floating-cta {
+        bottom: 20px;
+        right: 16px;
+        gap: 8px;
+    }
 }
