@@ -28,7 +28,9 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="shortcut icon" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="service-styles.css">
 
     <!-- Données structurées Schema.org -->
@@ -64,45 +66,35 @@
     </script>
 </head>
 <body>
-    <!-- Header / Navigation -->
-    <header class="main-header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <div class="logo">
-                        <a href="index.html">
-                            <span class="logo-text">CCFA</span>
-                            <span class="logo-subtitle">Chikhi Conseil Formation Audit</span>
-                        </a>
-                    </div>
-                    <button class="mobile-menu-toggle" aria-label="Menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <ul class="nav-menu">
-                        <li><a href="a-propos.html">À PROPOS</a></li>
-                        <li class="dropdown">
-                            <a href="#services">NOS SERVICES</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="service-ingenierie.html">Ingénierie de Formation</a></li>
-                                <li><a href="service-audit.html">Audit Qualiopi</a></li>
-                                <li><a href="service-essms.html">Évaluation ESSMS</a></li>
-                                <li><a href="service-bilan.html">Bilan de Compétences</a></li>
-                                <li><a href="service-management.html">Management de Transition</a></li>
-                                <li><a href="service-territorial.html">Développement Territorial</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="tarifs.html">TARIFS</a></li>
-                        <li><a href="contact.html" class="btn-contact">NOUS CONTACTER</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">CC<span>FA</span></a>
+    <ul class="nav-links">
+      <li><a href="a-propos.html">À propos</a></li>
+      <li class="nav-dropdown">
+        <a href="#">Nos services ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="service-ingenierie.html">Ingénierie de Formation</a>
+          <a href="service-management.html">Management de Transition</a>
+          <a href="service-territorial.html">Développement Territorial</a>
+          <a href="service-essms.html">Évaluation ESSMS</a>
+          <a href="service-bilan.html">Bilan de Compétences</a>
+          <a href="service-audit.html">Audit Qualiopi</a>
+        </div>
+      </li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="blog.html">Ressources</a></li>
+      <li><a href="contact.html" class="nav-cta">Premier échange gratuit →</a></li>
+    </ul>
+    <div class="hamburger" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
 
     <!-- Service Hero -->
-    <section class="service-hero" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <section class="service-hero" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">
         <div class="container">
             <div class="service-hero-content">
                 <h1>Ingénierie de Formation</h1>
@@ -117,7 +109,7 @@
     <section class="service-intro">
         <div class="container">
             <div class="intro-grid">
-                <div class="intro-visual" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <div class="intro-visual" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">
                     📚
                 </div>
                 <div class="intro-text">
@@ -147,7 +139,7 @@
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">📋</div>
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">📋</div>
                     <h3>Conception de Parcours</h3>
                     <p>
                         Design complet de parcours de formation : analyse des besoins, définition des objectifs 
@@ -156,7 +148,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🎯</div>
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">🎯</div>
                     <h3>Référentiels de Compétences</h3>
                     <p>
                         Construction de référentiels métiers et de compétences. Cartographie des compétences 
@@ -165,7 +157,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">💰</div>
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">💰</div>
                     <h3>Ingénierie Financière</h3>
                     <p>
                         Montage des dossiers de financement (OPCO, CPF, financements publics). Optimisation 
@@ -174,7 +166,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">👨‍🏫</div>
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">👨‍🏫</div>
                     <h3>Formation de Formateurs</h3>
                     <p>
                         Formation et accompagnement de vos formateurs internes. Transfert de compétences 
@@ -183,7 +175,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">📚</div>
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">📚</div>
                     <h3>Création de Supports</h3>
                     <p>
                         Conception de supports pédagogiques adaptés : manuels, guides, vidéos, e-learning, 
@@ -192,7 +184,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">✅</div>
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">✅</div>
                     <h3>Certifications</h3>
                     <p>
                         Accompagnement à l'inscription au RNCP/RS. Préparation des dossiers de certification 
@@ -214,25 +206,25 @@
             </div>
             <div class="process-steps">
                 <div class="process-step">
-                    <div class="step-number" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">1</div>
+                    <div class="step-number" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">1</div>
                     <h4>Analyse des Besoins</h4>
                     <p>Diagnostic de vos besoins, publics cibles et objectifs stratégiques</p>
                 </div>
 
                 <div class="process-step">
-                    <div class="step-number" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">2</div>
+                    <div class="step-number" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">2</div>
                     <h4>Conception</h4>
                     <p>Design du parcours, objectifs pédagogiques, progression et modalités</p>
                 </div>
 
                 <div class="process-step">
-                    <div class="step-number" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">3</div>
+                    <div class="step-number" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">3</div>
                     <h4>Production</h4>
                     <p>Création des supports, outils d'évaluation et documents pédagogiques</p>
                 </div>
 
                 <div class="process-step">
-                    <div class="step-number" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">4</div>
+                    <div class="step-number" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">4</div>
                     <h4>Financement</h4>
                     <p>Montage des dossiers OPCO, CPF ou financements publics</p>
                 </div>
@@ -248,7 +240,7 @@
             </div>
             <div class="benefits-list">
                 <div class="benefit-item">
-                    <div class="benefit-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🎓</div>
+                    <div class="benefit-icon" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">🎓</div>
                     <div>
                         <h4>Expérience Terrain Éprouvée</h4>
                         <p>
@@ -260,7 +252,7 @@
                 </div>
 
                 <div class="benefit-item">
-                    <div class="benefit-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🔧</div>
+                    <div class="benefit-icon" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">🔧</div>
                     <div>
                         <h4>Approche Sur-Mesure</h4>
                         <p>
@@ -272,7 +264,7 @@
                 </div>
 
                 <div class="benefit-item">
-                    <div class="benefit-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">💼</div>
+                    <div class="benefit-icon" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">💼</div>
                     <div>
                         <h4>Vision Stratégique</h4>
                         <p>
@@ -284,7 +276,7 @@
                 </div>
 
                 <div class="benefit-item">
-                    <div class="benefit-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">💰</div>
+                    <div class="benefit-icon" style="background: linear-gradient(135deg, #3a3210 0%, #56481c 100%);">💰</div>
                     <div>
                         <h4>Expertise Financement</h4>
                         <p>
@@ -343,66 +335,73 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <span class="logo-text">CCFA</span>
-                        <span class="logo-subtitle">Chikhi Conseil Formation Audit</span>
-                    </div>
-                    <p class="footer-contact">
-                        <strong>Téléphone:</strong> 06 51 50 97 18<br>
-                        <strong>Email:</strong> <a href="mailto:contact@c2fa.fr">contact@c2fa.fr</a><br>
-                        <strong>Adresse:</strong> 12 rue du Génie<br>
-                        82000 Montauban
-                    </p>
-                </div>
-                <div class="footer-col">
-                    <h4>Nos Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="service-ingenierie.html">Ingénierie de Formation</a></li>
-                        <li><a href="service-audit.html">Audit Qualiopi</a></li>
-                        <li><a href="service-essms.html">Évaluation ESSMS</a></li>
-                        <li><a href="service-bilan.html">Bilan de Compétences</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>L'Entreprise</h4>
-                    <ul class="footer-links">
-                        <li><a href="a-propos.html">À propos</a></li>
-                        <li><a href="tarifs.html">Nos Tarifs</a></li>
-                        <li><a href="service-management.html">Management de Transition</a></li>
-                        <li><a href="service-territorial.html">Développement Territorial</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Horaires</h4>
-                    <p><strong>Du lundi au vendredi</strong><br>
-                    9h - 12h30 et 14h - 18h</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/samirchikhi/" target="_blank">in</a>
-                        <a href="https://samir-chikhi.mystrikingly.com/" target="_blank" style="font-size:13px;font-weight:600;">CV</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span class="current-year">2026</span> CCFA - Tous droits réservés | <a href="mentions-legales.html">Mentions Légales</a></p>
-            </div>
+    <!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-foot">CC<span>FA</span> — Chikhi Conseil Formation Audit</div>
+        <p>Conseil, formation, audit et développement territorial. Basé à Montauban, intervenant en Occitanie et partout en France.</p>
+        <div class="contact-items">
+          <a href="tel:0651509718" class="contact-item">📞 06 51 50 97 18</a>
+          <a href="mailto:contact@c2fa.fr" class="contact-item">✉️ contact@c2fa.fr</a>
+          <span class="contact-item">📍 12 rue du Génie, 82000 Montauban</span>
         </div>
-    </footer>
-
-    <!-- Bouton CTA flottant -->
-    <div class="floating-cta">
-        <a href="tel:0651509718" class="floating-btn floating-btn-phone">
-            <span>&#128222;</span><span>06 51 50 97 18</span>
-        </a>
-        <a href="contact.html" class="floating-btn floating-btn-rdv">
-            <span>&#128197;</span><span>Prendre rendez-vous</span>
-        </a>
+      </div>
+      <div>
+        <h4>Nos services</h4>
+        <ul>
+          <li><a href="service-ingenierie.html">Ingénierie de Formation</a></li>
+          <li><a href="service-management.html">Management de Transition</a></li>
+          <li><a href="service-territorial.html">Développement Territorial</a></li>
+          <li><a href="service-essms.html">Évaluation ESSMS</a></li>
+          <li><a href="service-bilan.html">Bilan de Compétences</a></li>
+          <li><a href="service-audit.html">Audit Qualiopi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>L'entreprise</h4>
+        <ul>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="blog.html">Ressources &amp; Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Horaires</h4>
+        <ul>
+          <li><a href="#">Lun – Ven : 9h–12h30</a></li>
+          <li><a href="#">14h – 18h</a></li>
+        </ul>
+        <div style="margin-top:1.5rem;">
+          <h4>Suivre CCFA</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/samirchikhi/" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
+    <div class="footer-bottom">
+      <p>© 2026 CCFA — Chikhi Conseil Formation Audit SASU · SIRET 100 178 730 00014</p>
+      <div class="qualiopi-foot">★ Certifié QUALIOPI</div>
+    </div>
+  </div>
+</footer>
 
-    <script src="script.js"></script>
+<div class="float-bar" id="floatBar">
+  <p>Premier échange <strong>gratuit</strong> et sans engagement</p>
+  <a href="contact.html">Prendre RDV →</a>
+  <button class="float-close" onclick="document.getElementById('floatBar').style.display='none'">✕</button>
+</div>
+<script>
+window.addEventListener('scroll', function() {
+  var bar = document.getElementById('floatBar');
+  if (!bar) return;
+  if (window.scrollY < 300) { bar.style.opacity='0'; bar.style.pointerEvents='none'; }
+  else { bar.style.opacity='1'; bar.style.pointerEvents='auto'; }
+});
+</script>
 </body>
 </html>
