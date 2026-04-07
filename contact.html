@@ -167,10 +167,24 @@ footer { background: #0f1824; padding: 3rem 0 2rem; }
     <a href="index.html" class="logo">CC<span>FA</span></a>
     <ul class="nav-links">
       <li><a href="a-propos.html">À propos</a></li>
-      <li><a href="index.html#services">Nos services</a></li>
+      <li class="nav-dropdown">
+        <a href="#">Nos services ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="service-ingenierie.html">Ingénierie de Formation</a>
+          <a href="service-management.html">Management de Transition</a>
+          <a href="service-territorial.html">Développement Territorial</a>
+          <a href="service-essms.html">Évaluation ESSMS</a>
+          <a href="service-bilan.html">Bilan de Compétences</a>
+          <a href="service-audit.html">Audit Qualiopi</a>
+        </div>
+      </li>
       <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="blog.html">Ressources</a></li>
       <li><a href="contact.html" class="nav-cta">Premier échange gratuit →</a></li>
     </ul>
+    <div class="hamburger" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
   </div>
 </nav>
 
