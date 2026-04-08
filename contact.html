@@ -3,24 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — CCFA | Conseil Formation Ingénierie Tiers-Lieu | Montauban, Occitanie</title>
-<meta name="description" content="Contactez CCFA pour un premier échange gratuit. Ingénierie de formation, certification Qualiopi, développement territorial, management de transition ESS, tiers-lieu. Montauban (82), intervenant partout en France. Réponse sous 24h.">
+<title>CCFA — Conseil, Formation, Ingénierie & Développement Territorial | Montauban, Occitanie</title>
+<meta name="description" content="Samir Chikhi, 27 ans d'expérience en développement territorial, ingénierie de formation, management de transition, conseil ESS et tiers-lieu. Certification Qualiopi. Basé à Montauban, intervenant en Occitanie et partout en France.">
+<meta name="keywords" content="conseil formation Occitanie, ingénierie de formation Montauban, formation professionnelle Tarn-et-Garonne, développement territorial Occitanie, management de transition ESS, tiers-lieu Montauban, tiers lieu ESS Occitanie, audit Qualiopi Montauban, certification Qualiopi Occitanie, accompagnement Qualiopi, évaluation ESSMS, bilan de compétences CPF, OPCO financement formation, CCFA Tarn-et-Garonne">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --navy: #1a2b4a; --navy-light: #243759; --terracotta: #7a3820;
-  --terracotta-light: #9a4e2e; --gold: #8a6828; --cream: #f8f5f0;
-  --gray-light: #f2f0ec; --gray-mid: #e0ddd7; --gray-text: #6b6560;
+  --navy: #1a2b4a;
+  --navy-light: #243759;
+  --terracotta: #7a3820;
+  --terracotta-light: #9a4e2e;
+  --gold: #8a6828;
+  --cream: #f8f5f0;
+  --gray-light: #f2f0ec;
+  --gray-mid: #e0ddd7;
+  --gray-text: #6b6560;
   --white: #ffffff;
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
+
+  /* Couleurs professionnelles pour les 6 services — palette sobre et distincte */
+  --color-ingenierie:  #3B5E8C; /* bleu ardoise */
+  --color-audit:       #5C6E5B; /* vert sauge foncé */
+  --color-essms:       #7A5C4A; /* brun cuir */
+  --color-bilan:       #4A6070; /* bleu-gris acier */
+  --color-management:  #6B5344; /* marron tabac */
+  --color-territorial: #4E5C6E; /* gris-bleu graphite */
 }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font-body); color: var(--navy); background: var(--white); -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--navy);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── NAV ─── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(26,43,74,0.97); backdrop-filter: blur(8px);
+  background: rgba(26,43,74,0.97);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 .nav-inner {
@@ -28,140 +55,462 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 2rem; height: 68px;
 }
-.logo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--white); text-decoration: none; }
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem; font-weight: 700;
+  color: var(--white); text-decoration: none;
+  letter-spacing: -0.01em;
+}
 .logo span { color: var(--terracotta); }
-.nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
-.nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.5rem 0.9rem; border-radius: 4px; transition: all 0.2s; }
+.nav-links {
+  display: flex; align-items: center; gap: 0.2rem;
+  list-style: none;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.8); text-decoration: none;
+  font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
+  text-transform: uppercase; padding: 0.5rem 0.9rem;
+  border-radius: 4px; transition: all 0.2s;
+}
 .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
-.nav-cta { background: var(--terracotta) !important; color: var(--white) !important; }
-.page-header {
-  background: linear-gradient(135deg, var(--navy) 0%, #0f1d35 100%);
-  padding: 8rem 2rem 4rem; text-align: center;
+.nav-cta {
+  background: var(--terracotta) !important;
+  color: var(--white) !important;
+  padding: 0.55rem 1.2rem !important;
+  border-radius: 4px !important;
 }
-.page-header h1 { font-family: var(--font-display); font-size: 2.8rem; color: white; margin-bottom: 1rem; }
-.page-header p { color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 560px; margin: 0 auto; }
-.contact-main { padding: 5rem 0; background: var(--cream); }
+.nav-cta:hover { background: var(--terracotta-light) !important; }
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  display: none; position: absolute; top: 100%; left: 0;
+  background: var(--navy-light); border-radius: 6px;
+  padding: 0.5rem 0; min-width: 240px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu a {
+  display: block; padding: 0.6rem 1.2rem !important;
+  font-size: 0.82rem !important; border-radius: 0 !important;
+  border-left: 3px solid transparent;
+}
+.nav-dropdown-menu a:hover { border-left-color: var(--terracotta) !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 22px; height: 2px; background: white; border-radius: 2px; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--navy) 0%, #0f1d35 50%, #1a2b4a 100%);
+  display: flex; align-items: center; position: relative; overflow: hidden;
+  padding-top: 68px;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(192,87,42,0.10) 0%, transparent 60%);
+}
+.hero::after {
+  content: '';
+  position: absolute; top: -50%; right: -10%;
+  width: 600px; height: 600px;
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; padding: 5rem 2rem;
+  display: grid; grid-template-columns: 1fr 400px; gap: 5rem; align-items: center;
+  position: relative; z-index: 1;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(192,87,42,0.15); border: 1px solid rgba(192,87,42,0.3);
+  color: #e8855a; font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.4rem 0.9rem; border-radius: 20px; margin-bottom: 1.5rem;
+}
+.hero-badge::before { content: '●'; font-size: 0.6rem; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 700; line-height: 1.12;
+  color: var(--white); margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+.hero h1 em { color: var(--terracotta); font-style: normal; }
+.hero-sub {
+  font-size: 1.1rem; color: rgba(255,255,255,0.7);
+  line-height: 1.7; margin-bottom: 2.5rem; max-width: 520px;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--terracotta); color: var(--white);
+  padding: 0.9rem 2rem; border-radius: 5px;
+  font-weight: 600; font-size: 0.95rem; text-decoration: none;
+  transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(192,87,42,0.35);
+}
+.btn-primary:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(192,87,42,0.4); }
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.3); color: var(--white);
+  padding: 0.9rem 2rem; border-radius: 5px;
+  font-weight: 500; font-size: 0.95rem; text-decoration: none;
+  transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+.hero-trust {
+  margin-top: 3.5rem; padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; gap: 2.5rem; flex-wrap: wrap;
+}
+.trust-item { text-align: center; }
+.trust-num {
+  font-family: var(--font-display);
+  font-size: 2.2rem; font-weight: 700; color: var(--white);
+  line-height: 1;
+}
+.trust-num span { color: var(--terracotta); }
+.trust-label { font-size: 0.78rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.3rem; }
+
+/* Hero card — expertise générale (remplace la carte Qualiopi centrée) */
+.hero-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px; padding: 2.5rem;
+  backdrop-filter: blur(10px);
+}
+.hero-card-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem; color: var(--white); margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+.hero-card-title span { color: var(--terracotta); }
+.expertise-domains {
+  display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 1.5rem;
+}
+.expertise-domain {
+  display: flex; align-items: center; gap: 0.9rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 7px;
+  transition: background 0.2s;
+}
+.expertise-domain:hover { background: rgba(255,255,255,0.09); }
+.domain-icon {
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.domain-text {}
+.domain-name {
+  font-size: 0.88rem; font-weight: 600; color: var(--white);
+  line-height: 1.2;
+}
+.domain-sub {
+  font-size: 0.76rem; color: rgba(255,255,255,0.5);
+  margin-top: 0.15rem;
+}
+.hero-card-cta {
+  margin-top: 0.5rem; width: 100%; display: block; text-align: center;
+  background: var(--terracotta); color: white; padding: 0.9rem;
+  border-radius: 5px; text-decoration: none; font-weight: 600; font-size: 0.9rem;
+  transition: background 0.2s;
+}
+.hero-card-cta:hover { background: var(--terracotta-light); }
+
+/* ─── SECTIONS COMMUNES ─── */
+section { padding: 5rem 0; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-.contact-grid { display: grid; grid-template-columns: 1fr 400px; gap: 4rem; align-items: start; }
+.section-eyebrow {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.8rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700; line-height: 1.2;
+  letter-spacing: -0.02em; color: var(--navy);
+}
+.section-sub { font-size: 1.05rem; color: var(--gray-text); margin-top: 0.8rem; max-width: 560px; }
 
-/* FORMULAIRE */
-.form-card {
-  background: white; border-radius: 12px; padding: 2.5rem;
-  box-shadow: 0 4px 30px rgba(26,43,74,0.08);
+/* ─── SERVICES ─── */
+.services { background: var(--cream); }
+.services-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 3rem; gap: 2rem; flex-wrap: wrap;
+}
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.service-card {
+  background: var(--white); border-radius: 10px;
   border: 1px solid var(--gray-mid);
+  padding: 2rem; transition: all 0.25s;
+  position: relative; overflow: hidden;
 }
-.form-card h2 { font-family: var(--font-display); font-size: 1.6rem; color: var(--navy); margin-bottom: 0.5rem; }
-.form-card .subtitle { color: var(--gray-text); font-size: 0.9rem; margin-bottom: 2rem; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-.form-group { margin-bottom: 1rem; }
-.form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.04em; }
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%; padding: 0.75rem 1rem;
-  border: 1px solid var(--gray-mid); border-radius: 6px;
-  font-family: var(--font-body); font-size: 0.9rem;
-  color: var(--navy); background: var(--gray-light);
-  transition: all 0.2s; outline: none;
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; transition: background 0.25s;
 }
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--terracotta); background: white;
-  box-shadow: 0 0 0 3px rgba(192,87,42,0.1);
-}
-.form-group textarea { resize: vertical; min-height: 120px; }
-.form-submit {
-  width: 100%; padding: 1rem;
-  background: var(--terracotta); color: white;
-  border: none; border-radius: 6px; cursor: pointer;
-  font-family: var(--font-body); font-size: 1rem; font-weight: 700;
-  transition: all 0.2s; letter-spacing: 0.02em;
-}
-.form-submit:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(192,87,42,0.3); }
-.form-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
-.form-note { font-size: 0.78rem; color: var(--gray-text); text-align: center; margin-top: 0.8rem; }
+/* Couleur de barre par service */
+.service-card.s-ingenierie::before  { background: var(--color-ingenierie); }
+.service-card.s-audit::before       { background: var(--color-audit); }
+.service-card.s-essms::before       { background: var(--color-essms); }
+.service-card.s-bilan::before       { background: var(--color-bilan); }
+.service-card.s-management::before  { background: var(--color-management); }
+.service-card.s-territorial::before { background: var(--color-territorial); }
 
-/* Message d'erreur */
-.form-error {
-  display: none; background: #fff0ed; border: 1px solid #f5b8a8;
-  border-radius: 6px; padding: 0.8rem 1rem;
-  color: #9e3e1c; font-size: 0.86rem; margin-top: 0.8rem;
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,43,74,0.1); }
+
+.service-tag {
+  display: inline-block; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.25rem 0.6rem; border-radius: 3px; margin-bottom: 1rem;
+}
+/* Tags colorés par service */
+.service-card.s-ingenierie  .service-tag { background: rgba(59,94,140,0.10);  color: var(--color-ingenierie); }
+.service-card.s-audit       .service-tag { background: rgba(92,110,91,0.10);  color: var(--color-audit); }
+.service-card.s-essms       .service-tag { background: rgba(122,92,74,0.10);  color: var(--color-essms); }
+.service-card.s-bilan       .service-tag { background: rgba(74,96,112,0.10);  color: var(--color-bilan); }
+.service-card.s-management  .service-tag { background: rgba(107,83,68,0.10);  color: var(--color-management); }
+.service-card.s-territorial .service-tag { background: rgba(78,92,110,0.10);  color: var(--color-territorial); }
+
+.service-icon { font-size: 2rem; margin-bottom: 1rem; }
+.service-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem; font-weight: 600; color: var(--navy);
+  margin-bottom: 0.7rem;
+}
+.service-card p { font-size: 0.88rem; color: var(--gray-text); line-height: 1.6; }
+.service-card-link {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-size: 0.85rem; font-weight: 600;
+  text-decoration: none; margin-top: 1.2rem; transition: gap 0.2s;
+}
+.service-card.s-ingenierie  .service-card-link { color: var(--color-ingenierie); }
+.service-card.s-audit       .service-card-link { color: var(--color-audit); }
+.service-card.s-essms       .service-card-link { color: var(--color-essms); }
+.service-card.s-bilan       .service-card-link { color: var(--color-bilan); }
+.service-card.s-management  .service-card-link { color: var(--color-management); }
+.service-card.s-territorial .service-card-link { color: var(--color-territorial); }
+.service-card-link:hover { gap: 0.6rem; }
+
+/* ─── PREUVE SOCIALE ─── */
+.proof { background: var(--white); }
+.proof-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  margin-top: 3rem;
+}
+.proof-card {
+  background: var(--cream); border-radius: 10px;
+  padding: 2rem; border-left: 4px solid var(--terracotta);
+}
+.proof-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.8rem; }
+.proof-text {
+  font-size: 0.95rem; line-height: 1.7; color: var(--navy);
+  font-style: italic; margin-bottom: 1.2rem;
+}
+.proof-author { display: flex; flex-direction: column; }
+.proof-name { font-weight: 700; font-size: 0.9rem; color: var(--navy); }
+.proof-role { font-size: 0.8rem; color: var(--gray-text); }
+.clients-strip {
+  margin-top: 3.5rem; padding-top: 2.5rem;
+  border-top: 1px solid var(--gray-mid);
+}
+.clients-strip p { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); text-align: center; margin-bottom: 1.5rem; }
+.clients-logos {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 1rem 2.5rem; align-items: center;
+}
+.client-pill {
+  background: var(--gray-light); border: 1px solid var(--gray-mid);
+  border-radius: 20px; padding: 0.4rem 1rem;
+  font-size: 0.82rem; font-weight: 600; color: var(--navy);
 }
 
-/* SIDEBAR */
-.contact-sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
-.info-card {
-  background: white; border-radius: 10px; padding: 1.8rem;
-  border: 1px solid var(--gray-mid);
+/* ─── PARCOURS / LÉGITIMITÉ ─── */
+.legitimite { background: var(--navy); }
+.legit-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
 }
-.info-card h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--navy); margin-bottom: 1.2rem; }
-.info-item {
-  display: flex; align-items: flex-start; gap: 0.8rem;
-  margin-bottom: 1rem; padding-bottom: 1rem;
-  border-bottom: 1px solid var(--gray-light);
+.legit-left .section-title { color: white; }
+.legit-left .section-eyebrow { color: #e8855a; }
+.legit-left .section-sub { color: rgba(255,255,255,0.6); }
+.legit-highlight-box {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 1.8rem; margin-top: 2rem;
 }
-.info-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
-.info-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-text); margin-bottom: 0.2rem; }
-.info-value { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
-.info-value a { color: var(--terracotta); text-decoration: none; }
-.info-value a:hover { text-decoration: underline; }
-.promise-card {
-  background: var(--navy); border-radius: 10px; padding: 1.8rem;
+.legit-highlight-box h4 { color: var(--terracotta); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+.credentials { display: flex; flex-direction: column; gap: 0.6rem; }
+.credential-item {
+  display: flex; align-items: center; gap: 0.7rem;
+  color: rgba(255,255,255,0.85); font-size: 0.88rem;
 }
-.promise-card h3 { font-family: var(--font-display); color: white; font-size: 1.1rem; margin-bottom: 1.2rem; }
-.promise-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
-.promise-list li { display: flex; gap: 0.7rem; color: rgba(255,255,255,0.85); font-size: 0.88rem; }
-.promise-list li::before { content: '✓'; color: var(--terracotta); font-weight: 700; flex-shrink: 0; }
-.calendly-card {
-  background: linear-gradient(135deg, var(--terracotta), #9e3e1c);
-  border-radius: 10px; padding: 1.8rem; text-align: center;
+.credential-item::before { content: '✓'; color: var(--terracotta); font-weight: 700; flex-shrink: 0; }
+.timeline { display: flex; flex-direction: column; gap: 0; }
+.timeline-item {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 1.5rem; padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
 }
-.calendly-card h3 { color: white; font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.5rem; }
-.calendly-card p { color: rgba(255,255,255,0.8); font-size: 0.85rem; margin-bottom: 1.2rem; }
-.btn-calendly {
-  display: block; background: white; color: var(--terracotta);
-  padding: 0.8rem 1.5rem; border-radius: 6px;
-  font-weight: 700; font-size: 0.9rem; text-decoration: none;
+.timeline-item:last-child { border-bottom: none; }
+.timeline-date { font-size: 0.8rem; color: var(--terracotta); font-weight: 600; padding-top: 0.2rem; line-height: 1.4; }
+.timeline-content h4 { color: white; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; }
+.timeline-content p { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+
+/* ─── REPÈRES TARIFAIRES ─── */
+.tarifs { background: var(--gray-light); padding: 5rem 0; }
+
+/* ─── CTA FINAL ─── */
+.cta-final {
+  background: linear-gradient(135deg, var(--terracotta) 0%, #9e3e1c 100%);
+  padding: 5rem 0;
+}
+.cta-inner { max-width: 700px; margin: 0 auto; padding: 0 2rem; text-align: center; }
+.cta-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  color: white; margin-bottom: 1rem; font-weight: 700;
+}
+.cta-inner p { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 2.5rem; }
+.cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-cta-white {
+  background: white; color: var(--terracotta);
+  padding: 1rem 2.2rem; border-radius: 5px;
+  font-weight: 700; font-size: 1rem; text-decoration: none;
+  transition: all 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.btn-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+.btn-cta-trans {
+  border: 2px solid rgba(255,255,255,0.5); color: white;
+  padding: 1rem 2.2rem; border-radius: 5px;
+  font-weight: 600; font-size: 1rem; text-decoration: none;
   transition: all 0.2s;
 }
-.btn-calendly:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+.btn-cta-trans:hover { border-color: white; background: rgba(255,255,255,0.1); }
 
-/* FAQ */
-.faq { padding: 5rem 0; background: white; }
-.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
-.faq-item { background: var(--gray-light); border-radius: 8px; padding: 1.5rem; }
-.faq-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
-.faq-item p { font-size: 0.86rem; color: var(--gray-text); line-height: 1.6; }
-
-footer { background: #0f1824; padding: 3rem 0 2rem; }
-.footer-simple { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-.footer-simple p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
-.footer-simple a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.82rem; }
-.footer-logo { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: white; }
-.footer-logo span { color: var(--terracotta); }
-
-/* SUCCESS STATE */
-.form-success {
-  display: none; text-align: center; padding: 3rem 2rem;
+/* ─── FOOTER ─── */
+footer {
+  background: #0f1824;
+  padding: 4rem 0 2rem;
 }
-.form-success .success-icon { font-size: 3rem; margin-bottom: 1rem; }
-.form-success h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--navy); margin-bottom: 0.8rem; }
-.form-success p { color: var(--gray-text); font-size: 0.95rem; }
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem; margin-bottom: 3rem;
+}
+.footer-brand .logo-foot {
+  font-family: var(--font-display);
+  font-size: 1.3rem; font-weight: 700; color: white;
+}
+.footer-brand .logo-foot span { color: var(--terracotta); }
+.footer-brand p {
+  font-size: 0.85rem; color: rgba(255,255,255,0.5);
+  margin-top: 1rem; line-height: 1.7; max-width: 260px;
+}
+.footer-brand .contact-items { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-brand .contact-item {
+  display: flex; align-items: center; gap: 0.5rem;
+  color: rgba(255,255,255,0.6); font-size: 0.85rem; text-decoration: none;
+}
+.footer-brand .contact-item:hover { color: white; }
+footer h4 {
+  color: white; font-size: 0.78rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
+}
+footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+footer ul a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+footer ul a:hover { color: rgba(255,255,255,0.9); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 1.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+.qualiopi-foot {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: rgba(184,150,62,0.1); border: 1px solid rgba(184,150,62,0.3);
+  border-radius: 4px; padding: 0.4rem 0.8rem;
+  font-size: 0.75rem; font-weight: 700; color: var(--gold);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
 
-@media (max-width: 900px) {
-  .contact-grid { grid-template-columns: 1fr; }
-  .contact-sidebar { order: -1; }
-  .faq-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
+/* ─── FLOATING BAR ─── */
+.float-bar {
+  position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+  background: var(--navy); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50px; padding: 0.7rem 1.2rem;
+  display: flex; align-items: center; gap: 1rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3); z-index: 90;
+  white-space: nowrap;
+}
+.float-bar p { color: rgba(255,255,255,0.8); font-size: 0.85rem; }
+.float-bar a {
+  background: var(--terracotta); color: white;
+  padding: 0.45rem 1.2rem; border-radius: 25px;
+  text-decoration: none; font-size: 0.82rem; font-weight: 700;
+  transition: background 0.2s;
+}
+.float-bar a:hover { background: var(--terracotta-light); }
+.float-close {
+  color: rgba(255,255,255,0.4); cursor: pointer; font-size: 1rem;
+  background: none; border: none; padding: 0 0.3rem;
+}
+.float-close:hover { color: white; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-card { max-width: 480px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .legit-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .proof-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
   .nav-links { display: none; }
-  .page-header h1 { font-size: 2rem; }
+  .hamburger { display: flex; }
+  .services-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-trust { gap: 1.5rem; }
+  .float-bar { left: 1rem; right: 1rem; transform: none; justify-content: space-between; }
+}
+
+/* ─── ANIMATIONS ENTRÉE ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.anim { opacity: 0; animation: fadeUp 0.6s ease forwards; }
+.anim-1 { animation-delay: 0.1s; }
+.anim-2 { animation-delay: 0.25s; }
+.anim-3 { animation-delay: 0.4s; }
+.anim-4 { animation-delay: 0.55s; }
+
+/* ─── HERO VALUE PROP ─── */
+.hero-value-prop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 1.6rem;
+  margin-top: -0.5rem;
+}
+.hero-value-prop strong { color: white; }
+
+/* ─── RESPONSIVE MINI FORM ─── */
+@media (max-width: 700px) {
+  #contact-rapide > .container > div {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
 }
 </style>
 </head>
-<body>
 
+<body>
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="logo">CC<span>FA</span></a>
@@ -183,246 +532,549 @@ footer { background: #0f1824; padding: 3rem 0 2rem; }
       <li><a href="blog.html">Ressources</a></li>
       <li><a href="contact.html" class="nav-cta">Premier échange gratuit →</a></li>
     </ul>
-    <div class="hamburger" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">
+    <div class="hamburger" onclick="document.querySelector('.nav-links').style.display='flex'">
       <span></span><span></span><span></span>
     </div>
   </div>
 </nav>
 
-<div class="page-header">
-  <h1>Discutons de votre projet</h1>
-  <p>Premier échange offert · Sans engagement · Réponse sous 24h</p>
-</div>
-
-<section class="contact-main">
-  <div class="container">
-    <div class="contact-grid">
-
-      <!-- FORMULAIRE -->
-      <div class="form-card">
-        <h2>Envoyez-moi un message</h2>
-        <p class="subtitle">Je réponds personnellement à chaque demande sous 24h ouvrées.</p>
-
-        <div id="formContent">
-          <!--
-            ╔══════════════════════════════════════════════════════════════╗
-            ║  ACTIVATION FORMULAIRE — INSTRUCTIONS POUR SAMIR            ║
-            ║                                                              ║
-            ║  Ce formulaire est prêt. Il suffit de 2 minutes pour        ║
-            ║  l'activer avec Formspree (service gratuit) :               ║
-            ║                                                              ║
-            ║  1. Aller sur https://formspree.io et créer un compte       ║
-            ║  2. Créer un nouveau formulaire → copier votre form ID      ║
-            ║  3. Remplacer YOUR_FORMSPREE_ID ci-dessous par votre ID     ║
-            ║     (ex: xzbqpkoa)                                          ║
-            ║  4. Pousser sur GitHub → les emails arriveront directement  ║
-            ║     sur contact@c2fa.fr                                     ║
-            ╚══════════════════════════════════════════════════════════════╝
-          -->
-          <form id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="prenom">Prénom *</label>
-                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
-              </div>
-              <div class="form-group">
-                <label for="nom">Nom *</label>
-                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" placeholder="votre@email.fr" required>
-              </div>
-              <div class="form-group">
-                <label for="tel">Téléphone</label>
-                <input type="tel" id="tel" name="tel" placeholder="06 XX XX XX XX">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="structure">Structure / Organisme</label>
-              <input type="text" id="structure" name="structure" placeholder="Nom de votre structure">
-            </div>
-            <div class="form-group">
-              <label for="sujet">Objet de votre demande *</label>
-              <select id="sujet" name="sujet" required>
-                <option value="">— Sélectionnez —</option>
-                <option value="ingenierie">Ingénierie de Formation</option>
-                <option value="management">Management de Transition</option>
-                <option value="territorial">Développement Territorial</option>
-                <option value="essms">Évaluation ESSMS</option>
-                <option value="bilan">Bilan de Compétences</option>
-                <option value="qualiopi">Audit Qualiopi</option>
-                <option value="autre">Autre demande</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Votre message *</label>
-              <textarea id="message" name="message" placeholder="Décrivez votre projet, vos besoins ou vos questions..." required></textarea>
-            </div>
-            <button type="submit" class="form-submit" id="submitBtn">Envoyer ma demande →</button>
-            <div class="form-error" id="formError">
-              Une erreur est survenue. Merci de m'écrire directement à <a href="mailto:contact@c2fa.fr">contact@c2fa.fr</a> ou d'appeler le 06 51 50 97 18.
-            </div>
-            <p class="form-note">🔒 Vos données ne sont jamais transmises à des tiers.</p>
-          </form>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge anim anim-1">Conseil · Formation · Audit · Territoire</div>
+      <h1 class="anim anim-2">
+        L'expertise au service<br>
+        des <em>territoires</em><br>
+        et des structures.
+      </h1>
+      <p class="hero-sub anim anim-3">
+        27 ans d'expérience en développement local, ingénierie de formation, management de transition
+        et accompagnement des associations, collectivités et structures ESS — en Occitanie et partout en France.
+      </p>
+      <p class="hero-value-prop anim anim-3">
+        ✅ Organisme certifié <strong>Qualiopi</strong> · 💼 Accompagnement <strong>sur-mesure</strong> · 📍 Basé à <strong>Montauban</strong>
+      </p>
+      <div class="hero-actions anim anim-4">
+        <a href="contact.html" class="btn-primary">📅 Premier échange gratuit →</a>
+        <a href="catalogue-formations.html" class="btn-outline">📚 Voir les formations</a>
+      </div>
+      <div class="hero-trust anim anim-4">
+        <div class="trust-item">
+          <div class="trust-num">27<span>ans</span></div>
+          <div class="trust-label">d'expérience terrain</div>
         </div>
+        <div class="trust-item">
+          <div class="trust-num">100<span>%</span></div>
+          <div class="trust-label">Réussite Qualiopi</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">4,2<span>M€</span></div>
+          <div class="trust-label">Budgets pilotés</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">55<span>p.</span></div>
+          <div class="trust-label">Équipes managées</div>
+        </div>
+      </div>
+    </div>
 
-        <div class="form-success" id="formSuccess">
-          <div class="success-icon">✅</div>
-          <h3>Message bien reçu !</h3>
-          <p>Je vous réponds personnellement sous 24h ouvrées.<br>En attendant, vous pouvez aussi me joindre directement au <a href="tel:0651509718" style="color:var(--terracotta);font-weight:600;">06 51 50 97 18</a>.</p>
+    <!-- HERO CARD : expertise générale -->
+    <div class="hero-card anim anim-3">
+      <div class="hero-card-title">6 domaines d'<span>expertise</span></div>
+      <div class="expertise-domains">
+        <div class="expertise-domain">
+          <div class="domain-icon">📚</div>
+          <div class="domain-text">
+            <div class="domain-name">Ingénierie de Formation</div>
+            <div class="domain-sub">Dispositifs sur-mesure, OPCO/CPF</div>
+          </div>
+        </div>
+        <div class="expertise-domain">
+          <div class="domain-icon">👔</div>
+          <div class="domain-text">
+            <div class="domain-name">Management de Transition</div>
+            <div class="domain-sub">Direction opérationnelle ESS & collectivités</div>
+          </div>
+        </div>
+        <div class="expertise-domain">
+          <div class="domain-icon">🏛️</div>
+          <div class="domain-text">
+            <div class="domain-name">Développement Territorial</div>
+            <div class="domain-sub">LEADER, politiques publiques, PETR</div>
+          </div>
+        </div>
+        <div class="expertise-domain">
+          <div class="domain-icon">🏥</div>
+          <div class="domain-text">
+            <div class="domain-name">Évaluation ESSMS</div>
+            <div class="domain-sub">Réglementaire, diagnostic organisationnel</div>
+          </div>
+        </div>
+        <div class="expertise-domain">
+          <div class="domain-icon">🎯</div>
+          <div class="domain-text">
+            <div class="domain-name">Bilan de Compétences</div>
+            <div class="domain-sub">24h réglementaires · Finançable CPF</div>
+          </div>
+        </div>
+        <div class="expertise-domain">
+          <div class="domain-icon">📋</div>
+          <div class="domain-text">
+            <div class="domain-name">Audit Qualiopi</div>
+            <div class="domain-sub">100% réussite · Accompagnement RNQ</div>
+          </div>
+        </div>
+      </div>
+      <a href="#services" class="hero-card-cta">Voir toutes nos prestations →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <div class="section-eyebrow">Ce que nous faisons</div>
+        <h2 class="section-title">6 expertises,<br>une seule priorité : vos résultats</h2>
+      </div>
+      <a href="tarifs.html" style="color:var(--terracotta);font-weight:600;text-decoration:none;font-size:0.9rem;white-space:nowrap;">Voir tous les tarifs →</a>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card s-ingenierie">
+        <div class="service-tag">Formation</div>
+        <div class="service-icon">📚</div>
+        <h3>Ingénierie de Formation</h3>
+        <p>Conception de dispositifs pédagogiques sur-mesure, référentiels, progression sur 3 niveaux, ingénierie financière OPCO/CPF.</p>
+        <a href="service-ingenierie.html" class="service-card-link">Découvrir →</a>
+      </div>
+
+      <div class="service-card s-management">
+        <div class="service-tag">Transition</div>
+        <div class="service-icon">👔</div>
+        <h3>Management de Transition</h3>
+        <p>Direction générale opérationnelle pour collectivités et ESS. Intégration en 48h. Expérience prouvée : budgets jusqu'à 4,2M€, équipes 55 personnes.</p>
+        <a href="service-management.html" class="service-card-link">Découvrir →</a>
+      </div>
+
+      <div class="service-card s-territorial">
+        <div class="service-tag">Territoire</div>
+        <div class="service-icon">🏛️</div>
+        <h3>Développement Territorial</h3>
+        <p>Fonds européens LEADER/FEDER, diagnostic territorial, conseil en politiques publiques. Ancien chargé de mission PETR sur 140 communes.</p>
+        <a href="service-territorial.html" class="service-card-link">Découvrir →</a>
+      </div>
+
+      <div class="service-card s-essms">
+        <div class="service-tag">Social & Médico-social</div>
+        <div class="service-icon">🏥</div>
+        <h3>Évaluation ESSMS</h3>
+        <p>Évaluations réglementaires des établissements sociaux et médico-sociaux. Diagnostic organisationnel et plans d'amélioration.</p>
+        <a href="service-essms.html" class="service-card-link">Découvrir →</a>
+      </div>
+
+      <div class="service-card s-bilan">
+        <div class="service-tag">Individuel</div>
+        <div class="service-icon">🎯</div>
+        <h3>Bilan de Compétences</h3>
+        <p>24h réglementaires sur 3 mois. Finançable CPF. Analyse des compétences, aptitudes et motivations pour un projet de reconversion réaliste.</p>
+        <a href="service-bilan.html" class="service-card-link">Découvrir →</a>
+      </div>
+
+      <div class="service-card s-audit">
+        <div class="service-tag">Qualité</div>
+        <div class="service-icon">📋</div>
+        <h3>Audit &amp; Certification Qualiopi</h3>
+        <p>Ancien auditeur certificateur QOANIX, je connais les attendus des organismes certificateurs de l'intérieur. 100% de réussite au premier passage.</p>
+        <a href="service-audit.html" class="service-card-link">Découvrir →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PREUVE SOCIALE -->
+<section class="proof">
+  <div class="container">
+    <div class="section-eyebrow">Témoignages</div>
+    <h2 class="section-title">Ils m'ont fait confiance.<br>Voici ce qu'ils en disent.</h2>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">« L'accompagnement de Samir a été décisif. Il connaît le référentiel Qualiopi de l'intérieur — il a lui-même été auditeur certificateur. Résultat : zéro non-conformité majeure le jour J. Je recommande sans réserve. »</p>
+        <div class="proof-author">
+          <span class="proof-name">Directrice pédagogique</span>
+          <span class="proof-role">Organisme de formation, Toulouse (150 salariés)</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">« Mission de management de transition en urgence : Samir opérationnel en 48h, nos équipes stabilisées en 3 semaines. Sa capacité à aller droit au cœur des problèmes RH et financiers nous a évité une crise grave. »</p>
+        <div class="proof-author">
+          <span class="proof-name">Président</span>
+          <span class="proof-role">Association ESS, Occitanie (55 salariés)</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">« Le diagnostic DLA réalisé par CCFA a transformé notre façon de voir notre modèle économique. Des recommandations concrètes, opérationnelles, et pas de bla-bla inutile. Nos financements sont sécurisés. »</p>
+        <div class="proof-author">
+          <span class="proof-name">Directrice</span>
+          <span class="proof-role">Structure médico-sociale, Tarn (ESSMS)</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">« Samir a monté notre dossier LEADER de A à Z. Rigueur, connaissance des exigences européennes et des réalités territoriales — nous avons obtenu le financement. Un partenaire de confiance sur le long terme. »</p>
+        <div class="proof-author">
+          <span class="proof-name">Chargée de mission</span>
+          <span class="proof-role">Collectivité territoriale, Tarn-et-Garonne</span>
+        </div>
+      </div>
+    </div>
+    <div class="clients-strip">
+      <p>Structures ayant bénéficié d'un accompagnement CCFA</p>
+      <div class="clients-logos">
+        <span class="client-pill">QOANIX — Orléans</span>
+        <span class="client-pill">UFCV Occitanie</span>
+        <span class="client-pill">In-Team Consultants</span>
+        <span class="client-pill">DLA Occitanie</span>
+        <span class="client-pill">Léo Lagrange Formation</span>
+        <span class="client-pill">NAPSIA</span>
+        <span class="client-pill">Cap Métiers Bordeaux</span>
+        <span class="client-pill">PETR GQG</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LÉGITIMITÉ -->
+<section class="legitimite">
+  <div class="container">
+    <div class="legit-inner">
+      <div class="legit-left">
+        <div class="section-eyebrow">Pourquoi CCFA ?</div>
+        <h2 class="section-title">Une légitimité construite sur le terrain, pas en salle de réunion.</h2>
+        <p class="section-sub">27 ans de missions opérationnelles — DGS, directeur ESS, chargé de mission européen, auditeur certificateur. Je connais vos problèmes parce que je les ai vécus.</p>
+        <div class="legit-highlight-box">
+          <h4>Qualifications &amp; accréditations</h4>
+          <div class="credentials">
+            <div class="credential-item">Auditeur certificateur Qualiopi — QOANIX (2022-2024)</div>
+            <div class="credential-item">Évaluateur ESSMS accrédité</div>
+            <div class="credential-item">Consultant DLA Occitanie référencé</div>
+            <div class="credential-item">Expert montage fonds européens LEADER/FEDER</div>
+            <div class="credential-item">Formateur certifié CNFPT &amp; Léo Lagrange</div>
+            <div class="credential-item">Certifié Qualiopi (démarche propre)</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Depuis 2020</div>
+            <div class="timeline-content">
+              <h4>Fondateur CCFA</h4>
+              <p>Conseil, formation, audit — Occitanie &amp; national</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2019 – 2021</div>
+            <div class="timeline-content">
+              <h4>DGS — Mairie de Grisolles (82)</h4>
+              <p>Budget 4,2M€ · 55 agents · Pilotage stratégique</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2016 – 2018</div>
+            <div class="timeline-content">
+              <h4>Chargé de mission LEADER</h4>
+              <p>PETR Garonne Quercy Gascogne · 140 communes</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2009 – 2012</div>
+            <div class="timeline-content">
+              <h4>Directeur — Régie de Quartier Bellefontaine</h4>
+              <p>Structure ESS · 1,1M€ · 55 salariés · Toulouse</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2003 – 2007</div>
+            <div class="timeline-content">
+              <h4>Chargé de mission ANRU</h4>
+              <p>CA Montauban Trois Rivières · Clause d'insertion</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REPÈRES TARIFAIRES -->
+<section class="tarifs">
+  <div class="container">
+    <div class="section-eyebrow">Honoraires &amp; missions</div>
+    <h2 class="section-title">Des repères budgétaires<br>par domaine d'expertise</h2>
+    <p class="section-sub">Chaque mission est établie sur devis après un premier échange gratuit. Les fourchettes ci-dessous vous donnent un repère budgétaire.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;">
+
+      <div style="background:white;border:1px solid var(--gray-mid);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+        <div style="font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);font-weight:600;">Audit &amp; Certification</div>
+        <div style="font-family:var(--font-display);font-size:1rem;color:var(--navy);font-weight:600;">Qualiopi</div>
+        <div style="font-size:0.82rem;color:var(--gray-text);line-height:1.5;">Audit blanc · mise en conformité documentaire · accompagnement jusqu'à la certification</div>
+        <div style="margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--gray-mid);">
+          <span style="font-size:1.1rem;font-weight:700;color:var(--terracotta);">750 € – 5 900 €</span>
+          <span style="font-size:0.75rem;color:var(--gray-text);"> HT selon mission</span>
         </div>
       </div>
 
-      <!-- SIDEBAR -->
-      <div class="contact-sidebar">
-        <div class="calendly-card">
-          <h3>📅 Réserver directement un créneau</h3>
-          <p>Choisissez le moment qui vous convient — 30 min de consultation gratuite.</p>
-          <a href="https://calendly.com/samir-chikhi" target="_blank" class="btn-calendly">Voir les disponibilités →</a>
+      <div style="background:white;border:1px solid var(--gray-mid);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+        <div style="font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);font-weight:600;">Formation</div>
+        <div style="font-family:var(--font-display);font-size:1rem;color:var(--navy);font-weight:600;">Ingénierie pédagogique</div>
+        <div style="font-size:0.82rem;color:var(--gray-text);line-height:1.5;">Conception de parcours · formation de formateurs · ingénierie financière OPCO/CPF</div>
+        <div style="margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--gray-mid);">
+          <span style="font-size:1.1rem;font-weight:700;color:var(--terracotta);">700 € – 1 500 €</span>
+          <span style="font-size:0.75rem;color:var(--gray-text);"> HT selon prestation</span>
         </div>
+      </div>
 
-        <div class="info-card">
-          <h3>Coordonnées</h3>
-          <div class="info-item">
-            <div class="info-icon">📞</div>
-            <div>
-              <div class="info-label">Téléphone</div>
-              <div class="info-value"><a href="tel:0651509718">06 51 50 97 18</a></div>
-            </div>
+      <div style="background:white;border:1px solid var(--gray-mid);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+        <div style="font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);font-weight:600;">Individuel · CPF</div>
+        <div style="font-family:var(--font-display);font-size:1rem;color:var(--navy);font-weight:600;">Bilan de compétences</div>
+        <div style="font-size:0.82rem;color:var(--gray-text);line-height:1.5;">24h réglementaires sur 3 mois · finançable intégralement via le CPF</div>
+        <div style="margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--gray-mid);">
+          <span style="font-size:1.1rem;font-weight:700;color:var(--terracotta);">1 800 €</span>
+          <span style="font-size:0.75rem;color:var(--gray-text);"> HT / bilan</span>
+        </div>
+      </div>
+
+      <div style="background:white;border:1px solid var(--gray-mid);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+        <div style="font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);font-weight:600;">Médico-social</div>
+        <div style="font-family:var(--font-display);font-size:1rem;color:var(--navy);font-weight:600;">Évaluation ESSMS</div>
+        <div style="font-size:0.82rem;color:var(--gray-text);line-height:1.5;">Évaluation interne &amp; externe · référentiel HAS · EHPAD, ESAT, IME, SAAD…</div>
+        <div style="margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--gray-mid);">
+          <span style="font-size:1.1rem;font-weight:700;color:var(--terracotta);">Sur devis</span>
+          <span style="font-size:0.75rem;color:var(--gray-text);"> selon taille structure</span>
+        </div>
+      </div>
+
+      <div style="background:white;border:1px solid var(--gray-mid);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+        <div style="font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);font-weight:600;">Direction temporaire</div>
+        <div style="font-family:var(--font-display);font-size:1rem;color:var(--navy);font-weight:600;">Management de transition</div>
+        <div style="font-size:0.82rem;color:var(--gray-text);line-height:1.5;">DGS / direction ESS &amp; collectivités · temps partiel ou temps plein · 3 à 18 mois</div>
+        <div style="margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--gray-mid);">
+          <span style="font-size:1.1rem;font-weight:700;color:var(--terracotta);">3 000 – 5 000 €</span>
+          <span style="font-size:0.75rem;color:var(--gray-text);"> HT / mois</span>
+        </div>
+      </div>
+
+      <div style="background:white;border:1px solid var(--gray-mid);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+        <div style="font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);font-weight:600;">Collectivités &amp; ESS</div>
+        <div style="font-family:var(--font-display);font-size:1rem;color:var(--navy);font-weight:600;">Développement territorial</div>
+        <div style="font-size:0.82rem;color:var(--gray-text);line-height:1.5;">Diagnostic · projets européens LEADER/FEDER · politiques publiques · DLA</div>
+        <div style="margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--gray-mid);">
+          <span style="font-size:1.1rem;font-weight:700;color:var(--terracotta);">700 – 2 500 €</span>
+          <span style="font-size:0.75rem;color:var(--gray-text);"> HT selon mission</span>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;margin-top:1.75rem;font-size:0.85rem;color:var(--gray-text);">
+      Finançable OPCO · CPF · Fonds publics &amp; régionaux · DLA
+      · <a href="tarifs.html" style="color:var(--terracotta);font-weight:600;">Grille tarifaire complète →</a>
+    </p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-inner">
+    <h2>Votre projet mérite un expert qui connaît le terrain.</h2>
+    <p>Premier échange offert et sans engagement. Je vous réponds sous 24h et vous propose un devis sous 48h.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn-cta-white">📅 Prendre rendez-vous gratuitement</a>
+      <a href="tel:0651509718" class="btn-cta-trans">📞 06 51 50 97 18</a>
+    </div>
+  </div>
+</section>
+
+<!-- MINI FORMULAIRE DE CONTACT RAPIDE -->
+<section id="contact-rapide" style="background:var(--cream);padding:4rem 0;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:960px;margin:0 auto;">
+      <div>
+        <div class="section-eyebrow">Contact rapide</div>
+        <h2 class="section-title" style="font-size:1.7rem;margin-bottom:1rem;">Écrivez-nous<br>directement ici</h2>
+        <p style="color:var(--gray-text);font-size:0.95rem;margin-bottom:1.5rem;">
+          Pas besoin de naviguer vers une autre page. Décrivez votre besoin en quelques mots — 
+          nous vous rappelons sous 24h.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:var(--navy);">
+            <span style="color:var(--terracotta);font-size:1.1rem;">⏱️</span> Réponse sous 24h garantie
           </div>
-          <div class="info-item">
-            <div class="info-icon">✉️</div>
-            <div>
-              <div class="info-label">Email</div>
-              <div class="info-value"><a href="mailto:contact@c2fa.fr">contact@c2fa.fr</a></div>
-            </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:var(--navy);">
+            <span style="color:var(--terracotta);font-size:1.1rem;">🎁</span> Premier échange 100% gratuit
           </div>
-          <div class="info-item">
-            <div class="info-icon">📍</div>
-            <div>
-              <div class="info-label">Adresse</div>
-              <div class="info-value">12 rue du Génie<br>82000 Montauban</div>
-            </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:var(--navy);">
+            <span style="color:var(--terracotta);font-size:1.1rem;">📍</span> Déplacement possible en Occitanie
           </div>
-          <div class="info-item">
-            <div class="info-icon">🕐</div>
-            <div>
-              <div class="info-label">Horaires</div>
-              <div class="info-value">Lun–Ven : 9h–12h30 · 14h–18h</div>
-            </div>
-          </div>
-          <div class="info-item">
-            <div class="info-icon">🌍</div>
-            <div>
-              <div class="info-label">Zone d'intervention</div>
-              <div class="info-value">Occitanie &amp; France entière</div>
-            </div>
+          <!-- Google Avis -->
+          <div style="margin-top:1.5rem;padding:1.2rem;background:white;border-radius:12px;border:1px solid var(--gray-mid);box-shadow:var(--shadow-sm);">
+            <div style="font-size:0.78rem;color:var(--gray-text);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">Avis Google</div>
+            <div style="font-size:1.4rem;margin-bottom:0.25rem;">⭐⭐⭐⭐⭐</div>
+            <p style="font-size:0.88rem;color:var(--navy);margin-bottom:0.75rem;">"Accompagnement Qualiopi d'une grande qualité, professionnel et disponible."</p>
+            <a href="https://g.page/r/ccfa-montauban/review" target="_blank" rel="noopener" 
+               style="font-size:0.82rem;color:var(--terracotta);font-weight:600;text-decoration:none;">
+              ✍️ Laisser un avis Google →
+            </a>
           </div>
         </div>
+      </div>
+      <div>
+        <form action="https://formspree.io/f/contact@c2fa.fr" method="POST" 
+              style="background:white;padding:2rem;border-radius:16px;border:1px solid var(--gray-mid);box-shadow:var(--shadow-md);display:flex;flex-direction:column;gap:1rem;">
+          <div>
+            <label style="font-size:0.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:0.4rem;">Votre nom *</label>
+            <input type="text" name="nom" required placeholder="Prénom Nom"
+              style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--gray-mid);border-radius:8px;font-family:var(--font-body);font-size:0.92rem;color:var(--navy);outline:none;transition:border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--terracotta)'" onblur="this.style.borderColor='var(--gray-mid)'">
+          </div>
+          <div>
+            <label style="font-size:0.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:0.4rem;">Email *</label>
+            <input type="email" name="email" required placeholder="vous@exemple.fr"
+              style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--gray-mid);border-radius:8px;font-family:var(--font-body);font-size:0.92rem;color:var(--navy);outline:none;transition:border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--terracotta)'" onblur="this.style.borderColor='var(--gray-mid)'">
+          </div>
+          <div>
+            <label style="font-size:0.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:0.4rem;">Votre besoin *</label>
+            <select name="service" required 
+              style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--gray-mid);border-radius:8px;font-family:var(--font-body);font-size:0.92rem;color:var(--navy);outline:none;background:white;transition:border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--terracotta)'" onblur="this.style.borderColor='var(--gray-mid)'">
+              <option value="">-- Sélectionnez --</option>
+              <option value="qualiopi">Audit / Certification Qualiopi</option>
+              <option value="formation">Ingénierie de Formation</option>
+              <option value="bilan">Bilan de Compétences CPF</option>
+              <option value="essms">Évaluation ESSMS</option>
+              <option value="territorial">Développement Territorial</option>
+              <option value="management">Management de Transition</option>
+              <option value="autre">Autre demande</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size:0.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:0.4rem;">Message</label>
+            <textarea name="message" rows="3" placeholder="Décrivez brièvement votre situation..."
+              style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--gray-mid);border-radius:8px;font-family:var(--font-body);font-size:0.92rem;color:var(--navy);outline:none;resize:vertical;transition:border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--terracotta)'" onblur="this.style.borderColor='var(--gray-mid)'"></textarea>
+          </div>
+          <button type="submit" 
+            style="background:var(--terracotta);color:white;border:none;padding:0.9rem 1.5rem;border-radius:8px;font-family:var(--font-body);font-size:0.95rem;font-weight:600;cursor:pointer;transition:background 0.2s;text-align:center;"
+            onmouseover="this.style.background='var(--terracotta-light)'" onmouseout="this.style.background='var(--terracotta)'">
+            Envoyer ma demande →
+          </button>
+          <p style="font-size:0.75rem;color:var(--gray-text);text-align:center;margin:0;">
+            Données protégées · Pas de spam · Réponse sous 24h
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="promise-card">
-          <h3>Mon engagement</h3>
-          <ul class="promise-list">
-            <li>Réponse personnelle sous 24h</li>
-            <li>Devis détaillé sous 48h ouvrées</li>
-            <li>Aucun engagement après le premier échange</li>
-            <li>Confidentialité garantie de votre projet</li>
-            <li>Pas d'intermédiaire — vous parlez directement à Samir</li>
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-foot">CC<span>FA</span> — Chikhi Conseil Formation Audit</div>
+        <p>Conseil, formation, audit et développement territorial. Basé à Montauban, intervenant en Occitanie et partout en France.</p>
+        <div class="contact-items">
+          <a href="tel:0651509718" class="contact-item">📞 06 51 50 97 18</a>
+          <a href="mailto:contact@c2fa.fr" class="contact-item">✉️ contact@c2fa.fr</a>
+          <a href="https://maps.google.com/?q=12+rue+du+Génie+82000+Montauban" target="_blank" rel="noopener" class="contact-item">📍 12 rue du Génie, 82000 Montauban</a>
+        </div>
+      </div>
+      <div>
+        <h4>Nos services</h4>
+        <ul>
+          <li><a href="service-ingenierie.html">Ingénierie de Formation</a></li>
+          <li><a href="service-management.html">Management de Transition</a></li>
+          <li><a href="service-territorial.html">Développement Territorial</a></li>
+          <li><a href="service-essms.html">Évaluation ESSMS</a></li>
+          <li><a href="service-bilan.html">Bilan de Compétences</a></li>
+          <li><a href="service-audit.html">Audit Qualiopi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>L'entreprise</h4>
+        <ul>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="blog.html">Ressources &amp; Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+        <div style="margin-top:1.5rem;">
+          <h4>Notre tiers-lieu</h4>
+          <ul>
+            <li><a href="https://genie-montauban.fr" target="_blank" rel="noopener">🏢 Le Génie — Montauban</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h4>Horaires</h4>
+        <ul>
+          <li><a href="#">Lun – Ven : 9h–12h30</a></li>
+          <li><a href="#">14h – 18h</a></li>
+          <li><a href="contact.html">Urgences : sur devis</a></li>
+        </ul>
+        <div style="margin-top:1.5rem;">
+          <h4>Suivre CCFA</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/samirchikhi/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://g.page/r/ccfa-montauban/review" target="_blank" rel="noopener">⭐ Avis Google</a></li>
           </ul>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:1rem;">
-      <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--terracotta);">FAQ</div>
-      <h2 style="font-family:var(--font-display);font-size:2rem;color:var(--navy);">Questions fréquentes</h2>
-    </div>
-    <div class="faq-grid">
-
-      <div class="faq-item">
-        <h4>Intervenez-vous en Occitanie ?</h4>
-        <p>Oui, l'Occitanie est notre terrain de prédilection (Tarn-et-Garonne, Haute-Garonne, Tarn, Lot, Gers…). J'interviens également partout en France pour tout type de mission — il n'est pas nécessaire qu'il s'agisse d'un projet d'envergure nationale.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>Quel est le délai pour obtenir un devis ?</h4>
-        <p>Réponse sous 24h ouvrées, devis détaillé sous 48h après un premier échange téléphonique. Je prends le temps de comprendre votre situation avant de chiffrer.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>Puis-je financer votre accompagnement Qualiopi ?</h4>
-        <p>Oui. Selon votre statut, les prestations peuvent être financées par votre OPCO, des fonds régionaux ou des dispositifs publics. Je vous accompagne dans le montage des dossiers.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>Combien de temps dure un accompagnement Qualiopi ?</h4>
-        <p>Entre 3 et 6 mois selon votre niveau de préparation initial. Le Pack Starter vous donne une photo immédiate de vos écarts. Le Pack Intégral couvre tout jusqu'au jour J de l'audit.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>Qu'est-ce que le « 100% de réussite » Qualiopi signifie ?</h4>
-        <p>Toutes les structures que j'ai accompagnées ont obtenu leur certification dès le premier audit. C'est le résultat d'une préparation rigoureuse et d'une connaissance précise des attentes des organismes certificateurs — j'en ai moi-même été un.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>Proposez-vous du management de transition à temps partiel ?</h4>
-        <p>Oui. Je propose des formules temps plein (5 000€ HT/mois) et temps partiel 2–3 jours/semaine (3 000€ HT/mois). Je m'adapte à votre situation d'urgence et à vos ressources.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="footer-simple">
-      <div class="footer-logo">CC<span>FA</span></div>
-      <p>© 2026 CCFA — SASU · SIRET 943 861 989 00011 · <a href="mentions-legales.html">Mentions légales</a></p>
-      <a href="https://www.linkedin.com/in/samirchikhi/" target="_blank" style="color:rgba(255,255,255,0.5);">LinkedIn</a>
+    <div class="footer-bottom">
+      <p>© 2026 CCFA — Chikhi Conseil Formation Audit SASU · SIRET 943 861 989 00011</p>
+      <div class="qualiopi-foot">★ Certifié QUALIOPI</div>
     </div>
   </div>
 </footer>
 
+<!-- FLOATING BAR -->
+<div class="float-bar" id="floatBar">
+  <p>Premier échange <strong>gratuit</strong> et sans engagement</p>
+  <a href="contact.html">Prendre RDV →</a>
+  <button class="float-close" onclick="document.getElementById('floatBar').style.display='none'">✕</button>
+</div>
+
 <script>
-// ─── CONFIGURATION FORMSPREE ───────────────────────────────────────────────
-// Remplacez YOUR_FORMSPREE_ID par votre vrai ID (ex: xzbqpkoa)
-// Obtenez-le gratuitement sur https://formspree.io
-const FORMSPREE_ID = 'YOUR_FORMSPREE_ID';
-// ──────────────────────────────────────────────────────────────────────────
+// Cacher la float bar en haut de page
+window.addEventListener('scroll', function() {
+  const bar = document.getElementById('floatBar');
+  if (!bar) return;
+  if (window.scrollY < 400) { bar.style.opacity = '0'; bar.style.pointerEvents = 'none'; }
+  else { bar.style.opacity = '1'; bar.style.pointerEvents = 'auto'; }
+});
+document.getElementById('floatBar').style.opacity = '0';
+document.getElementById('floatBar').style.transition = 'opacity 0.3s';
 
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
+// Animations au scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
 
-  const btn = document.getElementById('submitBtn');
-  const errorEl = document.getElementById('formError');
-  btn.textContent = 'Envoi en cours…';
-  btn.disabled = true;
-  errorEl.style.display = 'none';
-
-  // Si Formspree non configuré, on simule un succès (mode démo)
-  if (FORMSPREE_ID === 'YOUR_FORMSPREE_ID') {
-    setTimeout(() => {
-      document.getElementById('formContent').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
-    }, 1000);
-    return;
-  }
-
-  try {
-    const formData = new FormData(this);
-    const response = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
- 
+document.querySelectorAll('.service-card, .proof-card, 
