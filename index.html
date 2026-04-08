@@ -357,46 +357,8 @@ section { padding: 5rem 0; }
 .timeline-content h4 { color: white; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; }
 .timeline-content p { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
 
-/* ─── TARIFS RAPIDES ─── */
-.tarifs { background: var(--gray-light); }
-.tarifs-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem; margin-top: 3rem;
-}
-.tarif-card {
-  background: var(--white); border-radius: 10px;
-  border: 1px solid var(--gray-mid);
-  padding: 2rem; text-align: center; transition: all 0.25s;
-}
-.tarif-card.popular {
-  border-color: var(--terracotta); position: relative;
-}
-.popular-badge {
-  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-  background: var(--terracotta); color: white;
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
-  text-transform: uppercase; padding: 0.25rem 0.8rem; border-radius: 10px;
-}
-.tarif-card h3 { font-family: var(--font-display); font-size: 1.15rem; color: var(--navy); margin-bottom: 0.5rem; }
-.tarif-price {
-  font-family: var(--font-display);
-  font-size: 2.4rem; font-weight: 700; color: var(--navy);
-  margin: 1rem 0 0.3rem;
-}
-.tarif-price span { font-size: 1rem; font-weight: 400; color: var(--gray-text); }
-.tarif-desc { font-size: 0.82rem; color: var(--gray-text); margin-bottom: 1.5rem; }
-.tarif-features { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
-.tarif-features li { font-size: 0.84rem; color: var(--navy); display: flex; gap: 0.5rem; }
-.tarif-features li::before { content: '✓'; color: var(--terracotta); font-weight: 700; flex-shrink: 0; }
-.btn-tarif {
-  display: block; padding: 0.75rem; border-radius: 5px;
-  text-decoration: none; font-weight: 600; font-size: 0.88rem;
-  transition: all 0.2s;
-}
-.btn-tarif-outline { border: 1px solid var(--navy); color: var(--navy); }
-.btn-tarif-outline:hover { background: var(--navy); color: white; }
-.btn-tarif-solid { background: var(--terracotta); color: white; }
-.btn-tarif-solid:hover { background: var(--terracotta-light); }
+/* ─── REPÈRES TARIFAIRES ─── */
+.tarifs { background: var(--gray-light); padding: 5rem 0; }
 
 /* ─── CTA FINAL ─── */
 .cta-final {
@@ -502,7 +464,6 @@ footer ul a:hover { color: rgba(255,255,255,0.9); }
   .hero-card { max-width: 480px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .legit-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .tarifs-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .proof-grid { grid-template-columns: 1fr; }
 }
@@ -510,7 +471,6 @@ footer ul a:hover { color: rgba(255,255,255,0.9); }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .services-grid { grid-template-columns: 1fr; }
-  .tarifs-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .hero-trust { gap: 1.5rem; }
   .float-bar { left: 1rem; right: 1rem; transform: none; justify-content: space-between; }
@@ -853,59 +813,80 @@ footer ul a:hover { color: rgba(255,255,255,0.9); }
   </div>
 </section>
 
-<!-- TARIFS RAPIDES -->
+<!-- REPÈRES TARIFAIRES -->
 <section class="tarifs">
   <div class="container">
-    <div class="section-eyebrow">Tarification transparente</div>
-    <h2 class="section-title">Des packs clairs.<br>Pas de mauvaises surprises.</h2>
-    <p class="section-sub">Tous les tarifs sont affichés. Devis personnalisé gratuit sous 48h.</p>
-    <div class="tarifs-grid">
-      <div class="tarif-card">
-        <h3>Pack Starter</h3>
-        <p class="tarif-desc">Pour démarrer votre démarche Qualiopi</p>
-        <div class="tarif-price">1 900€ <span>HT</span></div>
-        <ul class="tarif-features">
-          <li>Audit blanc complet (1 jour)</li>
-          <li>Rapport d'écarts détaillé</li>
-          <li>Plan d'action priorisé</li>
-          <li>2h formation équipe</li>
-          <li>Templates documentaires</li>
-        </ul>
-        <a href="contact.html" class="btn-tarif btn-tarif-outline">Demander un devis</a>
+    <div class="section-eyebrow">Honoraires &amp; missions</div>
+    <h2 class="section-title">Des repères budgétaires<br>par domaine d'expertise</h2>
+    <p class="section-sub">Chaque mission est établie sur devis après un premier échange gratuit. Les fourchettes ci-dessous vous donnent un repère budgétaire.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;">
+
+      <div style="background:white;border:1px solid var(--gray-mid);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+        <div style="font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);font-weight:600;">Audit &amp; Certification</div>
+        <div style="font-family:var(--font-display);font-size:1rem;color:var(--navy);font-weight:600;">Qualiopi</div>
+        <div style="font-size:0.82rem;color:var(--gray-text);line-height:1.5;">Audit blanc · mise en conformité documentaire · accompagnement jusqu'à la certification</div>
+        <div style="margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--gray-mid);">
+          <span style="font-size:1.1rem;font-weight:700;color:var(--terracotta);">750 € – 5 900 €</span>
+          <span style="font-size:0.75rem;color:var(--gray-text);"> HT selon mission</span>
+        </div>
       </div>
-      <div class="tarif-card popular">
-        <div class="popular-badge">Le plus choisi</div>
-        <h3>Pack Premium</h3>
-        <p class="tarif-desc">Accompagnement complet jusqu'à la certification</p>
-        <div class="tarif-price">3 900€ <span>HT</span></div>
-        <ul class="tarif-features">
-          <li>Tout le Pack Starter +</li>
-          <li>Accompagnement 3 mois</li>
-          <li>5 jours de conseil sur site</li>
-          <li>Mise en conformité documentaire</li>
-          <li>Formation formateurs (1 jour)</li>
-          <li>Hotline email illimitée</li>
-        </ul>
-        <a href="contact.html" class="btn-tarif btn-tarif-solid">Choisir ce pack</a>
+
+      <div style="background:white;border:1px solid var(--gray-mid);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+        <div style="font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);font-weight:600;">Formation</div>
+        <div style="font-family:var(--font-display);font-size:1rem;color:var(--navy);font-weight:600;">Ingénierie pédagogique</div>
+        <div style="font-size:0.82rem;color:var(--gray-text);line-height:1.5;">Conception de parcours · formation de formateurs · ingénierie financière OPCO/CPF</div>
+        <div style="margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--gray-mid);">
+          <span style="font-size:1.1rem;font-weight:700;color:var(--terracotta);">700 € – 1 500 €</span>
+          <span style="font-size:0.75rem;color:var(--gray-text);"> HT selon prestation</span>
+        </div>
       </div>
-      <div class="tarif-card">
-        <h3>Pack Intégral</h3>
-        <p class="tarif-desc">Sérénité totale · Garantie réussite</p>
-        <div class="tarif-price">5 900€ <span>HT</span></div>
-        <ul class="tarif-features">
-          <li>Tout le Pack Premium +</li>
-          <li>Accompagnement 6 mois</li>
-          <li>10 jours de conseil</li>
-          <li>Audit blanc final pré-certification</li>
-          <li>Présence le jour J de l'audit</li>
-          <li>Suivi post-certification (3 mois)</li>
-        </ul>
-        <a href="contact.html" class="btn-tarif btn-tarif-outline">Demander un devis</a>
+
+      <div style="background:white;border:1px solid var(--gray-mid);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+        <div style="font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);font-weight:600;">Individuel · CPF</div>
+        <div style="font-family:var(--font-display);font-size:1rem;color:var(--navy);font-weight:600;">Bilan de compétences</div>
+        <div style="font-size:0.82rem;color:var(--gray-text);line-height:1.5;">24h réglementaires sur 3 mois · finançable intégralement via le CPF</div>
+        <div style="margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--gray-mid);">
+          <span style="font-size:1.1rem;font-weight:700;color:var(--terracotta);">1 800 €</span>
+          <span style="font-size:0.75rem;color:var(--gray-text);"> HT / bilan</span>
+        </div>
       </div>
+
+      <div style="background:white;border:1px solid var(--gray-mid);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+        <div style="font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);font-weight:600;">Médico-social</div>
+        <div style="font-family:var(--font-display);font-size:1rem;color:var(--navy);font-weight:600;">Évaluation ESSMS</div>
+        <div style="font-size:0.82rem;color:var(--gray-text);line-height:1.5;">Évaluation interne &amp; externe · référentiel HAS · EHPAD, ESAT, IME, SAAD…</div>
+        <div style="margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--gray-mid);">
+          <span style="font-size:1.1rem;font-weight:700;color:var(--terracotta);">Sur devis</span>
+          <span style="font-size:0.75rem;color:var(--gray-text);"> selon taille structure</span>
+        </div>
+      </div>
+
+      <div style="background:white;border:1px solid var(--gray-mid);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+        <div style="font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);font-weight:600;">Direction temporaire</div>
+        <div style="font-family:var(--font-display);font-size:1rem;color:var(--navy);font-weight:600;">Management de transition</div>
+        <div style="font-size:0.82rem;color:var(--gray-text);line-height:1.5;">DGS / direction ESS &amp; collectivités · temps partiel ou temps plein · 3 à 18 mois</div>
+        <div style="margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--gray-mid);">
+          <span style="font-size:1.1rem;font-weight:700;color:var(--terracotta);">3 000 – 5 000 €</span>
+          <span style="font-size:0.75rem;color:var(--gray-text);"> HT / mois</span>
+        </div>
+      </div>
+
+      <div style="background:white;border:1px solid var(--gray-mid);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+        <div style="font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);font-weight:600;">Collectivités &amp; ESS</div>
+        <div style="font-family:var(--font-display);font-size:1rem;color:var(--navy);font-weight:600;">Développement territorial</div>
+        <div style="font-size:0.82rem;color:var(--gray-text);line-height:1.5;">Diagnostic · projets européens LEADER/FEDER · politiques publiques · DLA</div>
+        <div style="margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--gray-mid);">
+          <span style="font-size:1.1rem;font-weight:700;color:var(--terracotta);">700 – 2 500 €</span>
+          <span style="font-size:0.75rem;color:var(--gray-text);"> HT selon mission</span>
+        </div>
+      </div>
+
     </div>
-    <p style="text-align:center;margin-top:1.5rem;font-size:0.85rem;color:var(--gray-text);">
-      Finançable OPCO · CPF (bilan de compétences) · Fonds publics &amp; régionaux
-      · <a href="tarifs.html" style="color:var(--terracotta);font-weight:600;">Voir tous les tarifs →</a>
+
+    <p style="text-align:center;margin-top:1.75rem;font-size:0.85rem;color:var(--gray-text);">
+      Finançable OPCO · CPF · Fonds publics &amp; régionaux · DLA
+      · <a href="tarifs.html" style="color:var(--terracotta);font-weight:600;">Grille tarifaire complète →</a>
     </p>
   </div>
 </section>
