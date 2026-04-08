@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogue de Formations — CCFA | Montauban, Occitanie</title>
+  <meta name="description" content="Catalogue de formations CCFA : SST, incendie, TMS, habilitation électrique, management, bilan de compétences. Formations à la demande — Montauban, Occitanie.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="service-styles.css">
+  <style>
+    .catalogue-hero {
+      background: var(--navy);
+      padding: 5rem 0 4rem;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .catalogue-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(122,56,32,0.18) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 30%, rgba(59,94,140,0.15) 0%, transparent 60%);
+    }
+    .catalogue-hero .container { position: relative; z-index: 1; }
+    .catalogue-hero .badge {
+      display: inline-block;
+      background: rgba(122,56,32,0.25);
+      border: 1px solid rgba(122,56,32,0.4);
+      color: #d4886a;
+      padding: 0.4rem 1.2rem;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .catalogue-hero h1 {
+      color: white;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 1.2rem;
+    }
+    .catalogue-hero h1 em { color: var(--terracotta-light); font-style: normal; }
+    .catalogue-hero p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ── CONSTRUCTION SECTION ── */
+    .construction-section {
+      padding: 5rem 0;
+      background: var(--cream);
+    }
+    .construction-card {
+      background: white;
+      border-radius: 20px;
+      padding: 4rem 3rem;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--gray-mid);
+    }
+    .construction-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .construction-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--navy);
+    }
+    .construction-card p {
+      color: var(--gray-text);
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .construction-card .highlight {
+      background: var(--cream);
+      border-left: 4px solid var(--terracotta);
+      padding: 1rem 1.5rem;
+      text-align: left;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--navy);
+    }
+    .construction-card .highlight strong { color: var(--terracotta); }
+
+    /* Themes aperçu */
+    .themes-preview {
+      padding: 4rem 0;
+      background: white;
+    }
+    .themes-preview h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .themes-preview .subtitle {
+      text-align: center;
+      color: var(--gray-text);
+      margin-bottom: 3rem;
+      font-size: 0.95rem;
+    }
+    .themes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .theme-card {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid var(--gray-mid);
+      transition: transform 0.2s, box-shadow 0.2s;
+      opacity: 0.7;
+      cursor: default;
+    }
+    .theme-card .theme-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+    .theme-card h3 { font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--navy); }
+    .theme-card p { font-size: 0.8rem; color: var(--gray-text); }
+    .theme-card .badge-soon {
+      display: inline-block;
+      background: var(--gray-mid);
+      color: var(--gray-text);
+      font-size: 0.68rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.75rem;
+    }
+
+    /* CTA demande */
+    .cta-demande {
+      background: var(--navy);
+      padding: 4rem 0;
+      text-align: center;
+      color: white;
+    }
+    .cta-demande h2 { color: white; font-size: 1.8rem; margin-bottom: 1rem; }
+    .cta-demande p { color: rgba(255,255,255,0.65); margin-bottom: 2rem; font-size: 1rem; }
+    .cta-demande .btn-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-white {
+      display: inline-block;
+      background: white;
+      color: var(--navy);
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-cta-white:hover { background: var(--cream); transform: translateY(-2px); }
+    .btn-cta-outline-w {
+      display: inline-block;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-cta-outline-w:hover { border-color: white; background: rgba(255,255,255,0.08); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">CC<span>FA</span></a>
+    <ul class="nav-links">
+      <li><a href="a-propos.html">À propos</a></li>
+      <li class="nav-dropdown">
+        <a href="#">Nos services ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="service-ingenierie.html">Ingénierie de Formation</a>
+          <a href="service-management.html">Management de Transition</a>
+          <a href="service-territorial.html">Développement Territorial</a>
+          <a href="service-essms.html">Évaluation ESSMS</a>
+          <a href="service-bilan.html">Bilan de Compétences</a>
+          <a href="service-audit.html">Audit Qualiopi</a>
+        </div>
+      </li>
+      <li><a href="catalogue-formations.html" style="color:var(--terracotta);font-weight:600;">Formations</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="blog.html">Ressources</a></li>
+      <li><a href="contact.html" class="nav-cta">Premier échange gratuit →</a></li>
+    </ul>
+    <div class="hamburger" onclick="document.querySelector('.nav-links').style.display='flex'">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="catalogue-hero">
+  <div class="container">
+    <div class="badge">Formations professionnelles</div>
+    <h1>Notre <em>catalogue de formations</em><br>arrive bientôt</h1>
+    <p>SST, Sécurité incendie, TMS, habilitation électrique, management et bien plus — disponibles sur devis et à la demande.</p>
+  </div>
+</section>
+
+<!-- CONSTRUCTION -->
+<section class="construction-section">
+  <div class="container">
+    <div class="construction-card">
+      <span class="construction-icon">🏗️</span>
+      <h2>Page en cours de construction</h2>
+      <p>
+        Notre catalogue de formations inter et intra-entreprises est en cours de finalisation.
+        Il couvrira les formations réglementaires, managériales et de développement des compétences,
+        toutes finançables via votre OPCO ou le CPF.
+      </p>
+      <div class="highlight">
+        <strong>Vous avez un besoin immédiat ?</strong><br>
+        Contactez-nous directement — nous construisons des formations sur-mesure adaptées à votre contexte
+        (secteur, public, durée, financement). Réponse sous 48h.
+      </div>
+      <p style="margin-bottom:0; color:var(--gray-text); font-size:0.92rem;">
+        Toutes nos formations sont conçues par un ingénieur pédagogique certifié Qualiopi,
+        avec 27 ans d'expérience terrain en Occitanie et partout en France.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- THEMES APERÇU -->
+<section class="themes-preview">
+  <div class="container">
+    <h2>Ce qui arrive dans le catalogue</h2>
+    <p class="subtitle">Thèmes de formations — fiches détaillées à paraître</p>
+    <div class="themes-grid">
+      <div class="theme-card">
+        <span class="theme-icon">🚑</span>
+        <h3>SST</h3>
+        <p>Sauveteur Secouriste du Travail — initiale et recyclage</p>
+        <span class="badge-soon">Bientôt</span>
+      </div>
+      <div class="theme-card">
+        <span class="theme-icon">🔥</span>
+        <h3>Sécurité incendie</h3>
+        <p>SSIAP, évacuation, maniement extincteurs</p>
+        <span class="badge-soon">Bientôt</span>
+      </div>
+      <div class="theme-card">
+        <span class="theme-icon">🦺</span>
+        <h3>Prévention TMS</h3>
+        <p>Troubles musculo-squelettiques, gestes et postures</p>
+        <span class="badge-soon">Bientôt</span>
+      </div>
+      <div class="theme-card">
+        <span class="theme-icon">⚡</span>
+        <h3>Habilitation électrique</h3>
+        <p>BR, BS, BE mesure — recyclage et initiale</p>
+        <span class="badge-soon">Bientôt</span>
+      </div>
+      <div class="theme-card">
+        <span class="theme-icon">👔</span>
+        <h3>Management</h3>
+        <p>Leadership, conduite du changement, RPS</p>
+        <span class="badge-soon">Bientôt</span>
+      </div>
+      <div class="theme-card">
+        <span class="theme-icon">🎯</span>
+        <h3>Bilan de compétences</h3>
+        <p>24h réglementaires — finançable CPF</p>
+        <span class="badge-soon">Bientôt</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA DEMANDE -->
+<section class="cta-demande">
+  <div class="container">
+    <h2>Besoin d'une formation maintenant ?</h2>
+    <p>Décrivez votre besoin — nous vous proposons une solution sur-mesure sous 48h.</p>
+    <div class="btn-row">
+      <a href="contact.html" class="btn-cta-white">📋 Demander une formation →</a>
+      <a href="tel:0651509718" class="btn-cta-outline-w">📞 06 51 50 97 18</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-foot">CC<span>FA</span> — Chikhi Conseil Formation Audit</div>
+        <p>Conseil, formation, audit et développement territorial. Basé à Montauban, intervenant en Occitanie et partout en France.</p>
+        <div class="contact-items">
+          <a href="tel:0651509718" class="contact-item">📞 06 51 50 97 18</a>
+          <a href="mailto:contact@c2fa.fr" class="contact-item">✉️ contact@c2fa.fr</a>
+          <a href="https://maps.google.com/?q=12+rue+du+Génie+82000+Montauban" target="_blank" class="contact-item">📍 12 rue du Génie, 82000 Montauban</a>
+        </div>
+      </div>
+      <div>
+        <h4>Nos services</h4>
+        <ul>
+          <li><a href="service-ingenierie.html">Ingénierie de Formation</a></li>
+          <li><a href="service-management.html">Management de Transition</a></li>
+          <li><a href="service-territorial.html">Développement Territorial</a></li>
+          <li><a href="service-essms.html">Évaluation ESSMS</a></li>
+          <li><a href="service-bilan.html">Bilan de Compétences</a></li>
+          <li><a href="service-audit.html">Audit Qualiopi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>L'entreprise</h4>
+        <ul>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="blog.html">Ressources &amp; Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+        <div style="margin-top:1.5rem;">
+          <h4>Notre tiers-lieu</h4>
+          <ul>
+            <li><a href="https://genie-montauban.fr" target="_blank">🏢 Le Génie — Montauban</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h4>Horaires</h4>
+        <ul>
+          <li><a href="#">Lun – Ven : 9h–12h30</a></li>
+          <li><a href="#">14h – 18h</a></li>
+          <li><a href="contact.html">Urgences : sur devis</a></li>
+        </ul>
+        <div style="margin-top:1.5rem;">
+          <h4>Suivre CCFA</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/samirchikhi/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://g.page/r/ccfa-montauban/review" target="_blank">⭐ Avis Google</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CCFA — Chikhi Conseil Formation Audit SASU · SIRET 943 861 989 00011</p>
+      <div class="qualiopi-foot">★ Certifié QUALIOPI</div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
