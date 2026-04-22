@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist Qualiopi 32 indicateurs — CCFA Montauban</title>
+<meta name="description" content="Checklist complète des 32 indicateurs Qualiopi par CCFA. Cochez votre niveau de conformité et imprimez votre auto-évaluation.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Source Sans 3',sans-serif;background:#f0ede6;color:#1a1a1a;font-size:14px}
+.header{background:#1a1a1a;color:white;padding:28px 40px}
+.header-inner{max-width:900px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:white;text-decoration:none}
+.logo span{color:#B5882A}
+.header h1{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;margin-bottom:4px}
+.header h1 em{color:#B5882A;font-style:italic}
+.header p{font-size:13px;color:rgba(255,255,255,0.55);margin-top:4px}
+.wrapper{max-width:900px;margin:28px auto;padding:0 20px 60px}
+.intro-card{background:white;border-radius:6px;padding:24px 28px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,0.05);display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.score-box{background:#f7f4ef;border-radius:8px;padding:20px 28px;text-align:center;min-width:140px}
+.score-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#B5882A;line-height:1}
+.score-label{font-size:11px;color:#888;margin-top:4px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase}
+.intro-text{flex:1}
+.intro-text h2{font-size:16px;font-weight:700;margin-bottom:6px}
+.intro-text p{font-size:13px;color:#666;line-height:1.6}
+.btn-print{background:#1a1a1a;color:white;border:none;padding:10px 20px;border-radius:4px;font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;margin-top:12px;transition:background 0.2s}
+.btn-print:hover{background:#B5882A}
+.critere-section{background:white;border-radius:6px;overflow:hidden;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+.critere-header{padding:16px 24px;display:flex;align-items:center;gap:12px;cursor:pointer}
+.critere-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:white;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--c,#B5882A);flex-shrink:0}
+.critere-info{flex:1}
+.critere-titre{font-size:14px;font-weight:700;color:#1a1a1a}
+.critere-desc{font-size:12px;color:#888;margin-top:2px}
+.critere-score{font-size:12px;font-weight:700;color:var(--c,#B5882A);background:rgba(181,136,42,0.1);padding:4px 10px;border-radius:20px;white-space:nowrap}
+.indicateurs-list{border-top:1px solid #f0ede6}
+.indicateur{display:flex;align-items:flex-start;gap:16px;padding:14px 24px;border-bottom:1px solid #f7f4ef}
+.indicateur:last-child{border-bottom:none}
+.ind-ref{font-size:11px;font-weight:700;color:#aaa;min-width:32px;padding-top:2px}
+.ind-body{flex:1}
+.ind-texte{font-size:13px;color:#333;line-height:1.5;margin-bottom:8px}
+.ind-fundamental{font-size:10px;font-weight:700;color:#c0392b;background:#fce8e8;padding:2px 8px;border-radius:3px;display:inline-block;margin-bottom:6px}
+.ind-radio{display:flex;gap:8px;flex-wrap:wrap}
+.ind-radio label{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:4px;border:1.5px solid #e0dbd0;background:#fafaf8;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s}
+.ind-radio input{position:absolute;opacity:0;width:0}
+.ind-radio input:checked+span{font-weight:700}
+label.conforme input:checked~*,.conforme input:checked+span{color:#2a6b4a}
+label.conforme:has(input:checked){border-color:#2a6b4a;background:#edfaf3}
+label.partiel:has(input:checked){border-color:#e67e22;background:#fff3e0}
+label.partiel input:checked+span{color:#e67e22}
+label.nc:has(input:checked){border-color:#c0392b;background:#fce8e8}
+label.nc input:checked+span{color:#c0392b}
+label.na:has(input:checked){border-color:#aaa;background:#f5f5f5}
+label.na input:checked+span{color:#888}
+.progress-bar{height:6px;background:#f0ede6;border-radius:3px;margin-top:8px;overflow:hidden}
+.progress-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#c0392b,#e67e22,#2a6b4a);transition:width 0.4s}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px;font-size:12px}
+.legend-item{display:flex;align-items:center;gap:6px}
+.legend-dot{width:10px;height:10px;border-radius:50%}
+.cta-bas{background:#1a1a1a;border-radius:6px;padding:24px 28px;text-align:center;color:white;margin-top:24px}
+.cta-bas h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:8px}
+.cta-bas p{font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:16px}
+.cta-bas a{display:inline-flex;align-items:center;gap:8px;background:#B5882A;color:white;padding:12px 24px;border-radius:4px;font-size:13px;font-weight:700;text-decoration:none}
+@media print{
+  body{background:white}
+  .header{background:#1a1a1a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .critere-num{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .btn-print,.cta-bas{display:none}
+  .wrapper{padding:0}
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <a href="/index.html" class="logo">CC<span>FA</span></a>
+    <div>
+      <h1>Checklist <em>Qualiopi</em></h1>
+      <p>32 indicateurs · Auto-évaluation · Imprimable en PDF</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <div class="intro-card">
+    <div class="score-box">
+      <div class="score-num" id="score-pct">0%</div>
+      <div class="score-label">Conformité<br>globale</div>
+      <div class="progress-bar" style="margin-top:10px"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="intro-text">
+      <h2>Auto-évaluez votre niveau de préparation Qualiopi</h2>
+      <p>Pour chaque indicateur, sélectionnez votre niveau : <strong style="color:#2a6b4a">Conforme</strong>, <strong style="color:#e67e22">Partiel</strong>, <strong style="color:#c0392b">Non-conforme</strong> ou <strong style="color:#888">Non applicable</strong>. Le score se met à jour en temps réel. Imprimez ensuite votre bilan via le bouton ci-dessous.</p>
+      <button class="btn-print" onclick="window.print()">⬇ Imprimer / Télécharger PDF</button>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="legend-item"><span class="legend-dot" style="background:#2a6b4a"></span> Conforme (C)</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#e67e22"></span> Partiel (P)</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#c0392b"></span> Non-conforme (NC)</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#aaa"></span> Non applicable (NA)</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#c0392b;border:2px solid #800"></span> ⚠ Indicateur fondamental</span>
+  </div>
+
+  <!-- CRITÈRE 1 -->
+  <div class="critere-section">
+    <div class="critere-header" style="--c:#7a2238">
+      <div class="critere-num" style="--c:#7a2238">1</div>
+      <div class="critere-info">
+        <div class="critere-titre">Les conditions d'information du public sur les prestations proposées</div>
+        <div class="critere-desc">Accessibilité, clarté et mise à jour des informations destinées aux bénéficiaires</div>
+      </div>
+      <div class="critere-score" id="score-c1" style="--c:#7a2238;background:rgba(122,34,56,0.1);color:#7a2238">0/6</div>
+    </div>
+    <div class="indicateurs-list">
+      <div class="indicateur">
+        <span class="ind-ref">1.1</span>
+        <div class="ind-body">
+          <div class="ind-fundamental">⚠ FONDAMENTAL</div>
+          <div class="ind-texte">Le prestataire diffuse des informations quantitatives et qualitatives sur les prestations qu'il propose : objectifs, programme, durée, tarifs, financement, accessibilité handicap, résultats obtenus.</div>
+          <div class="ind-radio" data-critere="1">
+            <label class="conforme"><input type="radio" name="i1.1" value="C" onchange="updateScore()"><span>✓ Conforme</span></label>
+            <label class="partiel"><input type="radio" name="i1.1" value="P" onchange="updateScore()"><span>~ Partiel</span></label>
+            <label class="nc"><input type="radio" name="i1.1" value="NC" onchange="updateScore()"><span>✗ NC</span></label>
+            <label class="na"><input type="radio" name="i1.1" value="NA" onchange="updateScore()"><span>— NA</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="indicateur">
+        <span class="ind-ref">1.2</span>
+        <div class="ind-body">
+          <div class="ind-texte">Le prestataire diffuse des indicateurs de résultats adaptés à ses prestations.</div>
+          <div class="ind-radio" data-critere="1">
+            <label class="conforme"><input type="radio" name="i1.2" value="C" onchange="updateScore()"><span>✓ Conforme</span></label>
+            <label class="partiel"><input type="radio" name="i1.2" value="P" onchange="updateScore()"><span>~ Partiel</span></label>
+            <label class="nc"><input type="radio" name="i1.2" value="NC" onchange="updateScore()"><span>✗ NC</span></label>
+            <label class="na"><input type="radio" name="i1.2" value="NA" onchange="updateScore()"><span>— NA</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="indicateur">
+        <span class="ind-ref">1.3</span>
+        <div class="ind-body">
+          <div class="ind-texte">Le prestataire communique sur les modalités de financement et sur les délais d'accès à la prestation.</div>
+          <div class="ind-radio" data-critere="1">
+            <label class="conforme"><input type="radio" name="i1.3" value="C" onchange="updateScore()"><span>✓ Conforme</span></label>
+            <label class="partiel"><input type="radio" name="i1.3" value="P" onchange="updateScore()"><span>~ Partiel</span></label>
+            <label class="nc"><input type="radio" name="i1.3" value="NC" onchange="updateScore()"><span>✗ NC</span></label>
+            <label class="na"><input type="radio" name="i1.3" value="NA" onchange="updateScore()"><span>— NA</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="indicateur">
+        <span class="ind-ref">1.4</span>
+        <div class="ind-body">
+          <div class="ind-texte">Le prestataire précise les prérequis ainsi que les publics visés par ses prestations.</div>
+          <div class="ind-radio" data-critere="1">
+            <label class="conforme"><input type="radio" name="i1.4" value="C" onchange="updateScore()"><span>✓ Conforme</span></label>
+            <label class="partiel"><input type="radio" name="i1.4" value="P" onchange="updateScore()"><span>~ Partiel</span></label>
+            <label class="nc"><input type="radio" name="i1.4" value="NC" onchange="updateScore()"><span>✗ NC</span></label>
+            <label class="na"><input type="radio" name="i1.4" value="NA" onchange="updateScore()"><span>— NA</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="indicateur">
+        <span class="ind-ref">1.5</span>
+        <div class="ind-body">
+          <div class="ind-texte">Le prestataire met à disposition du bénéficiaire, avant la prestation, les éléments permettant de contractualiser la prestation (devis, contrat, convention, programme).</div>
+          <div class="ind-radio" data-critere="1">
+            <label class="conforme"><input type="radio" name="i1.5" value="C" onchange="updateScore()"><span>✓ Conforme</span></label>
+            <label class="partiel"><input type="radio" name="i1.5" value="P" onchange="updateScore()"><span>~ Partiel</span></label>
+            <label class="nc"><input type="radio" name="i1.5" value="NC" onchange="updateScore()"><span>✗ NC</span></label>
+            <label class="na"><input type="radio" name="i1.5" value="NA" onchange="updateScore()"><span>— NA</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="indicateur">
+        <span class="ind-ref">1.6</span>
+        <div class="ind-body">
+          <div class="ind-texte">Le prestataire met à disposition des bénéficiaires en situation de handicap les informations relatives aux conditions d'accès à ses prestations, en partenariat, le cas échéant, avec des structures dédiées.</div>
+          <div class="ind-radio" data-critere="1">
+            <label class="conforme"><input type="radio" name="i1.6" value="C" onchange="updateScore()"><span>✓ Conforme</span></label>
+            <label class="partiel"><input type="radio" name="i1.6" value="P" onchange="updateScore()"><span>~ Partiel</span></label>
+            <label class="nc"><input type="radio" name="i1.6" value="NC" onchange="updateScore()"><span>✗ NC</span></label>
+            <label class="na"><input type="radio" name="i1.6" value="NA" onchange="updateScore()"><span>— NA</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRITÈRE 2 -->
+  <div class="critere-section">
+    <div class="critere-header" style="--c:#1a3a5c">
+      <div class="critere-num" style="background:#1a3a5c">2</div>
+      <div class="critere-info">
+        <div class="critere-titre">L'identification et l'analyse des besoins des bénéficiaires</div>
+        <div class="critere-desc">Recueil et prise en compte des besoins individuels avant et pendant la prestation</div>
+      </div>
+      <div class="critere-score" id="score-c2" style="background:rgba(26,58,92,0.1);color:#1a3a5c">0/4</div>
+    </div>
+    <div class="indicateurs-list">
+      <div class="indicateur"><span class="ind-ref">2.1</span><div class="ind-body"><div class="ind-fundamental">⚠ FONDAMENTAL</div><div class="ind-texte">Le prestataire recueille et prend en compte les attentes et les besoins du bénéficiaire et, le cas échéant, du financeur, en vue de valider l'adéquation de la prestation au regard de la situation du bénéficiaire.</div><div class="ind-radio" data-critere="2"><label class="conforme"><input type="radio" name="i2.1" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i2.1" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i2.1" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i2.1" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">2.2</span><div class="ind-body"><div class="ind-texte">Le prestataire assure la mise en œuvre de la prestation en cohérence avec les besoins du bénéficiaire et, le cas échéant, du financeur, en procédant aux ajustements nécessaires.</div><div class="ind-radio" data-critere="2"><label class="conforme"><input type="radio" name="i2.2" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i2.2" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i2.2" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i2.2" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">2.3</span><div class="ind-body"><div class="ind-texte">Le prestataire informe le bénéficiaire des résultats de la prestation et, le cas échéant, de l'atteinte des objectifs.</div><div class="ind-radio" data-critere="2"><label class="conforme"><input type="radio" name="i2.3" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i2.3" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i2.3" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i2.3" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">2.4</span><div class="ind-body"><div class="ind-texte">Le prestataire s'assure de la cohérence des intervenants, des moyens pédagogiques et des méthodes mobilisés avec les prestations réalisées.</div><div class="ind-radio" data-critere="2"><label class="conforme"><input type="radio" name="i2.4" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i2.4" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i2.4" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i2.4" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+    </div>
+  </div>
+
+  <!-- CRITÈRE 3 -->
+  <div class="critere-section">
+    <div class="critere-header" style="--c:#2a6b4a">
+      <div class="critere-num" style="background:#2a6b4a">3</div>
+      <div class="critere-info">
+        <div class="critere-titre">L'adaptation aux publics bénéficiaires de la prestation</div>
+        <div class="critere-desc">Moyens pédagogiques, techniques et d'encadrement mobilisés</div>
+      </div>
+      <div class="critere-score" id="score-c3" style="background:rgba(42,107,74,0.1);color:#2a6b4a">0/4</div>
+    </div>
+    <div class="indicateurs-list">
+      <div class="indicateur"><span class="ind-ref">3.1</span><div class="ind-body"><div class="ind-fundamental">⚠ FONDAMENTAL</div><div class="ind-texte">Le prestataire s'appuie sur des méthodes pédagogiques, des moyens techniques et d'encadrement adaptés aux prestations et aux bénéficiaires.</div><div class="ind-radio" data-critere="3"><label class="conforme"><input type="radio" name="i3.1" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i3.1" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i3.1" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i3.1" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">3.2</span><div class="ind-body"><div class="ind-texte">Le prestataire réalise des évaluations des acquis tout au long de la prestation.</div><div class="ind-radio" data-critere="3"><label class="conforme"><input type="radio" name="i3.2" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i3.2" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i3.2" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i3.2" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">3.3</span><div class="ind-body"><div class="ind-texte">Le prestataire met en place des mesures pour favoriser l'engagement des bénéficiaires et prévenir les ruptures de parcours.</div><div class="ind-radio" data-critere="3"><label class="conforme"><input type="radio" name="i3.3" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i3.3" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i3.3" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i3.3" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">3.4</span><div class="ind-body"><div class="ind-texte">Le prestataire met à disposition du bénéficiaire des ressources pédagogiques lui permettant de poursuivre son apprentissage.</div><div class="ind-radio" data-critere="3"><label class="conforme"><input type="radio" name="i3.4" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i3.4" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i3.4" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i3.4" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+    </div>
+  </div>
+
+  <!-- CRITÈRE 4 -->
+  <div class="critere-section">
+    <div class="critere-header" style="--c:#4a2d6b">
+      <div class="critere-num" style="background:#4a2d6b">4</div>
+      <div class="critere-info">
+        <div class="critere-titre">L'adéquation des intervenants avec les prestations</div>
+        <div class="critere-desc">Compétences et qualification des formateurs et intervenants</div>
+      </div>
+      <div class="critere-score" id="score-c4" style="background:rgba(74,45,107,0.1);color:#4a2d6b">0/3</div>
+    </div>
+    <div class="indicateurs-list">
+      <div class="indicateur"><span class="ind-ref">4.1</span><div class="ind-body"><div class="ind-fundamental">⚠ FONDAMENTAL</div><div class="ind-texte">Le prestataire s'assure de la qualification des intervenants, de la pertinence et de la mise à jour de leurs compétences.</div><div class="ind-radio" data-critere="4"><label class="conforme"><input type="radio" name="i4.1" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i4.1" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i4.1" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i4.1" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">4.2</span><div class="ind-body"><div class="ind-texte">Le prestataire s'assure du développement des compétences des personnes chargées de l'accueil et du suivi des bénéficiaires.</div><div class="ind-radio" data-critere="4"><label class="conforme"><input type="radio" name="i4.2" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i4.2" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i4.2" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i4.2" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">4.3</span><div class="ind-body"><div class="ind-texte">Le prestataire s'assure de l'adéquation des compétences des intervenants en cas de sous-traitance ou de recours à des intervenants extérieurs.</div><div class="ind-radio" data-critere="4"><label class="conforme"><input type="radio" name="i4.3" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i4.3" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i4.3" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i4.3" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+    </div>
+  </div>
+
+  <!-- CRITÈRE 5 -->
+  <div class="critere-section">
+    <div class="critere-header" style="--c:#a0442a">
+      <div class="critere-num" style="background:#a0442a">5</div>
+      <div class="critere-info">
+        <div class="critere-titre">L'inscription et l'investissement du prestataire dans son environnement professionnel</div>
+        <div class="critere-desc">Veille, partenariats, dialogue avec les financeurs et les parties prenantes</div>
+      </div>
+      <div class="critere-score" id="score-c5" style="background:rgba(160,68,42,0.1);color:#a0442a">0/5</div>
+    </div>
+    <div class="indicateurs-list">
+      <div class="indicateur"><span class="ind-ref">5.1</span><div class="ind-body"><div class="ind-texte">Le prestataire réalise une veille sur les évolutions des compétences, des métiers et des emplois dans ses domaines d'intervention.</div><div class="ind-radio" data-critere="5"><label class="conforme"><input type="radio" name="i5.1" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i5.1" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i5.1" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i5.1" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">5.2</span><div class="ind-body"><div class="ind-texte">Le prestataire réalise une veille sur les évolutions réglementaires et légales relatives aux prestations qu'il délivre.</div><div class="ind-radio" data-critere="5"><label class="conforme"><input type="radio" name="i5.2" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i5.2" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i5.2" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i5.2" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">5.3</span><div class="ind-body"><div class="ind-texte">Le prestataire adapte ses prestations aux évolutions des besoins des bénéficiaires, de son environnement et de l'offre de formation.</div><div class="ind-radio" data-critere="5"><label class="conforme"><input type="radio" name="i5.3" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i5.3" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i5.3" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i5.3" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">5.4</span><div class="ind-body"><div class="ind-texte">Le prestataire inscrit ses prestations dans une dynamique partenariale avec son environnement professionnel.</div><div class="ind-radio" data-critere="5"><label class="conforme"><input type="radio" name="i5.4" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i5.4" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i5.4" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i5.4" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">5.5</span><div class="ind-body"><div class="ind-texte">Le prestataire adopte des mesures favorisant l'égalité des droits et des chances dans l'accès à ses prestations.</div><div class="ind-radio" data-critere="5"><label class="conforme"><input type="radio" name="i5.5" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i5.5" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i5.5" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i5.5" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+    </div>
+  </div>
+
+  <!-- CRITÈRE 6 -->
+  <div class="critere-section">
+    <div class="critere-header" style="--c:#B5882A">
+      <div class="critere-num" style="background:#B5882A">6</div>
+      <div class="critere-info">
+        <div class="critere-titre">Le recueil et la prise en compte des appréciations et réclamations</div>
+        <div class="critere-desc">Questionnaires de satisfaction, gestion des réclamations, analyse et amélioration</div>
+      </div>
+      <div class="critere-score" id="score-c6" style="background:rgba(181,136,42,0.1);color:#B5882A">0/6</div>
+    </div>
+    <div class="indicateurs-list">
+      <div class="indicateur"><span class="ind-ref">6.1</span><div class="ind-body"><div class="ind-fundamental">⚠ FONDAMENTAL</div><div class="ind-texte">Le prestataire recueille les appréciations des parties prenantes : bénéficiaires, financeurs, équipe pédagogique.</div><div class="ind-radio" data-critere="6"><label class="conforme"><input type="radio" name="i6.1" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i6.1" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i6.1" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i6.1" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">6.2</span><div class="ind-body"><div class="ind-texte">Le prestataire met en œuvre des modalités de traitement des difficultés rencontrées par les bénéficiaires.</div><div class="ind-radio" data-critere="6"><label class="conforme"><input type="radio" name="i6.2" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i6.2" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i6.2" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i6.2" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">6.3</span><div class="ind-body"><div class="ind-texte">Le prestataire met en œuvre des modalités de traitement des réclamations des parties prenantes.</div><div class="ind-radio" data-critere="6"><label class="conforme"><input type="radio" name="i6.3" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i6.3" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i6.3" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i6.3" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">6.4</span><div class="ind-body"><div class="ind-texte">Le prestataire met en œuvre les actions d'amélioration à partir des appréciations collectées.</div><div class="ind-radio" data-critere="6"><label class="conforme"><input type="radio" name="i6.4" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i6.4" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i6.4" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i6.4" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">6.5</span><div class="ind-body"><div class="ind-texte">Le prestataire informe les parties prenantes des suites données aux appréciations, difficultés et réclamations recueillies.</div><div class="ind-radio" data-critere="6"><label class="conforme"><input type="radio" name="i6.5" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i6.5" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i6.5" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i6.5" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">6.6</span><div class="ind-body"><div class="ind-texte">Le prestataire met en œuvre des modalités d'analyse des résultats obtenus sur la base d'indicateurs.</div><div class="ind-radio" data-critere="6"><label class="conforme"><input type="radio" name="i6.6" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i6.6" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i6.6" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i6.6" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+    </div>
+  </div>
+
+  <!-- CRITÈRE 7 -->
+  <div class="critere-section">
+    <div class="critere-header" style="--c:#2a6b4a">
+      <div class="critere-num" style="background:#2a6b4a">7</div>
+      <div class="critere-info">
+        <div class="critere-titre">L'amélioration continue des prestations</div>
+        <div class="critere-desc">Boucle d'amélioration, plan d'actions, suivi et mesure de l'impact</div>
+      </div>
+      <div class="critere-score" id="score-c7" style="background:rgba(42,107,74,0.1);color:#2a6b4a">0/4</div>
+    </div>
+    <div class="indicateurs-list">
+      <div class="indicateur"><span class="ind-ref">7.1</span><div class="ind-body"><div class="ind-fundamental">⚠ FONDAMENTAL</div><div class="ind-texte">Le prestataire formalise son analyse des résultats et les mesures d'amélioration qui en découlent dans un plan d'actions.</div><div class="ind-radio" data-critere="7"><label class="conforme"><input type="radio" name="i7.1" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i7.1" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i7.1" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i7.1" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">7.2</span><div class="ind-body"><div class="ind-texte">Le prestataire met en œuvre les actions d'amélioration formalisées dans le plan d'actions.</div><div class="ind-radio" data-critere="7"><label class="conforme"><input type="radio" name="i7.2" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i7.2" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i7.2" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i7.2" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">7.3</span><div class="ind-body"><div class="ind-texte">Le prestataire mesure l'impact des actions mises en œuvre sur les résultats obtenus.</div><div class="ind-radio" data-critere="7"><label class="conforme"><input type="radio" name="i7.3" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i7.3" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i7.3" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i7.3" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+      <div class="indicateur"><span class="ind-ref">7.4</span><div class="ind-body"><div class="ind-texte">Le prestataire mesure le développement des compétences et la performance des personnes chargées de mettre en œuvre la démarche qualité.</div><div class="ind-radio" data-critere="7"><label class="conforme"><input type="radio" name="i7.4" value="C" onchange="updateScore()"><span>✓ Conforme</span></label><label class="partiel"><input type="radio" name="i7.4" value="P" onchange="updateScore()"><span>~ Partiel</span></label><label class="nc"><input type="radio" name="i7.4" value="NC" onchange="updateScore()"><span>✗ NC</span></label><label class="na"><input type="radio" name="i7.4" value="NA" onchange="updateScore()"><span>— NA</span></label></div></div></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-bas">
+    <h3>Votre score vous inquiète ?</h3>
+    <p>Le Pack Certif' Occitanie CCFA vous accompagne en 4 journées collectives pour atteindre la conformité — 1 790 € HT, 10 OF max par session.</p>
+    <a href="/inscription-ccfa.html?formation=qualiopi">📋 Réserver une place — Session juin 2026</a>
+  </div>
+
+</div>
+
+<script>
+const configs = {
+  1:{total:6,el:'score-c1'},2:{total:4,el:'score-c2'},3:{total:4,el:'score-c3'},
+  4:{total:3,el:'score-c4'},5:{total:5,el:'score-c5'},6:{total:6,el:'score-c6'},7:{total:4,el:'score-c7'}
+};
+const TOTAL = 32;
+
+function updateScore() {
+  let globalC = 0, globalAnswered = 0;
+  for (let c = 1; c <= 7; c++) {
+    const cfg = configs[c];
+    let cC = 0, cAnswered = 0;
+    for (let i = 1; i <= cfg.total; i++) {
+      const checked = document.querySelector(`[name="i${c}.${i}"]:checked`);
+      if (checked) {
+        cAnswered++;
+        if (checked.value === 'C') cC++;
+        else if (checked.value === 'P') cC += 0.5;
+      }
+    }
+    globalC += cC; globalAnswered += cAnswered;
+    const el = document.getElementById(cfg.el);
+    el.textContent = `${Math.round(cC)}/${cfg.total}`;
+  }
+  const pct = globalAnswered > 0 ? Math.round((globalC / globalAnswered) * 100) : 0;
+  document.getElementById('score-pct').textContent = pct + '%';
+  document.getElementById('progress-fill').style.width = pct + '%';
+}
+</script>
+</body>
+</html>
