@@ -1,370 +1,599 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catalogue de Formations — CCFA | Montauban, Occitanie</title>
-  <meta name="description" content="Catalogue de formations CCFA : SST, incendie, TMS, habilitation électrique, management, bilan de compétences. Formations à la demande — Montauban, Occitanie.">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="service-styles.css">
-  <style>
-    .catalogue-hero {
-      background: var(--navy);
-      padding: 5rem 0 4rem;
-      text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-    .catalogue-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(122,56,32,0.18) 0%, transparent 60%),
-                  radial-gradient(ellipse at 70% 30%, rgba(59,94,140,0.15) 0%, transparent 60%);
-    }
-    .catalogue-hero .container { position: relative; z-index: 1; }
-    .catalogue-hero .badge {
-      display: inline-block;
-      background: rgba(122,56,32,0.25);
-      border: 1px solid rgba(122,56,32,0.4);
-      color: #d4886a;
-      padding: 0.4rem 1.2rem;
-      border-radius: 100px;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-    .catalogue-hero h1 {
-      color: white;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      margin-bottom: 1.2rem;
-    }
-    .catalogue-hero h1 em { color: var(--terracotta-light); font-style: normal; }
-    .catalogue-hero p {
-      color: rgba(255,255,255,0.65);
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalogue de Formations 2026 — CCFA | Montauban, Tarn-et-Garonne</title>
+<meta name="description" content="6 formations certifiantes à Montauban : Conseiller Funéraire, Chauffeur VTC, ADVF, FPA, Maître de Cérémonie, Qualiopi. Financement CPF, OPCO, France Travail. NDA 76820142382.">
+<meta name="keywords" content="formation Montauban, formation funéraire Montauban, formation VTC 82, ADVF Tarn-et-Garonne, FPA formation formateur Montauban, CPF Montauban">
+<meta property="og:title" content="Catalogue Formations CCFA — Montauban 2026">
+<meta property="og:description" content="6 formations certifiantes peu concurrencées en Tarn-et-Garonne. Financement CPF, OPCO, France Travail.">
+<meta property="og:url" content="https://www.c2fa.fr/catalogue-formations.html">
+<link rel="canonical" href="https://www.c2fa.fr/catalogue-formations.html">
 
-    /* ── CONSTRUCTION SECTION ── */
-    .construction-section {
-      padding: 5rem 0;
-      background: var(--cream);
-    }
-    .construction-card {
-      background: white;
-      border-radius: 20px;
-      padding: 4rem 3rem;
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--gray-mid);
-    }
-    .construction-icon {
-      font-size: 4rem;
-      margin-bottom: 1.5rem;
-      display: block;
-    }
-    .construction-card h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: var(--navy);
-    }
-    .construction-card p {
-      color: var(--gray-text);
-      font-size: 1.05rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-    .construction-card .highlight {
-      background: var(--cream);
-      border-left: 4px solid var(--terracotta);
-      padding: 1rem 1.5rem;
-      text-align: left;
-      border-radius: 0 8px 8px 0;
-      margin: 1.5rem 0;
-      font-size: 0.95rem;
-      color: var(--navy);
-    }
-    .construction-card .highlight strong { color: var(--terracotta); }
+<!-- Fonts identiques au site CCFA -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    /* Themes aperçu */
-    .themes-preview {
-      padding: 4rem 0;
-      background: white;
-    }
-    .themes-preview h2 {
-      text-align: center;
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
-    }
-    .themes-preview .subtitle {
-      text-align: center;
-      color: var(--gray-text);
-      margin-bottom: 3rem;
-      font-size: 0.95rem;
-    }
-    .themes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .theme-card {
-      background: var(--cream);
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-      border: 1px solid var(--gray-mid);
-      transition: transform 0.2s, box-shadow 0.2s;
-      opacity: 0.7;
-      cursor: default;
-    }
-    .theme-card .theme-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
-    .theme-card h3 { font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--navy); }
-    .theme-card p { font-size: 0.8rem; color: var(--gray-text); }
-    .theme-card .badge-soon {
-      display: inline-block;
-      background: var(--gray-mid);
-      color: var(--gray-text);
-      font-size: 0.68rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 100px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-top: 0.75rem;
-    }
+<style>
+/* ── BASE identique au site CCFA ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #1a1a1a; font-size: 15px; line-height: 1.65; }
 
-    /* CTA demande */
-    .cta-demande {
-      background: var(--navy);
-      padding: 4rem 0;
-      text-align: center;
-      color: white;
-    }
-    .cta-demande h2 { color: white; font-size: 1.8rem; margin-bottom: 1rem; }
-    .cta-demande p { color: rgba(255,255,255,0.65); margin-bottom: 2rem; font-size: 1rem; }
-    .cta-demande .btn-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-cta-white {
-      display: inline-block;
-      background: white;
-      color: var(--navy);
-      padding: 0.9rem 2rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn-cta-white:hover { background: var(--cream); transform: translateY(-2px); }
-    .btn-cta-outline-w {
-      display: inline-block;
-      border: 1.5px solid rgba(255,255,255,0.4);
-      color: white;
-      padding: 0.9rem 2rem;
-      border-radius: 8px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn-cta-outline-w:hover { border-color: white; background: rgba(255,255,255,0.08); }
-  </style>
+/* ── NAV — copie exacte du site ── */
+.navbar {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 0 5%;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; font-weight: 700;
+  color: #1a1a1a; text-decoration: none;
+}
+.nav-logo span { color: #B5882A; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { font-size: 14px; font-weight: 500; color: #444; text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: #B5882A; }
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { cursor: pointer; }
+.dropdown-menu {
+  position: absolute; top: 100%; left: 0;
+  background: white; border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px; padding: 8px 0;
+  min-width: 230px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: all 0.2s;
+}
+.nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown-menu a { display: block; padding: 10px 20px; font-size: 13px; color: #333; text-decoration: none; }
+.dropdown-menu a:hover { background: #f9f6f0; color: #B5882A; }
+.nav-cta {
+  background: #1a1a1a; color: white !important;
+  padding: 10px 20px; border-radius: 6px;
+  font-size: 13px !important; font-weight: 600 !important;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: #B5882A !important; color: white !important; }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 60%, #16213e 100%);
+  color: white;
+  padding: 80px 5% 64px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 50% 80% at 85% 20%, rgba(181,136,42,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 35% 50% at 5% 85%, rgba(42,106,74,0.12) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-badge {
+  display: inline-block;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #B5882A; border: 1px solid rgba(181,136,42,0.45);
+  padding: 6px 14px; border-radius: 3px; margin-bottom: 28px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700; line-height: 1.12; margin-bottom: 20px;
+}
+.hero h1 em { color: #B5882A; font-style: italic; }
+.hero-sub { font-size: 16px; color: rgba(255,255,255,0.65); max-width: 580px; margin-bottom: 36px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+.hero-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.7); }
+.hero-meta-item strong { color: white; font-weight: 500; }
+.dot-ocre { width: 5px; height: 5px; border-radius: 50%; background: #B5882A; flex-shrink: 0; }
+
+/* ── FINANCEMENT STRIP ── */
+.financement-strip {
+  background: #B5882A;
+  padding: 14px 5%;
+  display: flex; align-items: center; justify-content: center;
+  gap: 28px; flex-wrap: wrap;
+}
+.financement-strip span {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #0d0d0d;
+}
+.fs-sep { width: 1px; height: 14px; background: rgba(0,0,0,0.2); }
+
+/* ── INTRO SECTION ── */
+.intro {
+  text-align: center; padding: 56px 5% 32px;
+  max-width: 900px; margin: 0 auto;
+}
+.section-pre {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.22em;
+  text-transform: uppercase; color: #B5882A; margin-bottom: 12px;
+}
+.intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; color: #1a1a1a;
+  margin-bottom: 14px;
+}
+.intro p { color: #666; font-size: 15px; max-width: 640px; margin: 0 auto; }
+
+/* ── GRILLE FORMATIONS ── */
+.formations-grid {
+  max-width: 1200px; margin: 0 auto;
+  padding: 24px 4% 72px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.formation-card {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.09);
+  border-radius: 10px;
+  padding: 32px 28px 24px;
+  display: flex; flex-direction: column;
+  position: relative;
+  transition: transform 0.25s, box-shadow 0.25s;
+  overflow: hidden;
+}
+.formation-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--accent, #B5882A);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s;
+}
+.formation-card:hover { transform: translateY(-5px); box-shadow: 0 16px 50px rgba(0,0,0,0.09); }
+.formation-card:hover::before { transform: scaleX(1); }
+
+.card-picto {
+  font-size: 2rem; margin-bottom: 16px; line-height: 1;
+}
+.card-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--accent, #B5882A); margin-bottom: 8px;
+}
+.card-titre {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700; color: #1a1a1a;
+  line-height: 1.2; margin-bottom: 12px;
+}
+.card-desc { font-size: 13.5px; color: #666; line-height: 1.6; margin-bottom: 18px; flex: 1; }
+
+/* Tableau infos compact */
+.card-infos {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6px; margin-bottom: 16px;
+  background: #f7f4ef; border-radius: 6px; padding: 14px;
+}
+.info-item { display: flex; flex-direction: column; gap: 2px; }
+.info-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #999; font-weight: 600; }
+.info-val { font-size: 12.5px; font-weight: 700; color: #1a1a1a; }
+
+/* Badges financement */
+.card-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.badge-fin {
+  font-size: 10px; padding: 3px 8px; border-radius: 3px;
+  font-weight: 600; letter-spacing: 0.04em;
+}
+.badge-cpf { background: #e8f0f8; color: #1a3a5c; }
+.badge-opco { background: #e8f5ee; color: #1e5c3a; }
+.badge-ft { background: #f5f0e0; color: #7a5a18; }
+.badge-auto { background: #f5e8ea; color: #7a2238; }
+
+/* Alerte niche */
+.niche-alert {
+  background: #edfaf3; border-left: 3px solid #2a6b4a;
+  padding: 8px 12px; border-radius: 0 4px 4px 0;
+  font-size: 12px; color: #1e5c3a; font-weight: 600;
+  margin-bottom: 16px; line-height: 1.4;
+}
+
+.card-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--accent, #B5882A);
+  text-decoration: none; margin-top: auto;
+  transition: gap 0.2s;
+}
+.formation-card:hover .card-cta { gap: 10px; }
+.card-cta::after { content: '→'; }
+
+/* ── AVANTAGES ── */
+.avantages {
+  background: #0d0d0d; color: white;
+  padding: 72px 5%;
+}
+.avantages-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: center;
+}
+.avantages h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem; font-weight: 700; color: white; line-height: 1.15;
+}
+.avantages h2 em { color: #B5882A; font-style: italic; }
+.av-liste { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.av-item { display: flex; gap: 16px; }
+.av-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #B5882A; line-height: 1; min-width: 32px; }
+.av-content strong { display: block; font-size: 13px; font-weight: 600; color: white; margin-bottom: 4px; }
+.av-content span { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+/* ── CTA SECTION ── */
+.cta-section {
+  background: linear-gradient(135deg, #f7f4ef 0%, #ffffff 100%);
+  padding: 72px 5%; text-align: center;
+}
+.cta-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+.cta-section p { color: #666; max-width: 540px; margin: 0 auto 32px; font-size: 15px; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  background: #1a1a1a; color: white;
+  padding: 14px 28px; border-radius: 6px;
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: #B5882A; }
+.btn-secondary {
+  background: transparent; color: #1a1a1a;
+  padding: 14px 28px; border-radius: 6px; border: 1.5px solid #1a1a1a;
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-secondary:hover { border-color: #B5882A; color: #B5882A; }
+
+/* ── FOOTER — copie exacte du site ── */
+.footer {
+  background: #111; color: rgba(255,255,255,0.6);
+  padding: 56px 5% 28px;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px; margin-bottom: 48px;
+}
+.footer-brand h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: white; margin-bottom: 12px; }
+.footer-brand h3 span { color: #B5882A; }
+.footer-brand p { font-size: 13px; line-height: 1.6; margin-bottom: 16px; }
+.footer-brand a { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; display: block; margin-bottom: 6px; }
+.footer-brand a:hover { color: #B5882A; }
+.footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+.footer-col ul li a:hover { color: #B5882A; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.footer-bottom p { font-size: 12px; }
+.footer-bottom .qualiopi { font-size: 12px; color: #B5882A; font-weight: 600; }
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .formations-grid { grid-template-columns: 1fr; padding: 16px 20px 56px; }
+  .avantages-inner { grid-template-columns: 1fr; gap: 32px; }
+  .av-liste { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 56px 5% 48px; }
+  .financement-strip { gap: 14px; }
+  .fs-sep { display: none; }
+}
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+}
+</style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
   <div class="nav-inner">
-    <a href="index.html" class="logo">CC<span>FA</span></a>
+    <a href="/index.html" class="nav-logo">CC<span>FA</span></a>
     <ul class="nav-links">
-      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="/a-propos.html">À propos</a></li>
       <li class="nav-dropdown">
         <a href="#">Nos services ▾</a>
-        <div class="nav-dropdown-menu">
-          <a href="service-ingenierie.html">Ingénierie de Formation</a>
-          <a href="service-management.html">Management de Transition</a>
-          <a href="service-territorial.html">Développement Territorial</a>
-          <a href="service-essms.html">Évaluation ESSMS</a>
-          <a href="service-bilan.html">Bilan de Compétences</a>
-          <a href="service-audit.html">Audit Qualiopi</a>
+        <div class="dropdown-menu">
+          <a href="/service-ingenierie.html">Ingénierie de Formation</a>
+          <a href="/service-management.html">Management de Transition</a>
+          <a href="/service-territorial.html">Développement Territorial</a>
+          <a href="/service-essms.html">Évaluation ESSMS</a>
+          <a href="/service-bilan.html">Bilan de Compétences</a>
+          <a href="/service-audit.html">Audit Qualiopi</a>
         </div>
       </li>
-      <li><a href="catalogue-formations.html" style="color:var(--terracotta);font-weight:600;">Formations</a></li>
-      <li><a href="tarifs.html">Tarifs</a></li>
-      <li><a href="blog.html">Ressources</a></li>
-      <li><a href="contact.html" class="nav-cta">Premier échange gratuit →</a></li>
+      <li><a href="/catalogue-formations.html" class="active">Formations</a></li>
+      <li><a href="/tarifs.html">Tarifs</a></li>
+      <li><a href="/blog.html">Ressources</a></li>
+      <li><a href="/contact.html" class="nav-cta">Premier échange gratuit →</a></li>
     </ul>
-    <div class="hamburger" onclick="document.querySelector('.nav-links').style.display='flex'">
-      <span></span><span></span><span></span>
-    </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="catalogue-hero">
-  <div class="container">
-    <div class="badge">Formations professionnelles</div>
-    <h1>Notre <em>catalogue de formations</em><br>arrive bientôt</h1>
-    <p>SST, Sécurité incendie, TMS, habilitation électrique, management et bien plus — disponibles sur devis et à la demande.</p>
-  </div>
-</section>
-
-<!-- CONSTRUCTION -->
-<section class="construction-section">
-  <div class="container">
-    <div class="construction-card">
-      <span class="construction-icon">🏗️</span>
-      <h2>Page en cours de construction</h2>
-      <p>
-        Notre catalogue de formations inter et intra-entreprises est en cours de finalisation.
-        Il couvrira les formations réglementaires, managériales et de développement des compétences,
-        toutes finançables via votre OPCO ou le CPF.
-      </p>
-      <div class="highlight">
-        <strong>Vous avez un besoin immédiat ?</strong><br>
-        Contactez-nous directement — nous construisons des formations sur-mesure adaptées à votre contexte
-        (secteur, public, durée, financement). Réponse sous 48h.
-      </div>
-      <p style="margin-bottom:0; color:var(--gray-text); font-size:0.92rem;">
-        Toutes nos formations sont conçues par un ingénieur pédagogique certifié Qualiopi,
-        avec 27 ans d'expérience terrain en Occitanie et partout en France.
-      </p>
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Catalogue 2026 — Tarn-et-Garonne</div>
+    <h1>Former. Certifier.<br><em>Insérer.</em></h1>
+    <p class="hero-sub">6 formations certifiantes, peu ou pas concurrencées à Montauban — dans des secteurs en tension réelle du territoire. Financement CPF, OPCO, France Travail.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><div class="dot-ocre"></div><strong>NDA 76820142382</strong>&nbsp;— Préfet Occitanie</div>
+      <div class="hero-meta-item"><div class="dot-ocre"></div><strong>Qualiopi</strong>&nbsp;en cours d'obtention</div>
+      <div class="hero-meta-item"><div class="dot-ocre"></div><strong>Tiers-lieu Génie</strong>, 12 rue du Génie, Montauban</div>
+      <div class="hero-meta-item"><div class="dot-ocre"></div><strong>06 51 50 97 18</strong></div>
     </div>
   </div>
 </section>
 
-<!-- THEMES APERÇU -->
-<section class="themes-preview">
-  <div class="container">
-    <h2>Ce qui arrive dans le catalogue</h2>
-    <p class="subtitle">Thèmes de formations — fiches détaillées à paraître</p>
-    <div class="themes-grid">
-      <div class="theme-card">
-        <span class="theme-icon">🚑</span>
-        <h3>SST</h3>
-        <p>Sauveteur Secouriste du Travail — initiale et recyclage</p>
-        <span class="badge-soon">Bientôt</span>
-      </div>
-      <div class="theme-card">
-        <span class="theme-icon">🔥</span>
-        <h3>Sécurité incendie</h3>
-        <p>SSIAP, évacuation, maniement extincteurs</p>
-        <span class="badge-soon">Bientôt</span>
-      </div>
-      <div class="theme-card">
-        <span class="theme-icon">🦺</span>
-        <h3>Prévention TMS</h3>
-        <p>Troubles musculo-squelettiques, gestes et postures</p>
-        <span class="badge-soon">Bientôt</span>
-      </div>
-      <div class="theme-card">
-        <span class="theme-icon">⚡</span>
-        <h3>Habilitation électrique</h3>
-        <p>BR, BS, BE mesure — recyclage et initiale</p>
-        <span class="badge-soon">Bientôt</span>
-      </div>
-      <div class="theme-card">
-        <span class="theme-icon">👔</span>
-        <h3>Management</h3>
-        <p>Leadership, conduite du changement, RPS</p>
-        <span class="badge-soon">Bientôt</span>
-      </div>
-      <div class="theme-card">
-        <span class="theme-icon">🎯</span>
-        <h3>Bilan de compétences</h3>
-        <p>24h réglementaires — finançable CPF</p>
-        <span class="badge-soon">Bientôt</span>
-      </div>
+<!-- ══ STRIP FINANCEMENT ══ -->
+<div class="financement-strip">
+  <span>✓ CPF — Mon Compte Formation</span>
+  <div class="fs-sep"></div>
+  <span>✓ OPCO (Uniformation, Atlas…)</span>
+  <div class="fs-sep"></div>
+  <span>✓ France Travail (AIF)</span>
+  <div class="fs-sep"></div>
+  <span>✓ Plan de développement des compétences</span>
+  <div class="fs-sep"></div>
+  <span>✓ Autofinancement</span>
+</div>
+
+<!-- ══ INTRO ══ -->
+<div class="intro">
+  <p class="section-pre">Notre catalogue</p>
+  <h2>6 formations certifiantes à Montauban</h2>
+  <p>Des formations choisies pour leur pertinence territoriale, leurs débouchés concrets et la rareté de l'offre locale. Un entretien de positionnement gratuit avant toute inscription.</p>
+</div>
+
+<!-- ══ GRILLE FORMATIONS ══ -->
+<div class="formations-grid">
+
+  <!-- 1. CONSEILLER FUNÉRAIRE -->
+  <div class="formation-card" style="--accent:#7a2238;">
+    <div class="card-picto">⚱️</div>
+    <div class="card-tag">Diplôme national — Secteur funéraire</div>
+    <h3 class="card-titre">Conseiller Funéraire</h3>
+    <p class="card-desc">Seule formation disponible à Montauban. Les candidats du 82 parcourent actuellement 60 km jusqu'à Toulouse-Labège. Diplôme national obligatoire pour exercer — secteur en recrutement permanent.</p>
+    <div class="card-infos">
+      <div class="info-item"><span class="info-label">Durée</span><span class="info-val">280h + 140h stage</span></div>
+      <div class="info-item"><span class="info-label">Format</span><span class="info-val">Présentiel Montauban</span></div>
+      <div class="info-item"><span class="info-label">Certification</span><span class="info-val">Diplôme national</span></div>
+      <div class="info-item"><span class="info-label">Session</span><span class="info-val">Sept. 2026</span></div>
     </div>
+    <div class="card-badges">
+      <span class="badge-fin badge-cpf">CPF</span>
+      <span class="badge-fin badge-ft">France Travail</span>
+      <span class="badge-fin badge-auto">Autofinancement</span>
+    </div>
+    <div class="niche-alert">🎯 NICHE — Aucun organisme à Montauban sur ce diplôme</div>
+    <a href="/contact.html?formation=conseiller-funeraire" class="card-cta">Demander un dossier</a>
+  </div>
+
+  <!-- 2. CHAUFFEUR VTC -->
+  <div class="formation-card" style="--accent:#1a3a5c;">
+    <div class="card-picto">🚗</div>
+    <div class="card-tag">Carte professionnelle — Transport</div>
+    <h3 class="card-titre">Chauffeur VTC</h3>
+    <p class="card-desc">Préparation complète aux examens VTC (théorique + pratique). 140h comprenant réglementation, sécurité routière, anglais, gestion d'entreprise et conduite. Fort taux d'insertion en Occitanie.</p>
+    <div class="card-infos">
+      <div class="info-item"><span class="info-label">Durée</span><span class="info-val">140h (20 jours)</span></div>
+      <div class="info-item"><span class="info-label">Format</span><span class="info-val">Présentiel + conduite</span></div>
+      <div class="info-item"><span class="info-label">Certification</span><span class="info-val">Carte prof. VTC</span></div>
+      <div class="info-item"><span class="info-label">Session</span><span class="info-val">Juin 2026</span></div>
+    </div>
+    <div class="card-badges">
+      <span class="badge-fin badge-cpf">CPF</span>
+      <span class="badge-fin badge-ft">France Travail</span>
+      <span class="badge-fin badge-auto">Autofinancement</span>
+    </div>
+    <a href="/contact.html?formation=vtc" class="card-cta">Demander un dossier</a>
+  </div>
+
+  <!-- 3. ADVF -->
+  <div class="formation-card" style="--accent:#2a6b4a;">
+    <div class="card-picto">🤝</div>
+    <div class="card-tag">Titre Pro RNCP N3 — Services à la personne</div>
+    <h3 class="card-titre">Assistant de Vie aux Familles (ADVF)</h3>
+    <p class="card-desc">Le 82 manque chroniquement d'ADVF qualifiés. Formation courte, insertion quasi-immédiate, financement massif France Travail et OPCO Santé. Débouchés directs auprès des structures du territoire.</p>
+    <div class="card-infos">
+      <div class="info-item"><span class="info-label">Durée</span><span class="info-val">315h + 105h stage</span></div>
+      <div class="info-item"><span class="info-label">Format</span><span class="info-val">Présentiel + terrain</span></div>
+      <div class="info-item"><span class="info-label">Certification</span><span class="info-val">Titre Pro RNCP N3</span></div>
+      <div class="info-item"><span class="info-label">Session</span><span class="info-val">Juin 2026</span></div>
+    </div>
+    <div class="card-badges">
+      <span class="badge-fin badge-cpf">CPF</span>
+      <span class="badge-fin badge-opco">OPCO Santé</span>
+      <span class="badge-fin badge-ft">France Travail</span>
+    </div>
+    <div class="niche-alert">🎯 TENSION FORTE — Secteur en pénurie dans le 82</div>
+    <a href="/contact.html?formation=advf" class="card-cta">Demander un dossier</a>
+  </div>
+
+  <!-- 4. FPA -->
+  <div class="formation-card" style="--accent:#4a2d6b;">
+    <div class="card-picto">🎓</div>
+    <div class="card-tag">Titre Pro RNCP37275 N5 — Formation</div>
+    <h3 class="card-titre">Formateur Professionnel d'Adultes (FPA)</h3>
+    <p class="card-desc">Le titre qui professionnalise les intervenants et formateurs en activité. Formation modulaire sur 4 blocs, accessible en alternance. Financement CPF maximal pour les indépendants souhaitant se qualifier.</p>
+    <div class="card-infos">
+      <div class="info-item"><span class="info-label">Durée</span><span class="info-val">840h + 320h entreprise</span></div>
+      <div class="info-item"><span class="info-label">Format</span><span class="info-val">Alternance modulaire</span></div>
+      <div class="info-item"><span class="info-label">Certification</span><span class="info-val">Titre Pro RNCP N5</span></div>
+      <div class="info-item"><span class="info-label">Session</span><span class="info-val">Sept. 2026</span></div>
+    </div>
+    <div class="card-badges">
+      <span class="badge-fin badge-cpf">CPF</span>
+      <span class="badge-fin badge-opco">Tout OPCO</span>
+      <span class="badge-fin badge-ft">France Travail</span>
+    </div>
+    <a href="/contact.html?formation=fpa" class="card-cta">Demander un dossier</a>
+  </div>
+
+  <!-- 5. QUALIOPI -->
+  <div class="formation-card" style="--accent:#B5882A;">
+    <div class="card-picto">✅</div>
+    <div class="card-tag">Accompagnement collectif B2B</div>
+    <h3 class="card-titre">Pack Certif' Occitanie — Qualiopi</h3>
+    <p class="card-desc">Accompagnement collectif de 10 OF maximum en 4 journées : auto-évaluation 32 indicateurs, plan d'actions, audit à blanc, kit 18 templates. Trois fois moins cher que l'accompagnement individuel du marché.</p>
+    <div class="card-infos">
+      <div class="info-item"><span class="info-label">Format</span><span class="info-val">4 jours collectifs</span></div>
+      <div class="info-item"><span class="info-label">Tarif</span><span class="info-val">1 790 € HT / OF</span></div>
+      <div class="info-item"><span class="info-label">Places</span><span class="info-val">10 max / session</span></div>
+      <div class="info-item"><span class="info-label">Session</span><span class="info-val">Juin 2026 — URGENT</span></div>
+    </div>
+    <div class="card-badges">
+      <span class="badge-fin badge-opco">Financement employeur</span>
+      <span class="badge-fin badge-auto">Facturation directe</span>
+    </div>
+    <div class="niche-alert">🎯 OFFRE UNIQUE en Occitanie à ce format et ce prix</div>
+    <a href="/contact.html?formation=qualiopi-collectif" class="card-cta">Réserver une place</a>
+  </div>
+
+  <!-- 6. MAÎTRE DE CÉRÉMONIE -->
+  <div class="formation-card" style="--accent:#a0442a;">
+    <div class="card-picto">🕊️</div>
+    <div class="card-tag">Habilitation préfectorale — Secteur funéraire</div>
+    <h3 class="card-titre">Maître de Cérémonie Funéraire</h3>
+    <p class="card-desc">Habilitation permettant d'officier lors des obsèques laïques et religieuses. Complément naturel au Conseiller Funéraire. Débouchés directs dans les pompes funèbres et régies municipales du 82.</p>
+    <div class="card-infos">
+      <div class="info-item"><span class="info-label">Durée</span><span class="info-val">140h (blended)</span></div>
+      <div class="info-item"><span class="info-label">Format</span><span class="info-val">Présentiel + distanciel</span></div>
+      <div class="info-item"><span class="info-label">Certification</span><span class="info-val">Habilitation préfectorale</span></div>
+      <div class="info-item"><span class="info-label">Session</span><span class="info-val">Oct. 2026</span></div>
+    </div>
+    <div class="card-badges">
+      <span class="badge-fin badge-cpf">CPF</span>
+      <span class="badge-fin badge-ft">France Travail</span>
+      <span class="badge-fin badge-auto">Autofinancement</span>
+    </div>
+    <div class="niche-alert">🎯 NICHE — Aucune session à Montauban actuellement</div>
+    <a href="/contact.html?formation=maitre-ceremonie" class="card-cta">Demander un dossier</a>
+  </div>
+
+</div>
+
+<!-- ══ AVANTAGES ══ -->
+<section class="avantages">
+  <div class="avantages-inner">
+    <div>
+      <h2>Pourquoi choisir <em>CCFA</em>&nbsp;à Montauban&nbsp;?</h2>
+    </div>
+    <ul class="av-liste">
+      <li class="av-item">
+        <span class="av-num">01</span>
+        <div class="av-content">
+          <strong>Lieu premium au centre de Montauban</strong>
+          <span>Tiers-lieu Génie, 12 rue du Génie — salles équipées, coworking, café, parking. Un cadre valorisant pour l'apprentissage.</span>
+        </div>
+      </li>
+      <li class="av-item">
+        <span class="av-num">02</span>
+        <div class="av-content">
+          <strong>Formateurs praticiens du terrain</strong>
+          <span>Réseau de sous-traitants experts issus de chaque secteur. Pas de généralistes — que des professionnels en exercice.</span>
+        </div>
+      </li>
+      <li class="av-item">
+        <span class="av-num">03</span>
+        <div class="av-content">
+          <strong>Multi-financement facilité</strong>
+          <span>CPF, OPCO, France Travail, plan de formation. Aide au montage du dossier incluse — vous ne payez souvent rien.</span>
+        </div>
+      </li>
+      <li class="av-item">
+        <span class="av-num">04</span>
+        <div class="av-content">
+          <strong>27 ans d'expertise territoriale</strong>
+          <span>Ancien DGS, dirigeant ESS, expert certifié Qualiopi. Une connaissance intime des besoins réels des employeurs du 82.</span>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
-<!-- CTA DEMANDE -->
-<section class="cta-demande">
-  <div class="container">
-    <h2>Besoin d'une formation maintenant ?</h2>
-    <p>Décrivez votre besoin — nous vous proposons une solution sur-mesure sous 48h.</p>
-    <div class="btn-row">
-      <a href="contact.html" class="btn-cta-white">📋 Demander une formation →</a>
-      <a href="tel:0651509718" class="btn-cta-outline-w">📞 06 51 50 97 18</a>
-    </div>
+<!-- ══ CTA ══ -->
+<section class="cta-section">
+  <h2>Votre projet de formation mérite un premier échange.</h2>
+  <p>Entretien de positionnement gratuit, identification du financement adapté, devis sous 48h. Aucun engagement.</p>
+  <div class="cta-buttons">
+    <a href="/contact.html" class="btn-primary">📅 Prendre rendez-vous gratuitement</a>
+    <a href="tel:0651509718" class="btn-secondary">📞 06 51 50 97 18</a>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo-foot">CC<span>FA</span> — Chikhi Conseil Formation Audit</div>
+        <h3>CC<span>FA</span></h3>
         <p>Conseil, formation, audit et développement territorial. Basé à Montauban, intervenant en Occitanie et partout en France.</p>
-        <div class="contact-items">
-          <a href="tel:0651509718" class="contact-item">📞 06 51 50 97 18</a>
-          <a href="mailto:contact@c2fa.fr" class="contact-item">✉️ contact@c2fa.fr</a>
-          <a href="https://maps.google.com/?q=12+rue+du+Génie+82000+Montauban" target="_blank" class="contact-item">📍 12 rue du Génie, 82000 Montauban</a>
-        </div>
+        <a href="tel:0651509718">📞 06 51 50 97 18</a>
+        <a href="mailto:samir@c2fa.fr">✉️ samir@c2fa.fr</a>
+        <a href="https://maps.google.com/?q=12+rue+du+Génie+82000+Montauban" target="_blank">📍 12 rue du Génie, 82000 Montauban</a>
       </div>
-      <div>
+      <div class="footer-col">
         <h4>Nos services</h4>
         <ul>
-          <li><a href="service-ingenierie.html">Ingénierie de Formation</a></li>
-          <li><a href="service-management.html">Management de Transition</a></li>
-          <li><a href="service-territorial.html">Développement Territorial</a></li>
-          <li><a href="service-essms.html">Évaluation ESSMS</a></li>
-          <li><a href="service-bilan.html">Bilan de Compétences</a></li>
-          <li><a href="service-audit.html">Audit Qualiopi</a></li>
+          <li><a href="/service-ingenierie.html">Ingénierie de Formation</a></li>
+          <li><a href="/service-management.html">Management de Transition</a></li>
+          <li><a href="/service-territorial.html">Développement Territorial</a></li>
+          <li><a href="/service-essms.html">Évaluation ESSMS</a></li>
+          <li><a href="/service-bilan.html">Bilan de Compétences</a></li>
+          <li><a href="/service-audit.html">Audit Qualiopi</a></li>
         </ul>
       </div>
-      <div>
+      <div class="footer-col">
         <h4>L'entreprise</h4>
         <ul>
-          <li><a href="a-propos.html">À propos</a></li>
-          <li><a href="tarifs.html">Tarifs</a></li>
-          <li><a href="blog.html">Ressources &amp; Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="/a-propos.html">À propos</a></li>
+          <li><a href="/catalogue-formations.html">Formations</a></li>
+          <li><a href="/tarifs.html">Tarifs</a></li>
+          <li><a href="/blog.html">Ressources & Blog</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/mentions-legales.html">Mentions légales</a></li>
         </ul>
-        <div style="margin-top:1.5rem;">
-          <h4>Notre tiers-lieu</h4>
-          <ul>
-            <li><a href="https://genie-montauban.fr" target="_blank">🏢 Le Génie — Montauban</a></li>
-          </ul>
-        </div>
       </div>
-      <div>
-        <h4>Horaires</h4>
+      <div class="footer-col">
+        <h4>Notre tiers-lieu</h4>
+        <ul>
+          <li><a href="https://genie-montauban.fr" target="_blank">🏢 Le Génie — Montauban</a></li>
+        </ul>
+        <h4 style="margin-top:20px;">Horaires</h4>
         <ul>
           <li><a href="#">Lun – Ven : 9h–12h30</a></li>
           <li><a href="#">14h – 18h</a></li>
-          <li><a href="contact.html">Urgences : sur devis</a></li>
+          <li><a href="/contact.html">Urgences : sur devis</a></li>
         </ul>
-        <div style="margin-top:1.5rem;">
-          <h4>Suivre CCFA</h4>
-          <ul>
-            <li><a href="https://www.linkedin.com/in/samirchikhi/" target="_blank">LinkedIn</a></li>
-            <li><a href="https://g.page/r/ccfa-montauban/review" target="_blank">⭐ Avis Google</a></li>
-          </ul>
-        </div>
+        <h4 style="margin-top:20px;">Suivre CCFA</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/company/chikhi-conseil/" target="_blank">LinkedIn</a></li>
+          <li><a href="https://g.page/r/ccfa-montauban/review" target="_blank">⭐ Avis Google</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 CCFA — Chikhi Conseil Formation Audit SASU · SIRET 943 861 989 00011</p>
-      <div class="qualiopi-foot">★ Certifié QUALIOPI</div>
+      <p>© 2026 CCFA — Chikhi Conseil Formation Audit SASU · SIRET 943 861 989 00011 · NDA 76820142382</p>
+      <span class="qualiopi">★ Certification Qualiopi en cours</span>
     </div>
   </div>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
