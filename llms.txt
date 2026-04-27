@@ -1,28 +1,29 @@
 # C2FA
 
-> C2FA est un cabinet basé à Montauban spécialisé en conseil, formation, audit, ingénierie, ESSMS et développement territorial.
+> Cabinet de conseil, formation, audit Qualiopi, ESSMS et développement territorial basé à Montauban.
 
 ## Pages principales
 - https://www.c2fa.fr/ : Accueil
-- https://www.c2fa.fr/a-propos.html : Présentation de Samir Chikhi et du cabinet
+- https://www.c2fa.fr/a-propos.html : À propos
 - https://www.c2fa.fr/contact.html : Contact
 - https://www.c2fa.fr/tarifs.html : Tarifs
 
 ## Services
-- https://www.c2fa.fr/service-audit.html : Audit
-- https://www.c2fa.fr/service-ingenierie.html : Ingénierie
-- https://www.c2fa.fr/service-essms.html : Accompagnement ESSMS
-- https://www.c2fa.fr/service-bilan.html : Bilan
-- https://www.c2fa.fr/service-management.html : Management
+- https://www.c2fa.fr/service-audit.html : Audit Qualiopi
+- https://www.c2fa.fr/service-ingenierie.html : Ingénierie de formation
+- https://www.c2fa.fr/service-essms.html : Évaluation ESSMS
+- https://www.c2fa.fr/service-bilan.html : Bilan de compétences
+- https://www.c2fa.fr/service-management.html : Management de transition
 - https://www.c2fa.fr/service-territorial.html : Développement territorial
 
 ## Ressources
-- https://www.c2fa.fr/blog.html : Blog
-- https://www.c2fa.fr/ccfa-blog.html : Articles et contenus
-- https://www.c2fa.fr/checklist-qualiopi.html : Ressource Qualiopi
+- https://www.c2fa.fr/blog.html : Blog et ressources
+- https://www.c2fa.fr/ccfa-blog.html : Articles complémentaires
+- https://www.c2fa.fr/checklist-qualiopi.html : Checklist Qualiopi
 - https://www.c2fa.fr/catalogue-formations.html : Catalogue des formations
 - https://www.c2fa.fr/google-business.html : Guide Google Business
 
-## Positionnement
-- Zone principale : Montauban, Tarn-et-Garonne, Occitanie
-- Expertises : Qualiopi, ESSMS, formation professionnelle, audit, accompagnement stratégique
+## Contact
+- Téléphone : 06 51 50 97 18
+- Email : contact@c2fa.fr
+- Adresse : 12 rue du Génie, 82000 Montauban
