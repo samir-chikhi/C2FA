@@ -1,72 +1,126 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Management de Transition - CCFA Montauban</title>
-    <meta name="description" content="Management de transition avec CCFA : direction générale ou RH en intérim pour associations et collectivités d'Occitanie. Disponibilité immédiate.">
-    <meta name="keywords" content="management transition Montauban, directeur général transition, DG intérim associations, manager transition Occitanie, direction intérimaire">
-    <meta name="author" content="Samir Chikhi — CCFA">
-    <link rel="canonical" href="https://www.c2fa.fr/service-management.html">
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.c2fa.fr/service-management.html">
-    <meta property="og:title" content="Management de Transition — Direction Intérimaire | CCFA Montauban">
-    <meta property="og:description" content="Besoin d'un DG ou directeur RH en transition ? CCFA prend le relais rapidement pour associations et collectivités en Occitanie.">
-    <meta property="og:site_name" content="CCFA — Chikhi Conseil Formation Audit">
-    <meta property="og:locale" content="fr_FR">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Management de Transition — CCFA Montauban">
-    <meta name="twitter:description" content="Direction générale ou RH en intérim. Disponibilité immédiate. Occitanie.">
-
-    <!-- Géolocalisation locale SEO -->
-    <meta name="geo.region" content="FR-OCC">
-    <meta name="geo.placename" content="Montauban, Tarn-et-Garonne">
-    <meta name="geo.position" content="44.0157;1.3553">
-    <meta name="ICBM" content="44.0157, 1.3553">
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="shortcut icon" href="favicon.svg">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="service-styles.css">
-
-    <!-- Données structurées Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Management de Transition",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "CCFA — Chikhi Conseil Formation Audit",
-        "url": "https://www.c2fa.fr",
-        "telephone": "+33651509718",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "12 rue du Génie",
-          "addressLocality": "Montauban",
-          "postalCode": "82000",
-          "addressCountry": "FR"
-        }
-      },
-      "description": "Direction générale ou RH en management de transition pour associations et collectivités : prise de poste rapide, accompagnement au changement.",
-      "areaServed": "Occitanie",
-      "url": "https://www.c2fa.fr/service-management.html",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.c2fa.fr/"},
-          {"@type": "ListItem", "position": 2, "name": "Management de Transition", "item": "https://www.c2fa.fr/service-management.html"}
-        ]
-      }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Management de Transition — CCFA | Direction opérationnelle Occitanie</title>
+  <meta name="description" content="Management de transition en Occitanie : direction générale, pilotage opérationnel, conduite du changement, restructuration. 27 ans d'expérience DGS et ESS. CCFA Montauban.">
+  <link rel="canonical" href="https://www.c2fa.fr/service-management.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.c2fa.fr/service-management.html">
+  <meta property="og:title" content="Management de Transition — CCFA Montauban">
+  <meta property="og:description" content="Direction opérationnelle temporaire pour collectivités, ESS et organismes de formation. Ancien DGS, directeur ESS 27 ans d'expérience.">
+  <meta property="og:site_name" content="CCFA — Chikhi Conseil Formation Audit">
+  <meta name="geo.region" content="FR-OCC">
+  <meta name="geo.placename" content="Montauban, Occitanie">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="service-styles.css">
+  <style>
+    .mgmt-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0;
     }
-    </script>
+    .mgmt-stat {
+      background: var(--cream);
+      border-left: 4px solid var(--color-management);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+    }
+    .mgmt-stat strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--color-management);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .mgmt-stat span {
+      font-size: 0.85rem;
+      color: var(--gray-text);
+    }
+    .intervention-timeline {
+      margin: 2.5rem 0;
+    }
+    .timeline-step {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      align-items: flex-start;
+    }
+    .timeline-num {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 50%;
+      background: var(--color-management);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .timeline-content h4 {
+      margin-bottom: 0.3rem;
+      color: var(--navy);
+    }
+    .timeline-content p {
+      color: var(--gray-text);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .ref-card {
+      background: white;
+      border: 1px solid var(--gray-mid);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+    .ref-card strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+    .ref-card span {
+      font-size: 0.82rem;
+      color: var(--gray-text);
+    }
+    .mgmt-engagement-box {
+      background: linear-gradient(135deg, #1a2b4a 0%, #243759 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .mgmt-engagement-box h3 { color: white; margin-bottom: 1rem; }
+    .engagement-list {
+      list-style: none;
+      padding: 0;
+    }
+    .engagement-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.92rem;
+      display: flex;
+      gap: 0.75rem;
+    }
+    .engagement-list li:last-child { border-bottom: none; }
+  </style>
 </head>
 <body>
-    <nav>
+
+<nav>
   <div class="nav-inner">
     <a href="index.html" class="logo">CC<span>FA</span></a>
     <ul class="nav-links">
@@ -75,7 +129,7 @@
         <a href="#">Nos services ▾</a>
         <div class="nav-dropdown-menu">
           <a href="service-ingenierie.html">Ingénierie de Formation</a>
-          <a href="service-management.html">Management de Transition</a>
+          <a href="service-management.html" style="color:var(--terracotta);font-weight:600;">Management de Transition</a>
           <a href="service-territorial.html">Développement Territorial</a>
           <a href="service-essms.html">Évaluation ESSMS</a>
           <a href="service-bilan.html">Bilan de Compétences</a>
@@ -93,92 +147,213 @@
   </div>
 </nav>
 
-    <section class="service-hero" style="background: linear-gradient(135deg, #38200e 0%, #522f16 100%);">
-        <div class="container">
-            <div class="service-hero-content">
-                <h1>Management de Transition</h1>
-                <p class="service-hero-subtitle">
-                    Direction opérationnelle temporaire pour piloter vos transformations et gérer vos situations critiques
-                </p>
-            </div>
-        </div>
-    </section>
+<!-- Hero -->
+<section class="service-hero" style="background: linear-gradient(135deg, #2d1f14 0%, #4a3020 100%);">
+  <div class="container">
+    <div class="service-hero-content">
+      <h1>Management de Transition</h1>
+      <p class="service-hero-subtitle">
+        Direction opérationnelle temporaire pour piloter vos transformations, sécuriser vos passages critiques et renforcer vos organisations
+      </p>
+    </div>
+  </div>
+</section>
 
-    <section class="service-intro">
-        <div class="container">
-            <div class="intro-grid">
-                <div class="intro-visual" style="background: linear-gradient(135deg, #38200e 0%, #522f16 100%);">👔</div>
-                <div class="intro-text">
-                    <h2>Expert Opérationnel à Votre Service</h2>
-                    <p>
-                        Fort de <strong>27 ans d'expérience en direction</strong> (DGS de collectivité avec budget 4,2M€ 
-                        et 55 agents, directeur de structures ESS jusqu'à 1,1M€), j'interviens comme <strong>manager de 
-                        transition</strong> pour assurer la continuité opérationnelle et piloter vos projets stratégiques.
-                    </p>
-                    <p>
-                        Mon expertise couvre la <strong>direction générale</strong> de collectivités territoriales et 
-                        structures de l'ESS, le <strong>pilotage de projets complexes</strong>, la <strong>conduite du 
-                        changement</strong> et les <strong>situations de crise</strong>. Je prends en main immédiatement 
-                        vos enjeux et délivre des résultats concrets.
-                    </p>
-                    <div class="highlight-box">
-                        <strong>Mon approche :</strong> Pragmatisme et efficacité. Je ne conseille pas depuis un bureau, 
-                        j'agis au cœur de votre organisation pour transformer, restructurer et pérenniser.
-                    </div>
-                </div>
-            </div>
+<!-- Intro -->
+<section class="service-intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-visual" style="background: linear-gradient(135deg, #2d1f14 0%, #4a3020 100%);">👔</div>
+      <div class="intro-text">
+        <h2>Un dirigeant opérationnel à vos côtés</h2>
+        <p>
+          Fort de <strong>27 ans d'expérience en direction</strong> — DGS de collectivité territoriale (budget 4,2 M€, 55 agents) et directeur de structures ESS (CA jusqu'à 1,1 M€, 55 salariés) — j'interviens comme <strong>manager de transition</strong> pour assurer la continuité de votre organisation et piloter vos projets stratégiques.
+        </p>
+        <p>
+          Contrairement au conseil classique, le management de transition est un <strong>engagement opérationnel direct</strong> : je prends position dans votre structure, assume des responsabilités managériales réelles et produis des résultats mesurables. Chaque mission s'appuie sur une méthodologie éprouvée, adaptée aux spécificités des collectivités, associations et structures de l'ESS.
+        </p>
+        <div class="highlight-box">
+          <strong>Ma différence :</strong> 27 ans de terrain, pas de bureau. J'ai géré les crises RH, les restructurations financières et les passages de cap depuis l'intérieur des organisations — en tant que dirigeant, pas en tant que consultant externe.
         </div>
-    </section>
 
-    <section class="features-section">
-        <div class="container">
-            <div class="section-header"><h2 class="section-title">Mes Prestations</h2></div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #38200e 0%, #522f16 100%);">📋</div>
-                    <h3>Diagnostic Flash & Cadrage</h3>
-                    <p>Diagnostic 3-5 jours, feuille de route opérationnelle, quick wins, analyse des ressources.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #38200e 0%, #522f16 100%);">🎯</div>
-                    <h3>Pilotage Opérationnel</h3>
-                    <p>Prise en main équipes, tableaux de bord, reportings COMEX/CA, gestion urgences.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #38200e 0%, #522f16 100%);">🔄</div>
-                    <h3>Conduite du Changement</h3>
-                    <p>Mobilisation équipes, gestion résistances, accompagnement managérial, formation interne.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #38200e 0%, #522f16 100%);">⚡</div>
-                    <h3>Restructuration & Retournement</h3>
-                    <p>Redressement opérationnel, réorganisation services, négociations sociales, restauration rentabilité.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #38200e 0%, #522f16 100%);">🔗</div>
-                    <h3>Management Relais</h3>
-                    <p>Continuité opérationnelle, pilotage activité courante, préparation recrutement, transfert compétences.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #38200e 0%, #522f16 100%);">🚀</div>
-                    <h3>Projets Stratégiques</h3>
-                    <p>Projets complexes, multi-sites, transformation digitale, fusions/acquisitions, nouveaux services.</p>
-                </div>
-            </div>
+        <div class="mgmt-stat-grid">
+          <div class="mgmt-stat">
+            <strong>27 ans</strong>
+            <span>d'expérience en direction</span>
+          </div>
+          <div class="mgmt-stat">
+            <strong>4,2 M€</strong>
+            <span>budget piloté en collectivité</span>
+          </div>
+          <div class="mgmt-stat">
+            <strong>55</strong>
+            <span>agents / salariés managés</span>
+          </div>
+          <div class="mgmt-stat">
+            <strong>3–18 mois</strong>
+            <span>durée standard d'intervention</span>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Besoin d'un Manager de Transition ?</h2>
-                <p>Contactez-moi pour échanger sur votre situation</p>
-                <a href="contact.html" class="btn-primary-large">Discutons-en</a>
+<!-- Prestations -->
+<section class="features-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Mes Prestations</h2>
+      <p class="section-subtitle">Six types d'intervention couvrant l'ensemble des situations critiques</p>
+    </div>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--color-management); color:white;">📋</div>
+        <h3>Diagnostic Flash & Cadrage</h3>
+        <p>En 3 à 5 jours, j'établis un état des lieux complet : analyse organisationnelle, financière et humaine, identification des risques immédiats, définition des quick wins et feuille de route opérationnelle priorisée.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--color-management); color:white;">🎯</div>
+        <h3>Direction Générale de Transition</h3>
+        <p>Prise en main effective de la direction générale : management des équipes, pilotage budgétaire, représentation institutionnelle, COMEX/CA, gestion des urgences. Je remplace un dirigeant absent ou assure l'intérim entre deux recrutements.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--color-management); color:white;">🔄</div>
+        <h3>Conduite du Changement</h3>
+        <p>Accompagnement des transformations organisationnelles : mobilisation des équipes, gestion des résistances, communication interne, formations managériales, plans de développement des compétences et suivi de la performance.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--color-management); color:white;">⚡</div>
+        <h3>Restructuration & Redressement</h3>
+        <p>Intervention en situation critique : redressement opérationnel et financier, réorganisation des services, optimisation des processus, négociations sociales, restauration de la performance. Expérience directe en gestion de crise associative et territoriale.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--color-management); color:white;">🔗</div>
+        <h3>Management Relais</h3>
+        <p>Assurer la continuité opérationnelle pendant un recrutement, une vacance de poste ou un congé. Pilotage de l'activité courante, maintien des relations partenariales, préparation et accompagnement du successeur, transfert de compétences documenté.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--color-management); color:white;">🚀</div>
+        <h3>Pilotage de Projets Stratégiques</h3>
+        <p>Direction de projets complexes et structurants : création de structures (SCIC, association, SAS), fusion/absorption, ouverture de nouveaux services, déploiement territorial multi-sites, transformation numérique, montage de financements publics et européens.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Méthode d'intervention -->
+<section style="padding: 4rem 0; background: var(--cream);">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Comment j'interviens</h2>
+      <p class="section-subtitle">Une méthode structurée en 4 phases, inspirée des meilleurs cabinets français (EIM, CAHRA, Delville Management)</p>
+    </div>
+
+    <div class="intro-grid">
+      <div style="flex:1;">
+        <div class="intervention-timeline">
+          <div class="timeline-step">
+            <div class="timeline-num">1</div>
+            <div class="timeline-content">
+              <h4>Diagnostic & cadrage (J1–J5)</h4>
+              <p>Audit flash de la situation, rencontre des parties prenantes, identification des enjeux critiques. Production d'un rapport de cadrage et d'une feuille de route validée avec le commanditaire.</p>
             </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-num">2</div>
+            <div class="timeline-content">
+              <h4>Prise de fonction & stabilisation (S2–M1)</h4>
+              <p>Intégration opérationnelle, communication interne, premiers arbitrages managériaux, sécurisation des processus critiques. Mise en place du tableau de bord de suivi.</p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-num">3</div>
+            <div class="timeline-content">
+              <h4>Transformation & production (M1–M12)</h4>
+              <p>Déploiement du plan d'actions, pilotage opérationnel, reporting régulier au commanditaire, ajustements en continu. Livraison des résultats mesurables définis en phase 1.</p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-num">4</div>
+            <div class="timeline-content">
+              <h4>Transmission & clôture (M12–M18)</h4>
+              <p>Documentation complète des processus, formation du successeur ou de l'équipe, rapport de mission détaillé, plan de continuité. Sortie propre et sécurisée de la mission.</p>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <footer>
+      <div style="flex:1;">
+        <div class="mgmt-engagement-box">
+          <h3>Mes engagements sur chaque mission</h3>
+          <ul class="engagement-list">
+            <li>✅ Disponibilité immédiate — démarrage sous 5 jours ouvrés</li>
+            <li>✅ Rapport de cadrage livré dans les 5 premiers jours</li>
+            <li>✅ Reporting mensuel structuré au commanditaire</li>
+            <li>✅ Confidentialité absolue — clause de non-divulgation systématique</li>
+            <li>✅ Intervention en présentiel et/ou à distance selon vos besoins</li>
+            <li>✅ Couverture RC Pro Hiscox active</li>
+            <li>✅ Périmètre d'intervention : Occitanie + déplacements France entière</li>
+          </ul>
+        </div>
+
+        <div class="highlight-box" style="margin-top:1.5rem;">
+          <strong>Secteurs d'expertise :</strong>
+          <br>Collectivités territoriales (communes, EPCI, PETR) · Associations loi 1901 · Structures ESS (SCIC, coopératives) · Organismes de formation · Structures médico-sociales (ESSMS)
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Références -->
+<section style="padding: 4rem 0; background: white;">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Expériences de direction</h2>
+      <p class="section-subtitle">Des références terrain, pas des études de cas théoriques</p>
+    </div>
+    <div class="ref-grid">
+      <div class="ref-card">
+        <strong>DGS — Mairie de Grisolles (82)</strong>
+        <span>2019–2021 · Budget 4,2 M€ · 55 agents<br>Pilotage stratégique, finances publiques, management d'équipes pluridisciplinaires</span>
+      </div>
+      <div class="ref-card">
+        <strong>Directeur — Régie de Quartier Bellefontaine</strong>
+        <span>2009–2012 · Toulouse · CA 1,1 M€ · 55 salariés<br>Développement, partenariats, ancrage territorial, gestion RH</span>
+      </div>
+      <div class="ref-card">
+        <strong>Directeur Adjoint — Régie de Quartier</strong>
+        <span>2001–2009 · Montauban · CA 700 K€ · 43 salariés<br>Gestion opérationnelle quotidienne, RH, finances, coordination</span>
+      </div>
+      <div class="ref-card">
+        <strong>Chargé de mission ANRU</strong>
+        <span>2003–2007 · CA Montauban<br>Renouvellement urbain, politique emploi-insertion, création clause d'insertion</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Besoin d'un Manager de Transition ?</h2>
+      <p>Échangeons en 20 minutes sur votre situation — premier contact gratuit et confidentiel</p>
+      <a href="contact.html" class="btn-primary-large">Discutons-en →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -206,7 +381,7 @@
         <ul>
           <li><a href="a-propos.html">À propos</a></li>
           <li><a href="catalogue-formations.html">Formations</a></li>
-      <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
           <li><a href="blog.html">Ressources &amp; Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="mentions-legales.html">Mentions légales</a></li>
