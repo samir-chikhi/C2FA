@@ -1,72 +1,118 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Développement Territorial - CCFA Montauban</title>
-    <meta name="description" content="Développement territorial avec CCFA : diagnostic, stratégie et animation de projets de territoire pour collectivités locales et acteurs en Occitanie.">
-    <meta name="keywords" content="développement territorial Montauban, consultant territoire Occitanie, projet territorial collectivité, diagnostic territorial, animation territoire">
-    <meta name="author" content="Samir Chikhi — CCFA">
-    <link rel="canonical" href="https://www.c2fa.fr/service-territorial.html">
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.c2fa.fr/service-territorial.html">
-    <meta property="og:title" content="Développement Territorial — Conseil Collectivités | CCFA Montauban">
-    <meta property="og:description" content="Diagnostic, stratégie et animation de projets de territoire pour collectivités d'Occitanie. Expert CCFA Montauban.">
-    <meta property="og:site_name" content="CCFA — Chikhi Conseil Formation Audit">
-    <meta property="og:locale" content="fr_FR">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Développement Territorial — CCFA Montauban">
-    <meta name="twitter:description" content="Diagnostic, stratégie et animation de projets de territoire pour collectivités en Occitanie.">
-
-    <!-- Géolocalisation locale SEO -->
-    <meta name="geo.region" content="FR-OCC">
-    <meta name="geo.placename" content="Montauban, Tarn-et-Garonne">
-    <meta name="geo.position" content="44.0157;1.3553">
-    <meta name="ICBM" content="44.0157, 1.3553">
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="shortcut icon" href="favicon.svg">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="service-styles.css">
-
-    <!-- Données structurées Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Développement Territorial",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "CCFA — Chikhi Conseil Formation Audit",
-        "url": "https://www.c2fa.fr",
-        "telephone": "+33651509718",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "12 rue du Génie",
-          "addressLocality": "Montauban",
-          "postalCode": "82000",
-          "addressCountry": "FR"
-        }
-      },
-      "description": "Diagnostic, stratégie et animation de projets de développement territorial pour collectivités locales et acteurs en Occitanie.",
-      "areaServed": "Occitanie",
-      "url": "https://www.c2fa.fr/service-territorial.html",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.c2fa.fr/"},
-          {"@type": "ListItem", "position": 2, "name": "Développement Territorial", "item": "https://www.c2fa.fr/service-territorial.html"}
-        ]
-      }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Développement Territorial — CCFA | Conseil stratégique Occitanie</title>
+  <meta name="description" content="Développement territorial en Occitanie : stratégie locale, fonds européens LEADER/FEDER, politiques publiques, DLA, ingénierie de projet. 27 ans d'expérience. CCFA Montauban.">
+  <link rel="canonical" href="https://www.c2fa.fr/service-territorial.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.c2fa.fr/service-territorial.html">
+  <meta property="og:title" content="Développement Territorial — CCFA Montauban">
+  <meta property="og:description" content="Conseil stratégique territorial pour collectivités, PETR, associations ESS. Expert fonds européens LEADER, chargé de mission ANRU, DLA Occitanie 2020–2024.">
+  <meta property="og:site_name" content="CCFA — Chikhi Conseil Formation Audit">
+  <meta name="geo.region" content="FR-OCC">
+  <meta name="geo.placename" content="Montauban, Occitanie">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="service-styles.css">
+  <style>
+    .terr-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin: 2rem 0;
     }
-    </script>
+    .terr-stat {
+      background: var(--cream);
+      border-left: 4px solid var(--color-territorial);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+    }
+    .terr-stat strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      color: var(--color-territorial);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .terr-stat span {
+      font-size: 0.83rem;
+      color: var(--gray-text);
+    }
+    .expertise-zone {
+      background: white;
+      border: 1px solid var(--gray-mid);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .expertise-zone h4 {
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .expertise-zone p {
+      color: var(--gray-text);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .ref-terr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .ref-terr-card {
+      background: var(--cream);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      border-top: 3px solid var(--color-territorial);
+    }
+    .ref-terr-card strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+    .ref-terr-card span {
+      font-size: 0.82rem;
+      color: var(--gray-text);
+    }
+    .financements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .financement-chip {
+      background: white;
+      border: 1px solid var(--gray-mid);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .financement-chip em {
+      display: block;
+      font-style: normal;
+      font-size: 0.75rem;
+      color: var(--gray-text);
+      margin-top: 0.25rem;
+    }
+  </style>
 </head>
 <body>
-    <nav>
+
+<nav>
   <div class="nav-inner">
     <a href="index.html" class="logo">CC<span>FA</span></a>
     <ul class="nav-links">
@@ -76,7 +122,7 @@
         <div class="nav-dropdown-menu">
           <a href="service-ingenierie.html">Ingénierie de Formation</a>
           <a href="service-management.html">Management de Transition</a>
-          <a href="service-territorial.html">Développement Territorial</a>
+          <a href="service-territorial.html" style="color:var(--terracotta);font-weight:600;">Développement Territorial</a>
           <a href="service-essms.html">Évaluation ESSMS</a>
           <a href="service-bilan.html">Bilan de Compétences</a>
           <a href="service-audit.html">Audit Qualiopi</a>
@@ -93,89 +139,168 @@
   </div>
 </nav>
 
-    <section class="service-hero" style="background: linear-gradient(135deg, #163520 0%, #22502e 100%);">
-        <div class="container">
-            <div class="service-hero-content">
-                <h1>Développement Territorial</h1>
-                <p class="service-hero-subtitle">
-                    Conseil stratégique et opérationnel pour dynamiser votre territoire et fédérer les acteurs locaux
-                </p>
-            </div>
-        </div>
-    </section>
+<!-- Hero -->
+<section class="service-hero" style="background: linear-gradient(135deg, #162818 0%, #243d28 100%);">
+  <div class="container">
+    <div class="service-hero-content">
+      <h1>Développement Territorial</h1>
+      <p class="service-hero-subtitle">
+        Conseil stratégique et opérationnel pour dynamiser votre territoire, mobiliser les acteurs et sécuriser vos financements
+      </p>
+    </div>
+  </div>
+</section>
 
-    <section class="service-intro">
-        <div class="container">
-            <div class="intro-grid">
-                <div class="intro-visual" style="background: linear-gradient(135deg, #163520 0%, #22502e 100%);">🏛️</div>
-                <div class="intro-text">
-                    <h2>Expert en Développement Local</h2>
-                    <p>
-                        <strong>25 ans d'expérience en développement territorial</strong> : chargé de mission ANRU (créateur de la clause d'insertion), 
-                        chargé de mission fonds LEADER sur 140 communes, DLA Occitanie (2020-2024), consultant pour collectivités et structures ESS.
-                    </p>
-                    <p>
-                        Je maîtrise l'<strong>ingénierie de projet</strong>, le <strong>montage de fonds européens</strong>, 
-                        les <strong>politiques publiques locales</strong> et l'<strong>animation de territoires</strong>. 
-                        Mon ancrage en Occitanie me donne une connaissance fine des acteurs, des dispositifs et des opportunités.
-                    </p>
-                    <div class="highlight-box">
-                        <strong>Ma valeur ajoutée :</strong> Une approche globale combinant stratégie, opérationnel et animation des acteurs.
-                    </div>
-                </div>
-            </div>
+<!-- Intro -->
+<section class="service-intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-visual" style="background: linear-gradient(135deg, #162818 0%, #243d28 100%);">🏛️</div>
+      <div class="intro-text">
+        <h2>Un expert ancré dans les territoires</h2>
+        <p>
+          <strong>27 ans d'expérience en développement territorial</strong> : chargé de mission ANRU (créateur de la clause d'insertion à Montauban), chargé de mission fonds LEADER sur 140 communes et 6 communautés de communes, consultant DLA Occitanie (2020–2024), conseiller en création de SCIC.
+        </p>
+        <p>
+          Je connais les <strong>acteurs, les dispositifs et les rouages institutionnels</strong> de l'Occitanie de l'intérieur. Mon approche combine expertise stratégique, maîtrise de l'ingénierie financière et capacité à animer des collectifs d'acteurs pour faire avancer les projets sur le terrain.
+        </p>
+        <div class="highlight-box">
+          <strong>Mon ancrage :</strong> Tarn-et-Garonne, Haute-Garonne, Lot, Gers, Aveyron, Hérault. Réseau institutionnel actif — préfecture, DREETS, Région Occitanie, PETR, collectivités et structures ESS.
         </div>
-    </section>
 
-    <section class="features-section">
-        <div class="container">
-            <div class="section-header"><h2 class="section-title">Mes Prestations</h2></div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #163520 0%, #22502e 100%);">📊</div>
-                    <h3>Stratégie & Diagnostic</h3>
-                    <p>Diagnostic territorial, analyse AFOM, vision stratégique, projet de territoire, prospective.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #163520 0%, #22502e 100%);">💼</div>
-                    <h3>Développement Économique</h3>
-                    <p>Schéma économique, attractivité, animation ZA, accompagnement création d'entreprises, DLA.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #163520 0%, #22502e 100%);">🇪🇺</div>
-                    <h3>Fonds Européens</h3>
-                    <p>Montage LEADER/FEDER/FSE, ingénierie financière, animation programmes, évaluation projets.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #163520 0%, #22502e 100%);">🏛️</div>
-                    <h3>Politiques Publiques</h3>
-                    <p>Définition politiques locales, plans d'action, évaluation, prospective, contractualisation.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #163520 0%, #22502e 100%);">🏗️</div>
-                    <h3>Aménagement</h3>
-                    <p>Programmation urbaine, requalification friches, valorisation foncière, projets ZAC/zones activités.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #163520 0%, #22502e 100%);">🤝</div>
-                    <h3>Animation Territoriale</h3>
-                    <p>Réseaux d'acteurs, intelligence collective, ateliers participatifs, partenariats public-privé.</p>
-                </div>
-            </div>
+        <div class="terr-stat-grid">
+          <div class="terr-stat">
+            <strong>140</strong>
+            <span>communes accompagnées (PETR LEADER)</span>
+          </div>
+          <div class="terr-stat">
+            <strong>6</strong>
+            <span>communautés de communes pilotées</span>
+          </div>
+          <div class="terr-stat">
+            <strong>20 ans</strong>
+            <span>de fonds LEADER / politiques d'insertion</span>
+          </div>
+          <div class="terr-stat">
+            <strong>DLA</strong>
+            <span>consultant référencé Occitanie 2020–2024</span>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Un Projet Territorial à Développer ?</h2>
-                <p>Échangeons sur vos enjeux et vos ambitions</p>
-                <a href="contact.html" class="btn-primary-large">Contactez-moi</a>
-            </div>
-        </div>
-    </section>
+<!-- Prestations -->
+<section class="features-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Mes Prestations</h2>
+      <p class="section-subtitle">De la stratégie à l'animation, un accompagnement complet du territoire</p>
+    </div>
+    <div class="features-grid">
 
-    <footer>
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--color-territorial); color:white;">📊</div>
+        <h3>Stratégie & Diagnostic territorial</h3>
+        <p>Diagnostic territorial partagé (analyse AFOM/SWOT), vision stratégique, projet de territoire, prospective et scénarios de développement. Accompagnement à la définition et à la formalisation des orientations stratégiques pluriannuelles.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--color-territorial); color:white;">💼</div>
+        <h3>Développement économique local</h3>
+        <p>Schéma de développement économique, stratégie d'attractivité territoriale, animation de zones d'activités, accompagnement à la création et au développement d'entreprises ESS, diagnostic DLA et plans de consolidation.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--color-territorial); color:white;">🇪🇺</div>
+        <h3>Fonds européens & ingénierie financière</h3>
+        <p>Montage et gestion de programmes LEADER, FEDER, FSE. Construction de dossiers de financement, identification des sources de cofinancement, évaluation de projets, reporting et animation de programmes pluriannuels.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--color-territorial); color:white;">🏛️</div>
+        <h3>Politiques publiques locales</h3>
+        <p>Définition et mise en œuvre de politiques publiques : emploi, insertion, logement, culture, mobilité. Contractualisation avec l'État et la Région. Évaluation des politiques publiques et accompagnement à la décision des élus.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--color-territorial); color:white;">🏗️</div>
+        <h3>Tiers-lieux & innovation sociale</h3>
+        <p>Études de faisabilité, montage juridique et financier (SCIC, association gestionnaire, SAS), ingénierie de services, modèles économiques hybrides. Expérience directe dans la création du tiers-lieu Le Génie à Montauban.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: var(--color-territorial); color:white;">🤝</div>
+        <h3>Animation & gouvernance territoriale</h3>
+        <p>Construction de dynamiques collectives : réseaux d'acteurs, ateliers d'intelligence collective, facilitation de concertations, coordination de partenariats public-privé, animation de comités de pilotage et gouvernances partenariales.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Financement maîtrisés -->
+<section style="padding: 4rem 0; background: var(--cream);">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Financements maîtrisés</h2>
+      <p class="section-subtitle">Je vous aide à identifier, monter et gérer les dispositifs adaptés à votre projet</p>
+    </div>
+    <div class="financements-grid">
+      <div class="financement-chip">LEADER<em>GAL / PETR</em></div>
+      <div class="financement-chip">FEDER<em>Région Occitanie</em></div>
+      <div class="financement-chip">FSE+<em>Insertion / emploi</em></div>
+      <div class="financement-chip">DLA<em>Structures ESS</em></div>
+      <div class="financement-chip">ANRU<em>Rénovation urbaine</em></div>
+      <div class="financement-chip">FNADT<em>Aménagement du territoire</em></div>
+      <div class="financement-chip">Contrats de ruralité<em>État / collectivités</em></div>
+      <div class="financement-chip">Programmes régionaux<em>Occitanie 2027</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- Références terrain -->
+<section style="padding: 4rem 0; background: white;">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Expériences de terrain</h2>
+      <p class="section-subtitle">Des missions opérationnelles sur des périmètres réels, en Occitanie</p>
+    </div>
+    <div class="ref-terr-grid">
+      <div class="ref-terr-card">
+        <strong>Fonds LEADER — PETR Garonne Quercy Gascogne</strong>
+        <span>2016–2018 · 6 communautés de communes · 140 communes<br>Animation du programme, identification de projets, accompagnement des porteurs, ingénierie financière</span>
+      </div>
+      <div class="ref-terr-card">
+        <strong>Chargé de mission ANRU — CA Montauban</strong>
+        <span>2003–2007 · Renouvellement urbain<br>Pilotage de l'ANRU, création de la clause d'insertion, politique emploi-insertion locale</span>
+      </div>
+      <div class="ref-terr-card">
+        <strong>Consultant DLA Occitanie</strong>
+        <span>2020–2024 · Accompagnement structures ESS<br>Diagnostics organisationnels, stratégies de développement, plans de consolidation économique</span>
+      </div>
+      <div class="ref-terr-card">
+        <strong>Consultant REZOPOUCE — Moissac</strong>
+        <span>2015 · Innovation mobilité<br>Création de la SCIC, formation des médiateurs mobilité, formation des élus collectivités</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Un projet territorial à développer ?</h2>
+      <p>Échangeons sur vos enjeux, vos ambitions et les financements mobilisables — premier contact gratuit</p>
+      <a href="contact.html" class="btn-primary-large">Prendre contact →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -203,7 +328,7 @@
         <ul>
           <li><a href="a-propos.html">À propos</a></li>
           <li><a href="catalogue-formations.html">Formations</a></li>
-      <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
           <li><a href="blog.html">Ressources &amp; Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="mentions-legales.html">Mentions légales</a></li>
