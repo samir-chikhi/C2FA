@@ -1,1635 +1,1474 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formation IA – Distanciel Teams</title>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support stagiaire — Formation IA Distanciel Teams | C2FA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #0f172a;
+      --blue:   #1e40af;
+      --blue-l: #3b82f6;
+      --blue-bg:#eff6ff;
+      --blue-br:#bfdbfe;
+      --teal:   #0d9488;
+      --teal-bg:#f0fdfa;
+      --teal-br:#99f6e4;
+      --amber:  #d97706;
+      --amb-bg: #fffbeb;
+      --amb-br: #fde68a;
+      --green:  #16a34a;
+      --grn-bg: #f0fdf4;
+      --grn-br: #bbf7d0;
+      --purple: #7c3aed;
+      --pur-bg: #fdf2f8;
+      --red:    #dc2626;
+      --red-bg: #fff5f5;
+      --red-br: #fecaca;
+      --g50:    #f8fafc;
+      --g100:   #f1f5f9;
+      --g200:   #e2e8f0;
+      --g400:   #94a3b8;
+      --g600:   #475569;
+      --g700:   #334155;
+      --g800:   #1e293b;
+      --white:  #ffffff;
+      --border: #e2e8f0;
+      --sh:     0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04);
+      --sh-md:  0 4px 6px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.06);
+      --r: 10px; --rsm: 6px; --rlg: 14px;
+    }
+    html { font-family:'Segoe UI',system-ui,-apple-system,sans-serif; scroll-behavior:smooth; }
+    body { background:var(--g50); color:var(--g800); line-height:1.6; }
 
-  :root {
-    --purple-dark: #26215C;
-    --purple-mid: #534AB7;
-    --purple-light: #EEEDFE;
-    --purple-text: #3C3489;
-    --teal-dark: #085041;
-    --teal-mid: #0F6E56;
-    --teal-light: #E1F5EE;
-    --teal-text: #085041;
-    --amber-dark: #633806;
-    --amber-mid: #854F0B;
-    --amber-light: #FAEEDA;
-    --coral-dark: #712B13;
-    --coral-mid: #993C1D;
-    --coral-light: #FAECE7;
-    --gray-dark: #444441;
-    --gray-mid: #5F5E5A;
-    --gray-light: #F1EFE8;
-    --gray-100: #D3D1C7;
-    --blue-dark: #0C447C;
-    --blue-mid: #185FA5;
-    --blue-light: #E6F1FB;
-    --bg: #ffffff;
-    --fg: #1a1a1a;
-    --muted: #5a5a5a;
-    --border: #ddd;
-    --surface: #f8f7f4;
-  }
+    /* ─── STICKY NAV ─── */
+    .top-bar {
+      position:sticky; top:0; z-index:200;
+      background:var(--navy);
+      box-shadow:0 2px 8px rgba(0,0,0,.3);
+    }
+    .top-bar-inner {
+      max-width:1100px; margin:0 auto;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 20px; height:56px; gap:16px; flex-wrap:wrap;
+    }
+    .top-logo { font-size:16px; font-weight:800; color:white; letter-spacing:-.03em; flex-shrink:0; }
+    .top-logo span { color:var(--blue-l); }
+    .top-nav { display:flex; align-items:center; gap:4px; flex:1; overflow-x:auto; }
+    .top-nav a {
+      font-size:12px; font-weight:600; color:rgba(255,255,255,.65);
+      padding:6px 10px; border-radius:var(--rsm); white-space:nowrap;
+      transition:all .15s; text-decoration:none;
+    }
+    .top-nav a:hover { background:rgba(255,255,255,.1); color:white; }
+    .top-nav .active { color:white; background:rgba(255,255,255,.12); }
+    .btn-print {
+      background:rgba(255,255,255,.1); color:white;
+      border:1px solid rgba(255,255,255,.2);
+      font-size:12px; font-weight:600; padding:6px 14px;
+      border-radius:var(--rsm); cursor:pointer; flex-shrink:0;
+      transition:all .15s;
+    }
+    .btn-print:hover { background:rgba(255,255,255,.2); }
 
-  html, body { height: 100%; font-family: 'Segoe UI', Arial, sans-serif; background: #f0eee8; color: var(--fg); }
+    /* ─── HERO ─── */
+    .hero {
+      background:linear-gradient(135deg,var(--navy) 0%,#1e3a5f 100%);
+      padding:48px 24px 40px; position:relative; overflow:hidden;
+    }
+    .hero::before {
+      content:''; position:absolute; top:-60px; right:-60px;
+      width:280px; height:280px; background:var(--blue-l);
+      border-radius:50%; opacity:.1;
+    }
+    .hero-inner { max-width:860px; margin:0 auto; position:relative; }
+    .hero-tag {
+      display:inline-flex; align-items:center; gap:6px;
+      background:rgba(59,130,246,.25); color:#93c5fd;
+      font-size:11px; font-weight:700; letter-spacing:.05em;
+      padding:4px 12px; border-radius:99px; margin-bottom:14px;
+      text-transform:uppercase;
+    }
+    .hero h1 {
+      font-size:clamp(22px,4vw,32px); font-weight:800;
+      color:white; line-height:1.25; margin-bottom:12px; letter-spacing:-.02em;
+    }
+    .hero h1 em { color:#93c5fd; font-style:normal; }
+    .hero-sub { font-size:15px; color:rgba(255,255,255,.7); max-width:520px; line-height:1.65; margin-bottom:24px; }
+    .hero-pills { display:flex; flex-wrap:wrap; gap:8px; }
+    .hero-pill {
+      background:rgba(255,255,255,.1); color:rgba(255,255,255,.85);
+      font-size:12px; padding:5px 12px; border-radius:99px;
+      border:1px solid rgba(255,255,255,.15);
+    }
 
-  /* ── TOP NAV ── */
-  .top-nav {
-    background: var(--purple-dark);
-    display: flex; align-items: center; gap: 0;
-    padding: 0; position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    height: 52px;
-  }
-  .nav-brand {
-    padding: 0 20px; font-size: 14px; font-weight: 600; color: white;
-    white-space: nowrap; border-right: 1px solid rgba(255,255,255,.15);
-    height: 100%; display: flex; align-items: center; gap: 8px;
-  }
-  .nav-modes {
-    display: flex; align-items: center; height: 100%; overflow-x: auto;
-  }
-  .nav-mode {
-    padding: 0 18px; height: 100%; display: flex; align-items: center;
-    font-size: 13px; color: rgba(255,255,255,.75); cursor: pointer;
-    border: none; background: none; white-space: nowrap;
-    transition: all .15s; border-bottom: 3px solid transparent;
-  }
-  .nav-mode:hover { color: white; background: rgba(255,255,255,.08); }
-  .nav-mode.active { color: white; border-bottom-color: #9F96F5; background: rgba(255,255,255,.06); }
-  .nav-right {
-    margin-left: auto; padding: 0 16px; display: flex; align-items: center; gap: 10px;
-  }
-  .nav-timer {
-    font-size: 13px; color: rgba(255,255,255,.8); font-family: monospace;
-    background: rgba(255,255,255,.1); padding: 4px 10px; border-radius: 6px;
-    cursor: pointer; user-select: none; min-width: 64px; text-align: center;
-  }
-  .nav-timer.running { color: #9FE1CB; }
+    /* ─── PROGRESS BAR ─── */
+    .progress-strip {
+      background:var(--white); border-bottom:2px solid var(--border);
+      padding:12px 24px; display:flex; align-items:center; gap:8px;
+      flex-wrap:wrap; max-width:100%;
+    }
+    .prog-step {
+      display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600;
+    }
+    .prog-dot {
+      width:28px; height:28px; border-radius:50%; display:flex;
+      align-items:center; justify-content:center; font-size:12px; font-weight:800;
+      flex-shrink:0; color:white;
+    }
+    .prog-sep { color:var(--g400); font-size:16px; flex-shrink:0; }
+    .d-blue   { background:var(--blue); }
+    .d-teal   { background:var(--teal); }
+    .d-amber  { background:var(--amber); }
+    .d-green  { background:var(--green); }
+    .d-purple { background:var(--purple); }
+    .d-navy   { background:var(--navy); }
 
-  /* ── MAIN LAYOUT ── */
-  .app { margin-top: 52px; display: flex; height: calc(100vh - 52px); }
+    /* ─── LAYOUT ─── */
+    .container { max-width:900px; margin:0 auto; padding:0 24px; }
+    .section { padding:56px 0; }
+    .module-header {
+      display:flex; align-items:center; gap:16px; margin-bottom:32px;
+      padding-bottom:20px; border-bottom:2px solid var(--border);
+    }
+    .module-badge {
+      font-size:11px; font-weight:700; padding:5px 14px;
+      border-radius:99px; white-space:nowrap; flex-shrink:0;
+      text-transform:uppercase; letter-spacing:.05em;
+    }
+    .mb-blue   { background:var(--blue-bg); color:var(--blue); border:1px solid var(--blue-br); }
+    .mb-teal   { background:var(--teal-bg); color:var(--teal); border:1px solid var(--teal-br); }
+    .mb-amber  { background:var(--amb-bg);  color:var(--amber); border:1px solid var(--amb-br); }
+    .mb-green  { background:var(--grn-bg);  color:var(--green); border:1px solid var(--grn-br); }
+    .mb-purple { background:var(--pur-bg);  color:var(--purple); border:1px solid #ddd6fe; }
+    .mb-navy   { background:var(--navy);    color:white; }
+    .module-title { font-size:22px; font-weight:800; color:var(--navy); letter-spacing:-.02em; flex:1; }
+    .module-time { font-size:13px; color:var(--g400); white-space:nowrap; flex-shrink:0; }
+    .section-label {
+      font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+      margin-bottom:8px; margin-top:24px;
+    }
+    .sl-blue   { color:var(--blue); }
+    .sl-teal   { color:var(--teal); }
+    .sl-amber  { color:var(--amber); }
+    .sl-green  { color:var(--green); }
+    .sl-purple { color:var(--purple); }
+    .card {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); padding:20px; box-shadow:var(--sh); margin-bottom:14px;
+    }
+    .card h3 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px; }
+    .card p  { font-size:13.5px; color:var(--g700); line-height:1.65; }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    @media(max-width:620px){ .two-col{ grid-template-columns:1fr; } }
+    .three-col { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; }
+    @media(max-width:720px){ .three-col{ grid-template-columns:1fr 1fr; } }
+    @media(max-width:460px){ .three-col{ grid-template-columns:1fr; } }
 
-  /* ── SIDEBAR ── */
-  .sidebar {
-    width: 260px; min-width: 260px; background: white; border-right: 1px solid var(--border);
-    overflow-y: auto; flex-shrink: 0;
-  }
-  .sidebar-section { padding: 12px 0; border-bottom: 1px solid #eee; }
-  .sidebar-label {
-    font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: .08em;
-    text-transform: uppercase; padding: 0 16px 8px;
-  }
-  .sidebar-item {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 8px 16px; cursor: pointer; transition: background .12s;
-    border: none; background: none; width: 100%; text-align: left;
-  }
-  .sidebar-item:hover { background: var(--gray-light); }
-  .sidebar-item.active { background: var(--purple-light); }
-  .sidebar-num {
-    min-width: 22px; height: 22px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
-  }
-  .n-purple { background: var(--purple-mid); color: white; }
-  .n-teal { background: var(--teal-mid); color: white; }
-  .n-coral { background: var(--coral-mid); color: white; }
-  .n-amber { background: var(--amber-mid); color: white; }
-  .n-gray { background: var(--gray-mid); color: white; }
-  .sidebar-item-text { font-size: 12.5px; line-height: 1.4; color: var(--fg); }
-  .sidebar-item.active .sidebar-item-text { color: var(--purple-text); font-weight: 600; }
-  .sidebar-time {
-    font-size: 10px; color: var(--muted); margin-top: 2px; display: block;
-  }
+    /* ─── VOCABULAIRE ─── */
+    .vocab-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:12px; margin-bottom:20px; }
+    .vocab-card {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); padding:16px; box-shadow:var(--sh);
+    }
+    .vocab-term { font-size:18px; font-weight:900; color:var(--blue); margin-bottom:4px; }
+    .vocab-def  { font-size:13px; color:var(--g700); line-height:1.6; }
+    .vocab-ex   { font-size:11.5px; color:var(--g400); margin-top:6px; font-style:italic; }
 
-  /* ── MAIN CONTENT ── */
-  .main { flex: 1; overflow-y: auto; padding: 32px 40px 60px; }
+    /* ─── COMPARE TABLE ─── */
+    .cmp-wrap { overflow-x:auto; border-radius:var(--r); border:1px solid var(--border); box-shadow:var(--sh); margin-bottom:20px; }
+    .cmp-table { width:100%; border-collapse:collapse; font-size:13.5px; }
+    .cmp-table th { padding:12px 16px; font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
+    .cmp-table td { padding:11px 16px; border-top:1px solid var(--border); line-height:1.5; }
+    .cmp-table .th-l { background:var(--g100); color:var(--navy); width:28%; text-align:left; }
+    .cmp-table .th-c { background:var(--blue); color:white; text-align:center; }
+    .cmp-table .th-w { background:var(--teal); color:white; text-align:center; }
+    .cmp-table .td-l { background:var(--g50); color:var(--g700); font-weight:600; }
+    .cmp-table .td-c { background:var(--blue-bg); color:var(--g700); text-align:center; }
+    .cmp-table .td-w { background:var(--teal-bg); color:var(--g800); text-align:center; font-weight:600; }
 
-  /* ── VIEWS ── */
-  .view { display: none; }
-  .view.active { display: block; }
+    /* ─── FORCES / LIMITES ─── */
+    .fl-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:20px; }
+    @media(max-width:580px){ .fl-grid{ grid-template-columns:1fr; } }
+    .fl-card { border-radius:var(--r); padding:18px; }
+    .fl-card.forces  { background:var(--grn-bg); border:1px solid var(--grn-br); }
+    .fl-card.limites { background:var(--red-bg);  border:1px solid var(--red-br); }
+    .fl-card h4 { font-size:13.5px; font-weight:700; margin-bottom:10px; }
+    .fl-card.forces  h4 { color:var(--green); }
+    .fl-card.limites h4 { color:var(--red); }
+    .fl-card ul { padding-left:16px; }
+    .fl-card li { font-size:13px; color:var(--g700); margin-bottom:5px; line-height:1.55; }
 
-  /* ── SLIDE CARD ── */
-  .slide-card {
-    background: white; border-radius: 12px; padding: 40px 48px;
-    max-width: 900px; margin: 0 auto 28px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.06); border: 1px solid var(--border);
-  }
-  .slide-header {
-    display: flex; align-items: flex-start; gap: 14px; margin-bottom: 24px;
-  }
-  .slide-num-badge {
-    font-size: 11px; font-weight: 700; padding: 3px 10px;
-    border-radius: 99px; white-space: nowrap; flex-shrink: 0;
-  }
-  .badge-purple { background: var(--purple-light); color: var(--purple-text); }
-  .badge-teal { background: var(--teal-light); color: var(--teal-dark); }
-  .badge-coral { background: var(--coral-light); color: var(--coral-dark); }
-  .badge-amber { background: var(--amber-light); color: var(--amber-dark); }
-  .badge-gray { background: var(--gray-light); color: var(--gray-dark); }
-  .slide-title { font-size: 22px; font-weight: 700; color: var(--fg); line-height: 1.3; }
-  .slide-subtitle { font-size: 14px; color: var(--muted); margin-top: 4px; }
-  .slide-divider { border: none; border-top: 2px solid var(--purple-mid); margin-bottom: 24px; width: 48px; }
+    /* ─── PROMPT BOX ─── */
+    .prompt-wrap { position:relative; margin:14px 0; }
+    .prompt-box {
+      background:var(--g50); border-left:4px solid var(--blue);
+      border-radius:0 var(--rsm) var(--rsm) 0;
+      padding:14px 48px 14px 16px;
+      font-family:'Courier New',monospace; font-size:13px; line-height:1.7;
+      color:var(--g800); white-space:pre-wrap;
+    }
+    .prompt-box.teal  { border-left-color:var(--teal); }
+    .prompt-box.amber { border-left-color:var(--amber); }
+    .prompt-box.green { border-left-color:var(--green); }
+    .copy-btn {
+      position:absolute; top:10px; right:10px;
+      background:var(--blue); color:white;
+      border:none; border-radius:var(--rsm); cursor:pointer;
+      font-size:11px; font-weight:700; padding:5px 10px;
+      transition:all .15s; white-space:nowrap;
+    }
+    .copy-btn.teal  { background:var(--teal); }
+    .copy-btn.amber { background:var(--amber); }
+    .copy-btn.green { background:var(--green); }
+    .copy-btn:hover { opacity:.85; transform:scale(1.03); }
+    .copy-btn.copied { background:var(--green); }
 
-  .slide-body { font-size: 15px; color: var(--fg); line-height: 1.75; }
-  .slide-body p { margin-bottom: 12px; }
-  .slide-body strong { font-weight: 700; }
+    /* ─── KEY MESSAGE ─── */
+    .key-msg {
+      background:var(--navy); border-radius:var(--r); padding:20px 24px;
+      display:flex; gap:16px; align-items:flex-start; margin:20px 0;
+    }
+    .key-msg-icon { font-size:28px; flex-shrink:0; }
+    .key-msg h4   { font-size:14px; font-weight:800; color:white; margin-bottom:4px; }
+    .key-msg p    { font-size:13px; color:rgba(255,255,255,.75); line-height:1.65; }
+    .key-msg em   { color:#93c5fd; font-style:normal; }
 
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 16px 0; }
-  .col-box { border-radius: 8px; padding: 16px 18px; }
-  .col-box.green { background: var(--teal-light); }
-  .col-box.red { background: var(--coral-light); }
-  .col-box h4 { font-size: 13px; font-weight: 700; margin-bottom: 10px; }
-  .col-box.green h4 { color: var(--teal-dark); }
-  .col-box.red h4 { color: var(--coral-dark); }
-  .col-box ul { padding-left: 18px; }
-  .col-box li { font-size: 13.5px; margin-bottom: 5px; }
-  .col-box.green li { color: var(--teal-text); }
-  .col-box.red li { color: var(--coral-dark); }
+    /* ─── NOTE BOX ─── */
+    .note {
+      border-radius:var(--rsm); padding:12px 16px; margin:12px 0;
+      display:flex; gap:10px; align-items:flex-start;
+    }
+    .note.blue   { background:var(--blue-bg); border:1px solid var(--blue-br); }
+    .note.teal   { background:var(--teal-bg); border:1px solid var(--teal-br); }
+    .note.amber  { background:var(--amb-bg);  border:1px solid var(--amb-br); }
+    .note.green  { background:var(--grn-bg);  border:1px solid var(--grn-br); }
+    .note.red    { background:var(--red-bg);  border:1px solid var(--red-br); }
+    .note i { flex-shrink:0; font-size:16px; margin-top:1px; }
+    .note.blue  i,.note.blue  p { color:var(--blue); }
+    .note.teal  i,.note.teal  p { color:var(--teal); }
+    .note.amber i,.note.amber p { color:var(--amber); }
+    .note.green i,.note.green p { color:var(--green); }
+    .note.red   i,.note.red   p { color:var(--red); }
+    .note p { font-size:13px; line-height:1.55; }
 
-  .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
-  .vocab-card { border-radius: 8px; padding: 14px; border: 1px solid; }
-  .vc-purple { background: var(--purple-light); border-color: #CECBF6; }
-  .vc-teal { background: var(--teal-light); border-color: #9FE1CB; }
-  .vc-coral { background: var(--coral-light); border-color: #F5C4B3; }
-  .vc-amber { background: var(--amber-light); border-color: #FAC775; }
-  .vc-blue { background: var(--blue-light); border-color: #B5D4F4; }
-  .vocab-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
-  .vc-purple h4 { color: var(--purple-text); } .vc-teal h4 { color: var(--teal-dark); }
-  .vc-coral h4 { color: var(--coral-dark); } .vc-amber h4 { color: var(--amber-dark); }
-  .vc-blue h4 { color: var(--blue-dark); }
-  .vocab-card p { font-size: 12.5px; line-height: 1.5; }
-  .vc-purple p { color: var(--purple-mid); } .vc-teal p { color: var(--teal-mid); }
-  .vc-coral p { color: var(--coral-mid); } .vc-amber p { color: var(--amber-mid); }
-  .vc-blue p { color: var(--blue-mid); }
+    /* ─── MÉTHODE 4 QUESTIONS ─── */
+    .q4-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media(max-width:580px){ .q4-grid{ grid-template-columns:1fr; } }
+    .q4-card {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); padding:16px; box-shadow:var(--sh);
+      display:flex; gap:12px; align-items:flex-start;
+    }
+    .q4-num {
+      font-size:20px; font-weight:900; color:white;
+      background:var(--blue); width:32px; height:32px;
+      border-radius:var(--rsm); display:flex; align-items:center;
+      justify-content:center; flex-shrink:0;
+    }
+    .q4-num.t { background:var(--teal); }
+    .q4-num.a { background:var(--amber); }
+    .q4-num.g { background:var(--green); }
+    .q4-card h4 { font-size:13px; font-weight:700; color:var(--navy); margin-bottom:4px; }
+    .q4-card p  { font-size:12.5px; color:var(--g600); line-height:1.5; }
 
-  .rules-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
-  .rule-box { border-radius: 8px; padding: 18px; text-align: center; }
-  .rb1 { background: var(--purple-light); }
-  .rb2 { background: var(--teal-light); }
-  .rb3 { background: var(--coral-light); }
-  .rule-num { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
-  .rb1 .rule-num { color: var(--purple-text); } .rb2 .rule-num { color: var(--teal-dark); } .rb3 .rule-num { color: var(--coral-dark); }
-  .rule-box p { font-size: 13px; line-height: 1.5; }
-  .rb1 p { color: var(--purple-mid); } .rb2 p { color: var(--teal-mid); } .rb3 p { color: var(--coral-mid); }
+    /* ─── STRUCTURE PROMPT ─── */
+    .struct-wrap {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); overflow:hidden; box-shadow:var(--sh); margin-bottom:20px;
+    }
+    .struct-row {
+      display:flex; align-items:stretch; border-bottom:1px solid var(--border);
+    }
+    .struct-row:last-child { border-bottom:none; }
+    .struct-label {
+      width:130px; flex-shrink:0; background:var(--g50);
+      font-size:11.5px; font-weight:700; text-transform:uppercase;
+      letter-spacing:.05em; color:var(--blue); padding:12px 14px;
+      display:flex; align-items:center;
+    }
+    .struct-content {
+      flex:1; font-size:13px; color:var(--g700); padding:12px 16px;
+      line-height:1.55;
+    }
+    .struct-ex {
+      font-family:'Courier New',monospace; font-size:12px;
+      color:var(--g600); border-left:2px solid var(--blue-br);
+      padding:4px 10px; margin-top:6px; background:var(--blue-bg);
+      border-radius:0 var(--rsm) var(--rsm) 0;
+    }
 
-  .prompt-block {
-    background: var(--gray-light); border-left: 4px solid var(--purple-mid);
-    border-radius: 0 8px 8px 0; padding: 16px 18px; margin: 16px 0;
-    font-family: 'Courier New', monospace; font-size: 13.5px; line-height: 1.7;
-    color: #1a1a1a;
-  }
-  .prompt-label {
-    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
-    color: var(--purple-mid); margin-bottom: 6px; font-family: 'Segoe UI', Arial, sans-serif;
-  }
+    /* ─── CAS PRATIQUE ─── */
+    .cas-header {
+      background:linear-gradient(135deg,var(--navy),#1e3a5f);
+      border-radius:var(--r) var(--r) 0 0; padding:18px 22px;
+      display:flex; gap:14px; align-items:flex-start;
+    }
+    .cas-wrap {
+      border:1px solid var(--border); border-radius:var(--r);
+      overflow:hidden; box-shadow:var(--sh-md); margin-bottom:28px;
+    }
+    .cas-body { padding:20px 22px; background:var(--white); }
+    .cas-icon {
+      background:rgba(255,255,255,.15); border-radius:50%;
+      width:42px; height:42px; display:flex; align-items:center;
+      justify-content:center; font-size:20px; flex-shrink:0;
+    }
+    .cas-header h3 { font-size:16px; font-weight:700; color:white; margin-bottom:3px; }
+    .cas-header p  { font-size:13px; color:rgba(255,255,255,.7); }
+    .cas-badge {
+      font-size:10px; font-weight:700; text-transform:uppercase;
+      letter-spacing:.06em; color:rgba(255,255,255,.55); margin-bottom:5px;
+    }
+    .files-list {
+      background:var(--g50); border:1px solid var(--border);
+      border-radius:var(--rsm); padding:12px 14px;
+      font-family:'Courier New',monospace; font-size:12.5px;
+      line-height:1.9; margin-bottom:16px;
+    }
+    .files-list span { font-family:'Segoe UI',sans-serif; color:var(--g600); }
+    .output-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:16px; }
+    @media(max-width:580px){ .output-grid{ grid-template-columns:1fr 1fr; } }
+    .output-card {
+      border-radius:var(--rsm); padding:10px 12px;
+      font-size:12px; font-weight:600; line-height:1.45;
+    }
+    .out-1 { background:var(--blue-bg); color:var(--blue); border:1px solid var(--blue-br); }
+    .out-2 { background:var(--teal-bg); color:var(--teal); border:1px solid var(--teal-br); }
+    .out-3 { background:var(--pur-bg);  color:var(--purple); border:1px solid #ddd6fe; }
+    .out-4 { background:var(--amb-bg);  color:var(--amber); border:1px solid var(--amb-br); }
+    .out-5 { background:var(--grn-bg);  color:var(--green); border:1px solid var(--grn-br); }
+    .out-6 { background:#f0f0ff; color:#3730a3; border:1px solid #c7d2fe; font-weight:800; }
+    .output-card span { display:block; font-weight:400; font-size:11px; color:var(--g600); margin-top:2px; }
 
-  .exercise-box {
-    background: var(--purple-light); border: 1px solid #CECBF6;
-    border-radius: 8px; padding: 16px 18px; margin: 16px 0;
-  }
-  .exercise-box .ex-label {
-    font-size: 11px; font-weight: 700; color: var(--purple-text);
-    text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px;
-  }
-  .exercise-box p { font-size: 13.5px; color: var(--purple-text); line-height: 1.65; }
+    /* ─── 4V ─── */
+    .v4-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:16px 0; }
+    @media(max-width:640px){ .v4-grid{ grid-template-columns:1fr 1fr; } }
+    .v4-card { border-radius:var(--r); padding:16px 14px; text-align:center; }
+    .v4-val  { font-size:28px; font-weight:900; margin-bottom:4px; }
+    .v4-label{ font-size:13px; font-weight:700; color:var(--navy); margin-bottom:4px; }
+    .v4-desc { font-size:12px; color:var(--g600); line-height:1.5; }
 
-  .warn-box {
-    background: var(--amber-light); border: 1px solid #FAC775;
-    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
-    display: flex; gap: 12px; align-items: flex-start;
-  }
-  .warn-icon { font-size: 18px; flex-shrink: 0; }
-  .warn-box p { font-size: 13px; color: var(--amber-dark); line-height: 1.6; }
+    /* ─── RISQUES CARTES ─── */
+    .risques-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-bottom:20px; }
+    .risque-card {
+      background:var(--white); border-radius:var(--r);
+      border:1px solid var(--border); border-top-width:3px;
+      padding:16px; box-shadow:var(--sh);
+    }
+    .risque-icon { font-size:24px; margin-bottom:8px; }
+    .risque-card h4 { font-size:13.5px; font-weight:700; color:var(--navy); margin-bottom:5px; }
+    .risque-card p  { font-size:12.5px; color:var(--g600); line-height:1.55; }
+    .risque-card .regle { font-size:12px; font-weight:700; color:var(--blue); margin-top:8px; display:block; }
 
-  .tip-box {
-    background: var(--teal-light); border: 1px solid #9FE1CB;
-    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
-  }
-  .tip-box p { font-size: 13.5px; color: var(--teal-dark); line-height: 1.6; }
+    /* ─── ERREURS ─── */
+    .erreurs-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    @media(max-width:640px){ .erreurs-grid{ grid-template-columns:1fr; } }
+    .erreur-card {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); padding:14px 16px;
+      box-shadow:var(--sh); display:flex; gap:12px; align-items:flex-start;
+    }
+    .e-num {
+      font-size:14px; font-weight:900; color:white;
+      border-radius:var(--rsm); width:28px; height:28px;
+      display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    }
+    .e-red    { background:#dc2626; }
+    .e-amber  { background:var(--amber); }
+    .e-teal   { background:var(--teal); }
+    .e-green  { background:var(--green); }
+    .e-purple { background:var(--purple); }
+    .erreur-card h4 { font-size:13px; font-weight:700; color:var(--navy); margin-bottom:3px; }
+    .erreur-card p  { font-size:12px; color:var(--g600); line-height:1.5; }
 
-  .flow-chain { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
-  .flow-step { background: #f0eee8; border: 1px solid var(--border); border-radius: 6px; padding: 7px 14px; font-size: 13px; color: var(--fg); }
-  .flow-step.hl { background: var(--purple-light); border-color: #CECBF6; color: var(--purple-text); font-weight: 600; }
-  .flow-arrow { color: var(--muted); font-size: 16px; }
+    /* ─── NE FAIT PAS ─── */
+    .nefait-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:20px; }
+    @media(max-width:580px){ .nefait-grid{ grid-template-columns:1fr; } }
+    .nefait-item {
+      display:flex; align-items:flex-start; gap:10px;
+      background:var(--red-bg); border:1px solid var(--red-br);
+      border-radius:var(--rsm); padding:10px 12px;
+      font-size:12.5px; color:var(--g700); line-height:1.5;
+    }
+    .nefait-item span { flex-shrink:0; }
 
-  .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin: 10px 0; }
-  .tag { font-size: 12px; padding: 3px 12px; border-radius: 99px; border: 1px solid; }
-  .t-purple { background: var(--purple-light); color: var(--purple-text); border-color: #CECBF6; }
-  .t-teal { background: var(--teal-light); color: var(--teal-dark); border-color: #9FE1CB; }
-  .t-amber { background: var(--amber-light); color: var(--amber-dark); border-color: #FAC775; }
-  .t-coral { background: var(--coral-light); color: var(--coral-dark); border-color: #F5C4B3; }
+    /* ─── ACTION PLAN ─── */
+    .plan-card {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); padding:20px; margin-bottom:14px;
+      box-shadow:var(--sh);
+    }
+    .plan-card h3 { font-size:14px; font-weight:700; color:var(--navy); margin-bottom:12px; }
+    .plan-item {
+      display:flex; align-items:flex-start; gap:12px; padding:10px 0;
+      border-bottom:1px solid var(--g100);
+    }
+    .plan-item:last-child { border-bottom:none; }
+    .plan-num {
+      width:24px; height:24px; border-radius:50%;
+      background:var(--blue-bg); color:var(--blue);
+      font-size:12px; font-weight:800; display:flex;
+      align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;
+    }
+    .plan-item p { font-size:13.5px; color:var(--g700); line-height:1.55; }
+    .plan-item strong { color:var(--navy); }
 
-  /* hero slide */
-  .slide-hero {
-    background: var(--purple-dark); border-radius: 12px;
-    padding: 48px 52px; max-width: 900px; margin: 0 auto 28px;
-    position: relative; overflow: hidden;
-  }
-  .slide-hero::before {
-    content: ''; position: absolute; top: -60px; right: -60px;
-    width: 240px; height: 240px; background: var(--purple-mid);
-    border-radius: 50%; opacity: .35;
-  }
-  .slide-hero h1 { font-size: 28px; font-weight: 800; color: white; margin-bottom: 10px; line-height: 1.3; position: relative; }
-  .slide-hero .sh-sub { font-size: 16px; color: rgba(255,255,255,.8); margin-bottom: 24px; position: relative; }
-  .slide-hero-meta { display: flex; gap: 20px; flex-wrap: wrap; position: relative; }
-  .sh-pill { background: rgba(255,255,255,.15); color: white; font-size: 13px; padding: 6px 14px; border-radius: 99px; }
+    /* ─── ONEDRIVE ─── */
+    .tree {
+      background:var(--g50); border:1px solid var(--border);
+      border-radius:var(--rsm); padding:16px;
+      font-family:'Courier New',monospace; font-size:13px;
+      line-height:2; color:var(--g700);
+    }
+    .tree .folder { color:var(--blue); font-weight:700; }
+    .tree .file   { color:var(--g600); padding-left:20px; }
+    .naming-ex {
+      background:var(--navy); color:#93c5fd;
+      font-family:'Courier New',monospace; font-size:13px;
+      border-radius:var(--rsm); padding:12px 16px; margin:10px 0;
+    }
 
-  /* ── TIMELINE VIEW ── */
-  .timeline { max-width: 860px; margin: 0 auto; }
-  .tl-block { background: white; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 12px; overflow: hidden; }
-  .tl-header { display: flex; align-items: center; gap: 14px; padding: 14px 20px; cursor: pointer; user-select: none; }
-  .tl-header:hover { background: #fafaf8; }
-  .tl-time { font-size: 13px; font-weight: 700; color: white; padding: 4px 12px; border-radius: 99px; white-space: nowrap; flex-shrink: 0; }
-  .tt-purple { background: var(--purple-mid); }
-  .tt-teal { background: var(--teal-mid); }
-  .tt-coral { background: var(--coral-mid); }
-  .tt-amber { background: var(--amber-mid); }
-  .tt-gray { background: var(--gray-mid); }
-  .tl-label { font-size: 14px; font-weight: 600; color: var(--fg); flex: 1; }
-  .tl-toggle { color: var(--muted); transition: transform .2s; font-size: 18px; }
-  .tl-body { padding: 0 20px 16px 20px; border-top: 1px solid #eee; display: none; }
-  .tl-body.open { display: block; }
-  .tl-body ul { padding-left: 20px; margin: 10px 0; }
-  .tl-body li { font-size: 13.5px; margin-bottom: 5px; line-height: 1.55; }
-  .tl-body p { font-size: 13.5px; line-height: 1.65; margin: 8px 0; }
-  .tl-body strong { font-weight: 700; }
+    /* ─── RESSOURCES ─── */
+    .res-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+    .res-card {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); padding:18px; box-shadow:var(--sh);
+      text-align:center;
+    }
+    .res-card .icon { font-size:28px; margin-bottom:8px; display:block; }
+    .res-card h4 { font-size:13.5px; font-weight:700; color:var(--navy); margin-bottom:4px; }
+    .res-card p  { font-size:12.5px; color:var(--g600); margin-bottom:10px; }
+    .res-card a  {
+      display:inline-block; background:var(--blue); color:white;
+      font-size:12px; font-weight:600; padding:6px 14px;
+      border-radius:var(--rsm); text-decoration:none; transition:.15s;
+    }
+    .res-card a:hover { background:var(--blue-l); }
 
-  .action-chip {
-    display: inline-flex; align-items: center; gap: 5px;
-    font-size: 11px; font-weight: 700; padding: 2px 10px;
-    border-radius: 99px; margin-right: 5px; margin-bottom: 4px;
-    text-transform: uppercase; letter-spacing: .05em;
-  }
-  .ac-screen { background: #EEEDFE; color: var(--purple-text); }
-  .ac-chat { background: var(--blue-light); color: var(--blue-dark); }
-  .ac-group { background: var(--teal-light); color: var(--teal-dark); }
-  .ac-doc { background: var(--amber-light); color: var(--amber-dark); }
-  .ac-mic { background: var(--coral-light); color: var(--coral-dark); }
+    /* ─── FOOTER ─── */
+    .footer {
+      background:var(--navy); color:rgba(255,255,255,.55);
+      padding:24px; text-align:center; margin-top:40px;
+    }
+    .footer p { font-size:12px; }
+    .footer strong { color:rgba(255,255,255,.8); }
 
-  /* ── PROMPTS LIBRARY ── */
-  .prompts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 16px; max-width: 920px; margin: 0 auto; }
-  .prompt-card { background: white; border-radius: 10px; border: 1px solid var(--border); overflow: hidden; }
-  .pc-header { padding: 14px 18px; display: flex; align-items: center; gap: 10px; }
-  .pc-icon { font-size: 20px; }
-  .pc-title { font-size: 14px; font-weight: 700; }
-  .pc-body { padding: 0 18px 16px; }
-  .pc-prompt { background: var(--gray-light); border-left: 3px solid var(--purple-mid); border-radius: 0 6px 6px 0; padding: 12px 14px; font-family: 'Courier New', monospace; font-size: 12.5px; line-height: 1.65; color: #1a1a1a; margin-bottom: 10px; }
-  .pc-note { font-size: 12px; color: var(--muted); line-height: 1.5; }
-  .ph-purple { background: var(--purple-light); }
-  .ph-teal { background: var(--teal-light); }
-  .ph-coral { background: var(--coral-light); }
-  .ph-amber { background: var(--amber-light); }
-  .ph-purple .pc-title { color: var(--purple-text); }
-  .ph-teal .pc-title { color: var(--teal-dark); }
-  .ph-coral .pc-title { color: var(--coral-dark); }
-  .ph-amber .pc-title { color: var(--amber-dark); }
+    /* ─── PRINT ─── */
+    @media print {
+      .top-bar, .btn-print, .progress-strip { display:none !important; }
+      body { background:white; }
+      .section { padding:32px 0; break-inside:avoid; }
+      .cas-wrap, .card, .prompt-wrap { break-inside:avoid; }
+      .copy-btn { display:none; }
+      .prompt-box { padding:14px 16px; }
+      .hero { background:#0f172a !important; print-color-adjust:exact; -webkit-print-color-adjust:exact; }
+    }
 
-  .copy-btn {
-    display: flex; align-items: center; gap: 5px;
-    font-size: 11px; padding: 5px 12px; border-radius: 6px;
-    border: 1px solid var(--border); background: white; cursor: pointer;
-    color: var(--muted); transition: all .15s;
-  }
-  .copy-btn:hover { background: var(--purple-light); color: var(--purple-text); border-color: #CECBF6; }
-  .copy-btn.copied { background: var(--teal-light); color: var(--teal-dark); border-color: #9FE1CB; }
-
-  /* ── CHECKLIST VIEW ── */
-  .checklist-wrap { max-width: 700px; margin: 0 auto; }
-  .cl-section { background: white; border-radius: 10px; border: 1px solid var(--border); padding: 20px 24px; margin-bottom: 14px; }
-  .cl-section h3 { font-size: 16px; font-weight: 700; margin-bottom: 14px; }
-  .check-item { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; border-bottom: 1px solid #f0f0f0; cursor: pointer; }
-  .check-item:last-child { border-bottom: none; }
-  .cb { width: 20px; height: 20px; border: 2px solid var(--border); border-radius: 4px; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: all .15s; }
-  .check-item.done .cb { background: var(--teal-mid); border-color: var(--teal-mid); }
-  .check-item.done .cb::after { content: '✓'; color: white; font-size: 12px; font-weight: 800; }
-  .check-item p { font-size: 13.5px; line-height: 1.5; }
-  .check-item.done p { color: var(--muted); text-decoration: line-through; }
-  .progress-outer { background: #eee; border-radius: 99px; height: 8px; margin: 14px 0 6px; overflow: hidden; }
-  .progress-inner { height: 100%; background: var(--teal-mid); border-radius: 99px; transition: width .3s; }
-  .progress-label { font-size: 12px; color: var(--muted); }
-
-  /* ── NAV ARROWS ── */
-  .slide-nav { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto 12px; }
-  .slide-nav-btn {
-    display: flex; align-items: center; gap: 6px;
-    padding: 8px 18px; border-radius: 8px; border: 1px solid var(--border);
-    background: white; font-size: 13px; cursor: pointer; color: var(--fg);
-    transition: all .15s;
-  }
-  .slide-nav-btn:hover { background: var(--purple-light); color: var(--purple-text); border-color: #CECBF6; }
-  .slide-nav-btn:disabled { opacity: .35; cursor: default; pointer-events: none; }
-  .slide-counter { font-size: 13px; color: var(--muted); }
-
-  /* scrollbar */
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 99px; }
-
-  @media (max-width: 720px) {
-    .sidebar { width: 200px; min-width: 200px; }
-    .main { padding: 20px 16px 40px; }
-    .slide-card { padding: 24px 22px; }
-    .slide-hero { padding: 32px 24px; }
-    .two-col, .rules-row { grid-template-columns: 1fr; }
-    .prompts-grid { grid-template-columns: 1fr; }
-  }
-</style>
+    /* ─── UTILS ─── */
+    ul.styled { padding-left:18px; margin-top:8px; }
+    ul.styled li { font-size:13.5px; color:var(--g700); margin-bottom:5px; line-height:1.6; }
+    .divider { width:40px; height:3px; background:var(--blue); border-radius:99px; margin:10px 0 24px; }
+    .divider.teal   { background:var(--teal); }
+    .divider.amber  { background:var(--amber); }
+    .divider.green  { background:var(--green); }
+    .divider.purple { background:var(--purple); }
+    .divider.navy   { background:var(--navy); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:6px; margin:10px 0; }
+    .tag {
+      font-size:12px; padding:3px 10px; border-radius:99px;
+      background:var(--g100); color:var(--g700); border:1px solid var(--border);
+    }
+    .tag.blue   { background:var(--blue-bg); color:var(--blue); border-color:var(--blue-br); }
+    .tag.teal   { background:var(--teal-bg); color:var(--teal); border-color:var(--teal-br); }
+    .tag.amber  { background:var(--amb-bg);  color:var(--amber);border-color:var(--amb-br); }
+    .tag.green  { background:var(--grn-bg);  color:var(--green);border-color:var(--grn-br); }
+    .separator { border:none; border-top:2px solid var(--border); margin:40px 0; }
+  </style>
 </head>
 <body>
 
-<!-- TOP NAV -->
-<nav class="top-nav">
-  <div class="nav-brand">🧠 Formation IA – Distanciel Teams</div>
-  <div class="nav-modes">
-    <button class="nav-mode active" onclick="switchView('slides')">📑 Diapositives</button>
-    <button class="nav-mode" onclick="switchView('timeline')">⏱ Plan minute/minute</button>
-    <button class="nav-mode" onclick="switchView('prompts')">💬 Bibliothèque prompts</button>
-    <button class="nav-mode" onclick="switchView('checklist')">✅ Checklist</button>
-    <button class="nav-mode" onclick="switchView('cowork')" style="border-left:1px solid rgba(255,255,255,.15)">🤖 Démos Cowork</button>
+<!-- STICKY NAV -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-logo">C<span>2</span>FA</div>
+    <nav class="top-nav">
+      <a href="#module1">① L'IA c'est quoi ?</a>
+      <a href="#module2">② Ma méthode</a>
+      <a href="#module3">③ Cas pratiques</a>
+      <a href="#module4">④ Organisation</a>
+      <a href="#risques">⚠ Risques</a>
+      <a href="#erreurs">✗ 10 erreurs</a>
+      <a href="#plan">🎯 Mon plan</a>
+    </nav>
+    <button class="btn-print" onclick="window.print()">🖨 Imprimer</button>
   </div>
-  <div class="nav-right">
-    <div class="nav-timer" id="timer" onclick="toggleTimer()" title="Cliquer pour démarrer/arrêter">00:00</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Support de formation · 2026</div>
+    <h1>Utiliser l'<em>IA</em> dans ma pratique<br>de consultant professionnel</h1>
+    <p class="hero-sub">Ce support est le vôtre. Gardez-le, imprimez-le, copiez les prompts directement dans Claude ou Cowork. Tout ce dont vous avez besoin pour repartir avec des outils concrets.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">⏱ 1h30 en classe virtuelle</span>
+      <span class="hero-pill">🛠 Claude · Cowork · Teams</span>
+      <span class="hero-pill">👥 Formateurs · Évaluateurs ESSMS · Conseillers bilans</span>
+      <span class="hero-pill">📍 Animé par Samir Chikhi — C2FA</span>
+    </div>
   </div>
-</nav>
+</div>
 
-<!-- APP -->
-<div class="app">
+<!-- BARRE DE PROGRESSION -->
+<div class="progress-strip">
+  <div class="prog-step"><div class="prog-dot d-blue">1</div> L'IA générative</div>
+  <div class="prog-sep">›</div>
+  <div class="prog-step"><div class="prog-dot d-teal">2</div> Ma méthode</div>
+  <div class="prog-sep">›</div>
+  <div class="prog-step"><div class="prog-dot d-amber">3</div> Cas pratiques</div>
+  <div class="prog-sep">›</div>
+  <div class="prog-step"><div class="prog-dot d-green">4</div> Organisation</div>
+  <div class="prog-sep">›</div>
+  <div class="prog-step"><div class="prog-dot d-purple">⚠</div> Risques</div>
+  <div class="prog-sep">›</div>
+  <div class="prog-step"><div class="prog-dot d-navy">🎯</div> Mon plan</div>
+</div>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar" id="sidebar-slides">
-    <div class="sidebar-section">
-      <div class="sidebar-label">Introduction</div>
-      <button class="sidebar-item active" onclick="goSlide(0)">
-        <span class="sidebar-num n-purple">T</span>
-        <span class="sidebar-item-text">Titre & contexte<span class="sidebar-time">Diapo 1</span></span>
-      </button>
-      <button class="sidebar-item" onclick="goSlide(1)">
-        <span class="sidebar-num n-gray">2</span>
-        <span class="sidebar-item-text">Règles classe virtuelle<span class="sidebar-time">Diapo 2</span></span>
-      </button>
-      <button class="sidebar-item" onclick="goSlide(2)">
-        <span class="sidebar-num n-gray">3</span>
-        <span class="sidebar-item-text">Plan de la session<span class="sidebar-time">Diapo 3</span></span>
-      </button>
+
+<!-- ═══════════════════════════════════════════
+     MODULE 1 — FONDAMENTAUX
+════════════════════════════════════════════ -->
+<div id="module1" style="background:white;">
+<div class="section">
+<div class="container">
+
+  <div class="module-header">
+    <span class="module-badge mb-blue">Module 1 · 20 min</span>
+    <h2 class="module-title">L'IA générative : ce qu'il faut savoir</h2>
+    <span class="module-time">0:05 – 0:25</span>
+  </div>
+
+  <!-- DÉFINITION SIMPLE -->
+  <p class="section-label sl-blue">Ce que c'est</p>
+  <div class="divider"></div>
+
+  <div class="card" style="border-top:3px solid var(--blue)">
+    <h3>En une phrase</h3>
+    <p>L'IA générative est un outil qui <strong>produit du texte structuré à partir de vos instructions</strong>. Vous lui donnez un contexte et une consigne, elle rédige, synthétise, structure. Elle ne pense pas — elle formule ce que vous lui demandez de formuler.</p>
+  </div>
+
+  <!-- FORCES / LIMITES -->
+  <p class="section-label sl-blue" style="margin-top:24px">Ce qu'elle fait bien — et ce qu'elle ne fait pas</p>
+  <div class="fl-grid">
+    <div class="fl-card forces">
+      <h4>✅ Points forts</h4>
+      <ul>
+        <li>Rédige vite et sans fatigue</li>
+        <li>Reformule, restructure, synthétise</li>
+        <li>Croise plusieurs sources simultanément</li>
+        <li>Disponible 24h/24, sans humeur</li>
+        <li>Adapte le ton et le format sur demande</li>
+        <li>Produit des livrables Word directement utilisables</li>
+      </ul>
     </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Module 1 — Fondamentaux (30 min)</div>
-      <button class="sidebar-item" onclick="goSlide(3)">
-        <span class="sidebar-num n-purple">4</span>
-        <span class="sidebar-item-text">Ce qu'est l'IA générative<span class="sidebar-time">10 min</span></span>
-      </button>
-      <button class="sidebar-item" onclick="goSlide(4)">
-        <span class="sidebar-num n-purple">5</span>
-        <span class="sidebar-item-text">Vocabulaire clé<span class="sidebar-time">10 min</span></span>
-      </button>
-      <button class="sidebar-item" onclick="goSlide(5)">
-        <span class="sidebar-num n-purple">6</span>
-        <span class="sidebar-item-text">Démo : bon vs mauvais prompt<span class="sidebar-time">5 min</span></span>
-      </button>
-      <button class="sidebar-item" onclick="goSlide(6)">
-        <span class="sidebar-num n-purple">7</span>
-        <span class="sidebar-item-text">Les 3 règles d'or<span class="sidebar-time">5 min</span></span>
-      </button>
+    <div class="fl-card limites">
+      <h4>❌ Limites à connaître</h4>
+      <ul>
+        <li>Peut <strong>inventer</strong> des faits plausibles mais faux (hallucinations)</li>
+        <li>Ne connaît pas votre contexte local ni votre établissement</li>
+        <li>Ne remplace pas votre jugement de terrain</li>
+        <li>Ne fait pas la visite, ne conduit pas l'entretien</li>
+        <li>Doit toujours être relu avant utilisation</li>
+        <li>La qualité dépend de ce que vous lui donnez</li>
+      </ul>
     </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Module 2 — Cahier des charges (30 min)</div>
-      <button class="sidebar-item" onclick="goSlide(7)">
-        <span class="sidebar-num n-teal">8</span>
-        <span class="sidebar-item-text">Pourquoi un cahier des charges ?<span class="sidebar-time">5 min</span></span>
-      </button>
-      <button class="sidebar-item" onclick="goSlide(8)">
-        <span class="sidebar-num n-teal">9</span>
-        <span class="sidebar-item-text">Outil cahier des charges IA<span class="sidebar-time">15 min</span></span>
-      </button>
-      <button class="sidebar-item" onclick="goSlide(9)">
-        <span class="sidebar-num n-teal">10</span>
-        <span class="sidebar-item-text">Mise en commun & démo<span class="sidebar-time">10 min</span></span>
-      </button>
+  </div>
+
+  <!-- VOCABULAIRE -->
+  <p class="section-label sl-blue">Les 5 mots à retenir</p>
+  <div class="divider"></div>
+  <div class="vocab-grid">
+    <div class="vocab-card" style="border-top:3px solid var(--blue)">
+      <div class="vocab-term">Prompt</div>
+      <div class="vocab-def">L'instruction que vous écrivez à l'IA. Plus elle est précise, meilleure est la réponse.</div>
+      <div class="vocab-ex">Exemple : "Tu es évaluateur ESSMS. À partir de ces constats, rédige…"</div>
     </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Module 3 — Cas pratiques (60 min)</div>
-      <button class="sidebar-item" onclick="goSlide(10)">
-        <span class="sidebar-num n-coral">11</span>
-        <span class="sidebar-item-text">Formation distancielle<span class="sidebar-time">20 min</span></span>
-      </button>
-      <button class="sidebar-item" onclick="goSlide(11)">
-        <span class="sidebar-num n-coral">12</span>
-        <span class="sidebar-item-text">Prompt : relance stagiaire<span class="sidebar-time">—</span></span>
-      </button>
-      <button class="sidebar-item" onclick="goSlide(12)">
-        <span class="sidebar-num n-coral">13</span>
-        <span class="sidebar-item-text">Bilans de compétences<span class="sidebar-time">20 min</span></span>
-      </button>
-      <button class="sidebar-item" onclick="goSlide(13)">
-        <span class="sidebar-num n-coral">14</span>
-        <span class="sidebar-item-text">Prompt : synthèse de bilan<span class="sidebar-time">—</span></span>
-      </button>
-      <button class="sidebar-item" onclick="goSlide(14)">
-        <span class="sidebar-num n-coral">15</span>
-        <span class="sidebar-item-text">ESSMS / HAS<span class="sidebar-time">20 min</span></span>
-      </button>
-      <button class="sidebar-item" onclick="goSlide(15)">
-        <span class="sidebar-num n-coral">16</span>
-        <span class="sidebar-item-text">Prompt : réponse critère HAS<span class="sidebar-time">—</span></span>
-      </button>
+    <div class="vocab-card" style="border-top:3px solid var(--teal)">
+      <div class="vocab-term" style="color:var(--teal)">Contexte</div>
+      <div class="vocab-def">Les données que vous fournissez à l'IA : vos notes, le référentiel, les preuves, le CV…</div>
+      <div class="vocab-ex">Plus le contexte est riche, plus la réponse est pertinente.</div>
     </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Module 4 — Organisation</div>
-      <button class="sidebar-item" onclick="goSlide(16)">
-        <span class="sidebar-num n-amber">17</span>
-        <span class="sidebar-item-text">OneDrive + Teams<span class="sidebar-time">10 min</span></span>
-      </button>
-      <button class="sidebar-item" onclick="goSlide(17)">
-        <span class="sidebar-num n-amber">18</span>
-        <span class="sidebar-item-text">Calendrier & relances<span class="sidebar-time">5 min</span></span>
-      </button>
-      <button class="sidebar-item" onclick="goSlide(18)">
-        <span class="sidebar-num n-gray">19</span>
-        <span class="sidebar-item-text">Synthèse & prochaines étapes<span class="sidebar-time">5 min</span></span>
-      </button>
+    <div class="vocab-card" style="border-top:3px solid var(--amber)">
+      <div class="vocab-term" style="color:var(--amber)">Rôle</div>
+      <div class="vocab-def">La "casquette" que vous donnez à l'IA. Elle adapte son registre en conséquence.</div>
+      <div class="vocab-ex">"Tu es consultant en bilan de compétences", "Tu es formateur Qualiopi"…</div>
     </div>
-  </aside>
+    <div class="vocab-card" style="border-top:3px solid var(--green)">
+      <div class="vocab-term" style="color:var(--green)">Output</div>
+      <div class="vocab-def">Le livrable attendu. À préciser toujours : mail, synthèse, tableau, réponse HAS, liste…</div>
+      <div class="vocab-ex">"Produis un fichier Word", "Rédige en 30 lignes max"…</div>
+    </div>
+    <div class="vocab-card" style="border-top:3px solid var(--purple)">
+      <div class="vocab-term" style="color:var(--purple)">Cowork</div>
+      <div class="vocab-def">Mode de Claude Desktop qui lit vos fichiers locaux et produit des livrables Word sans copier-coller. Tout reste sur votre ordinateur.</div>
+      <div class="vocab-ex">Vous pointez un dossier → Cowork lit tout → Word sauvegardé.</div>
+    </div>
+  </div>
 
-  <!-- MAIN CONTENT -->
-  <main class="main">
+  <!-- CLAUDE VS COWORK -->
+  <p class="section-label sl-blue" style="margin-top:28px">Claude.ai vs Cowork : la différence en pratique</p>
+  <div class="divider"></div>
+  <div class="cmp-wrap">
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th class="th-l">Question</th>
+          <th class="th-c">🤖 Claude.ai<br><span style="font-weight:400;font-size:11px;opacity:.8">dans le navigateur</span></th>
+          <th class="th-w">⚡ Cowork<br><span style="font-weight:400;font-size:11px;opacity:.8">sur votre ordinateur</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-l">Vos documents</td>
+          <td class="td-c">À copier-coller dans le chat</td>
+          <td class="td-w">Lus automatiquement depuis votre dossier</td>
+        </tr>
+        <tr>
+          <td class="td-l">Ce que vous obtenez</td>
+          <td class="td-c">Une réponse dans la fenêtre de chat</td>
+          <td class="td-w">Un fichier Word sauvegardé chez vous</td>
+        </tr>
+        <tr>
+          <td class="td-l">Confidentialité</td>
+          <td class="td-c">Données transitent en ligne → anonymiser</td>
+          <td class="td-w">Rien ne sort de votre ordinateur</td>
+        </tr>
+        <tr>
+          <td class="td-l">Idéal pour</td>
+          <td class="td-c">Questions, reformulations, brouillons rapides</td>
+          <td class="td-w">Synthèses bilans, réponses HAS, rapports</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-    <!-- ═══ VIEW : SLIDES ═══ -->
-    <div class="view active" id="view-slides">
+  <!-- EXERCICE BRISE-GLACE -->
+  <p class="section-label sl-blue" style="margin-top:28px">Exercice — Améliorer un prompt</p>
+  <div class="divider"></div>
+  <div class="card" style="border-left:4px solid var(--blue)">
+    <h3>❌ Mauvais prompt</h3>
+    <div style="background:var(--red-bg);border:1px solid var(--red-br);border-radius:var(--rsm);padding:12px 14px;font-family:'Courier New',monospace;font-size:13px;color:#7f1d1d;margin:10px 0">"Fais-moi une synthèse de bilan"</div>
+    <p style="margin-top:8px">Pourquoi c'est insuffisant : pas de rôle, pas de contexte, pas de structure attendue, pas de format, pas de longueur. L'IA va produire quelque chose de générique.</p>
+  </div>
+  <div class="card" style="border-left:4px solid var(--green)">
+    <h3>✅ Prompt amélioré — à copier et adapter</h3>
+    <div class="prompt-wrap">
+      <div class="prompt-box green">Tu es consultant senior en bilan de compétences.
+À partir des éléments suivants [notes d'entretien, résultats MBTI, parcours CV],
+rédige une synthèse structurée en 5 parties :
+1. Profil général
+2. Compétences clés
+3. Motivations profondes
+4. Freins et vigilances
+5. Pistes professionnelles réalistes
+Ton : professionnel et bienveillant. 30 lignes maximum.</div>
+      <button class="copy-btn green" onclick="copyPrompt(this)">📋 Copier</button>
+    </div>
+    <p>Ce prompt contient : un rôle · un contexte · une structure claire · un ton · une contrainte de longueur.</p>
+  </div>
 
-      <div class="slide-nav">
-        <button class="slide-nav-btn" id="btn-prev" onclick="prevSlide()" disabled>← Précédent</button>
-        <span class="slide-counter" id="slide-counter">Diapo 1 / 19</span>
-        <button class="slide-nav-btn" id="btn-next" onclick="nextSlide()">Suivant →</button>
+</div>
+</div>
+</div>
+
+<hr class="separator">
+
+<!-- ═══════════════════════════════════════════
+     MODULE 2 — MÉTHODE
+════════════════════════════════════════════ -->
+<div id="module2" style="background:var(--g50);">
+<div class="section">
+<div class="container">
+
+  <div class="module-header">
+    <span class="module-badge mb-teal">Module 2 · 15 min</span>
+    <h2 class="module-title">Construire son usage IA — la méthode des 4 questions</h2>
+    <span class="module-time">0:25 – 0:40</span>
+  </div>
+
+  <p class="section-label sl-teal">Avant d'écrire un prompt, posez-vous ces 4 questions</p>
+  <div class="divider teal"></div>
+
+  <div class="q4-grid">
+    <div class="q4-card">
+      <div class="q4-num">1</div>
+      <div>
+        <h4>Quelle tâche ?</h4>
+        <p>Quelle est exactement la tâche que je veux automatiser ou accélérer ? Soyez précis.</p>
+      </div>
+    </div>
+    <div class="q4-card">
+      <div class="q4-num t">2</div>
+      <div>
+        <h4>Quel résultat attendu ?</h4>
+        <p>À quoi ressemble un bon livrable ? Quel standard de qualité ? Pour quel usage final ?</p>
+      </div>
+    </div>
+    <div class="q4-card">
+      <div class="q4-num a">3</div>
+      <div>
+        <h4>Quel format de sortie ?</h4>
+        <p>Mail, synthèse, tableau, liste à puces, rapport HAS, compte rendu, déroulé pédagogique ?</p>
+      </div>
+    </div>
+    <div class="q4-card">
+      <div class="q4-num g">4</div>
+      <div>
+        <h4>Quelles données à fournir ?</h4>
+        <p>Quels fichiers, notes, extraits ou informations l'IA a-t-elle besoin pour bien répondre ?</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRUCTURE D'UN BON PROMPT -->
+  <p class="section-label sl-teal" style="margin-top:28px">La structure d'un prompt efficace</p>
+  <div class="divider teal"></div>
+  <div class="struct-wrap">
+    <div class="struct-row">
+      <div class="struct-label" style="color:var(--teal)">RÔLE</div>
+      <div class="struct-content">
+        Qui est l'IA dans ce prompt ? Quelle expertise incarne-t-elle ?
+        <div class="struct-ex">"Tu es évaluateur ESSMS certifié HAS, spécialisé en EHPAD."</div>
+      </div>
+    </div>
+    <div class="struct-row">
+      <div class="struct-label" style="color:var(--blue)">CONTEXTE</div>
+      <div class="struct-content">
+        Quelles informations lui donnez-vous ? Qu'est-ce qu'elle doit savoir sur votre situation ?
+        <div class="struct-ex">"Dans ce dossier tu trouveras les constats de visite, le texte du critère HAS et les notes d'équipe."</div>
+      </div>
+    </div>
+    <div class="struct-row">
+      <div class="struct-label" style="color:var(--amber)">OBJECTIF</div>
+      <div class="struct-content">
+        Quelle est la tâche précise ? Qu'attendez-vous comme production ?
+        <div class="struct-ex">"Rédige une réponse argumentée structurée en 6 parties conformes au format HAS."</div>
+      </div>
+    </div>
+    <div class="struct-row">
+      <div class="struct-label" style="color:var(--green)">FORMAT</div>
+      <div class="struct-content">
+        Comment voulez-vous la réponse ? Ton, longueur, structure ?
+        <div class="struct-ex">"Ton conforme à un rapport officiel HAS. 40 lignes maximum."</div>
+      </div>
+    </div>
+    <div class="struct-row">
+      <div class="struct-label" style="color:var(--purple)">CONTRAINTE</div>
+      <div class="struct-content">
+        Quelles limites ou règles à respecter ? Sauvegarde, format de fichier ?
+        <div class="struct-ex">"Sauvegarde le résultat dans un fichier Word nommé [Critere]_[Etablissement].docx."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROMPTS TEMPLATES -->
+  <p class="section-label sl-teal" style="margin-top:28px">2 templates à adapter à votre métier</p>
+  <div class="divider teal"></div>
+
+  <p style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px">Template 1 — Mail professionnel</p>
+  <div class="prompt-wrap">
+    <div class="prompt-box teal">Tu es [votre rôle : assistant administratif en organisme de formation / conseiller…].
+Rédige un mail [type : de relance / de convocation / de synthèse] pour [situation].
+Ton [bienveillant et professionnel / ferme mais respectueux].
+Inclure : [éléments obligatoires : date, lien Teams, proposition de créneaux…].
+Longueur : [10 lignes max / court et direct].</div>
+    <button class="copy-btn teal" onclick="copyPrompt(this)">📋 Copier</button>
+  </div>
+
+  <p style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px;margin-top:16px">Template 2 — Analyse et synthèse</p>
+  <div class="prompt-wrap">
+    <div class="prompt-box teal">Tu es [votre rôle].
+À partir des éléments suivants [description de ce que vous fournissez],
+rédige une synthèse structurée en [nombre] parties :
+1. [Intitulé de la partie 1]
+2. [Intitulé de la partie 2]
+3. [Intitulé de la partie 3]
+Ton : [professionnel / bienveillant / factuel].
+[X] lignes maximum.
+[Consigne de sauvegarde si Cowork].</div>
+    <button class="copy-btn teal" onclick="copyPrompt(this)">📋 Copier</button>
+  </div>
+
+  <div class="note teal" style="margin-top:12px">
+    <i>💡</i>
+    <p><strong>À retenir :</strong> Un prompt efficace, c'est comme un bon brief à un stagiaire. Plus vous êtes précis sur ce que vous attendez, plus le résultat sera proche de ce dont vous avez besoin. Itérez : "améliore le point 2", "reformule plus sobrement".</p>
+  </div>
+
+</div>
+</div>
+</div>
+
+<hr class="separator">
+
+<!-- ═══════════════════════════════════════════
+     MODULE 3 — CAS PRATIQUES
+════════════════════════════════════════════ -->
+<div id="module3" style="background:white;">
+<div class="section">
+<div class="container">
+
+  <div class="module-header">
+    <span class="module-badge mb-amber">Module 3 · 40 min</span>
+    <h2 class="module-title">Cas pratiques — 3 démonstrations avec Cowork</h2>
+    <span class="module-time">0:40 – 1:20</span>
+  </div>
+
+  <!-- CAS 1 : FORMATION -->
+  <div class="cas-wrap">
+    <div class="cas-header">
+      <div class="cas-icon">📚</div>
+      <div>
+        <div class="cas-badge">Cas 1 · 10 minutes</div>
+        <h3>Gestion de formation distancielle</h3>
+        <p>Mails de relance · Ordre du jour · Compte rendu de session</p>
+      </div>
+    </div>
+    <div class="cas-body">
+      <p class="section-label sl-amber">Ce que nous produisons en direct</p>
+      <div class="tag-row">
+        <span class="tag amber">Mail de relance stagiaire absent</span>
+        <span class="tag amber">Trame d'ordre du jour</span>
+        <span class="tag amber">Compte rendu de session</span>
       </div>
 
-      <!-- SLIDE 0 : HERO -->
-      <div class="slide-frame active" id="slide-0">
-        <div class="slide-hero">
-          <h1>Utiliser l'IA (Claude) pour la formation, les ESSMS et les bilans – Classe virtuelle Teams</h1>
-          <div class="sh-sub">2h pour passer de la découverte à des cas pratiques concrets</div>
-          <div class="slide-hero-meta">
-            <span class="sh-pill">⏱ 2h — 100 % distanciel</span>
-            <span class="sh-pill">👥 Formateurs · Évaluateurs ESSMS · Conseillers bilans</span>
-            <span class="sh-pill">🛠 Claude / Copilot · Teams · OneDrive</span>
-          </div>
-        </div>
-        <div class="slide-card">
-          <div class="slide-body">
-            <p><strong>Objectifs de la session</strong></p>
-            <div class="vocab-grid" style="grid-template-columns: repeat(auto-fit,minmax(170px,1fr))">
-              <div class="vocab-card vc-purple"><h4>Comprendre</h4><p>Les bases de l'IA générative et ses usages métier</p></div>
-              <div class="vocab-card vc-teal"><h4>Formuler</h4><p>Des demandes efficaces (prompting structuré)</p></div>
-              <div class="vocab-card vc-coral"><h4>Construire</h4><p>Son propre système de travail assisté par IA</p></div>
-              <div class="vocab-card vc-amber"><h4>Automatiser</h4><p>3 tâches clés : formation, bilans, ESSMS</p></div>
-            </div>
-          </div>
-        </div>
+      <p style="font-size:13px;font-weight:700;color:var(--navy);margin:14px 0 8px">Prompt — Mail de relance stagiaire absent</p>
+      <div class="prompt-wrap">
+        <div class="prompt-box amber">Tu es assistant administratif en organisme de formation.
+Rédige un mail de relance pour un stagiaire absent à la dernière classe virtuelle Teams.
+Ton : bienveillant mais ferme.
+Contenu obligatoire : rappel de l'importance de la session, lien Teams pour la prochaine date, proposition de 2 créneaux de rattrapage.
+Longueur : 12 lignes maximum.</div>
+        <button class="copy-btn amber" onclick="copyPrompt(this)">📋 Copier</button>
       </div>
 
-      <!-- SLIDE 1 : RÈGLES -->
-      <div class="slide-frame" id="slide-1">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-gray">Diapo 2</span>
-            <div><div class="slide-title">Règles de la classe virtuelle</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <div class="two-col">
-              <div class="col-box green">
-                <h4>✅ À faire</h4>
-                <ul>
-                  <li>Micro coupé par défaut — main levée pour intervenir</li>
-                  <li>Chat Teams actif pour partager prompts et liens</li>
-                  <li>Caméra activée si possible</li>
-                  <li>Utiliser les réactions Teams (👍 ✋)</li>
-                </ul>
-              </div>
-              <div class="col-box red">
-                <h4>🖥 À préparer</h4>
-                <ul>
-                  <li>Accès à un navigateur (Claude.ai ou Copilot)</li>
-                  <li>Document pour prendre des notes (numérique)</li>
-                  <li>Double écran si possible (Teams + Claude)</li>
-                  <li>Connexion stable</li>
-                </ul>
-              </div>
-            </div>
-            <div class="tip-box">
-              <p><strong>📋 Rappel formateur :</strong> Les documents de travail sont déposés dans l'onglet « Fichiers » du canal Teams. Pensez à partager le lien dans le chat au démarrage.</p>
-            </div>
-          </div>
-        </div>
+      <p style="font-size:13px;font-weight:700;color:var(--navy);margin:16px 0 8px">Prompt — Ordre du jour de session Teams</p>
+      <div class="prompt-wrap">
+        <div class="prompt-box amber">Tu es coordinateur pédagogique.
+Rédige un ordre du jour pour une session de formation distancielle de [durée] sur le thème [thème].
+Public : [description du public].
+Format : tableau avec colonnes Heure / Thème / Modalité (démo, échange, exercice) / Durée.
+Inclure les temps de pause. Ton professionnel.</div>
+        <button class="copy-btn amber" onclick="copyPrompt(this)">📋 Copier</button>
       </div>
 
-      <!-- SLIDE 2 : PLAN -->
-      <div class="slide-frame" id="slide-2">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-gray">Diapo 3</span>
-            <div><div class="slide-title">Plan de la session (2h)</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <div class="vocab-grid" style="grid-template-columns: repeat(auto-fit,minmax(180px,1fr))">
-              <div class="vocab-card vc-purple"><h4>0:00 – 0:10</h4><p>Accueil & cadrage (10 min)</p></div>
-              <div class="vocab-card vc-purple"><h4>0:10 – 0:40</h4><p>Module 1 — Fondamentaux & vocabulaire (30 min)</p></div>
-              <div class="vocab-card vc-teal"><h4>0:40 – 1:10</h4><p>Module 2 — Cahier des charges IA (30 min)</p></div>
-              <div class="vocab-card vc-coral"><h4>1:10 – 2:10</h4><p>Module 3 — Cas pratiques × 3 (60 min)</p></div>
-              <div class="vocab-card vc-amber"><h4>2:10 – 2:20</h4><p>Module 4 — Organisation OneDrive + clôture (10 min)</p></div>
-            </div>
-            <p style="margin-top:14px;font-size:13.5px;color:var(--muted)"><strong>Format :</strong> 30 % apports en partage d'écran · 70 % pratique guidée en direct dans Claude / navigateur</p>
-          </div>
-        </div>
+      <div class="note amber">
+        <i>⏱</i>
+        <p><strong>Gain constaté :</strong> un mail de relance prend habituellement 15 à 20 minutes. Avec ce prompt : 2 minutes. À adapter selon votre contexte, mais la structure est directement utilisable.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAS 2 : BILAN -->
+  <div class="cas-wrap">
+    <div class="cas-header" style="background:linear-gradient(135deg,var(--navy),#1e3a5f)">
+      <div class="cas-icon">🎯</div>
+      <div>
+        <div class="cas-badge">Cas 2 · 15 minutes · Démo Cowork en direct</div>
+        <h3>Bilan de compétences — Synthèse automatique</h3>
+        <p>Cowork lit 4 fichiers et génère une synthèse Word structurée en 5 parties</p>
+      </div>
+    </div>
+    <div class="cas-body">
+      <p class="section-label sl-blue">Les fichiers du dossier de démo</p>
+      <div class="files-list">
+        📄 notes_entretien_1.txt &nbsp;→ <span>Profil, compétences exprimées, freins identifiés</span><br>
+        📄 notes_entretien_2.txt &nbsp;→ <span>Projets professionnels, pistes, motivations profondes</span><br>
+        📄 resultats_tests.txt &nbsp;&nbsp;→ <span>MBTI, RIASEC, valeurs professionnelles</span><br>
+        📄 CV_parcours.txt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <span>Parcours professionnel, formations, bénévolat</span>
       </div>
 
-      <!-- SLIDE 3 : IA générative -->
-      <div class="slide-frame" id="slide-3">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-purple">Module 1 — Fondamentaux</span>
-            <div><div class="slide-title">Ce qu'est l'IA générative</div><div class="slide-subtitle">10 min — Apports + démonstration partagée à l'écran</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <p>L'IA générative est un outil de <strong>production de texte, de synthèse et de structuration</strong>. Elle fonctionne par <strong>prédiction statistique</strong> — elle prédit le mot le plus probable à chaque étape — et non par compréhension humaine.</p>
-            <div class="two-col">
-              <div class="col-box green">
-                <h4>✅ Forces</h4>
-                <ul>
-                  <li>Vitesse de production de texte</li>
-                  <li>Structuration automatique de contenu</li>
-                  <li>Reformulation / synthèse rapide</li>
-                  <li>Disponibilité permanente</li>
-                  <li>Adaptabilité au contexte fourni</li>
-                </ul>
-              </div>
-              <div class="col-box red">
-                <h4>⚠️ Limites</h4>
-                <ul>
-                  <li>Hallucinations (peut inventer des faits)</li>
-                  <li>Biais issus des données d'entraînement</li>
-                  <li>Nécessite validation humaine obligatoire</li>
-                  <li>Pas de mémoire long terme sans configuration</li>
-                  <li>Dépend de la qualité du prompt</li>
-                </ul>
-              </div>
-            </div>
-            <div class="exercise-box">
-              <div class="ex-label">🎯 Exercice brise-glace (5 min)</div>
-              <p>Chaque participant tape dans Claude ou Copilot :<br><br><em>« Explique-moi le référentiel Qualiopi comme si j'étais un formateur débutant. »</em><br><br>→ Comparez vos réponses dans le <strong>chat Teams</strong> (copier-coller le résultat). Notez les ressemblances et les différences.</p>
-            </div>
-          </div>
-        </div>
+      <p class="section-label sl-blue">Ce que Cowork va produire — les 5 parties</p>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px">
+        <div class="out-1 output-card">1. Profil général<span>Vue d'ensemble de la personne</span></div>
+        <div class="out-2 output-card">2. Compétences clés<span>Transférables et maîtrisées</span></div>
+        <div class="out-3 output-card">3. Motivations<span>Valeurs, leviers d'engagement</span></div>
+        <div class="out-4 output-card">4. Freins<span>Points de vigilance</span></div>
+        <div class="out-5 output-card">5. Pistes réalistes<span>Argumentées et contextualisées</span></div>
       </div>
 
-      <!-- SLIDE 4 : VOCABULAIRE -->
-      <div class="slide-frame" id="slide-4">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-purple">Module 1 — Fondamentaux</span>
-            <div><div class="slide-title">Vocabulaire essentiel</div><div class="slide-subtitle">10 min — À afficher pendant les échanges</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <div class="vocab-grid">
-              <div class="vocab-card vc-purple"><h4>Prompt</h4><p>Instruction donnée à l'IA.<br><em>Ex : "Rédige une relance mail pour un stagiaire absent"</em></p></div>
-              <div class="vocab-card vc-teal"><h4>Contexte</h4><p>Informations fournies pour situer la demande (documents, notes, référentiel…)</p></div>
-              <div class="vocab-card vc-coral"><h4>Rôle</h4><p>"Casquette" donnée à l'IA.<br><em>Ex : "Tu es évaluateur HAS", "Tu es formateur expert Qualiopi"</em></p></div>
-              <div class="vocab-card vc-amber"><h4>Output</h4><p>Format de sortie attendu : mail, plan, tableau, synthèse, compte rendu…</p></div>
-              <div class="vocab-card vc-blue"><h4>MCP / Skills</h4><p>Moyens d'enrichir les capacités de l'IA — connexion à des données externes, modules spécialisés</p></div>
-              <div class="vocab-card vc-purple"><h4>Workspace</h4><p>Espace de travail dédié dans Claude — thème, projet, contexte persistant</p></div>
-            </div>
-          </div>
-        </div>
+      <p class="section-label sl-blue">Le prompt à coller dans Cowork</p>
+      <div class="prompt-wrap">
+        <div class="prompt-box">Tu es consultant senior en bilan de compétences.
+Dans ce dossier tu trouveras les notes de deux entretiens, les résultats des tests psychométriques (MBTI, RIASEC, valeurs) et le parcours professionnel.
+Lis tous ces fichiers et produis une synthèse structurée en 5 parties :
+1. Profil général
+2. Compétences clés et transférables
+3. Motivations profondes et valeurs professionnelles
+4. Freins identifiés et points de vigilance
+5. Pistes professionnelles réalistes et argumentées
+Ton : professionnel et bienveillant. 30 lignes maximum.
+Sauvegarde dans Synthese_Bilan_Anonyme.docx dans ce même dossier.</div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copier</button>
       </div>
 
-      <!-- SLIDE 5 : DÉMO PROMPT -->
-      <div class="slide-frame" id="slide-5">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-purple">Module 1 — Fondamentaux</span>
-            <div><div class="slide-title">Démonstration : bon vs mauvais prompt</div><div class="slide-subtitle">5 min — Partage d'écran avec Claude en direct</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <p><strong>Prompt vague (résultat médiocre) :</strong></p>
-            <div class="prompt-block" style="border-left-color:#E24B4A;background:#FFF5F5">« Fais une synthèse. »</div>
-            <p style="margin-top:16px"><strong>Prompt structuré (résultat exploitable) :</strong></p>
-            <div class="prompt-label">Prompt amélioré</div>
-            <div class="prompt-block">« Fais une synthèse structurée en 5 points pour un rapport Qualiopi sur cette action de formation, en incluant : constats observés, points forts, axes d'amélioration, recommandations, et prochaines étapes. Ton professionnel, format bullet points. »</div>
-            <div class="warn-box">
-              <span class="warn-icon">💡</span>
-              <p><strong>Message clé :</strong> La qualité du prompt = la qualité du résultat. Un prompt précis = rôle + contexte + objectif + format attendu.</p>
-            </div>
-            <div class="exercise-box">
-              <div class="ex-label">🎯 Exercice interactif (5 min)</div>
-              <p>Dans le chat Teams, chaque participant poste un « mauvais prompt » qu'il utilise ou imaginerait. Le formateur en choisit 2–3 et les améliore en direct avec Claude sur partage d'écran.</p>
-            </div>
-          </div>
-        </div>
+      <div class="note amber">
+        <i>⚠️</i>
+        <p><strong>Règle impérative :</strong> en situation réelle, tous les fichiers sont anonymisés — aucun nom, aucune coordonnée. Cowork travaille en local sur votre ordinateur : aucun document ne sort de votre PC. Conforme RGPD et aux obligations de confidentialité du bilan de compétences.</p>
       </div>
 
-      <!-- SLIDE 6 : 3 RÈGLES -->
-      <div class="slide-frame" id="slide-6">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-purple">Module 1 — Fondamentaux</span>
-            <div><div class="slide-title">Les 3 règles d'or du prompting</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <div class="rules-row">
-              <div class="rule-box rb1"><div class="rule-num">①</div><p>Toujours donner un <strong>rôle</strong> à l'IA<br><em>"Tu es formateur expert en…"</em></p></div>
-              <div class="rule-box rb2"><div class="rule-num">②</div><p>Toujours préciser le <strong>résultat attendu</strong><br><em>"Rédige un mail en 5 lignes"</em></p></div>
-              <div class="rule-box rb3"><div class="rule-num">③</div><p>Toujours <strong>relire et valider</strong><br><em>Vous restez le professionnel</em></p></div>
-            </div>
-            <div class="tip-box" style="margin-top:18px">
-              <p><strong>Structure d'un prompt professionnel :</strong><br>
-              <em>Rôle → Contexte → Objectif → Format → Contraintes</em><br><br>
-              Exemple : <em>"Tu es coordinateur pédagogique. À partir de ces notes de formation (jointes), rédige un compte rendu de session en format Word, structuré en : présents, points traités, décisions, actions et responsables. 1 page max."</em></p>
-            </div>
-          </div>
+      <div class="key-msg" style="margin-top:16px">
+        <div class="key-msg-icon">🎯</div>
+        <div>
+          <h4>Le message essentiel</h4>
+          <p>Ce qui vient de se passer en 3 minutes m'aurait pris une heure. J'ai délégué l'assemblage et la structuration — <em>pas le jugement professionnel</em>. La relation avec la bénéficiaire, les décisions sur les pistes, la validation de la synthèse restent les miennes. Je délègue la rédaction. Je garde le jugement.</p>
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- SLIDE 7 : POURQUOI CAHIER DES CHARGES -->
-      <div class="slide-frame" id="slide-7">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-teal">Module 2 — Cahier des charges</span>
-            <div><div class="slide-title">Pourquoi un cahier des charges IA ?</div><div class="slide-subtitle">5 min — Introduction</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <p>Sans cadre, l'IA reste un <strong>gadget</strong>. Avec un cahier des charges, elle devient un <strong>outil de gain de temps réel</strong>.</p>
-            <div class="vocab-grid" style="grid-template-columns: repeat(2,1fr);margin-top:16px">
-              <div class="vocab-card vc-teal"><h4>Questions à se poser</h4>
-                <p>• Quelles tâches me prennent trop de temps ?<br>• Quels documents sont lourds à produire ?<br>• Quels processus sont répétitifs ?<br>• Que veux-je déléguer en gardant la décision ?</p>
-              </div>
-              <div class="vocab-card vc-amber"><h4>3 catégories de tâches IA</h4>
-                <p>• <strong>Répétitif</strong> : mails, relances, comptes rendus<br>• <strong>Analyse</strong> : dossiers, documents, tests<br>• <strong>Structuration</strong> : rapports, référentiels, plans</p>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- CAS 3 : ESSMS -->
+  <div class="cas-wrap">
+    <div class="cas-header" style="background:linear-gradient(135deg,#7c3aed,#5b21b6)">
+      <div class="cas-icon">🏥</div>
+      <div>
+        <div class="cas-badge">Cas 3 · 15 minutes · Démo Cowork en direct</div>
+        <h3>Évaluation ESSMS — Réponse au référentiel HAS</h3>
+        <p>Cowork croise 4 sources et produit une réponse en 6 parties avec cotation argumentée</p>
+      </div>
+    </div>
+    <div class="cas-body">
+
+      <!-- CONTEXTE RÉGLEMENTAIRE -->
+      <div style="background:var(--pur-bg);border:1px solid #ddd6fe;border-radius:var(--rsm);padding:14px 16px;margin-bottom:16px">
+        <p style="font-size:13px;font-weight:700;color:var(--purple);margin-bottom:8px">⚖️ Rappel réglementaire</p>
+        <p style="font-size:13px;color:var(--g700);line-height:1.65">Depuis la loi du 7 août 2022, tous les ESSMS sont évalués par des organismes accrédités COFRAC sur la base du référentiel HAS. Pour chaque critère, l'évaluateur doit croiser plusieurs sources hétérogènes et produire une réponse structurée avec une cotation argumentée (Favorable / À améliorer / Non favorable).</p>
       </div>
 
-      <!-- SLIDE 8 : OUTIL CDC -->
-      <div class="slide-frame" id="slide-8">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-teal">Module 2 — Cahier des charges</span>
-            <div><div class="slide-title">Outil « Cahier des charges IA »</div><div class="slide-subtitle">15 min — Travail individuel guidé sur document partagé Teams</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <p><strong>Support utilisé :</strong> Document partagé (Word / Forms / OneNote) déposé dans l'onglet Fichiers Teams</p>
-            <div style="margin:16px 0;background:var(--gray-light);border-radius:8px;overflow:hidden;border:1px solid var(--border)">
-              <div style="background:var(--gray-dark);color:white;padding:10px 16px;font-size:13px;font-weight:700">📄 Cahier des charges IA — À compléter</div>
-              <div style="padding:14px 16px">
-                <table style="width:100%;border-collapse:collapse;font-size:13px">
-                  <thead><tr style="background:#eee"><th style="padding:8px;text-align:left;border:1px solid #ddd">Rubrique</th><th style="padding:8px;text-align:left;border:1px solid #ddd">Vos réponses</th><th style="padding:8px;text-align:left;border:1px solid #ddd">Priorité</th></tr></thead>
-                  <tbody>
-                    <tr><td style="padding:8px;border:1px solid #ddd">3 tâches répétitives à automatiser</td><td style="padding:8px;border:1px solid #ddd;color:#888">Relances, CR, synthèses…</td><td style="padding:8px;border:1px solid #ddd">⭐</td></tr>
-                    <tr><td style="padding:8px;border:1px solid #ddd">2 documents lourds à faire analyser</td><td style="padding:8px;border:1px solid #ddd;color:#888">Référentiel HAS, dossiers bilans…</td><td style="padding:8px;border:1px solid #ddd">⭐</td></tr>
-                    <tr><td style="padding:8px;border:1px solid #ddd">1 processus à simplifier</td><td style="padding:8px;border:1px solid #ddd;color:#888">Organisation session distancielle…</td><td style="padding:8px;border:1px solid #ddd">⭐⭐</td></tr>
-                    <tr><td style="padding:8px;border:1px solid #ddd">Gains attendus</td><td style="padding:8px;border:1px solid #ddd;color:#888">Temps, qualité, confort…</td><td style="padding:8px;border:1px solid #ddd">—</td></tr>
-                    <tr><td style="padding:8px;border:1px solid #ddd"><strong>Mon top 1 à tester</strong></td><td style="padding:8px;border:1px solid #ddd;color:#888" colspan="2">À noter à la fin de la session</td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="exercise-box">
-              <div class="ex-label">🎯 Consigne (10 min de travail silencieux)</div>
-              <p>Remplissez ce tableau dans le document partagé Teams. Inspirez-vous de vos pratiques actuelles. Ensuite, postez <strong>1 exemple dans le chat Teams</strong> — le formateur choisira 2–3 cas à co-construire en direct.</p>
-            </div>
-          </div>
-        </div>
+      <p class="section-label sl-purple">Les fichiers du dossier de démo</p>
+      <div class="files-list">
+        📄 constats_visite.txt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <span>Constats + et à améliorer, critère 2.3 Bientraitance</span><br>
+        📄 extrait_referentiel_HAS.txt → <span>Texte officiel du critère + attendus précis</span><br>
+        📄 documents_preuves.txt &nbsp;&nbsp;&nbsp;&nbsp;→ <span>Inventaire des preuves disponibles / manquantes</span><br>
+        📄 notes_equipe.txt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <span>Verbatim direction, soignants, résidents</span>
       </div>
 
-      <!-- SLIDE 9 : MISE EN COMMUN -->
-      <div class="slide-frame" id="slide-9">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-teal">Module 2 — Cahier des charges</span>
-            <div><div class="slide-title">Mise en commun & démonstration</div><div class="slide-subtitle">10 min — Co-construction de prompts en partage d'écran</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <p style="margin-bottom:12px">Le formateur choisit <strong>3 exemples du chat</strong> (1 formation, 1 bilan, 1 ESSMS) et construit un prompt type pour chacun sur Claude, en partage d'écran.</p>
-            <div class="flow-chain">
-              <div class="flow-step">Cas du participant</div>
-              <span class="flow-arrow">→</span>
-              <div class="flow-step hl">Prompt co-construit</div>
-              <span class="flow-arrow">→</span>
-              <div class="flow-step">Résultat Claude</div>
-              <span class="flow-arrow">→</span>
-              <div class="flow-step">Sauvegarde Word / OneNote</div>
-            </div>
-            <div class="tip-box" style="margin-top:16px">
-              <p><strong>Conclusion (5 min) :</strong> Chaque participant note dans le document partagé son <strong>top 1 cas d'usage prioritaire</strong> à expérimenter dans le mois. Ce sera son engagement de fin de session.</p>
-            </div>
-          </div>
-        </div>
+      <p class="section-label sl-purple">Ce que Cowork va produire — les 6 parties HAS</p>
+      <div class="output-grid">
+        <div class="out-1 output-card">1. Contexte de l'établissement<span>Présentation, chiffres clés, visite</span></div>
+        <div class="out-2 output-card">2. Organisation mise en place<span>Politique, procédures, instances, référent</span></div>
+        <div class="out-3 output-card">3. Preuves disponibles<span>Documents, observations, traces</span></div>
+        <div class="out-4 output-card">4. Points à améliorer<span>Référencés aux attendus HAS</span></div>
+        <div class="out-5 output-card">5. Pistes d'action & délais<span>Recommandations opérationnelles</span></div>
+        <div class="out-6 output-card">6. Cotation argumentée<span>Favorable / À améliorer / Non favorable</span></div>
       </div>
 
-      <!-- SLIDE 10 : FORMATION DISTANCIELLE -->
-      <div class="slide-frame" id="slide-10">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-coral">Module 3 — Cas pratiques</span>
-            <div><div class="slide-title">Cas 1 : Formation distancielle</div><div class="slide-subtitle">20 min — 10 min démo + 10 min production</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <div class="tag-row">
-              <span class="tag t-purple">Mails de relance</span>
-              <span class="tag t-teal">Convocations Teams</span>
-              <span class="tag t-amber">Feuilles d'émargement</span>
-              <span class="tag t-coral">Comptes rendus de session</span>
-            </div>
-            <p style="margin-top:14px;margin-bottom:10px"><strong>Livrables générés par l'IA :</strong></p>
-            <ul style="padding-left:20px;margin-bottom:14px">
-              <li style="margin-bottom:5px;font-size:13.5px">Mail de relance pour stagiaire absent à une classe virtuelle Teams</li>
-              <li style="margin-bottom:5px;font-size:13.5px">Message court à coller dans un canal Teams</li>
-              <li style="margin-bottom:5px;font-size:13.5px">Trame d'ordre du jour pour session Teams</li>
-              <li style="margin-bottom:5px;font-size:13.5px">Modèle de compte rendu (participants, points vus, actions à suivre)</li>
-            </ul>
-            <div class="tip-box">
-              <p><strong>Aller plus loin :</strong> Coller la trame dans Word → Stocker dans un dossier OneDrive partagé → Y accéder depuis Teams (onglet « Fichiers »). Connecter avec Outlook / Planner pour les relances automatiques.</p>
-            </div>
-          </div>
-        </div>
+      <p class="section-label sl-purple">Le prompt à coller dans Cowork</p>
+      <div class="prompt-wrap">
+        <div class="prompt-box" style="border-left-color:var(--purple)">Tu es évaluateur ESSMS certifié HAS.
+Dans ce dossier tu trouveras les constats de visite, le texte du critère 2.3 du référentiel HAS, l'inventaire des preuves disponibles et les notes d'entretiens avec l'équipe.
+Lis attentivement tous ces fichiers, puis rédige une réponse argumentée au critère 2.3, structurée exactement en 6 parties :
+1. Contexte de l'établissement (présentation synthétique, chiffres clés, contexte de la visite)
+2. Organisation mise en place (politique, procédures, instances, référent bientraitance)
+3. Preuves disponibles (liste des documents et observations qui attestent des pratiques)
+4. Points à améliorer (formulés de façon constructive, référencés aux attendus HAS)
+5. Pistes d'action concrètes et délais suggérés (recommandations opérationnelles, priorisées)
+6. Cotation argumentée : Favorable / À améliorer / Non favorable — justifiée en 3 lignes max.
+Ton : conforme à un rapport d'évaluation officiel HAS. Registre professionnel, factuel, rigoureux.
+40 lignes maximum.
+Sauvegarde le résultat dans Reponse_Critere_2-3_LesMimosas.docx dans ce même dossier.</div>
+        <button class="copy-btn" style="background:var(--purple)" onclick="copyPrompt(this)">📋 Copier</button>
       </div>
 
-      <!-- SLIDE 11 : PROMPT RELANCE -->
-      <div class="slide-frame" id="slide-11">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-coral">Prompt type — Formation</span>
-            <div><div class="slide-title">Relance stagiaire absent à une classe Teams</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <div class="prompt-label">Prompt type — Mail de relance</div>
-            <div class="prompt-block">« Rédige un mail de relance pour un stagiaire absent à une classe virtuelle sur Teams. Ton professionnel et bienveillant, mais ferme. Inclure : rappel du lien Teams de reconnexion, proposition de 2 nouvelles dates (laisser des crochets à compléter), et une signature formelle.<br><br>Nom : [PRÉNOM NOM]<br>Formation : [INTITULÉ]<br>Date manquée : [DATE]<br>Organisme : [NOM ORGANISME] »</div>
-            <div class="prompt-label" style="margin-top:16px">Variante — Message court pour le chat Teams</div>
-            <div class="prompt-block">« Rédige un message court (5 lignes max) à publier dans un canal Teams pour rappeler une prochaine session de formation. Ton amical et professionnel. Inclure : lien de connexion, date et heure, un emoji adapté. »</div>
-            <div class="exercise-box" style="margin-top:14px">
-              <div class="ex-label">🎯 À vous ! (5 min)</div>
-              <p>Formulez un prompt de mail ou message adapté à votre contexte et collez-le dans le chat Teams. Le formateur en commente 1 ou 2 en direct.</p>
-            </div>
-          </div>
-        </div>
+      <div class="note green">
+        <i>🔒</i>
+        <p><strong>Confidentialité :</strong> Cowork travaille exclusivement en local. Aucune donnée ne transite par un serveur externe. Compatible avec les exigences des organismes évaluateurs accrédités COFRAC.</p>
       </div>
 
-      <!-- SLIDE 12 : BILANS DE COMPÉTENCES -->
-      <div class="slide-frame" id="slide-12">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-coral">Module 3 — Cas pratiques</span>
-            <div><div class="slide-title">Cas 2 : Bilans de compétences distanciels</div><div class="slide-subtitle">20 min — Analyse de documents + préparation entretien visio</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <div class="tag-row">
-              <span class="tag t-purple">Synthèse de bilan</span>
-              <span class="tag t-teal">Analyse de tests</span>
-              <span class="tag t-amber">Profil compétences</span>
-              <span class="tag t-coral">Préparation entretien visio</span>
-            </div>
-            <p style="margin-top:14px;margin-bottom:10px"><strong>Démarche :</strong></p>
-            <div class="flow-chain">
-              <div class="flow-step">Notes d'entretien</div>
-              <span class="flow-arrow">+</span>
-              <div class="flow-step">Tests</div>
-              <span class="flow-arrow">+</span>
-              <div class="flow-step">CV</div>
-              <span class="flow-arrow">→</span>
-              <div class="flow-step hl">Claude analyse</div>
-              <span class="flow-arrow">→</span>
-              <div class="flow-step">Synthèse prête à intégrer</div>
-            </div>
-            <div class="warn-box" style="margin-top:14px">
-              <span class="warn-icon">🔒</span>
-              <p><strong>Points critiques :</strong> Anonymisez systématiquement les documents avant de les soumettre à l'IA. La synthèse produite est un <em>support de travail</em> — la validation professionnelle du conseiller reste indispensable.</p>
-            </div>
-            <div class="tip-box">
-              <p><strong>Adaptation distanciel :</strong> Ajoutez à la synthèse une partie "préparation d'entretien visio" : liste de questions à poser, script d'introduction pour démarrer la séance Teams, points de vigilance à observer en visio.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SLIDE 13 : PROMPT BILAN -->
-      <div class="slide-frame" id="slide-13">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-coral">Prompt type — Bilans</span>
-            <div><div class="slide-title">Synthèse de bilan de compétences</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <div class="prompt-label">Prompt type — Synthèse bilan</div>
-            <div class="prompt-block">« Tu es consultant senior en bilan de compétences. À partir des documents suivants (notes d'entretien, résultats de tests, parcours CV), produis une synthèse structurée comprenant :<br><br>1. Profil général<br>2. Compétences clés identifiées<br>3. Centres d'intérêt et motivations profondes<br>4. Freins et points de vigilance<br>5. Pistes professionnelles réalistes et argumentées<br><br>Ton : professionnel et bienveillant. Prête à être intégrée dans un rapport final. Longueur : 25 lignes max. »</div>
-            <div class="prompt-label" style="margin-top:16px">Variante — Préparation entretien visio Teams</div>
-            <div class="prompt-block">« À partir du profil ci-dessus, génère : (1) un script d'introduction pour démarrer l'entretien de restitution en visio Teams (2 min max), (2) 5 questions ouvertes à poser au bénéficiaire pour valider les pistes professionnelles identifiées. »</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SLIDE 14 : ESSMS -->
-      <div class="slide-frame" id="slide-14">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-coral">Module 3 — Cas pratiques</span>
-            <div><div class="slide-title">Cas 3 : ESSMS / Référentiel HAS</div><div class="slide-subtitle">20 min — Réponse au référentiel + préparation réunion Teams</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <div class="tag-row">
-              <span class="tag t-purple">Reformulation de pratiques</span>
-              <span class="tag t-teal">Réponse au référentiel</span>
-              <span class="tag t-amber">Mise en conformité</span>
-              <span class="tag t-coral">Ordre du jour réunion Teams</span>
-            </div>
-            <p style="margin-top:14px;margin-bottom:10px"><strong>Usages concrets :</strong></p>
-            <ul style="padding-left:20px;margin-bottom:14px">
-              <li style="margin-bottom:5px;font-size:13.5px">Reformuler des pratiques en lien avec un critère HAS précis</li>
-              <li style="margin-bottom:5px;font-size:13.5px">Structurer une réponse argumentée : contexte, organisation, preuves, axes de progrès</li>
-              <li style="margin-bottom:5px;font-size:13.5px">Préparer l'ordre du jour d'une réunion d'évaluation en visio</li>
-              <li style="margin-bottom:5px;font-size:13.5px">Générer des questions à poser aux équipes lors des entretiens Teams</li>
-            </ul>
-            <div class="tip-box">
-              <p>Fournissez à Claude le texte exact du critère HAS concerné pour une reformulation précise et conforme. Plus le contexte est riche, plus la réponse est utilisable directement.</p>
-            </div>
-          </div>
+      <div class="key-msg" style="margin-top:16px">
+        <div class="key-msg-icon">⚖️</div>
+        <div>
+          <h4>Le message essentiel pour les évaluateurs ESSMS</h4>
+          <p>Cowork a croisé mes constats avec les attendus HAS et les verbatim de l'équipe. Il propose une cotation avec justification. <em>C'est ma décision finale</em> — je valide, je nuance, ou je conteste. J'ai structuré ma réponse en 3 minutes, pas en 2 heures. <em>La responsabilité de la cotation reste entièrement la mienne.</em></p>
         </div>
       </div>
 
-      <!-- SLIDE 15 : PROMPT ESSMS -->
-      <div class="slide-frame" id="slide-15">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-coral">Prompt type — ESSMS / HAS</span>
-            <div><div class="slide-title">Réponse au référentiel HAS & réunion Teams</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <div class="prompt-label">Prompt type — Réponse critère HAS</div>
-            <div class="prompt-block">« Tu es évaluateur ESSMS certifié. À partir des constats et documents ci-dessous, rédige une réponse argumentée pour le critère [NUMÉRO] du référentiel HAS ESSMS. Structure la réponse en :<br>1. Contexte de l'établissement<br>2. Organisation mise en place<br>3. Preuves disponibles (à compléter)<br>4. Points à améliorer<br>5. Pistes d'action concrètes<br><br>Ton conforme à un rapport d'évaluation. »</div>
-            <div class="prompt-label" style="margin-top:16px">Prompt type — Réunion d'évaluation en visio Teams</div>
-            <div class="prompt-block">« Génère un ordre du jour structuré pour une réunion d'évaluation ESSMS en visio Teams (durée : 1h30). Inclure : accueil, présentation des constats, questions aux équipes (liste de 5 questions ouvertes), synthèse et prochaines étapes. Ajouter un modèle de compte rendu à remplir pendant la réunion. »</div>
-          </div>
-        </div>
+      <!-- AUTRES TYPES D'ESSMS -->
+      <p class="section-label sl-purple" style="margin-top:24px">Cette méthode s'applique à tous les types d'ESSMS</p>
+      <div class="tag-row">
+        <span class="tag">EHPAD</span><span class="tag">ESAT</span><span class="tag">IME</span>
+        <span class="tag">ITEP</span><span class="tag">SAAD</span><span class="tag">SSIAD</span>
+        <span class="tag">SPASAD</span><span class="tag">MAS</span><span class="tag">FAM</span>
+        <span class="tag">CHRS</span><span class="tag">MECS</span><span class="tag">CSAPA</span><span class="tag">CADA</span>
       </div>
+      <p style="font-size:13px;color:var(--g600);margin-top:8px">Le référentiel HAS est unique pour tous. Vous adaptez le prompt en changeant simplement le numéro du critère et le nom de l'établissement.</p>
 
-      <!-- SLIDE 16 : ONEDRIVE + TEAMS -->
-      <div class="slide-frame" id="slide-16">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-amber">Module 4 — Organisation</span>
-            <div><div class="slide-title">Organisation documentaire OneDrive + Teams</div><div class="slide-subtitle">10 min — Rendre l'IA opérationnelle au quotidien</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <p style="margin-bottom:12px"><strong>Arborescence OneDrive recommandée :</strong></p>
-            <div style="background:var(--gray-light);border-radius:8px;padding:16px;font-family:monospace;font-size:13px;line-height:1.9;border:1px solid var(--border)">
-              📁 /Formations<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;📁 /Sessions_distancielles<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;📁 /Prompts_modeles<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;📁 /Comptes_rendus<br>
-              📁 /Bilans_de_competences<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;📁 /Dossiers_anonymises<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;📁 /Syntheses_generees<br>
-              📁 /ESSMS_HAS<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;📁 /Referentiels<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;📁 /Reponses_criteres<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;📁 /Reunions_Teams
-            </div>
-            <p style="margin-top:14px;margin-bottom:8px"><strong>Convention de nommage :</strong></p>
-            <div class="prompt-block" style="font-size:12.5px">AAAA-MM-JJ_Client_Projet_TypeDoc<br>Ex : 2025-10-15_CentreAlpha_BilanPierre_Synthese.docx</div>
-            <div class="tip-box" style="margin-top:12px">
-              <p><strong>Lien avec Teams :</strong> Rattachez vos dossiers OneDrive à un canal Teams (onglet Fichiers). Les documents générés par Claude sont directement accessibles depuis Teams, sans changer d'outil.</p>
-            </div>
-            <div class="exercise-box" style="margin-top:12px">
-              <div class="ex-label">🎯 Prompt à tester</div>
-              <p><em>« Propose une arborescence de dossiers OneDrive pour organiser mon activité (formations distancielles sur Teams, bilans de compétences, évaluations ESSMS), avec conventions de nommage standardisées et exemples de noms de fichiers. »</em></p>
-            </div>
-          </div>
-        </div>
+    </div>
+  </div>
+
+  <!-- BONUS : INGÉNIERIE PÉDAGOGIQUE -->
+  <div class="card" style="border-left:4px solid var(--amber)">
+    <h3>🎁 Prompt bonus — Déroulé pédagogique (pour les formateurs)</h3>
+    <p style="margin-bottom:12px">Vous avez un référentiel, un public et une durée ? Cowork ou Claude peut générer le squelette de votre formation.</p>
+    <div class="prompt-wrap">
+      <div class="prompt-box amber">Tu es ingénieur pédagogique expérimenté.
+À partir des éléments suivants, génère un déroulé pédagogique complet :
+- Référentiel / thème : [ex. Sécurité au travail - module 3]
+- Public cible : [ex. Animateurs de structures médico-sociales, niveau débutant]
+- Durée totale : [ex. 7h - 1 journée]
+- Modalité : [ex. présentiel / distanciel Teams]
+Structure attendue : tableau avec colonnes Heure / Thème / Objectif pédagogique / Activité / Durée / Ressources.
+Inclure : brise-glace, temps de pause, évaluation finale.
+Ton professionnel.</div>
+      <button class="copy-btn amber" onclick="copyPrompt(this)">📋 Copier</button>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<hr class="separator">
+
+<!-- ═══════════════════════════════════════════
+     MODULE 4 — ORGANISATION
+════════════════════════════════════════════ -->
+<div id="module4" style="background:var(--g50);">
+<div class="section">
+<div class="container">
+
+  <div class="module-header">
+    <span class="module-badge mb-green">Module 4 · 10 min</span>
+    <h2 class="module-title">Organisation OneDrive & Teams</h2>
+    <span class="module-time">1:20 – 1:30</span>
+  </div>
+
+  <p style="font-size:14px;color:var(--g700);line-height:1.7;margin-bottom:24px">L'IA ne fait pas tout. Le vrai gain durable vient d'un <strong>système organisé autour de l'outil</strong>. Voici la structure recommandée pour ne jamais perdre un fichier et pouvoir pointer Cowork sur le bon dossier en 10 secondes.</p>
+
+  <div class="two-col">
+    <div>
+      <p class="section-label sl-green">Arborescence OneDrive recommandée</p>
+      <div class="divider green"></div>
+      <div class="tree">
+        <div class="folder">📁 OneDrive — Mon espace de travail</div>
+        <div class="folder" style="padding-left:20px">📁 Formations/</div>
+        <div class="file">📁 [Nom-Formation-2026]/</div>
+        <div style="padding-left:40px;color:var(--g400);font-size:12px">Notes · Supports · CR · Suivi</div>
+        <div class="folder" style="padding-left:20px">📁 Bilans/</div>
+        <div class="file">📁 [Initiales-Beneficiaire]/</div>
+        <div style="padding-left:40px;color:var(--g400);font-size:12px">Entretiens · Tests · Synthèses</div>
+        <div class="folder" style="padding-left:20px">📁 ESSMS/</div>
+        <div class="file">📁 [Nom-Etablissement]/</div>
+        <div style="padding-left:60px;color:var(--g400);font-size:12px">📁 Critere-1-1/</div>
+        <div style="padding-left:60px;color:var(--g400);font-size:12px">📁 Critere-2-3/</div>
+        <div style="padding-left:60px;color:var(--g400);font-size:12px">📁 Rapport-Final/</div>
+        <div class="folder" style="padding-left:20px">📁 Mes-Prompts/</div>
+        <div class="file">Mes_Prompts_Metier.docx</div>
       </div>
-
-      <!-- SLIDE 17 : CALENDRIER -->
-      <div class="slide-frame" id="slide-17">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-amber">Module 4 — Organisation</span>
-            <div><div class="slide-title">Calendrier, relances et automatisations simples</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <div class="flow-chain">
-              <div class="flow-step">📁 OneDrive<br><small>Stockage docs</small></div>
-              <span class="flow-arrow">→</span>
-              <div class="flow-step hl">🧠 Claude / Copilot<br><small>Analyse & produit</small></div>
-              <span class="flow-arrow">→</span>
-              <div class="flow-step">📧 Outlook<br><small>Envoi mails</small></div>
-              <span class="flow-arrow">→</span>
-              <div class="flow-step">📅 Teams / Planner<br><small>Suivi & relances</small></div>
-            </div>
-            <ul style="padding-left:20px;margin:16px 0">
-              <li style="margin-bottom:6px;font-size:13.5px">Planifier des relances automatiques via Outlook / Teams</li>
-              <li style="margin-bottom:6px;font-size:13.5px">Créer des rappels de sessions distancielles dans le calendrier Teams</li>
-              <li style="margin-bottom:6px;font-size:13.5px">Utiliser Claude pour générer des listes de tâches et plannings</li>
-              <li style="margin-bottom:6px;font-size:13.5px">Préparer les messages de rappel de connexion à l'avance</li>
-            </ul>
-            <div class="warn-box">
-              <span class="warn-icon">⭐</span>
-              <p><strong>Message clé :</strong> Ce n'est pas l'IA seule qui fait gagner du temps — c'est <strong>le système organisé autour</strong> qui crée la vraie efficacité au quotidien.</p>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div>
+      <p class="section-label sl-green">Convention de nommage des fichiers</p>
+      <div class="divider green"></div>
+      <p style="font-size:13.5px;color:var(--g700);margin-bottom:10px">Toujours nommer vos fichiers selon ce format :</p>
+      <div class="naming-ex">AAAA-MM-JJ_Client_Projet_TypeDoc</div>
+      <p style="font-size:12.5px;color:var(--g600);margin:8px 0 16px">Exemples :</p>
+      <div class="naming-ex">2026-05-20_LesMimosas_Critere2-3_Reponse.docx</div>
+      <div class="naming-ex" style="margin-top:6px">2026-05-20_Bilan_Anon-AB_Synthese.docx</div>
+      <div class="naming-ex" style="margin-top:6px">2026-05-20_FormationIA_Session1_CR.docx</div>
+      <p style="font-size:13px;color:var(--g600);margin-top:12px;line-height:1.6">Avec ce format, vos fichiers sont triés automatiquement par date, retrouvables en 3 secondes, et Cowork peut les identifier facilement dans un dossier.</p>
+      <div class="note green" style="margin-top:14px">
+        <i>💡</i>
+        <p><strong>Astuce Teams :</strong> liez votre dossier OneDrive à un canal Teams (onglet "Fichiers") — tous les membres de l'équipe accèdent aux documents sans envoi de pièce jointe.</p>
       </div>
+    </div>
+  </div>
 
-      <!-- SLIDE 18 : CLÔTURE -->
-      <div class="slide-frame" id="slide-18">
-        <div class="slide-card">
-          <div class="slide-header">
-            <span class="slide-num-badge badge-gray">Clôture</span>
-            <div><div class="slide-title">Synthèse & prochaines étapes</div><div class="slide-subtitle">5 min — Tour de table chat Teams + livrables</div></div>
-          </div>
-          <hr class="slide-divider">
-          <div class="slide-body">
-            <p style="margin-bottom:12px"><strong>Récapitulatif des 3 apports de la session :</strong></p>
-            <div class="vocab-grid" style="grid-template-columns:repeat(3,1fr)">
-              <div class="vocab-card vc-purple"><h4>① Fondamentaux</h4><p>Prompts, contexte, rôles — les 3 règles d'or</p></div>
-              <div class="vocab-card vc-teal"><h4>② Cahier des charges</h4><p>Cibler les tâches à forte valeur ajoutée IA</p></div>
-              <div class="vocab-card vc-coral"><h4>③ Cas pratiques</h4><p>Formation · Bilans · ESSMS + organisation documentaire</p></div>
-            </div>
-            <p style="margin-top:16px;margin-bottom:10px"><strong>Chaque participant repart avec :</strong></p>
-            <ul style="padding-left:20px;margin-bottom:14px">
-              <li style="margin-bottom:5px;font-size:13.5px">3 prompts personnalisés prêts à l'emploi</li>
-              <li style="margin-bottom:5px;font-size:13.5px">1 cas concret travaillé pendant la session</li>
-              <li style="margin-bottom:5px;font-size:13.5px">1 début de cahier des charges IA rempli en ligne</li>
-              <li style="margin-bottom:5px;font-size:13.5px">Accès aux supports partagés dans Teams / OneDrive</li>
-            </ul>
-            <div class="exercise-box">
-              <div class="ex-label">🎯 Tour de table final — Chat Teams</div>
-              <p>Chacun poste dans le chat :<br><br>
-              ✅ <strong>1 idée à tester cette semaine</strong><br>
-              ❓ <strong>1 frein ou question restante</strong></p>
-            </div>
-          </div>
-        </div>
+</div>
+</div>
+</div>
+
+<hr class="separator">
+
+<!-- ═══════════════════════════════════════════
+     RISQUES ET LIMITES
+════════════════════════════════════════════ -->
+<div id="risques" style="background:white;">
+<div class="section">
+<div class="container">
+
+  <div class="module-header">
+    <span class="module-badge mb-purple">À connaître absolument</span>
+    <h2 class="module-title">Risques, limites & bonnes pratiques</h2>
+  </div>
+
+  <!-- CE QUE L'IA NE FAIT PAS -->
+  <p class="section-label sl-purple">Ce que l'IA ne fait pas</p>
+  <div class="divider purple"></div>
+  <div class="nefait-grid">
+    <div class="nefait-item"><span>🚫</span> Ne remplace pas votre expertise et votre analyse de terrain</div>
+    <div class="nefait-item"><span>🚫</span> Ne décide pas à votre place — vous gardez la main sur toutes les conclusions</div>
+    <div class="nefait-item"><span>🚫</span> Ne signe pas le rapport HAS ni aucun document officiel</div>
+    <div class="nefait-item"><span>🚫</span> Ne peut pas observer un comportement ou ressentir une ambiance</div>
+    <div class="nefait-item"><span>🚫</span> N'invente pas une observation que vous n'avez pas faite sur le terrain</div>
+    <div class="nefait-item"><span>🚫</span> Ne dispense pas du cadre réglementaire HAS, Qualiopi ou CPF</div>
+    <div class="nefait-item"><span>🚫</span> Ne garantit pas un résultat parfait — toujours relire avant d'utiliser</div>
+    <div class="nefait-item"><span>🚫</span> Ne remplace pas l'entretien avec le bénéficiaire ou le résident</div>
+  </div>
+
+  <!-- 5 RISQUES -->
+  <p class="section-label sl-purple" style="margin-top:24px">Les 5 risques à maîtriser</p>
+  <div class="divider purple"></div>
+  <div class="risques-grid">
+    <div class="risque-card" style="border-top-color:#dc2626">
+      <div class="risque-icon">🌀</div>
+      <h4>Hallucinations</h4>
+      <p>L'IA peut produire des informations plausibles mais fausses : date incorrecte, chiffre inventé, référence réglementaire inexacte.</p>
+      <span class="regle">→ Vérifier systématiquement tout fait factuel.</span>
+    </div>
+    <div class="risque-card" style="border-top-color:var(--amber)">
+      <div class="risque-icon">🛡️</div>
+      <h4>RGPD</h4>
+      <p>Saisir un nom, prénom ou dossier médical dans Claude.ai en ligne = violation potentielle du RGPD.</p>
+      <span class="regle">→ Jamais de données nominatives en ligne. Anonymiser avant traitement.</span>
+    </div>
+    <div class="risque-card" style="border-top-color:var(--blue)">
+      <div class="risque-icon">🔒</div>
+      <h4>Confidentialité</h4>
+      <p>Dossiers bénéficiaires, résidents et stagiaires protégés par le secret professionnel.</p>
+      <span class="regle">→ Traiter comme des données médicales. Cowork : tout reste en local.</span>
+    </div>
+    <div class="risque-card" style="border-top-color:var(--teal)">
+      <div class="risque-icon">👁️</div>
+      <h4>Validation humaine</h4>
+      <p>Toute production de l'IA doit être relue et validée. Un copier-coller direct engage votre responsabilité.</p>
+      <span class="regle">→ L'IA rédige un brouillon. Vous validez le livrable. Toujours.</span>
+    </div>
+    <div class="risque-card" style="border-top-color:var(--purple)">
+      <div class="risque-icon">🧱</div>
+      <h4>Limites des modèles</h4>
+      <p>L'IA structure ce que vous lui donnez. La qualité de l'output dépend directement de la qualité de vos notes et constats.</p>
+      <span class="regle">→ "Garbage in, garbage out." Bons constats = bonne synthèse.</span>
+    </div>
+  </div>
+
+  <!-- 4V -->
+  <p class="section-label sl-purple" style="margin-top:24px">La règle des 4V — votre méthode de travail responsable</p>
+  <div class="divider purple"></div>
+  <div class="v4-grid">
+    <div class="v4-card" style="background:var(--blue-bg);border:1px solid var(--blue-br)">
+      <div class="v4-val" style="color:var(--blue)">V1</div>
+      <div class="v4-label">Vérifier</div>
+      <div class="v4-desc">Les faits factuels, dates, chiffres et références réglementaires produits par l'IA.</div>
+    </div>
+    <div class="v4-card" style="background:var(--teal-bg);border:1px solid var(--teal-br)">
+      <div class="v4-val" style="color:var(--teal)">V2</div>
+      <div class="v4-label">Valider</div>
+      <div class="v4-desc">Le fond professionnel : cotation, analyse, pistes — avec votre jugement de terrain.</div>
+    </div>
+    <div class="v4-card" style="background:var(--amb-bg);border:1px solid var(--amb-br)">
+      <div class="v4-val" style="color:var(--amber)">V3</div>
+      <div class="v4-label">Valoriser</div>
+      <div class="v4-desc">L'expertise humaine irremplaçable : relation, non-dit, contexte perçu sur le terrain.</div>
+    </div>
+    <div class="v4-card" style="background:var(--grn-bg);border:1px solid var(--grn-br)">
+      <div class="v4-val" style="color:var(--green)">V4</div>
+      <div class="v4-label">Versionner</div>
+      <div class="v4-desc">Garder toujours le document original et tracer les versions du livrable final.</div>
+    </div>
+  </div>
+
+  <!-- MESSAGE EXPERT -->
+  <div style="background:linear-gradient(135deg,var(--navy),#1e3a5f);border-radius:var(--r);padding:22px 26px;display:flex;gap:16px;align-items:flex-start;margin-top:24px">
+    <div style="font-size:36px;flex-shrink:0">🎯</div>
+    <div>
+      <h4 style="font-size:15px;font-weight:800;color:white;margin-bottom:6px">L'IA amplifie les experts — elle ne remplace pas les débutants</h4>
+      <p style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.65">Un consultant expérimenté avec l'IA produit du contenu de haute qualité beaucoup plus vite — parce qu'il sait corriger, affiner et valider. <strong style="color:#93c5fd">Votre expertise métier reste le facteur déterminant.</strong> L'IA l'amplifie, elle ne la supplante pas.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<hr class="separator">
+
+<!-- ═══════════════════════════════════════════
+     10 ERREURS DE DÉBUTANTS
+════════════════════════════════════════════ -->
+<div id="erreurs" style="background:var(--g50);">
+<div class="section">
+<div class="container">
+
+  <div class="module-header">
+    <span class="module-badge mb-navy">Guide pratique</span>
+    <h2 class="module-title">Les 10 erreurs de débutants — à éviter dès la première semaine</h2>
+  </div>
+
+  <div class="erreurs-grid">
+    <div class="erreur-card">
+      <div class="e-num e-red">1</div>
+      <div>
+        <h4>Copier-coller sans relire</h4>
+        <p>L'IA peut faire des erreurs factuelles. Toujours relire avant d'insérer dans un document officiel.</p>
       </div>
-
-    </div><!-- /view-slides -->
-
-
-    <!-- ═══ VIEW : TIMELINE ═══ -->
-    <div class="view" id="view-timeline">
-      <div class="timeline">
-        <h2 style="font-size:18px;font-weight:700;margin-bottom:16px">Plan minute par minute – Classe virtuelle Teams (2h)</h2>
-
-        <div style="background:var(--amber-light);border:1px solid #FAC775;border-radius:8px;padding:14px 18px;margin-bottom:16px">
-          <strong style="color:var(--amber-dark)">📌 Avant la session (J-1 à J-0)</strong>
-          <ul style="padding-left:20px;margin-top:8px">
-            <li style="font-size:13.5px;margin-bottom:4px">Envoyer l'invitation Teams avec le lien + consignes techniques (casque, micro, double écran)</li>
-            <li style="font-size:13.5px;margin-bottom:4px">Rappeler que les participants doivent avoir accès à Claude ou Copilot</li>
-            <li style="font-size:13.5px;margin-bottom:4px">Déposer dans l'onglet Fichiers du canal : support PDF, document "Cahier des charges IA", exemple de dossier fictif anonymisé</li>
-          </ul>
-        </div>
-
-        <div class="tl-block">
-          <div class="tl-header" onclick="toggleTl(this)">
-            <span class="tl-time tt-gray">0:00 – 0:10</span>
-            <span class="tl-label">Accueil & cadrage (10 min)</span>
-            <span class="tl-toggle">▼</span>
-          </div>
-          <div class="tl-body open">
-            <p><span class="action-chip ac-screen">🖥 Écran partagé</span> Ouvrir la réunion Teams 5 min avant. Accueillir les participants.</p>
-            <p>Vérifier : micro, caméra, chat, partage d'écran.</p>
-            <p><strong>0:05 – 0:10 :</strong> Présenter l'objectif, l'agenda, les règles (micro coupé, chat actif, réactions Teams).</p>
-          </div>
-        </div>
-
-        <div class="tl-block">
-          <div class="tl-header" onclick="toggleTl(this)">
-            <span class="tl-time tt-purple">0:10 – 0:40</span>
-            <span class="tl-label">Module 1 — Fondamentaux & vocabulaire (30 min)</span>
-            <span class="tl-toggle">▼</span>
-          </div>
-          <div class="tl-body">
-            <p><strong>0:10 – 0:20 — Apports + démo</strong></p>
-            <p><span class="action-chip ac-screen">🖥 Écran partagé</span> Ouvrir l'interface Claude. Faire un prompt simple → résultat brut. Puis prompt amélioré → résultat structuré.</p>
-            <ul><li>Ce qu'est l'IA générative et ses usages dans la formation et l'évaluation</li><li>Différence prompt / contexte / rôle / output</li><li>Notions MCP, Skills, Workspace (sans entrer trop dans la technique)</li></ul>
-            <p><strong>0:20 – 0:30 — Vocabulaire appliqué</strong></p>
-            <p><span class="action-chip ac-screen">🖥 Diapo</span> Afficher la diapo Vocabulaire clé. Expliquer chaque terme avec un exemple métier.</p>
-            <p><strong>0:30 – 0:40 — Exercice interactif</strong></p>
-            <p><span class="action-chip ac-chat">💬 Chat Teams</span> Demander aux participants d'écrire un "mauvais prompt" dans le chat. Choisir 2–3 exemples, les reformuler avec eux en direct sur Claude.</p>
-          </div>
-        </div>
-
-        <div class="tl-block">
-          <div class="tl-header" onclick="toggleTl(this)">
-            <span class="tl-time tt-teal">0:40 – 1:10</span>
-            <span class="tl-label">Module 2 — Cahier des charges IA (30 min)</span>
-            <span class="tl-toggle">▼</span>
-          </div>
-          <div class="tl-body">
-            <p><strong>0:40 – 0:45 — Introduction</strong></p>
-            <p>Expliquer pourquoi un cahier des charges IA. Présenter le document partagé (Word/Forms/OneNote en ligne).</p>
-            <p><strong>0:45 – 0:55 — Travail individuel guidé</strong></p>
-            <p><span class="action-chip ac-doc">📄 Document partagé</span> Dans le document partagé Teams, chaque participant renseigne : 3 tâches répétitives, 2 documents lourds, 1 processus à simplifier. Laisser 5–7 minutes de travail silencieux.</p>
-            <p><strong>0:55 – 1:05 — Mise en commun & démonstration</strong></p>
-            <p><span class="action-chip ac-chat">💬 Chat Teams</span> Demander à 2–3 participants de partager un cas. Sur Claude (partage d'écran), construire un prompt type pour chacun. Montrer le résultat et comment le sauvegarder.</p>
-            <p><strong>1:05 – 1:10 — Synthèse</strong></p>
-            <p>Chaque participant note son top 1 cas d'usage dans le document partagé (colonne « priorité »).</p>
-          </div>
-        </div>
-
-        <div class="tl-block">
-          <div class="tl-header" onclick="toggleTl(this)">
-            <span class="tl-time tt-coral">1:10 – 1:30</span>
-            <span class="tl-label">Cas pratique 1 — Formation distancielle (20 min)</span>
-            <span class="tl-toggle">▼</span>
-          </div>
-          <div class="tl-body">
-            <p><strong>1:10 – 1:15 :</strong> Présenter les cas (mails de relance, convocations, messages chat Teams, comptes rendus).</p>
-            <p><strong>1:15 – 1:25 :</strong><span class="action-chip ac-screen">🖥 Démo Claude</span> Prompt pour mail de relance stagiaire absent. Variante pour message court canal Teams. Montrer comment coller dans Outlook / Teams.</p>
-            <p><strong>1:25 – 1:30 :</strong><span class="action-chip ac-chat">💬 Chat Teams</span> Chaque participant produit un prompt adapté à son contexte et le colle dans le chat. Commenter 1–2 exemples en direct.</p>
-          </div>
-        </div>
-
-        <div class="tl-block">
-          <div class="tl-header" onclick="toggleTl(this)">
-            <span class="tl-time tt-coral">1:30 – 1:50</span>
-            <span class="tl-label">Cas pratique 2 — Bilans de compétences (20 min)</span>
-            <span class="tl-toggle">▼</span>
-          </div>
-          <div class="tl-body">
-            <p><strong>1:30 – 1:35 :</strong><span class="action-chip ac-doc">📄 Fichiers Teams</span> Ouvrir le mini dossier fictif anonymisé déposé dans Teams (notes d'entretien + test).</p>
-            <p><strong>1:35 – 1:45 :</strong><span class="action-chip ac-screen">🖥 Démo Claude</span> Prompt pour synthèse de bilan de compétences structurée. Montrer le plan type (profil, compétences, freins, pistes). Variante : préparation entretien visio Teams.</p>
-            <p><strong>1:45 – 1:50 :</strong> Participants formulent un prompt adapté à leur pratique. Test en parallèle si souhaité.</p>
-          </div>
-        </div>
-
-        <div class="tl-block">
-          <div class="tl-header" onclick="toggleTl(this)">
-            <span class="tl-time tt-coral">1:50 – 2:10</span>
-            <span class="tl-label">Cas pratique 3 — ESSMS/HAS + Organisation (20 min)</span>
-            <span class="tl-toggle">▼</span>
-          </div>
-          <div class="tl-body">
-            <p><strong>1:50 – 2:00 :</strong><span class="action-chip ac-screen">🖥 Démo Claude</span> Extrait de référentiel HAS + constats fictifs. Prompt pour réponse structurée (contexte, organisation, preuves, axes de progrès).</p>
-            <p><strong>2:00 – 2:10 :</strong> Montrer l'arborescence OneDrive. Expliquer comment relier à Teams (onglet Fichiers). Rappeler calendrier Teams/Outlook pour planifier relances et réunions.</p>
-          </div>
-        </div>
-
-        <div class="tl-block">
-          <div class="tl-header" onclick="toggleTl(this)">
-            <span class="tl-time tt-gray">2:10 – 2:20</span>
-            <span class="tl-label">Clôture (10 min)</span>
-            <span class="tl-toggle">▼</span>
-          </div>
-          <div class="tl-body">
-            <p>Récapitulatif des 3 grands apports : fondamentaux, cahier des charges, cas pratiques.</p>
-            <p><span class="action-chip ac-chat">💬 Chat Teams</span> Tour de table final : chacun poste 1 idée à tester + 1 frein ou question.</p>
-            <p>Indiquer où retrouver les supports (Teams/OneDrive) et comment contacter le formateur.</p>
-            <p>Rappel des livrables repartis : 3 prompts, 1 cas concret, 1 cahier des charges IA.</p>
-          </div>
-        </div>
-
+    </div>
+    <div class="erreur-card">
+      <div class="e-num e-red">2</div>
+      <div>
+        <h4>Saisir des données nominatives en ligne</h4>
+        <p>Ne jamais entrer un nom, prénom ou dossier identifiant dans Claude.ai web. Anonymiser systématiquement.</p>
       </div>
-    </div><!-- /view-timeline -->
-
-
-    <!-- ═══ VIEW : PROMPTS ═══ -->
-    <div class="view" id="view-prompts">
-      <h2 style="font-size:18px;font-weight:700;margin-bottom:16px;max-width:920px;margin-left:auto;margin-right:auto">Bibliothèque de prompts métier</h2>
-      <div class="prompts-grid">
-
-        <div class="prompt-card">
-          <div class="pc-header ph-purple"><span class="pc-icon">📧</span><span class="pc-title">Relance — Stagiaire absent (Teams)</span></div>
-          <div class="pc-body">
-            <div class="pc-prompt" id="p1">Tu es assistant administratif dans un organisme de formation. Rédige un mail de relance pour un stagiaire absent à une classe virtuelle sur Teams. Ton professionnel et bienveillant mais ferme. Inclure : rappel du lien Teams, proposition de 2 nouvelles dates (crochets à compléter), signature formelle.
-
-Nom : [PRÉNOM NOM]
-Formation : [INTITULÉ]
-Date manquée : [DATE]
-Organisme : [NOM]</div>
-            <button class="copy-btn" onclick="copyPrompt('p1', this)">📋 Copier</button>
-          </div>
-        </div>
-
-        <div class="prompt-card">
-          <div class="pc-header ph-purple"><span class="pc-icon">💬</span><span class="pc-title">Message court — Canal Teams</span></div>
-          <div class="pc-body">
-            <div class="pc-prompt" id="p2">Rédige un message court (5 lignes max) à publier dans un canal Teams pour rappeler une prochaine session de formation. Ton amical et professionnel. Inclure : lien de connexion, date et heure, un emoji adapté au contexte.</div>
-            <button class="copy-btn" onclick="copyPrompt('p2', this)">📋 Copier</button>
-          </div>
-        </div>
-
-        <div class="prompt-card">
-          <div class="pc-header ph-purple"><span class="pc-icon">📋</span><span class="pc-title">Ordre du jour — Session Teams</span></div>
-          <div class="pc-body">
-            <div class="pc-prompt" id="p3">Génère une trame d'ordre du jour pour une session de formation distancielle sur Teams (durée : [DURÉE]). Inclure : accueil et tour de table, objectifs de la session, déroulé des activités, pause si applicable, synthèse et prochaines étapes, clôture. Format professionnel prêt à partager dans Teams.</div>
-            <button class="copy-btn" onclick="copyPrompt('p3', this)">📋 Copier</button>
-          </div>
-        </div>
-
-        <div class="prompt-card">
-          <div class="pc-header ph-teal"><span class="pc-icon">📝</span><span class="pc-title">Compte rendu — Session Teams</span></div>
-          <div class="pc-body">
-            <div class="pc-prompt" id="p4">Tu es assistant pédagogique. À partir des notes ci-dessous, rédige un compte rendu de session distancielle structuré en : date et participants, points traités, décisions prises, actions à suivre (responsable + délai), prochaine session. Format professionnel, 1 page max.</div>
-            <button class="copy-btn" onclick="copyPrompt('p4', this)">📋 Copier</button>
-          </div>
-        </div>
-
-        <div class="prompt-card">
-          <div class="pc-header ph-teal"><span class="pc-icon">🎯</span><span class="pc-title">Synthèse — Bilan de compétences</span></div>
-          <div class="pc-body">
-            <div class="pc-prompt" id="p5">Tu es consultant senior en bilan de compétences. À partir des documents suivants (notes d'entretien, tests, CV), produis une synthèse structurée : profil général, compétences clés, motivations profondes, freins et vigilances, pistes professionnelles réalistes et argumentées. Ton professionnel et bienveillant. 25 lignes max. Prête à intégrer dans un rapport.</div>
-            <button class="copy-btn" onclick="copyPrompt('p5', this)">📋 Copier</button>
-          </div>
-        </div>
-
-        <div class="prompt-card">
-          <div class="pc-header ph-teal"><span class="pc-icon">🤝</span><span class="pc-title">Préparation — Entretien visio bilan</span></div>
-          <div class="pc-body">
-            <div class="pc-prompt" id="p6">À partir du profil bilan ci-dessus, génère : (1) un script d'introduction pour démarrer l'entretien de restitution en visio Teams (2 min max, ton chaleureux), (2) 5 questions ouvertes à poser au bénéficiaire pour valider les pistes professionnelles, (3) 3 points de vigilance à observer pendant l'entretien en visio.</div>
-            <button class="copy-btn" onclick="copyPrompt('p6', this)">📋 Copier</button>
-          </div>
-        </div>
-
-        <div class="prompt-card">
-          <div class="pc-header ph-coral"><span class="pc-icon">📊</span><span class="pc-title">Réponse critère — Référentiel HAS</span></div>
-          <div class="pc-body">
-            <div class="pc-prompt" id="p7">Tu es évaluateur ESSMS certifié. À partir des constats et documents ci-dessous, rédige une réponse argumentée pour le critère [NUMÉRO] du référentiel HAS ESSMS. Structure : 1. Contexte de l'établissement, 2. Organisation mise en place, 3. Preuves disponibles, 4. Points à améliorer, 5. Pistes d'action. Ton conforme à un rapport d'évaluation.</div>
-            <button class="copy-btn" onclick="copyPrompt('p7', this)">📋 Copier</button>
-          </div>
-        </div>
-
-        <div class="prompt-card">
-          <div class="pc-header ph-coral"><span class="pc-icon">🏥</span><span class="pc-title">Réunion — Évaluation ESSMS en visio</span></div>
-          <div class="pc-body">
-            <div class="pc-prompt" id="p8">Génère un ordre du jour structuré pour une réunion d'évaluation ESSMS en visio Teams (1h30). Inclure : accueil, présentation des constats, 5 questions ouvertes aux équipes, synthèse et prochaines étapes. Ajouter un modèle de compte rendu à remplir pendant la réunion.</div>
-            <button class="copy-btn" onclick="copyPrompt('p8', this)">📋 Copier</button>
-          </div>
-        </div>
-
-        <div class="prompt-card">
-          <div class="pc-header ph-amber"><span class="pc-icon">📁</span><span class="pc-title">Arborescence OneDrive</span></div>
-          <div class="pc-body">
-            <div class="pc-prompt" id="p9">Propose une arborescence de dossiers OneDrive pour organiser mon activité (formations distancielles sur Teams, bilans de compétences, évaluations ESSMS), avec conventions de nommage standardisées et exemples concrets de noms de fichiers pour chaque type de document.</div>
-            <button class="copy-btn" onclick="copyPrompt('p9', this)">📋 Copier</button>
-          </div>
-        </div>
-
-        <div class="prompt-card">
-          <div class="pc-header ph-amber"><span class="pc-icon">✨</span><span class="pc-title">Amélioration de prompt</span></div>
-          <div class="pc-body">
-            <div class="pc-prompt" id="p10">Voici un prompt que j'utilise : "[VOTRE PROMPT]". Améliore-le en ajoutant : un rôle précis pour l'IA, un contexte clair, un objectif explicite et un format de sortie défini. Propose aussi 2 variantes pour des contextes légèrement différents.</div>
-            <button class="copy-btn" onclick="copyPrompt('p10', this)">📋 Copier</button>
-          </div>
-        </div>
-
+    </div>
+    <div class="erreur-card">
+      <div class="e-num e-amber">3</div>
+      <div>
+        <h4>Tout demander en une seule fois</h4>
+        <p>Un prompt trop large = réponse trop générale. Décomposer : 1 tâche = 1 prompt ciblé.</p>
       </div>
-    </div><!-- /view-prompts -->
-
-
-    <!-- ═══ VIEW : CHECKLIST ═══ -->
-    <div class="view" id="view-checklist">
-      <div class="checklist-wrap">
-        <h2 style="font-size:18px;font-weight:700;margin-bottom:16px">Checklist de formation</h2>
-
-        <div class="cl-section">
-          <h3>Avant la session</h3>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Invitation Teams envoyée avec lien de connexion et consignes techniques</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Documents déposés dans l'onglet Fichiers du canal Teams (support, cahier des charges, dossier fictif)</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Accès Claude / Copilot vérifié pour le formateur</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Partage d'écran testé sur Teams</p></div>
-        </div>
-
-        <div class="cl-section">
-          <h3>Module 1 — Fondamentaux (0:10 – 0:40)</h3>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Démo "mauvais prompt → prompt structuré" réalisée en direct</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Vocabulaire clé expliqué avec exemples métier</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Exercice brise-glace (chat Teams) complété</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Les 3 règles d'or présentées</p></div>
-        </div>
-
-        <div class="cl-section">
-          <h3>Module 2 — Cahier des charges (0:40 – 1:10)</h3>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Document partagé ouvert et lien envoyé dans le chat Teams</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Travail individuel guidé (10 min silencieux)</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>2–3 cas co-construits en partage d'écran avec Claude</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Top 1 cas d'usage noté par chaque participant</p></div>
-        </div>
-
-        <div class="cl-section">
-          <h3>Module 3 — Cas pratiques (1:10 – 2:10)</h3>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Cas 1 — Formation : prompt mail de relance Teams démontré</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Cas 1 — Participants ont produit et posté leur propre prompt</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Cas 2 — Bilans : dossier fictif ouvert dans Teams</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Cas 2 — Synthèse de bilan générée en direct</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Cas 3 — ESSMS : réponse HAS structurée démontrée</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Arborescence OneDrive présentée et reliée à Teams</p></div>
-        </div>
-
-        <div class="cl-section">
-          <h3>Clôture</h3>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Tour de table final dans le chat Teams (idée à tester + frein)</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Liens vers supports partagés dans le chat</p></div>
-          <div class="check-item" onclick="cl(this)"><div class="cb"></div><p>Livrables participants rappelés (3 prompts, cas concret, cahier des charges)</p></div>
-        </div>
-
-        <div style="background:white;border-radius:10px;border:1px solid var(--border);padding:20px 24px">
-          <div style="font-size:14px;font-weight:700;margin-bottom:10px">Progression globale</div>
-          <div class="progress-outer"><div class="progress-inner" id="main-progress" style="width:0%"></div></div>
-          <div class="progress-label" id="main-label">0 / 19 étapes validées</div>
-        </div>
-
+    </div>
+    <div class="erreur-card">
+      <div class="e-num e-amber">4</div>
+      <div>
+        <h4>Oublier le format de sortie</h4>
+        <p>"Fais une synthèse" sans préciser la structure, le ton ni la longueur produit quelque chose d'inutilisable directement.</p>
       </div>
-    </div><!-- /view-checklist -->
-
-
-    <!-- ═══ VIEW : COWORK ═══ -->
-    <div class="view" id="view-cowork">
-      <div style="max-width:900px;margin:0 auto">
-
-        <!-- INTRO COWORK -->
-        <div style="background:var(--purple-dark);border-radius:12px;padding:32px 40px;margin-bottom:20px;position:relative;overflow:hidden">
-          <div style="position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:var(--purple-mid);border-radius:50%;opacity:.3"></div>
-          <div style="position:relative">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#9F96F5;margin-bottom:12px">🤖 Cowork — Le clou de la formation</div>
-            <h2 style="font-size:22px;font-weight:800;color:white;margin-bottom:10px;line-height:1.3">Démonstrations en direct avec Cowork</h2>
-            <p style="font-size:14px;color:rgba(255,255,255,.8);line-height:1.7;max-width:600px">Cowork lit vos fichiers locaux, croise les informations, et produit un livrable Word directement sur votre PC — sans copier-coller. Deux scénarios prêts à jouer en partage d'écran.</p>
-            <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap">
-              <span style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:12px;padding:5px 14px;border-radius:99px;border:1px solid rgba(255,255,255,.15)">⏱ 10 min par démo</span>
-              <span style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:12px;padding:5px 14px;border-radius:99px;border:1px solid rgba(255,255,255,.15)">📁 Fichiers inclus à télécharger</span>
-              <span style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:12px;padding:5px 14px;border-radius:99px;border:1px solid rgba(255,255,255,.15)">🔒 Travail 100 % local</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- GUIDE ANIMATEUR -->
-        <div style="background:var(--amber-light);border:1px solid #FAC775;border-radius:10px;padding:18px 22px;margin-bottom:20px">
-          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--amber-dark);margin-bottom:10px">📋 Guide animateur — Avant de commencer</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-            <div>
-              <p style="font-size:13px;font-weight:700;color:var(--amber-dark);margin-bottom:6px">Organisation écrans (2 écrans recommandés)</p>
-              <ul style="padding-left:16px;font-size:13px;color:var(--amber-dark);line-height:1.7">
-                <li><strong>Écran 1 partagé :</strong> Cowork + explorateur de fichiers</li>
-                <li><strong>Écran 2 non partagé :</strong> Teams (chat + participants)</li>
-                <li>Si 1 seul écran : Alt+Tab entre Cowork et Teams</li>
-              </ul>
-            </div>
-            <div>
-              <p style="font-size:13px;font-weight:700;color:var(--amber-dark);margin-bottom:6px">Checklist pré-démo (J-1)</p>
-              <ul style="padding-left:16px;font-size:13px;color:var(--amber-dark);line-height:1.7">
-                <li>Dossiers déposés sur le Bureau (pas dans les téléchargements)</li>
-                <li>Cowork ouvert, dossier pointé sur DEMO_Bilan</li>
-                <li>Instructions copiées dans un bloc-notes à côté</li>
-                <li>Test à blanc effectué la veille ✅</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- TABS SCÉNARIOS -->
-        <div style="display:flex;gap:8px;margin-bottom:16px">
-          <button onclick="showCoworkTab('bilan',this)" id="cwtab-bilan"
-            style="padding:9px 20px;border-radius:8px;border:1px solid var(--border);background:var(--purple-dark);color:white;font-size:13px;font-weight:600;cursor:pointer">
-            🎯 Démo 1 — Bilan de compétences
-          </button>
-          <button onclick="showCoworkTab('essms',this)" id="cwtab-essms"
-            style="padding:9px 20px;border-radius:8px;border:1px solid var(--border);background:white;color:var(--fg);font-size:13px;font-weight:600;cursor:pointer">
-            🏥 Démo 2 — Évaluation ESSMS
-          </button>
-        </div>
-
-        <!-- ── DÉMO BILAN ── -->
-        <div id="cwpanel-bilan">
-
-          <!-- ÉTAPES -->
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px">
-            <div style="background:var(--purple-light);border-radius:8px;padding:14px;text-align:center">
-              <div style="font-size:22px;font-weight:800;color:var(--purple-text);margin-bottom:4px">①</div>
-              <p style="font-size:12px;color:var(--purple-mid);line-height:1.4">Préparer le dossier de fichiers fictifs</p>
-            </div>
-            <div style="background:var(--teal-light);border-radius:8px;padding:14px;text-align:center">
-              <div style="font-size:22px;font-weight:800;color:var(--teal-dark);margin-bottom:4px">②</div>
-              <p style="font-size:12px;color:var(--teal-mid);line-height:1.4">Ouvrir Cowork et pointer sur le dossier</p>
-            </div>
-            <div style="background:var(--coral-light);border-radius:8px;padding:14px;text-align:center">
-              <div style="font-size:22px;font-weight:800;color:var(--coral-dark);margin-bottom:4px">③</div>
-              <p style="font-size:12px;color:var(--coral-mid);line-height:1.4">Taper l'instruction en direct devant les participants</p>
-            </div>
-            <div style="background:var(--amber-light);border-radius:8px;padding:14px;text-align:center">
-              <div style="font-size:22px;font-weight:800;color:var(--amber-dark);margin-bottom:4px">④</div>
-              <p style="font-size:12px;color:var(--amber-mid);line-height:1.4">Ouvrir le Word généré et commenter</p>
-            </div>
-          </div>
-
-          <!-- DOSSIER -->
-          <div style="background:white;border-radius:10px;border:1px solid var(--border);overflow:hidden;margin-bottom:14px">
-            <div style="background:var(--gray-dark);color:white;padding:10px 16px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center">
-              <span>📁 DEMO_Bilan_Marie_Dupont — Contenu du dossier</span>
-              <span style="font-size:11px;opacity:.7">À placer sur votre Bureau</span>
-            </div>
-            <div style="padding:14px 16px">
-              <div style="font-family:monospace;font-size:13px;line-height:2;background:var(--gray-light);padding:12px 14px;border-radius:6px">
-                📁 DEMO_Bilan_Marie_Dupont/<br>
-                &nbsp;&nbsp;&nbsp;📄 notes_entretien_1.txt &nbsp;<span style="color:var(--teal-dark);font-family:sans-serif;font-size:11px">→ Entretien 1 : profil, compétences, freins</span><br>
-                &nbsp;&nbsp;&nbsp;📄 notes_entretien_2.txt &nbsp;<span style="color:var(--teal-dark);font-family:sans-serif;font-size:11px">→ Entretien 2 : projets, pistes, motivations</span><br>
-                &nbsp;&nbsp;&nbsp;📄 resultats_tests.txt &nbsp;&nbsp;<span style="color:var(--teal-dark);font-family:sans-serif;font-size:11px">→ MBTI, RIASEC, valeurs professionnelles</span><br>
-                &nbsp;&nbsp;&nbsp;📄 CV_parcours.txt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--teal-dark);font-family:sans-serif;font-size:11px">→ Parcours complet, formations, bénévolat</span><br>
-                &nbsp;&nbsp;&nbsp;📄 INSTRUCTION_COWORK.txt <span style="color:var(--purple-text);font-family:sans-serif;font-size:11px">→ Votre pense-bête formateur</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- INSTRUCTION COWORK -->
-          <div style="background:white;border-radius:10px;border:1px solid var(--border);overflow:hidden;margin-bottom:14px">
-            <div style="background:var(--purple-mid);color:white;padding:10px 16px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center">
-              <span>💬 Instruction à taper dans Cowork — Démo Bilan</span>
-              <button class="copy-btn" onclick="copyPrompt('cowork-bilan',this)" style="background:rgba(255,255,255,.15);color:white;border-color:rgba(255,255,255,.3)">📋 Copier</button>
-            </div>
-            <div style="padding:14px 16px">
-              <div class="prompt-block" id="cowork-bilan">Tu es consultant senior en bilan de compétences, certifié et expérimenté dans l'accompagnement de reconversions professionnelles.
-
-Dans ce dossier tu trouveras :
-- Les notes de deux entretiens individuels (séances 1 et 2)
-- Les résultats des tests psychométriques (MBTI, RIASEC, valeurs)
-- Le parcours professionnel et de formation de la bénéficiaire
-
-Lis attentivement tous ces fichiers, puis produis une synthèse de bilan de compétences structurée en 5 parties :
-
-1. PROFIL GÉNÉRAL
-   (portrait synthétique de la personne, ton bienveillant)
-
-2. COMPÉTENCES CLÉS IDENTIFIÉES
-   (compétences transférables, savoir-faire, savoir-être)
-
-3. CENTRES D'INTÉRÊT ET MOTIVATIONS PROFONDES
-   (ce qui donne du sens, valeurs au travail)
-
-4. FREINS ET POINTS DE VIGILANCE
-   (obstacles internes et externes, formulés sans stigmatiser)
-
-5. PISTES PROFESSIONNELLES RÉALISTES ET ARGUMENTÉES
-   (2 à 3 pistes, justifiées à partir des éléments du dossier)
-
-Ton : professionnel, bienveillant, factuel.
-Longueur : 30 lignes maximum.
-Sauvegarde le résultat dans un fichier Word nommé Synthese_Bilan_MarieD.docx dans ce même dossier.</div>
-            </div>
-          </div>
-
-          <!-- SCRIPT ANIMATEUR BILAN -->
-          <div style="background:var(--teal-light);border:1px solid #9FE1CB;border-radius:10px;padding:18px 22px;margin-bottom:14px">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-dark);margin-bottom:12px">🎙 Script de l'animateur — Ce que vous dites pendant la démo</div>
-            <div style="display:grid;grid-template-columns:80px 1fr;gap:8px;font-size:13px;color:var(--teal-dark)">
-              <span style="font-weight:700;padding-top:2px">0:00 – 0:30</span>
-              <span>"Je vais vous montrer quelque chose de concret. Voilà un dossier que j'aurais constitué après 2 entretiens de bilan et des tests : 4 fichiers texte, c'est tout."</span>
-              <span style="font-weight:700;padding-top:2px">0:30 – 1:00</span>
-              <span>"J'ouvre Cowork, je pointe sur ce dossier. Cowork sait qu'il doit lire ces fichiers. Maintenant je lui donne l'instruction — je la tape directement."</span>
-              <span style="font-weight:700;padding-top:2px">1:00 – 1:30</span>
-              <span><em>[Copiez-collez l'instruction — montrez que vous la tapez, ne la lisez pas intégralement]</em> "Vous voyez la structure : rôle, liste des fichiers, plan en 5 parties, format et longueur attendus."</span>
-              <span style="font-weight:700;padding-top:2px">1:30 – 4:00</span>
-              <span><em>[Laissez Cowork travailler — silence ou commentaire en direct]</em> "Il lit les 4 fichiers en ce moment. Il croise les informations. Il rédige."</span>
-              <span style="font-weight:700;padding-top:2px">4:00 – 6:00</span>
-              <span>"Voilà le Word généré directement dans le dossier. Je l'ouvre." <em>[Lisez un extrait à voix haute]</em> "Ce que j'aurais mis une heure à rédiger, il l'a assemblé en 3 minutes."</span>
-              <span style="font-weight:700;padding-top:2px">6:00 – 10:00</span>
-              <span><strong>Question à poser :</strong> "Qu'est-ce que vous auriez conservé ? Qu'est-ce que vous auriez modifié ?" → Discussion. Point clé : "Je n'ai pas délégué le jugement. J'ai délégué la synthèse."</span>
-            </div>
-          </div>
-
-          <!-- POINT PÉDAGOGIQUE -->
-          <div style="background:var(--purple-light);border:1px solid #CECBF6;border-radius:8px;padding:14px 18px">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--purple-text);margin-bottom:8px">🔑 Point pédagogique à conclure</div>
-            <p style="font-size:13.5px;color:var(--purple-text);line-height:1.65"><strong>Ce que Cowork a fait :</strong> lire, croiser, assembler, structurer, rédiger.<br>
-            <strong>Ce que vous gardez :</strong> la relation avec la bénéficiaire, la validation professionnelle, la décision sur les pistes d'évolution.<br>
-            <strong>⚠️ RGPD :</strong> en situation réelle, les fichiers sont anonymisés. Cowork travaille en local — aucun document ne sort de votre PC.</p>
-          </div>
-        </div><!-- /cwpanel-bilan -->
-
-
-        <!-- ── DÉMO ESSMS ── -->
-        <div id="cwpanel-essms" style="display:none">
-
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px">
-            <div style="background:var(--purple-light);border-radius:8px;padding:14px;text-align:center">
-              <div style="font-size:22px;font-weight:800;color:var(--purple-text);margin-bottom:4px">①</div>
-              <p style="font-size:12px;color:var(--purple-mid);line-height:1.4">Préparer le dossier ESSMS fictif</p>
-            </div>
-            <div style="background:var(--teal-light);border-radius:8px;padding:14px;text-align:center">
-              <div style="font-size:22px;font-weight:800;color:var(--teal-dark);margin-bottom:4px">②</div>
-              <p style="font-size:12px;color:var(--teal-mid);line-height:1.4">Pointer Cowork sur le bon dossier</p>
-            </div>
-            <div style="background:var(--coral-light);border-radius:8px;padding:14px;text-align:center">
-              <div style="font-size:22px;font-weight:800;color:var(--coral-dark);margin-bottom:4px">③</div>
-              <p style="font-size:12px;color:var(--coral-mid);line-height:1.4">Taper l'instruction avec cotation HAS</p>
-            </div>
-            <div style="background:var(--amber-light);border-radius:8px;padding:14px;text-align:center">
-              <div style="font-size:22px;font-weight:800;color:var(--amber-dark);margin-bottom:4px">④</div>
-              <p style="font-size:12px;color:var(--amber-mid);line-height:1.4">Ouvrir le rapport et valider la cotation</p>
-            </div>
-          </div>
-
-          <!-- DOSSIER ESSMS -->
-          <div style="background:white;border-radius:10px;border:1px solid var(--border);overflow:hidden;margin-bottom:14px">
-            <div style="background:var(--gray-dark);color:white;padding:10px 16px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center">
-              <span>📁 DEMO_Evaluation_ESSMS_LesMimosas — Contenu du dossier</span>
-              <span style="font-size:11px;opacity:.7">À placer sur votre Bureau</span>
-            </div>
-            <div style="padding:14px 16px">
-              <div style="font-family:monospace;font-size:13px;line-height:2;background:var(--gray-light);padding:12px 14px;border-radius:6px">
-                📁 DEMO_Evaluation_ESSMS_LesMimosas/<br>
-                &nbsp;&nbsp;&nbsp;📄 constats_visite.txt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--teal-dark);font-family:sans-serif;font-size:11px">→ Constats + / à améliorer, critère 2.3</span><br>
-                &nbsp;&nbsp;&nbsp;📄 extrait_referentiel_HAS.txt <span style="color:var(--teal-dark);font-family:sans-serif;font-size:11px">→ Texte officiel du critère + attendus HAS</span><br>
-                &nbsp;&nbsp;&nbsp;📄 documents_preuves.txt &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--teal-dark);font-family:sans-serif;font-size:11px">→ Inventaire preuves disponibles / manquantes</span><br>
-                &nbsp;&nbsp;&nbsp;📄 notes_equipe.txt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--teal-dark);font-family:sans-serif;font-size:11px">→ Verbatim direction, soignants, résidents</span><br>
-                &nbsp;&nbsp;&nbsp;📄 INSTRUCTION_COWORK.txt &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--purple-text);font-family:sans-serif;font-size:11px">→ Votre pense-bête formateur</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- INSTRUCTION COWORK ESSMS -->
-          <div style="background:white;border-radius:10px;border:1px solid var(--border);overflow:hidden;margin-bottom:14px">
-            <div style="background:var(--coral-mid);color:white;padding:10px 16px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center">
-              <span>💬 Instruction à taper dans Cowork — Démo ESSMS</span>
-              <button class="copy-btn" onclick="copyPrompt('cowork-essms',this)" style="background:rgba(255,255,255,.15);color:white;border-color:rgba(255,255,255,.3)">📋 Copier</button>
-            </div>
-            <div style="padding:14px 16px">
-              <div class="prompt-block" id="cowork-essms">Tu es évaluateur ESSMS certifié par la HAS, expérimenté dans l'évaluation des établissements médico-sociaux (EHPAD, ESAT, IME).
-
-Dans ce dossier tu trouveras :
-- Les constats de visite détaillés (points positifs et à améliorer)
-- L'extrait du référentiel HAS pour le critère 2.3 (Bientraitance)
-- L'inventaire des preuves disponibles et manquantes
-- Les notes prises lors des entretiens avec l'équipe et les résidents
-
-Lis attentivement tous ces fichiers, puis rédige une réponse argumentée au critère 2.3 du référentiel HAS ESSMS, structurée comme suit :
-
-1. CONTEXTE DE L'ÉTABLISSEMENT
-   (présentation synthétique, chiffres clés, contexte de la visite)
-
-2. ORGANISATION MISE EN PLACE
-   (politique, procédures, instances, référent bientraitance)
-
-3. PREUVES DISPONIBLES
-   (liste des documents et observations qui attestent des pratiques)
-
-4. POINTS À AMÉLIORER
-   (formulés de façon constructive, référencés aux attendus HAS)
-
-5. PISTES D'ACTION CONCRÈTES ET DÉLAIS SUGGÉRÉS
-   (recommandations opérationnelles, réalistes, priorisées)
-
-6. COTATION ARGUMENTÉE
-   Propose une cotation parmi : Favorable / À améliorer / Non favorable
-   et justifie-la en 3 lignes maximum.
-
-Ton : conforme à un rapport d'évaluation officiel HAS. Factuel, bienveillant, rigoureux.
-Longueur : 40 lignes maximum.
-Sauvegarde le résultat dans un fichier Word nommé Reponse_Critere_2-3_LesMimosas.docx dans ce même dossier.</div>
-            </div>
-          </div>
-
-          <!-- SCRIPT ANIMATEUR ESSMS -->
-          <div style="background:var(--teal-light);border:1px solid #9FE1CB;border-radius:10px;padding:18px 22px;margin-bottom:14px">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-dark);margin-bottom:12px">🎙 Script de l'animateur — Ce que vous dites pendant la démo</div>
-            <div style="display:grid;grid-template-columns:80px 1fr;gap:8px;font-size:13px;color:var(--teal-dark)">
-              <span style="font-weight:700;padding-top:2px">0:00 – 0:30</span>
-              <span>"Imaginez : vous rentrez d'une visite d'évaluation HAS dans un EHPAD. Vous avez vos constats, vos notes d'entretiens, le texte du critère. Voilà ce que ça donne sous forme de fichiers."</span>
-              <span style="font-weight:700;padding-top:2px">0:30 – 1:00</span>
-              <span>"J'ouvre Cowork, je pointe sur ce dossier. 4 fichiers. Je lui donne mon instruction."</span>
-              <span style="font-weight:700;padding-top:2px">1:00 – 1:30</span>
-              <span><em>[Copiez-collez l'instruction]</em> "Regardez la structure de la demande : rôle d'évaluateur HAS, liste des fichiers à lire, plan en 6 parties conforme au référentiel, et une cotation argumentée à la fin."</span>
-              <span style="font-weight:700;padding-top:2px">1:30 – 4:00</span>
-              <span><em>[Laissez Cowork travailler]</em> "Il est en train de croiser les constats avec les attendus HAS, les preuves disponibles et les verbatim de l'équipe."</span>
-              <span style="font-weight:700;padding-top:2px">4:00 – 6:00</span>
-              <span>"Voilà le rapport Word. Je l'ouvre." <em>[Lisez la cotation et sa justification]</em> "La cotation 'À améliorer' est argumentée — je peux la valider, la modifier ou la contester."</span>
-              <span style="font-weight:700;padding-top:2px">6:00 – 10:00</span>
-              <span><strong>Question :</strong> "En tant qu'évaluateur, est-ce que cette cotation vous semble juste ? Qu'est-ce qui manque ?" → Discussion. Point clé : "Cowork a rédigé. Vous avez évalué."</span>
-            </div>
-          </div>
-
-          <!-- POINT PÉDAGOGIQUE ESSMS -->
-          <div style="background:var(--coral-light);border:1px solid #F5C4B3;border-radius:8px;padding:14px 18px">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--coral-dark);margin-bottom:8px">🔑 Point pédagogique à conclure</div>
-            <p style="font-size:13.5px;color:var(--coral-dark);line-height:1.65"><strong>Ce que Cowork a fait :</strong> lire le référentiel, croiser avec les constats, structurer la réponse, proposer une cotation.<br>
-            <strong>Ce que vous gardez :</strong> la décision de cotation finale, la responsabilité professionnelle, le dialogue avec l'établissement.<br>
-            <strong>⚠️ RGPD :</strong> en situation réelle, les fichiers sont anonymisés ou ne contiennent aucune donnée nominative. Cowork travaille en local.</p>
-          </div>
-        </div><!-- /cwpanel-essms -->
-
+    </div>
+    <div class="erreur-card">
+      <div class="e-num e-amber">5</div>
+      <div>
+        <h4>Ne pas préciser le rôle</h4>
+        <p>"Tu es évaluateur ESSMS certifié HAS" ancre l'IA dans votre registre professionnel. Sans rôle, la réponse est générique.</p>
       </div>
-    </div><!-- /view-cowork -->
+    </div>
+    <div class="erreur-card">
+      <div class="e-num e-teal">6</div>
+      <div>
+        <h4>Traiter l'IA comme un oracle</h4>
+        <p>L'IA formule. Vous décidez. Elle ne sait pas ce qui est juste pour votre contexte local ou votre bénéficiaire.</p>
+      </div>
+    </div>
+    <div class="erreur-card">
+      <div class="e-num e-teal">7</div>
+      <div>
+        <h4>Ne pas contraindre la longueur</h4>
+        <p>Sans limite, l'IA écrit trop — et le surplus noie l'essentiel. Préciser : "30 lignes max", "5 points", "10 lignes".</p>
+      </div>
+    </div>
+    <div class="erreur-card">
+      <div class="e-num e-green">8</div>
+      <div>
+        <h4>S'arrêter au premier jet</h4>
+        <p>La première réponse est rarement parfaite. Itérer : "améliore le point 3", "reformule plus sobrement".</p>
+      </div>
+    </div>
+    <div class="erreur-card">
+      <div class="e-num e-green">9</div>
+      <div>
+        <h4>Croire que Cowork remplace le terrain</h4>
+        <p>Cowork structure vos constats. Il ne fait pas la visite, ne conduit pas l'entretien, n'observe pas l'ambiance.</p>
+      </div>
+    </div>
+    <div class="erreur-card">
+      <div class="e-num e-purple">10</div>
+      <div>
+        <h4>Ne pas sauvegarder ses prompts efficaces</h4>
+        <p>Chaque prompt qui marche est une ressource. Créer <em>Mes_Prompts_Metier.docx</em> dès cette semaine et y ajouter chaque template validé.</p>
+      </div>
+    </div>
+  </div>
 
-  </main>
+  <div class="note teal" style="margin-top:20px">
+    <i>💡</i>
+    <p><strong>À retenir :</strong> ces 10 erreurs, tout le monde les fait dans les premières semaines. L'important, c'est de les reconnaître vite et de corriger. Avec 2 semaines de pratique régulière, vous en éviterez 8 naturellement.</p>
+  </div>
+
+</div>
+</div>
+</div>
+
+<hr class="separator">
+
+<!-- ═══════════════════════════════════════════
+     MON PLAN D'ACTION
+════════════════════════════════════════════ -->
+<div id="plan" style="background:white;">
+<div class="section">
+<div class="container">
+
+  <div class="module-header">
+    <span class="module-badge mb-navy">Pour repartir avec du concret</span>
+    <h2 class="module-title">Ma feuille de route — les 7 premiers jours</h2>
+  </div>
+
+  <p style="font-size:14px;color:var(--g700);line-height:1.65;margin-bottom:28px">La formation se termine. Voici le plan pour ne pas en rester au stade de la découverte. <strong>Une action par jour suffit pour ancrer l'usage.</strong></p>
+
+  <!-- ÉTAPE 1 -->
+  <div class="plan-card" style="border-top:3px solid var(--blue)">
+    <h3>🗓 Cette semaine — avant vendredi</h3>
+    <div class="plan-item">
+      <div class="plan-num">1</div>
+      <p><strong>Créer un compte gratuit sur claude.ai</strong> si ce n'est pas encore fait. 5 minutes. Aucune carte bancaire requise pour le plan gratuit.</p>
+    </div>
+    <div class="plan-item">
+      <div class="plan-num">2</div>
+      <p><strong>Identifier ma tâche n°1 à automatiser</strong> — celle qui me prend le plus de temps et qui est la plus répétitive. L'écrire quelque part (bloc-notes, note Teams).</p>
+    </div>
+    <div class="plan-item">
+      <div class="plan-num">3</div>
+      <p><strong>Coller mon premier prompt dans Claude</strong> en utilisant les templates de ce support. Adapter, tester, itérer.</p>
+    </div>
+  </div>
+
+  <!-- ÉTAPE 2 -->
+  <div class="plan-card" style="border-top:3px solid var(--teal)">
+    <h3>📂 Semaine suivante — mise en place système</h3>
+    <div class="plan-item">
+      <div class="plan-num">4</div>
+      <p><strong>Créer l'arborescence OneDrive</strong> recommandée (Formations / Bilans / ESSMS). 10 minutes max.</p>
+    </div>
+    <div class="plan-item">
+      <div class="plan-num">5</div>
+      <p><strong>Créer le fichier Mes_Prompts_Metier.docx</strong> et y coller les 2-3 prompts que vous avez testés et validés.</p>
+    </div>
+    <div class="plan-item">
+      <div class="plan-num">6</div>
+      <p><strong>Essayer Cowork sur un vrai dossier anonymisé</strong> (un critère HAS, une synthèse bilan, un compte rendu). Observer le résultat, valider, ajuster.</p>
+    </div>
+  </div>
+
+  <!-- ÉTAPE 3 -->
+  <div class="plan-card" style="border-top:3px solid var(--green)">
+    <h3>🚀 Dans 1 mois — bilan d'usage</h3>
+    <div class="plan-item">
+      <div class="plan-num">7</div>
+      <p><strong>Répondre à 3 questions :</strong> Quelles tâches ai-je automatisées ? Combien de temps ai-je gagné ? Qu'est-ce que j'ai fait de ce temps récupéré ? Cette réflexion ancre l'usage et permet de l'améliorer.</p>
+    </div>
+  </div>
+
+  <!-- RAPPEL RÈGLES D'OR -->
+  <div style="background:var(--g50);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;margin-top:20px">
+    <p style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px">⭐ Les 5 règles d'or à afficher près de votre écran</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--g700)"><span>✅</span> <span>Toujours donner un <strong>rôle</strong> à l'IA</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--g700)"><span>✅</span> <span>Toujours <strong>relire</strong> avant d'utiliser</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--g700)"><span>✅</span> <span>Jamais de données <strong>nominatives</strong> en ligne</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--g700)"><span>✅</span> <span><strong>Itérer</strong> — le 2ᵉ jet est toujours meilleur</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--g700);grid-column:1/-1"><span>✅</span> <span>Sauvegarder chaque prompt efficace dans <strong>Mes_Prompts_Metier.docx</strong></span></div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<hr class="separator">
+
+<!-- ═══════════════════════════════════════════
+     RESSOURCES
+════════════════════════════════════════════ -->
+<div style="background:var(--g50);">
+<div class="section">
+<div class="container">
+
+  <div class="module-header">
+    <span class="module-badge mb-navy">Pour continuer</span>
+    <h2 class="module-title">Ressources & contacts</h2>
+  </div>
+
+  <div class="res-grid">
+    <div class="res-card">
+      <span class="icon">🤖</span>
+      <h4>Claude.ai</h4>
+      <p>Créer votre compte (gratuit) et commencer à tester vos premiers prompts.</p>
+      <a href="https://claude.ai" target="_blank">Accéder →</a>
+    </div>
+    <div class="res-card">
+      <span class="icon">⚡</span>
+      <h4>Claude Desktop</h4>
+      <p>L'application à installer pour utiliser Cowork (Windows & Mac, gratuite à télécharger).</p>
+      <a href="https://claude.ai/download" target="_blank">Télécharger →</a>
+    </div>
+    <div class="res-card">
+      <span class="icon">🏥</span>
+      <h4>Référentiel HAS ESSMS</h4>
+      <p>Le texte officiel du référentiel national d'évaluation des ESSMS, disponible sur has-sante.fr.</p>
+      <a href="https://www.has-sante.fr" target="_blank">HAS →</a>
+    </div>
+    <div class="res-card">
+      <span class="icon">📞</span>
+      <h4>C2FA — Samir Chikhi</h4>
+      <p>Questions post-formation, accompagnement, devis formation intra, suivi à 1 mois.</p>
+      <a href="mailto:contact@c2fa.fr">contact@c2fa.fr →</a>
+    </div>
+  </div>
+
+  <div class="note blue" style="margin-top:20px">
+    <i>📋</i>
+    <p><strong>Ce support est le vôtre.</strong> Imprimez-le, partagez-le avec vos collègues, copiez les prompts directement dans Claude ou Cowork. Si vous avez des questions après la formation, contactez C2FA — un suivi à 1 mois est disponible sur demande.</p>
+  </div>
+
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>Support de formation · <strong>C2FA — Chikhi Conseil Formation Audit</strong> · Montauban · 2026</p>
+  <p style="margin-top:4px">✅ Organisme certifié Qualiopi · NDA 76820142382 · <a href="mailto:contact@c2fa.fr" style="color:rgba(255,255,255,.6)">contact@c2fa.fr</a> · 06 51 50 97 18</p>
 </div>
 
 <script>
-// ── SLIDES ──
-const TOTAL = 19;
-let cur = 0;
-
-function goSlide(n) {
-  document.querySelectorAll('.slide-frame').forEach((f,i) => f.classList.toggle('active', i===n));
-  document.querySelectorAll('.sidebar-item').forEach((b,i) => b.classList.toggle('active', i===n));
-  document.getElementById('slide-counter').textContent = 'Diapo '+(n+1)+' / '+TOTAL;
-  document.getElementById('btn-prev').disabled = n===0;
-  document.getElementById('btn-next').disabled = n===TOTAL-1;
-  cur = n;
-}
-function prevSlide() { if(cur>0) goSlide(cur-1); }
-function nextSlide() { if(cur<TOTAL-1) goSlide(cur+1); }
-
-// keyboard navigation
-document.addEventListener('keydown', e => {
-  if(document.getElementById('view-slides').classList.contains('active')) {
-    if(e.key==='ArrowRight'||e.key==='ArrowDown') nextSlide();
-    if(e.key==='ArrowLeft'||e.key==='ArrowUp') prevSlide();
+  /* ─── COPY TO CLIPBOARD ─── */
+  function copyPrompt(btn) {
+    const box = btn.previousElementSibling;
+    const text = box.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '✅ Copié !';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = orig;
+        btn.classList.remove('copied');
+      }, 2000);
+    }).catch(() => {
+      // Fallback pour les navigateurs sans clipboard API
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      const orig = btn.innerHTML;
+      btn.innerHTML = '✅ Copié !';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = orig;
+        btn.classList.remove('copied');
+      }, 2000);
+    });
   }
-});
 
-// ── VIEWS ──
-function switchView(v) {
-  document.querySelectorAll('.view').forEach(el => el.classList.remove('active'));
-  document.getElementById('view-'+v).classList.add('active');
-  document.querySelectorAll('.nav-mode').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-  document.getElementById('sidebar-slides').style.display = v==='slides' ? 'block' : 'none';
-}
-
-// ── COWORK TABS ──
-function showCoworkTab(tab, btn) {
-  document.getElementById('cwpanel-bilan').style.display = tab==='bilan' ? 'block' : 'none';
-  document.getElementById('cwpanel-essms').style.display = tab==='essms' ? 'block' : 'none';
-  document.getElementById('cwtab-bilan').style.background = tab==='bilan' ? 'var(--purple-dark)' : 'white';
-  document.getElementById('cwtab-bilan').style.color = tab==='bilan' ? 'white' : 'var(--fg)';
-  document.getElementById('cwtab-essms').style.background = tab==='essms' ? 'var(--coral-mid)' : 'white';
-  document.getElementById('cwtab-essms').style.color = tab==='essms' ? 'white' : 'var(--fg)';
-}
-
-// ── TIMELINE ──
-function toggleTl(hdr) {
-  const body = hdr.nextElementSibling;
-  const toggle = hdr.querySelector('.tl-toggle');
-  body.classList.toggle('open');
-  toggle.textContent = body.classList.contains('open') ? '▲' : '▼';
-}
-
-// ── COPY PROMPTS ──
-function copyPrompt(id, btn) {
-  const text = document.getElementById(id).textContent;
-  navigator.clipboard.writeText(text).then(() => {
-    btn.textContent = '✅ Copié !';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.textContent = '📋 Copier'; btn.classList.remove('copied'); }, 2000);
+  /* ─── HIGHLIGHT ACTIVE NAV LINK ON SCROLL ─── */
+  const sections = document.querySelectorAll('[id]');
+  const navLinks = document.querySelectorAll('.top-nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 100) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
   });
-}
-
-// ── CHECKLIST ──
-function cl(el) {
-  el.classList.toggle('done');
-  const all = document.querySelectorAll('#view-checklist .check-item');
-  const done = document.querySelectorAll('#view-checklist .check-item.done');
-  const pct = Math.round(done.length/all.length*100);
-  document.getElementById('main-progress').style.width = pct+'%';
-  document.getElementById('main-label').textContent = done.length+' / '+all.length+' étapes validées';
-}
-
-// ── TIMER ──
-let timerOn = false, timerSec = 0, timerInterval = null;
-function toggleTimer() {
-  if(timerOn) {
-    clearInterval(timerInterval);
-    timerOn = false;
-    document.getElementById('timer').classList.remove('running');
-  } else {
-    timerOn = true;
-    document.getElementById('timer').classList.add('running');
-    timerInterval = setInterval(() => {
-      timerSec++;
-      const m = String(Math.floor(timerSec/60)).padStart(2,'0');
-      const s = String(timerSec%60).padStart(2,'0');
-      document.getElementById('timer').textContent = m+':'+s;
-    }, 1000);
-  }
-}
 </script>
+
 </body>
 </html>
