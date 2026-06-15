@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit IA — Identifiez les usages vraiment utiles à votre structure | CCFA Montauban</title>
+    <meta name="description" content="Audit IA concret pour organismes de formation, associations et structures ESS. Repérez les gains rapides, sécurisez vos usages, repartez avec des priorités d'action. CCFA Montauban.">
+    <meta name="keywords" content="audit IA organisme formation, intelligence artificielle association ESS, usages IA formation professionnelle, diagnostic IA Montauban, accompagnement IA Occitanie">
+    <meta name="author" content="Samir Chikhi — CCFA">
+    <link rel="canonical" href="https://www.c2fa.fr/audit-ia.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.c2fa.fr/audit-ia.html">
+    <meta property="og:title" content="Audit IA — Identifiez les usages vraiment utiles à votre structure | CCFA">
+    <meta property="og:description" content="Audit IA concret pour organismes de formation, associations et ESS. Priorités claires, plan d'action réaliste. CCFA Montauban, Occitanie.">
+    <meta property="og:site_name" content="CCFA — Chikhi Conseil Formation Audit">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Audit IA pour organismes de formation & associations | CCFA">
+    <meta name="twitter:description" content="Repérez les bons usages IA sans vous disperser. Audit concret, plan d'action réaliste.">
+    <!-- Géolocalisation locale SEO -->
+    <meta name="geo.region" content="FR-OCC">
+    <meta name="geo.placename" content="Montauban, Tarn-et-Garonne">
+    <meta name="geo.position" content="44.0157;1.3553">
+    <meta name="ICBM" content="44.0157, 1.3553">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Données structurées -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Audit IA pour organismes de formation et associations",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "CCFA — Chikhi Conseil Formation Audit",
+        "url": "https://www.c2fa.fr",
+        "telephone": "+33651509718",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "12 rue du Génie",
+          "addressLocality": "Montauban",
+          "postalCode": "82000",
+          "addressCountry": "FR"
+        }
+      },
+      "description": "Audit des usages de l'intelligence artificielle pour organismes de formation, associations, structures ESS et tiers-lieux. Diagnostic, recommandations et plan d'action concret.",
+      "areaServed": "Occitanie",
+      "url": "https://www.c2fa.fr/audit-ia.html",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.c2fa.fr/"},
+          {"@type": "ListItem", "position": 2, "name": "Audit IA", "item": "https://www.c2fa.fr/audit-ia.html"}
+        ]
+      }
+    }
+    </script>
+
+    <style>
+        /* ---- VARIABLES IA ---- */
+        :root {
+            --ia-blue: #1e3a5f;
+            --ia-teal: #0891b2;
+            --ia-teal-light: #06b6d4;
+            --ia-purple: #667eea;
+            --ia-green: #059669;
+            --ia-bg: #f0f9ff;
+        }
+
+        /* ---- HERO ---- */
+        .ia-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0891b2 100%);
+            padding: 140px 0 100px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .ia-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(6,182,212,0.18) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(102,126,234,0.18) 0%, transparent 50%);
+        }
+        .ia-hero .container { position: relative; z-index: 1; }
+        .ia-hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .ia-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(6,182,212,0.18);
+            border: 1px solid rgba(6,182,212,0.4);
+            color: #67e8f9;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+        }
+        .ia-badge::before { content: '✦'; font-size: 10px; }
+        .ia-hero h1 {
+            font-size: 46px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .ia-hero h1 span { color: #67e8f9; }
+        .ia-hero-sub {
+            font-size: 18px;
+            opacity: 0.85;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .ia-hero-bullets {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 36px;
+        }
+        .ia-hero-bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 15px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .ia-hero-bullets li::before {
+            content: '→';
+            color: #67e8f9;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .ia-cta-group { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+        .btn-ia-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #0891b2, #06b6d4);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 17px;
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(8,145,178,0.4);
+        }
+        .btn-ia-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(8,145,178,0.5); color: white; }
+        .ia-micro {
+            font-size: 13px;
+            opacity: 0.65;
+            line-height: 1.6;
+        }
+
+        /* Hero visual */
+        .ia-hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ia-visual-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 20px;
+            padding: 36px 30px;
+            width: 100%;
+            max-width: 340px;
+            backdrop-filter: blur(10px);
+        }
+        .ia-visual-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .ia-visual-row:last-child { border-bottom: none; }
+        .ia-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .dot-green { background: #22c55e; }
+        .dot-orange { background: #f97316; }
+        .dot-red { background: #ef4444; }
+        .ia-visual-label { font-size: 13px; color: rgba(255,255,255,0.75); flex: 1; }
+        .ia-visual-tag {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 50px;
+        }
+        .tag-green { background: rgba(34,197,94,0.15); color: #4ade80; }
+        .tag-orange { background: rgba(249,115,22,0.15); color: #fb923c; }
+        .tag-red { background: rgba(239,68,68,0.15); color: #f87171; }
+        .ia-visual-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #67e8f9;
+            margin-bottom: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* ---- SEGMENTATION ---- */
+        .ia-segment {
+            padding: 80px 0;
+            background: white;
+        }
+        .section-label {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ia-teal);
+            margin-bottom: 12px;
+        }
+        .ia-section-title {
+            font-size: 34px;
+            font-weight: 700;
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .ia-section-intro {
+            max-width: 680px;
+            margin: 0 auto 50px;
+            text-align: center;
+            font-size: 17px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+        .segment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .segment-card {
+            border-radius: 20px;
+            padding: 40px 36px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .segment-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+        .segment-card.formation {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 2px solid #bae6fd;
+        }
+        .segment-card.ess {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px solid #bbf7d0;
+        }
+        .segment-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .segment-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 14px;
+        }
+        .segment-card p {
+            font-size: 15px;
+            line-height: 1.75;
+            color: #4a5568;
+            margin-bottom: 24px;
+        }
+        .btn-segment {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-seg-blue { background: #0891b2; color: white; }
+        .btn-seg-blue:hover { background: #0e7490; color: white; }
+        .btn-seg-green { background: #059669; color: white; }
+        .btn-seg-green:hover { background: #047857; color: white; }
+
+        /* ---- AUDIENCE SECTIONS ---- */
+        .ia-audience {
+            padding: 80px 0;
+        }
+        .ia-audience.bg-light { background: var(--ia-bg); }
+        .ia-audience.bg-white { background: white; }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .audience-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+        .audience-accroche {
+            font-size: 16px;
+            line-height: 1.75;
+            color: #4a5568;
+            margin-bottom: 30px;
+            padding-left: 16px;
+            border-left: 4px solid var(--ia-teal);
+        }
+        .prob-title {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin-bottom: 14px;
+        }
+        .prob-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        .prob-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 15px;
+            color: #4a5568;
+            margin-bottom: 10px;
+            line-height: 1.55;
+        }
+        .prob-list li::before {
+            content: '✗';
+            color: #f97316;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .result-box {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            border: 1px solid #e2e8f0;
+        }
+        .result-box.blue-accent { border-top: 4px solid var(--ia-teal); }
+        .result-box.green-accent { border-top: 4px solid var(--ia-green); }
+        .result-box h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 14px;
+        }
+        .result-list {
+            list-style: none;
+            padding: 0;
+        }
+        .result-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: #4a5568;
+            margin-bottom: 10px;
+            line-height: 1.55;
+        }
+        .result-list li::before {
+            content: '✓';
+            color: #059669;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .usecase-box {
+            margin-top: 20px;
+            background: linear-gradient(135deg, #f8faff, #eef2ff);
+            border-radius: 12px;
+            padding: 20px 24px;
+            font-size: 14px;
+            color: #4338ca;
+            line-height: 1.7;
+        }
+        .usecase-box strong { display: block; margin-bottom: 6px; color: #3730a3; }
+        .reassurance-tag {
+            display: inline-block;
+            background: rgba(8,145,178,0.1);
+            color: #0891b2;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        /* ---- MÉTHODE ---- */
+        .ia-methode {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+            color: white;
+        }
+        .ia-methode .ia-section-title { color: white; }
+        .ia-methode .ia-section-intro { color: rgba(255,255,255,0.7); }
+        .methode-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .methode-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 32px 28px;
+            position: relative;
+        }
+        .methode-num {
+            font-size: 56px;
+            font-weight: 800;
+            color: rgba(6,182,212,0.2);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        .methode-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+        }
+        .methode-card p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.7;
+        }
+
+        /* ---- LIVRABLES ---- */
+        .ia-livrables {
+            padding: 80px 0;
+            background: white;
+        }
+        .livrables-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .livrables-list {
+            list-style: none;
+            padding: 0;
+        }
+        .livrables-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .livrables-list li:last-child { border-bottom: none; }
+        .livrable-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #0891b2, #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .livrable-text h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+        .livrable-text p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+        .livrables-visual {
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+        }
+        .livrables-visual h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #67e8f9;
+        }
+        .livrables-visual p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.75;
+        }
+        .lv-divider { height: 1px; background: rgba(255,255,255,0.1); margin: 20px 0; }
+
+        /* ---- CONFIANCE ---- */
+        .ia-confiance {
+            padding: 80px 0;
+            background: var(--ia-bg);
+        }
+        .confiance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 50px;
+        }
+        .confiance-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .confiance-card .c-icon {
+            font-size: 36px;
+            margin-bottom: 14px;
+            display: block;
+        }
+        .confiance-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+        .confiance-card p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.65;
+        }
+
+        /* ---- FAQ ---- */
+        .ia-faq {
+            padding: 80px 0;
+            background: white;
+        }
+        .faq-list { max-width: 780px; margin: 0 auto; }
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 22px 0;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: #0f172a;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        .faq-question:hover { color: var(--ia-teal); }
+        .faq-arrow {
+            flex-shrink: 0;
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: var(--ia-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: transform 0.3s, background 0.2s;
+            color: var(--ia-teal);
+        }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); background: var(--ia-teal); color: white; }
+        .faq-answer {
+            display: none;
+            padding: 0 0 22px;
+            font-size: 15px;
+            color: #4a5568;
+            line-height: 1.75;
+        }
+        .faq-item.open .faq-answer { display: block; }
+
+        /* ---- CTA FINAL ---- */
+        .ia-cta-final {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0891b2 0%, #667eea 50%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        .ia-cta-final h2 { font-size: 38px; margin-bottom: 16px; color: white; }
+        .ia-cta-final p { font-size: 18px; opacity: 0.88; max-width: 600px; margin: 0 auto 36px; line-height: 1.7; }
+        .btn-ia-white {
+            display: inline-block;
+            background: white;
+            color: #0891b2;
+            padding: 18px 44px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .btn-ia-white:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,0,0,0.25); color: #0891b2; }
+        .ia-cta-final .ia-micro { margin-top: 16px; opacity: 0.6; font-size: 14px; }
+
+        /* ---- FORMULAIRE ---- */
+        .ia-form-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        .form-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .form-wrapper .ia-section-title { font-size: 30px; text-align: left; }
+        .form-wrapper .ia-section-intro { text-align: left; margin-left: 0; font-size: 16px; }
+        .ia-form { margin-top: 36px; }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 13px 16px;
+            font-size: 15px;
+            font-family: 'Open Sans', sans-serif;
+            color: #1a202c;
+            background: white;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus { border-color: var(--ia-teal); }
+        .form-group textarea { resize: vertical; min-height: 110px; }
+        .form-full { grid-column: 1 / -1; }
+        .btn-form-ia {
+            width: 100%;
+            background: linear-gradient(135deg, #0891b2, #06b6d4);
+            color: white;
+            border: none;
+            padding: 17px;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 16px rgba(8,145,178,0.35);
+            margin-top: 8px;
+        }
+        .btn-form-ia:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(8,145,178,0.45); }
+        .form-note {
+            font-size: 13px;
+            color: #94a3b8;
+            text-align: center;
+            margin-top: 14px;
+            line-height: 1.6;
+        }
+        #iaFormMsg { margin-top: 16px; padding: 14px 18px; border-radius: 10px; font-size: 15px; display: none; }
+        #iaFormMsg.success { background: #f0fdf4; color: #166534; border: 1px solid #86efac; display: block; }
+        #iaFormMsg.error { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; display: block; }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 900px) {
+            .ia-hero-inner { grid-template-columns: 1fr; }
+            .ia-hero-visual { display: none; }
+            .segment-grid { grid-template-columns: 1fr; }
+            .audience-grid { grid-template-columns: 1fr; }
+            .methode-grid { grid-template-columns: 1fr; }
+            .livrables-grid { grid-template-columns: 1fr; }
+            .confiance-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .ia-hero { padding: 110px 0 70px; }
+            .ia-hero h1 { font-size: 30px; }
+            .ia-hero-sub { font-size: 16px; }
+            .ia-section-title { font-size: 26px; }
+            .form-row { grid-template-columns: 1fr; }
+            .ia-cta-final h2 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html">
+                            <span class="logo-text">CCFA</span>
+                            <span class="logo-subtitle">Chikhi Conseil Formation Audit</span>
+                        </a>
+                    </div>
+                    <button class="mobile-menu-toggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="a-propos.html">À PROPOS</a></li>
+                        <li class="dropdown">
+                            <a href="index.html#services">NOS SERVICES</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="service-ingenierie.html">Ingénierie de Formation</a></li>
+                                <li><a href="service-audit.html">Audit Qualiopi</a></li>
+                                <li><a href="service-essms.html">Évaluation ESSMS</a></li>
+                                <li><a href="service-bilan.html">Bilan de Compétences</a></li>
+                                <li><a href="service-management.html">Management de Transition</a></li>
+                                <li><a href="service-territorial.html">Développement Territorial</a></li>
+                                <li><a href="audit-ia.html" style="color:#0891b2;font-weight:700;">✦ Audit IA (Nouveau)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="tarifs.html">TARIFS</a></li>
+                        <li><a href="contact.html" class="btn-contact">NOUS CONTACTER</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="ia-hero">
+        <div class="container">
+            <div class="ia-hero-inner">
+                <div class="ia-hero-text">
+                    <div class="ia-badge">Audit IA concret, utile et adapté à votre structure</div>
+                    <h1>Identifiez les usages de <span>l'IA vraiment utiles</span> à votre organisation</h1>
+                    <p class="ia-hero-sub">Organismes de formation, associations, structures de l'ESS et tiers-lieux : obtenez un audit clair pour repérer les gains rapides, sécuriser vos usages et définir des priorités d'action réalistes.</p>
+                    <ul class="ia-hero-bullets">
+                        <li>Clarifiez où l'IA peut réellement vous faire gagner du temps.</li>
+                        <li>Évitez les usages gadget, flous ou risqués.</li>
+                        <li>Repartez avec des priorités concrètes, adaptées à votre niveau de maturité.</li>
+                    </ul>
+                    <div class="ia-cta-group">
+                        <a href="#formulaire" class="btn-ia-primary">Demander mon audit IA</a>
+                        <p class="ia-micro">Réponse sous 48h · Premier échange sans engagement · Données confidentielles</p>
+                    </div>
+                </div>
+                <div class="ia-hero-visual">
+                    <div class="ia-visual-card">
+                        <div class="ia-visual-title">Résultat d'audit — Exemples d'usages</div>
+                        <div class="ia-visual-row">
+                            <div class="ia-dot dot-green"></div>
+                            <span class="ia-visual-label">Synthèse de réunions</span>
+                            <span class="ia-visual-tag tag-green">Prioritaire</span>
+                        </div>
+                        <div class="ia-visual-row">
+                            <div class="ia-dot dot-green"></div>
+                            <span class="ia-visual-label">Rédaction de contenus</span>
+                            <span class="ia-visual-tag tag-green">Prioritaire</span>
+                        </div>
+                        <div class="ia-visual-row">
+                            <div class="ia-dot dot-orange"></div>
+                            <span class="ia-visual-label">Réponse aux AAP</span>
+                            <span class="ia-visual-tag tag-orange">Secondaire</span>
+                        </div>
+                        <div class="ia-visual-row">
+                            <div class="ia-dot dot-orange"></div>
+                            <span class="ia-visual-label">Données personnelles</span>
+                            <span class="ia-visual-tag tag-orange">À encadrer</span>
+                        </div>
+                        <div class="ia-visual-row">
+                            <div class="ia-dot dot-red"></div>
+                            <span class="ia-visual-label">Dossiers RH sensibles</span>
+                            <span class="ia-visual-tag tag-red">À éviter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEGMENTATION ===== -->
+    <section class="ia-segment" id="cibles">
+        <div class="container">
+            <p class="section-label">Deux contextes, une démarche adaptée</p>
+            <h2 class="ia-section-title">Un audit pensé pour votre réalité de terrain</h2>
+            <p class="ia-section-intro">Toutes les structures n'ont pas les mêmes contraintes, ni les mêmes leviers. Cette démarche distingue deux grands contextes d'usage pour vous proposer un audit pertinent, compréhensible et directement exploitable.</p>
+            <div class="segment-grid">
+                <div class="segment-card formation">
+                    <span class="segment-icon">🎓</span>
+                    <h3>Je suis un organisme de formation</h3>
+                    <p>Vous cherchez à gagner du temps sur l'ingénierie pédagogique, les tâches administratives, la communication, la personnalisation des parcours ou la production documentaire, sans perdre en qualité ni en conformité.</p>
+                    <a href="#formation" class="btn-segment btn-seg-blue">Voir les enjeux des organismes de formation</a>
+                </div>
+                <div class="segment-card ess">
+                    <span class="segment-icon">🤝</span>
+                    <h3>Je suis une association, une structure ESS ou un tiers-lieu</h3>
+                    <p>Vous voulez mieux organiser votre activité, fluidifier la coordination, améliorer vos écrits, valoriser vos actions et repérer les usages IA qui ont du sens pour une structure à ressources limitées.</p>
+                    <a href="#ess" class="btn-segment btn-seg-green">Voir les enjeux des structures associatives et ESS</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ORGANISMES DE FORMATION ===== -->
+    <section class="ia-audience bg-light" id="formation">
+        <div class="container">
+            <div class="audience-grid">
+                <div class="audience-content">
+                    <p class="section-label" style="text-align:left">Pour les organismes de formation</p>
+                    <h2>Gagner du temps, sans perdre en qualité</h2>
+                    <p class="audience-accroche">L'IA peut vous aider à aller plus vite, mais seulement si elle s'inscrit dans vos obligations, votre méthode et vos publics. L'objectif n'est pas de tout automatiser, mais d'identifier ce qui vous fait réellement gagner en efficacité.</p>
+
+                    <p class="prob-title">Problèmes fréquents</p>
+                    <ul class="prob-list">
+                        <li>Vous passez trop de temps sur des tâches répétitives : programmes, supports, synthèses, mails, comptes rendus.</li>
+                        <li>Vous testez des outils sans savoir lesquels sont vraiment utiles.</li>
+                        <li>Vous voulez avancer sans fragiliser la qualité de vos contenus ni vos pratiques documentaires.</li>
+                        <li>Vous cherchez des usages compatibles avec vos contraintes d'organisation et de suivi.</li>
+                    </ul>
+
+                    <div class="reassurance-tag">
+                        Regard ancré dans la pratique de la formation et de l'audit · Attention particulière aux petites et moyennes structures
+                    </div>
+                </div>
+                <div>
+                    <div class="result-box blue-accent">
+                        <h4>Ce que l'audit permet d'identifier</h4>
+                        <ul class="result-list">
+                            <li>Les tâches où l'IA peut vous faire gagner du temps rapidement.</li>
+                            <li>Les usages utiles pour la conception, la préparation, la reformulation, la veille et la communication.</li>
+                            <li>Les points de vigilance sur la qualité, la confidentialité et la cohérence des productions.</li>
+                            <li>Les priorités à mettre en place selon votre réalité, vos outils et votre niveau de maturité.</li>
+                        </ul>
+                    </div>
+                    <div class="usecase-box">
+                        <strong>Exemples de cas d'usage</strong>
+                        Préparation de contenus pédagogiques, trames de séquences, synthèses de ressources, formalisation de procédures, aide à la rédaction, communication de session, réponses aux demandes entrantes, production de supports internes ou commerciaux.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ASSOCIATIONS / ESS ===== -->
+    <section class="ia-audience bg-white" id="ess">
+        <div class="container">
+            <div class="audience-grid" style="direction:rtl">
+                <div class="audience-content" style="direction:ltr">
+                    <p class="section-label" style="text-align:left;color:#059669">Pour les associations, ESS et tiers-lieux</p>
+                    <h2>Alléger la charge, renforcer l'impact</h2>
+                    <p class="audience-accroche" style="border-color:#059669">Dans beaucoup de structures, les équipes portent plusieurs rôles à la fois. L'intérêt de l'IA n'est pas de remplacer l'humain, mais de soulager certaines tâches, d'améliorer l'organisation et de renforcer votre capacité d'action.</p>
+
+                    <p class="prob-title">Problèmes fréquents</p>
+                    <ul class="prob-list">
+                        <li>Vous manquez de temps pour structurer, rédiger, capitaliser et valoriser vos actions.</li>
+                        <li>Les équipes jonglent entre coordination, animation, partenariats, administratif et communication.</li>
+                        <li>Vous voulez gagner en efficacité sans vous éloigner de vos valeurs ni de vos publics.</li>
+                        <li>Vous avez besoin d'outils simples, utiles et proportionnés à vos moyens.</li>
+                    </ul>
+
+                    <div class="reassurance-tag" style="background:rgba(5,150,105,0.08);color:#059669">
+                        Approche adaptée aux structures qui veulent concilier utilité, sobriété et impact social
+                    </div>
+                </div>
+                <div style="direction:ltr">
+                    <div class="result-box green-accent">
+                        <h4>Ce que l'audit permet d'identifier</h4>
+                        <ul class="result-list">
+                            <li>Les tâches où l'IA peut alléger la charge de travail sans complexifier l'organisation.</li>
+                            <li>Les usages pertinents pour les écrits, comptes rendus, diagnostics, appels à projets, communication et animation.</li>
+                            <li>Les limites à poser pour garder la maîtrise, la qualité relationnelle et la cohérence de vos productions.</li>
+                            <li>Un plan d'action réaliste, progressif et compatible avec les ressources de votre structure.</li>
+                        </ul>
+                    </div>
+                    <div class="usecase-box" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);color:#166534">
+                        <strong style="color:#14532d">Exemples de cas d'usage</strong>
+                        Préparation de dossiers, synthèses de réunions, rédaction de notes, structuration de projets, amélioration de supports de communication, organisation d'informations, valorisation d'impact, animation, aide à la réponse à des appels à projets ou à des demandes partenariales.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MÉTHODE ===== -->
+    <section class="ia-methode" id="methode">
+        <div class="container">
+            <p class="section-label" style="color:#67e8f9">La démarche</p>
+            <h2 class="ia-section-title">Simple, lisible et orientée décision</h2>
+            <p class="ia-section-intro">Pas de jargon, pas de généralités. Une méthode en trois temps pour partir de votre réalité et repartir avec des choix clairs.</p>
+            <div class="methode-grid">
+                <div class="methode-card">
+                    <div class="methode-num">01</div>
+                    <h3>Comprendre votre contexte</h3>
+                    <p>Nous clarifions vos activités, vos contraintes, vos outils actuels, vos irritants et vos priorités. L'objectif est d'éviter les recommandations génériques et de partir de votre réalité.</p>
+                </div>
+                <div class="methode-card">
+                    <div class="methode-num">02</div>
+                    <h3>Repérer les usages prioritaires</h3>
+                    <p>Nous distinguons les usages utiles, les usages secondaires et les usages à éviter ou à encadrer. Vous savez où concentrer votre énergie et ce qui peut attendre.</p>
+                </div>
+                <div class="methode-card">
+                    <div class="methode-num">03</div>
+                    <h3>Formaliser un plan d'action</h3>
+                    <p>Vous repartez avec une lecture claire de vos opportunités, de vos points de vigilance et des premières actions à engager pour démarrer concrètement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LIVRABLES ===== -->
+    <section class="ia-livrables" id="livrables">
+        <div class="container">
+            <p class="section-label">Ce que vous recevez</p>
+            <h2 class="ia-section-title">À l'issue de l'audit</h2>
+            <p class="ia-section-intro">Des livrables concrets, pas un rapport PDF de 60 pages que personne ne lit.</p>
+            <div class="livrables-grid">
+                <ul class="livrables-list">
+                    <li>
+                        <div class="livrable-icon">🎯</div>
+                        <div class="livrable-text">
+                            <h4>Vos usages IA prioritaires</h4>
+                            <p>Une vision claire de ce qui peut vous faire gagner du temps maintenant.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="livrable-icon">⚡</div>
+                        <div class="livrable-text">
+                            <h4>Gains rapides identifiés</h4>
+                            <p>Les quick wins à court terme, sans transformation lourde.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="livrable-icon">⚠️</div>
+                        <div class="livrable-text">
+                            <h4>Points de vigilance</h4>
+                            <p>Les limites et risques d'usage à connaître pour ne pas se retrouver en difficulté.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="livrable-icon">💡</div>
+                        <div class="livrable-text">
+                            <h4>Recommandations adaptées</h4>
+                            <p>Des conseils calibrés à la taille et aux contraintes de votre structure.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="livrable-icon">🗺️</div>
+                        <div class="livrable-text">
+                            <h4>Plan d'action simple</h4>
+                            <p>Les premières actions à engager pour avancer sans se disperser.</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="livrables-visual">
+                    <h3>L'objectif n'est pas de vous vendre un discours sur l'IA</h3>
+                    <div class="lv-divider"></div>
+                    <p>C'est de vous aider à décider <strong>où agir</strong>, <strong>comment agir</strong> et avec quel niveau d'exigence — en partant de votre contexte réel, pas d'une vision idéale ou générique.</p>
+                    <div class="lv-divider"></div>
+                    <p>Cette approche est issue d'une pratique terrain sur la formation, l'audit, l'accompagnement de structures et l'amélioration continue. Elle s'adapte aux structures qui veulent aller à l'essentiel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONFIANCE ===== -->
+    <section class="ia-confiance" id="confiance">
+        <div class="container">
+            <p class="section-label">Pourquoi nous faire confiance</p>
+            <h2 class="ia-section-title">Une approche sobre, concrète et ancrée dans le terrain</h2>
+            <p class="ia-section-intro">Cette démarche s'adresse à des structures qui veulent des réponses utiles, pas du jargon ni des effets de mode.</p>
+            <div class="confiance-grid">
+                <div class="confiance-card">
+                    <span class="c-icon">🏅</span>
+                    <h4>27 ans d'expérience terrain</h4>
+                    <p>Expérience de terrain sur la formation et l'accompagnement de structures associatives, publiques et privées.</p>
+                </div>
+                <div class="confiance-card">
+                    <span class="c-icon">✅</span>
+                    <h4>~20 audits Qualiopi réalisés</h4>
+                    <p>100% de réussite aux audits de certification. Une culture du diagnostic structuré et de l'amélioration continue.</p>
+                </div>
+                <div class="confiance-card">
+                    <span class="c-icon">🤝</span>
+                    <h4>Ancrage ESS &amp; tiers-lieux</h4>
+                    <p>Intérêt fort pour les dynamiques associatives, l'ESS et les tiers-lieux. Approche adaptée aux structures à ressources limitées.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="ia-faq" id="faq">
+        <div class="container">
+            <p class="section-label">Questions fréquentes</p>
+            <h2 class="ia-section-title">Ce que vous voulez savoir</h2>
+            <div class="faq-list" style="margin-top:40px">
+
+                <div class="faq-item open">
+                    <button class="faq-question">
+                        Est-ce que cet audit s'adresse à une petite structure ?
+                        <span class="faq-arrow">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        Oui. L'audit est justement pensé pour des structures qui n'ont ni le temps ni les moyens de lancer une transformation complexe, mais qui veulent identifier des usages simples, utiles et progressifs.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Est-ce qu'il faut déjà utiliser des outils d'IA ?
+                        <span class="faq-arrow">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        Non. L'audit peut servir aussi bien à cadrer des premiers usages qu'à remettre de l'ordre dans des tests déjà engagés. L'important est de partir de vos besoins réels.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Est-ce que l'objectif est d'automatiser un maximum ?
+                        <span class="faq-arrow">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        Non. L'objectif est de distinguer ce qui apporte un vrai gain de ce qui ajoute de la complexité, du flou ou des risques inutiles. La sobriété est un critère de sélection des usages.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Que se passe-t-il après la demande ?
+                        <span class="faq-arrow">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        Vous êtes recontacté sous 48h pour un premier échange de qualification, sans engagement. Cet échange nous permet de vérifier l'adéquation et de vous proposer une suite adaptée.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Quelles informations dois-je préparer ?
+                        <span class="faq-arrow">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        Quelques éléments suffisent : votre type de structure, vos activités principales, vos difficultés actuelles et ce que vous aimeriez améliorer en priorité. Pas besoin de rapport détaillé.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="ia-cta-final">
+        <div class="container">
+            <h2>Faites le point sur les usages IA vraiment utiles à votre structure</h2>
+            <p>Que vous soyez organisme de formation, association, ESS ou tiers-lieu, l'enjeu est le même : avancer avec méthode, sans vous disperser, et avec une vision claire des priorités.</p>
+            <a href="#formulaire" class="btn-ia-white">Demander mon audit IA</a>
+            <p class="ia-micro">Premier échange sans engagement · Réponse sous 48h · Données traitées avec confidentialité</p>
+        </div>
+    </section>
+
+    <!-- ===== FORMULAIRE ===== -->
+    <section class="ia-form-section" id="formulaire">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2 class="ia-section-title">Demandez votre audit IA</h2>
+                <p class="ia-section-intro">Remplissez ce formulaire en 1 minute. Nous revenons vers vous pour un premier échange de cadrage.</p>
+
+                <form class="ia-form" id="iaForm" action="https://formspree.io/f/maqlqwgw" method="POST" novalidate>
+                    <input type="hidden" name="_subject" value="Demande d'audit IA — c2fa.fr">
+                    <input type="hidden" name="service" value="Audit IA">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ia-nom">Nom et prénom *</label>
+                            <input type="text" id="ia-nom" name="nom" placeholder="Votre nom complet" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ia-email">Email professionnel *</label>
+                            <input type="email" id="ia-email" name="email" placeholder="votre@email.fr" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ia-structure">Nom de la structure *</label>
+                            <input type="text" id="ia-structure" name="structure" placeholder="Nom de votre organisation" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ia-type">Type de structure *</label>
+                            <select id="ia-type" name="type_structure" required>
+                                <option value="" disabled selected>Sélectionnez...</option>
+                                <option value="Organisme de formation">Organisme de formation</option>
+                                <option value="Association">Association</option>
+                                <option value="Structure ESS">Structure ESS</option>
+                                <option value="Tiers-lieu">Tiers-lieu</option>
+                                <option value="Collectivité">Collectivité</option>
+                                <option value="Autre">Autre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group form-full">
+                            <label for="ia-besoin">Votre besoin principal *</label>
+                            <textarea id="ia-besoin" name="besoin" placeholder="Décrivez en quelques lignes votre contexte et ce que vous aimeriez améliorer ou clarifier..." required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-form-ia">Envoyer ma demande d'audit IA →</button>
+                    <div id="iaFormMsg"></div>
+                    <p class="form-note">Nous vous demandons uniquement les informations nécessaires pour comprendre votre contexte et vous répondre utilement.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-text">CCFA</span>
+                        <span class="logo-subtitle">Chikhi Conseil Formation Audit</span>
+                    </div>
+                    <p class="footer-contact">
+                        <strong>Téléphone:</strong> 06 51 50 97 18<br>
+                        <strong>Email:</strong> <a href="mailto:contact@c2fa.fr">contact@c2fa.fr</a><br>
+                        <strong>Adresse:</strong> 12 rue du Génie<br>82000 Montauban
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Nos Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="service-ingenierie.html">Ingénierie de Formation</a></li>
+                        <li><a href="service-audit.html">Audit Qualiopi</a></li>
+                        <li><a href="service-essms.html">Évaluation ESSMS</a></li>
+                        <li><a href="service-bilan.html">Bilan de Compétences</a></li>
+                        <li><a href="audit-ia.html">Audit IA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>L'Entreprise</h4>
+                    <ul class="footer-links">
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="tarifs.html">Nos Tarifs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Horaires</h4>
+                    <p><strong>Du lundi au vendredi</strong><br>9h – 12h30 et 14h – 18h</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year">2026</span> CCFA — Tous droits réservés | <a href="mentions-legales.html">Mentions Légales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <a href="tel:0651509718" class="floating-btn floating-btn-phone">📞 06 51 50 97 18</a>
+        <a href="#formulaire" class="floating-btn floating-btn-rdv">Demander l'audit IA</a>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // Form AJAX
+        const iaForm = document.getElementById('iaForm');
+        const iaMsg = document.getElementById('iaFormMsg');
+
+        if (iaForm) {
+            iaForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = iaForm.querySelector('button[type="submit"]');
+                const original = btn.textContent;
+                btn.textContent = 'Envoi en cours…';
+                btn.disabled = true;
+                iaMsg.className = '';
+                iaMsg.style.display = 'none';
+
+                try {
+                    const res = await fetch(iaForm.action, {
+                        method: 'POST',
+                        body: new FormData(iaForm),
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (res.ok) {
+                        iaMsg.textContent = 'Votre demande a bien été envoyée. Nous vous recontactons sous 48h !';
+                        iaMsg.className = 'success';
+                        iaForm.reset();
+                    } else {
+                        throw new Error('Erreur serveur');
+                    }
+                } catch {
+                    iaMsg.textContent = 'Une erreur est survenue. Veuillez nous contacter directement au 06 51 50 97 18.';
+                    iaMsg.className = 'error';
+                } finally {
+                    btn.textContent = original;
+                    btn.disabled = false;
+                }
+            });
+        }
+
+        // Dynamic year
+        document.querySelectorAll('.current-year').forEach(el => {
+            el.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

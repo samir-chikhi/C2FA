@@ -115,6 +115,12 @@
   </url>
 
   <url>
+    <loc>https://www.c2fa.fr/audit-ia.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://www.c2fa.fr/mentions-legales.html</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
