@@ -135,7 +135,35 @@ footer { background: #0f1824; padding: 3rem 0 2rem; }
   .stat-row { gap: 0.8rem; }
 }
 </style>
-</head>
+<style>
+/* ── Mobile nav open state ── */
+nav { position: relative; }
+@media (max-width: 768px) {
+  .nav-links.open {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: #1a2f4e;
+    padding: 0.75rem 1rem 1rem;
+    gap: 0.25rem;
+    z-index: 200;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  }
+  .nav-links.open li { width: 100%; }
+  .nav-links.open a { display: block; padding: 0.55rem 0.8rem !important; font-size: 0.9rem !important; }
+  .nav-links.open .nav-dropdown-menu {
+    display: block;
+    position: static;
+    box-shadow: none;
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+    margin: 4px 0;
+    padding: 4px 0;
+  }
+}
+</style></head>
 <body>
 
 <nav>
@@ -145,6 +173,7 @@ footer { background: #0f1824; padding: 3rem 0 2rem; }
       <li><a href="a-propos.html">À propos</a></li>
       <li><a href="index.html#services">Nos services</a></li>
       <li><a href="catalogue-formations.html">Formations</a></li>
+      <li><a href="service-createur.html">Accompagnement Cr&#233;ateur</a></li>
       <li><a href="tarifs.html">Tarifs</a></li>
       <li><a href="ccfa-blog.html" class="active">Ressources</a></li>
       <li><a href="contact.html" class="nav-cta">Consultation gratuite →</a></li>
@@ -760,6 +789,7 @@ footer { background: #0f1824; padding: 3rem 0 2rem; }
         <ul>
           <li><a href="a-propos.html">À propos</a></li>
           <li><a href="catalogue-formations.html">Formations</a></li>
+      <li><a href="service-createur.html">Accompagnement Cr&#233;ateur</a></li>
           <li><a href="tarifs.html">Tarifs</a></li>
           <li><a href="blog.html">Ressources &amp; Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
