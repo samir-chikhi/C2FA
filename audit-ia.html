@@ -747,43 +747,34 @@
 <body>
 
     <!-- Header -->
-    <header class="main-header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <div class="logo">
-                        <a href="index.html">
-                            <span class="logo-text">CCFA</span>
-                            <span class="logo-subtitle">Chikhi Conseil Formation Audit</span>
-                        </a>
-                    </div>
-                    <button class="mobile-menu-toggle" aria-label="Menu">
-                        <span></span><span></span><span></span>
-                    </button>
-                    <ul class="nav-menu">
-                        <li><a href="a-propos.html">À propos</a></li>
-                        <li class="nav-dropdown">
-                            <a href="index.html#services">Services</a>
-                            <div class="nav-dropdown-menu">
-                                <a href="service-ingenierie.html">Ingénierie de Formation</a>
-                                <a href="service-management.html">Management de Transition</a>
-                                <a href="service-territorial.html">Développement Territorial</a>
-                                <a href="service-essms.html">Évaluation ESSMS</a>
-                                <a href="service-bilan.html">Bilan de Compétences</a>
-                                <a href="service-audit.html">Audit Qualiopi</a>
-                                <a href="audit-ia.html" style="color:#0891b2;font-weight:600;">✦ Audit IA (Nouveau)</a>
-                                <a href="service-createur.html">Accompagnement Créateur</a>
-                            </div>
-                        </li>
-                        <li><a href="catalogue-formations.html">Formations</a></li>
-                        <li><a href="tarifs.html">Tarifs</a></li>
-                        <li><a href="blog.html">Ressources</a></li>
-                        <li><a href="contact.html" class="btn-contact">Contact</a></li>
-                    </ul>
-                </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="index.html" class="logo">CC<span>FA</span></a>
+        <ul class="nav-links">
+          <li><a href="a-propos.html">À propos</a></li>
+          <li class="nav-dropdown">
+            <a href="#">Nos services ▾</a>
+            <div class="nav-dropdown-menu">
+              <a href="service-ingenierie.html">Ingénierie de Formation</a>
+              <a href="service-management.html">Management de Transition</a>
+              <a href="service-territorial.html">Développement Territorial</a>
+              <a href="service-essms.html">Évaluation ESSMS</a>
+              <a href="service-bilan.html">Bilan de Compétences</a>
+              <a href="service-audit.html">Audit Qualiopi</a>
+              <a href="audit-ia.html" style="color:#67e8f9;font-weight:600;">✦ Audit IA (Nouveau)</a>
+              <a href="service-createur.html">Accompagnement Créateur</a>
             </div>
-        </nav>
-    </header>
+          </li>
+          <li><a href="catalogue-formations.html">Formations</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="blog.html">Ressources</a></li>
+          <li><a href="contact.html" class="nav-cta">Premier échange gratuit →</a></li>
+        </ul>
+        <div class="hamburger" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
 
     <!-- ===== HERO ===== -->
     <section class="ia-hero">
