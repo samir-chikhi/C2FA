@@ -712,6 +712,36 @@
             .form-row { grid-template-columns: 1fr; }
             .ia-cta-final h2 { font-size: 26px; }
         }
+
+        /* ---- FLOATING CTA ---- */
+        .floating-cta {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 999;
+        }
+        .floating-btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .floating-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+        .floating-btn-phone { background: white; color: #0f172a; border: 2px solid #e2e8f0; }
+        .floating-btn-rdv { background: linear-gradient(135deg, #0891b2, #06b6d4); color: white; }
+        @media (max-width: 600px) {
+            .floating-cta { bottom: 12px; right: 12px; }
+            .floating-btn { font-size: 13px; padding: 10px 16px; }
+        }
     </style>
 </head>
 <body>
@@ -731,21 +761,24 @@
                         <span></span><span></span><span></span>
                     </button>
                     <ul class="nav-menu">
-                        <li><a href="a-propos.html">À PROPOS</a></li>
-                        <li class="dropdown">
-                            <a href="index.html#services">NOS SERVICES</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="service-ingenierie.html">Ingénierie de Formation</a></li>
-                                <li><a href="service-audit.html">Audit Qualiopi</a></li>
-                                <li><a href="service-essms.html">Évaluation ESSMS</a></li>
-                                <li><a href="service-bilan.html">Bilan de Compétences</a></li>
-                                <li><a href="service-management.html">Management de Transition</a></li>
-                                <li><a href="service-territorial.html">Développement Territorial</a></li>
-                                <li><a href="audit-ia.html" style="color:#0891b2;font-weight:700;">✦ Audit IA (Nouveau)</a></li>
-                            </ul>
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li class="nav-dropdown">
+                            <a href="index.html#services">Services</a>
+                            <div class="nav-dropdown-menu">
+                                <a href="service-ingenierie.html">Ingénierie de Formation</a>
+                                <a href="service-management.html">Management de Transition</a>
+                                <a href="service-territorial.html">Développement Territorial</a>
+                                <a href="service-essms.html">Évaluation ESSMS</a>
+                                <a href="service-bilan.html">Bilan de Compétences</a>
+                                <a href="service-audit.html">Audit Qualiopi</a>
+                                <a href="audit-ia.html" style="color:#0891b2;font-weight:600;">✦ Audit IA (Nouveau)</a>
+                                <a href="service-createur.html">Accompagnement Créateur</a>
+                            </div>
                         </li>
-                        <li><a href="tarifs.html">TARIFS</a></li>
-                        <li><a href="contact.html" class="btn-contact">NOUS CONTACTER</a></li>
+                        <li><a href="catalogue-formations.html">Formations</a></li>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                        <li><a href="blog.html">Ressources</a></li>
+                        <li><a href="contact.html" class="btn-contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
