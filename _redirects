@@ -1,0 +1,20 @@
+# Redirections 301 page à page, C2FA -> MUSIVA.
+# GitHub Pages ignore ce fichier : il n'est lu que par Netlify et Cloudflare Pages.
+# En attendant, chaque page ci-dessous porte une redirection HTML + canonical.
+
+/                                https://musiva.fr/  301
+/a-propos.html                   https://musiva.fr/a-propos.html  301
+/contact.html                    https://musiva.fr/contact.html  301
+/tarifs.html                     https://musiva.fr/tarifs.html  301
+/mentions-legales.html           https://musiva.fr/mentions-legales.html  301
+/espace-pro.html                 https://musiva.fr/espace-pro.html  301
+/service-audit.html              https://musiva.fr/service-audit.html  301
+/service-bilan.html              https://musiva.fr/service-bilan.html  301
+/service-createur.html           https://musiva.fr/service-createur.html  301
+/service-essms.html              https://musiva.fr/service-essms.html  301
+/service-ingenierie.html         https://musiva.fr/service-ingenierie.html  301
+/service-management.html         https://musiva.fr/service-management.html  301
+/service-territorial.html        https://musiva.fr/service-territorial.html  301
+
+# Les pages éditoriales ne sont volontairement pas redirigées :
+# elles portent du contenu qui n'existe pas encore sur musiva.fr.

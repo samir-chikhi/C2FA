@@ -1,130 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Ne listent plus que les pages éditoriales encore servies par c2fa.fr.
+     Les pages redirigées vers musiva.fr en sont retirées. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://www.c2fa.fr/</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Pages Qualiopi — priorité maximale -->
-  <url>
-    <loc>https://www.c2fa.fr/service-audit.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://www.c2fa.fr/pack-certif-occitanie.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://www.c2fa.fr/checklist-qualiopi.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <!-- Pages formation -->
-  <url>
-    <loc>https://www.c2fa.fr/service-ingenierie.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://www.c2fa.fr/service-bilan.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://www.c2fa.fr/catalogue-formations.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-  </url>
-
-  <!-- Autres services -->
-  <url>
-    <loc>https://www.c2fa.fr/service-essms.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.87</priority>
-  </url>
-  <url>
-    <loc>https://www.c2fa.fr/service-management.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-  </url>
-  <url>
-    <loc>https://www.c2fa.fr/service-territorial.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <!-- Pages institutionnelles -->
-  <url>
-    <loc>https://www.c2fa.fr/tarifs.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.c2fa.fr/a-propos.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.c2fa.fr/contact.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.c2fa.fr/blog.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.78</priority>
-  </url>
-
-  <!-- Articles SEO -->
-  <url>
-    <loc>https://www.c2fa.fr/article-qualiopi-montauban.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  <url>
-    <loc>https://www.c2fa.fr/article-formation-professionnelle-montauban.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-  </url>
-  <url>
-    <loc>https://www.c2fa.fr/article-bilan-competences-montauban.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.c2fa.fr/audit-ia.html</loc>
-    <lastmod>2026-06-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://www.c2fa.fr/mentions-legales.html</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.20</priority>
-  </url>
-
+  <url><loc>https://www.c2fa.fr/blog.html</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://www.c2fa.fr/ccfa-blog.html</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://www.c2fa.fr/article-qualiopi-montauban.html</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://www.c2fa.fr/article-bilan-competences-montauban.html</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://www.c2fa.fr/article-formation-professionnelle-montauban.html</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://www.c2fa.fr/checklist-qualiopi.html</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://www.c2fa.fr/pack-certif-occitanie.html</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://www.c2fa.fr/catalogue-formations.html</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://www.c2fa.fr/audit-ia.html</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://www.c2fa.fr/google-business.html</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://www.c2fa.fr/formation-ia-distanciel.html</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://www.c2fa.fr/formation_IA_distanciel_Teams.html</loc><lastmod>2026-08-12</lastmod></url>
 </urlset>

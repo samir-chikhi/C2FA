@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# C2FA est devenu MUSIVA. Les pages de présentation et de services
+# redirigent vers https://musiva.fr. Seules les pages éditoriales
+# restent servies depuis ce domaine.
 Sitemap: https://www.c2fa.fr/sitemap.xml
